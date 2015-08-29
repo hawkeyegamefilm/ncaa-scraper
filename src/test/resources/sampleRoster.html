@@ -1,0 +1,1411 @@
+
+<html>
+<head>
+    <title> Game By Game Stats </title>
+    <link href="/stylesheets/scaffold.css?1434996016" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/baseForms.css?1434996016" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/pagination.css?1434996016" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/menu.css?1434996016" media="screen" rel="stylesheet" type="text/css" />
+
+    <script src="/javascripts/prototype.js?1434996016" type="text/javascript"></script>
+    <script src="/javascripts/effects.js?1434996016" type="text/javascript"></script>
+    <script src="/javascripts/dragdrop.js?1434996016" type="text/javascript"></script>
+    <script src="/javascripts/controls.js?1434996016" type="text/javascript"></script>
+    <script src="/javascripts/control.modal.2.2.1.js?1434996016" type="text/javascript"></script>
+    <script src="/javascripts/livepipe.js?1434996016" type="text/javascript"></script>
+    <script src="/javascripts/window.js?1434996016" type="text/javascript"></script>
+    <script src="/javascripts/menu.js?1434996016" type="text/javascript"></script>
+    <script src="/javascripts/jstz.min.js?1434996016" type="text/javascript"></script>
+
+    <script src="/javascripts/calendar_date_select/calendar_date_select.js?1434996016" type="text/javascript"></script>
+    <script src="/javascripts/calendar_date_select/format_american.js?1434996016" type="text/javascript"></script>
+    <link href="/stylesheets/calendar_date_select/silver.css?1434996016" media="screen" rel="stylesheet" type="text/css" />
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+
+    <link href="/stylesheets/redmond/jquery-ui-1.8.23.custom.css?1434996016" media="screen" rel="stylesheet" type="text/css" />
+
+    <link href="/stylesheets/overcast/jquery.css?1434996016" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/jquery.loadmask.css?1434996016" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/table.css?1434996016" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/jquery.dataTables.css?1434996016" media="screen" rel="stylesheet" type="text/css" />
+
+
+
+
+    <script src="/javascripts/jquery.loadmask.min.js?1434996016" type="text/javascript"></script>
+    <script src="/javascripts/jquery.dataTables.min.js?1434996016" type="text/javascript"></script>
+    <script src="/javascripts/application.js?1434996016" type="text/javascript"></script>
+    <script src="/javascripts/numHtmlSort.js?1434996016" type="text/javascript"></script>
+    <script src="/javascripts/titleNumericSort.js?1434996016" type="text/javascript"></script>
+    <script src="/javascripts/gradeLevelSort.js?1434996016" type="text/javascript"></script>
+    <script src="/javascripts/datatable.getColumnData.js?1434996016" type="text/javascript"></script>
+    <script src="/javascripts/datatable.createSelect.js?1434996016" type="text/javascript"></script>
+    <script src="/javascripts/datatable.thSelectors.js?1434996016" type="text/javascript"></script>
+
+    <script language="javascript">
+
+var downImage = "/images/down12.gif";
+var rightImage = "/images/right12.gif";
+
+function toggle_row(attr_val){
+	arr = $$('['+attr_val+']');
+	for(x=0; x < arr.length; x++){
+			arr[x].toggle();
+	}
+}
+function show_hide_rows(attr_val, link_id){
+  if (Object.prototype.toString.call(attr_val).match(/^\[object (.*)\]$/)[1] == "Array"){
+    for(y=0; y < attr_val.length; y++){
+       toggle_row(attr_val[y]);
+     }
+  }else{
+    toggle_row(attr_val);
+  }
+	//arr = $$('['+attr_val+']');
+	//for(x=0; x < arr.length; x++){
+			//arr[x].toggle();
+	//}
+	if ( $(link_id).alt == "Add" ){
+		$(link_id).src = downImage; //'/images/down12.gif';
+		$(link_id).alt = 'Delete';
+	}else{
+	    $(link_id).src = rightImage; //'/images/right12.gif';
+		$(link_id).alt = 'Add';
+
+	}
+}
+
+</script>
+
+    <script>
+
+var winHeight = "auto";
+var winWidth = "auto";
+var maxHeight = 700;
+var maxWidth = 1400;
+var minHeight = 100;
+var minWidth = 200;
+
+var modalOptions = {"width": winWidth,
+                    "height": winHeight,
+                    "maxHeight": maxHeight,
+                    "maxWidth": maxWidth,
+                    "minHeight": minHeight,
+                    "minWidth": minWidth};
+
+function dialog(url, title){
+
+  $j("#stats_app_dialog").dialog({modal:true, minWidth:minWidth, minHeight:minHeight, maxWidth:maxWidth, maxHeight:maxHeight, width:winWidth, height:winHeight, title:title, closeOnEscape: false});
+
+  modalOptions.title = title;
+
+  $j("#stats_app_dialog").dialog("option", modalOptions);
+
+  $j("#stats_app_dialog").html("Loading...");
+  $j("#stats_app_dialog").load(url).dialog('open');
+}
+
+</script>
+
+</head>
+<body>
+<div class="header" >
+    <div class="logo">
+    </div>
+    <div class="rightSide">
+        <a class="smallFont"
+           HREF="http://web1.ncaa.org/cgi-bin/ithelp/help.cgi?application=stats"
+           target="_blank"
+           title="To ask a question, report a problem, or to submit ideas to help us improve this website."
+                >Contact Us</a>
+    </div>
+    <div class="appTitle">
+        2014-15 Football
+    </div>
+</div>
+
+<p style="color: green"></p>
+<p style="color: red"></p>
+
+<div id="contentArea" class="contentArea">
+    <div id="stats_app_dialog" style="display:none;">
+    </div>
+
+    <h1>
+        Iowa Hawkeyes (7-6)</h1>
+
+    <a href="/team/index/11980?org_id=312" onclick="window.open(this.href,'_top','scrollbars');return false;">Schedule/Results</a> |
+    Roster |
+    <a href="/team/stats?org_id=312&amp;sport_year_ctl_id=11980">Team Statistics</a> |
+    <a href="/player/game_by_game?game_sport_year_ctl_id=11980&amp;org_id=312&amp;stats_player_seq=-100">Game By Game</a> |
+    <!--
+    <a href="/team/team_game_highs?org_id=312&amp;sport_year_ctl_id=11980">Game Highs</a> |
+    <a href="/team/conf_game_highs?org_id=312&amp;sport_year_ctl_id=11980">Conf Game Highs</a> |
+    -->
+    <a href="/player/player_rank_history?game_sport_year_ctl_id=11980&amp;index_start=0&amp;org_id=312&amp;stat_seq_to_chart=0&amp;stats_player_seq=-100">Ranking Trends</a> |
+    <a href="/player/team_player_rank_yearly_history?game_sport_year_ctl_id=11980&amp;index_start=0&amp;org_id=312&amp;stat_seq_to_chart=0&amp;stats_player_seq=-100">Team Final Trends</a> |
+
+    <a href="/team/inst_team_list/11980?conf_id=827.0&amp;division=11.0">Conf Team List</a> |
+    <a href="/team/schedule_list?academic_year=2015&amp;division=11.0&amp;sport_code=MFB" target="NCAA_SCHEDS">Scoreboard</a> |
+    <a href="/rankings/change_sport_year_div?academic_year=2015&amp;division=11.0&amp;sport_code=MFB">National Rankings</a>
+
+    | <a href="/rankings/ranking_summary?academic_year=2015&amp;division=11.0&amp;org_id=312&amp;ranking_period=72&amp;sport_code=MFB">Ranking Summary</a>
+
+    <!--
+    <a href="http://web1.ncaa.org/stats/StatsSrv/rankings?sportCode=MFB&academicYear=2015">National Rankings</a>
+    -->
+
+
+    <br/>
+
+    <script>
+       $j(document).ready(function() {
+          var oTable = $j('#stat_grid').dataTable({
+                "bPaginate": false,
+                "bProcessing": true,
+                "aoColumns": [
+
+               null,
+
+               null,
+
+               null,
+
+                 {"sType": "grade-level"},
+
+                 {"sType": "num-html", "asSorting": ["desc","asc"]},
+                 {"sType": "num-html", "asSorting": ["desc","asc"]}
+                 ],
+                 "aaSorting": [[1, 'asc']]
+             });
+             thSelectors(oTable);
+       } );
+    </script>
+    <table width="90%" align="center" class="mytable" id="stat_grid">
+        <thead>
+        <tr class="heading">
+            <td colspan="6">Roster</td>
+        </tr>
+        <tr class="heading">
+            <th>Jersey</th>
+            <th>Player</th>
+
+            <th allowSelectFilter="true">Pos</th>
+
+
+            <th allowSelectFilter="true" selectList="Fr,So,Jr,Sr,N/A">Yr</th>
+            <th>GP</th>
+            <th>GS</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr>
+            <td>52</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1224718.0" target="_TOP">Alston, Quinton</a></td>
+
+            <td>LB</td>
+
+
+            <td sortVal="4.0">Sr</td>
+            <td>13</td>
+            <td>13</td>
+        </tr>
+
+        <tr>
+            <td>99</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1459919.0" target="_TOP">Bazata, Nathan</a></td>
+
+            <td>DL</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>9</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>16</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1374599.0" target="_TOP">Beathard, C.J.</a></td>
+
+            <td>QB</td>
+
+
+            <td sortVal="2.0">So</td>
+            <td>9</td>
+            <td>1</td>
+        </tr>
+
+        <tr>
+            <td>63</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1224737.0" target="_TOP">Blythe, Austin</a></td>
+
+            <td>OL</td>
+
+
+            <td sortVal="3.0">Jr</td>
+            <td>13</td>
+            <td>13</td>
+        </tr>
+
+        <tr>
+            <td>7B</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1459931.0" target="_TOP">Boettger, Ike</a></td>
+
+            <td>OL</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>8</td>
+            <td>1</td>
+        </tr>
+
+        <tr>
+            <td>41</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1459932.0" target="_TOP">Bower, Bo</a></td>
+
+            <td>LB</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>13</td>
+            <td>13</td>
+        </tr>
+
+        <tr>
+            <td>5</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1224739.0" target="_TOP">Bullock, Damon</a></td>
+
+            <td>RB</td>
+
+
+            <td sortVal="4.0">Sr</td>
+            <td>10</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>33</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1224741.0" target="_TOP">Canzeri, Jordan</a></td>
+
+            <td>RB</td>
+
+
+            <td sortVal="3.0">Jr</td>
+            <td>11</td>
+            <td>1</td>
+        </tr>
+
+        <tr>
+            <td>97</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1224753.0" target="_TOP">Cooper, Darian</a></td>
+
+            <td>DL</td>
+
+
+            <td sortVal="3.0">Jr</td>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>64</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1375174.0" target="_TOP">Croston, Cole</a></td>
+
+            <td>OL</td>
+
+
+            <td sortVal="2.0">So</td>
+            <td>13</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>29</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1459935.0" target="_TOP">Daniels, Leshun, Jr.</a></td>
+
+            <td>RB</td>
+
+
+            <td sortVal="2.0">So</td>
+            <td>5</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>71</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1155937.0" target="_TOP">Davis, Carl</a></td>
+
+            <td>DL</td>
+
+
+            <td sortVal="4.0">Sr</td>
+            <td>13</td>
+            <td>13</td>
+        </tr>
+
+        <tr>
+            <td>78</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1155967.0" target="_TOP">Donnal, Andrew</a></td>
+
+            <td>OL</td>
+
+
+            <td sortVal="4.0">Sr</td>
+            <td>13</td>
+            <td>13</td>
+        </tr>
+
+        <tr>
+            <td>7</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1374600.0" target="_TOP">Draper, Sean</a></td>
+
+            <td>DB</td>
+
+
+            <td sortVal="3.0">Jr</td>
+            <td>12</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>87</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1224768.0" target="_TOP">Duzey, Jake</a></td>
+
+            <td>TE</td>
+
+
+            <td sortVal="3.0">Jr</td>
+            <td>13</td>
+            <td>6</td>
+        </tr>
+
+        <tr>
+            <td>56</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1375172.0" target="_TOP">Ekakitie, Faith</a></td>
+
+            <td>DL</td>
+
+
+            <td sortVal="2.0">So</td>
+            <td>6</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>2A</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1579987.0" target="_TOP">Ellis, Mick</a></td>
+
+            <td>K</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>3</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>54</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1375198.0" target="_TOP">Ferentz, Steve</a></td>
+
+            <td>OL</td>
+
+
+            <td sortVal="2.0">So</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>36</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1224769.0" target="_TOP">Fisher, Cole</a></td>
+
+            <td>LB</td>
+
+
+            <td sortVal="3.0">Jr</td>
+            <td>13</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>28</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1375089.0" target="_TOP">Fleming, Maurice</a></td>
+
+            <td>DB</td>
+
+
+            <td sortVal="2.0">So</td>
+            <td>11</td>
+            <td>1</td>
+        </tr>
+
+        <tr>
+            <td>7C</td>
+            <td>Gaffey, Daniel</td>
+
+            <td>DL</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>12</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1375076.0" target="_TOP">Gair, Anthony</a></td>
+
+            <td>DB</td>
+
+
+            <td sortVal="2.0">So</td>
+            <td>12</td>
+            <td>1</td>
+        </tr>
+
+        <tr>
+            <td>57</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1226125.0" target="_TOP">Gaul, Tommy</a></td>
+
+            <td>OL</td>
+
+
+            <td sortVal="4.0">Sr</td>
+            <td>8</td>
+            <td>7</td>
+        </tr>
+
+        <tr>
+            <td>50</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1459927.0" target="_TOP">Gilson, Chad</a></td>
+
+            <td>LB</td>
+
+
+            <td sortVal="4.0">Sr</td>
+            <td>7</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>66</td>
+            <td>Goebel, Colin</td>
+
+            <td>OL</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>72</td>
+            <td>Gressel, Brant</td>
+
+            <td>DL</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>21</td>
+            <td>Hadachek, Trev</td>
+
+            <td>WR</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>82</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1224778.0" target="_TOP">Hamilton, Ray</a></td>
+
+            <td>TE</td>
+
+
+            <td sortVal="4.0">Sr</td>
+            <td>13</td>
+            <td>13</td>
+        </tr>
+
+        <tr>
+            <td>98</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1155974.0" target="_TOP">Hardy, Mike</a></td>
+
+            <td>DL</td>
+
+
+            <td sortVal="4.0">Sr</td>
+            <td>13</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>84</td>
+            <td>Harris, Andre</td>
+
+            <td>WR</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>17</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1224820.0" target="_TOP">Hillyer, Jacob</a></td>
+
+            <td>WR</td>
+
+
+            <td sortVal="3.0">Jr</td>
+            <td>13</td>
+            <td>4</td>
+        </tr>
+
+        <tr>
+            <td>88</td>
+            <td>Hulett, Jake</td>
+
+            <td>DL</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>5D</td>
+            <td>Jackson, Joshua</td>
+
+            <td>DB</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>43</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1459946.0" target="_TOP">Jewell, Josey</a></td>
+
+            <td>LB</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>11</td>
+            <td>4</td>
+        </tr>
+
+        <tr>
+            <td>5C</td>
+            <td>Johnson, Zach</td>
+
+            <td>OL</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>67</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1375181.0" target="_TOP">Johnson, Jaleel</a></td>
+
+            <td>DL</td>
+
+
+            <td sortVal="2.0">So</td>
+            <td>13</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>8A</td>
+            <td>Joly, Marcel</td>
+
+            <td>DB</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>6C</td>
+            <td>Joyce, Justin</td>
+
+            <td>DL</td>
+
+
+            <td sortVal="2.0">So</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>4B</td>
+            <td>Keane, Connor</td>
+
+            <td>WR</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>47</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1459949.0" target="_TOP">Kenny, John</a></td>
+
+            <td>LB</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>11</td>
+            <td>2</td>
+        </tr>
+
+        <tr>
+            <td>74</td>
+            <td>Keppy, Mitch</td>
+
+            <td>OL</td>
+
+
+            <td sortVal="2.0">So</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>6A</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1579991.0" target="_TOP">Kidd, Dillon</a></td>
+
+            <td>P</td>
+
+
+            <td sortVal="3.0">Jr</td>
+            <td>11</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>9D</td>
+            <td>Kincart, Will</td>
+
+            <td>DL</td>
+
+
+            <td sortVal="2.0">So</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>14</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1459950.0" target="_TOP">King, Desmond</a></td>
+
+            <td>DB</td>
+
+
+            <td sortVal="2.0">So</td>
+            <td>13</td>
+            <td>13</td>
+        </tr>
+
+        <tr>
+            <td>46</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1459951.0" target="_TOP">Kittle, George</a></td>
+
+            <td>TE</td>
+
+
+            <td sortVal="2.0">So</td>
+            <td>12</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>9C</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1459952.0" target="_TOP">Kluver, Tyler</a></td>
+
+            <td>OL</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>13</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>1</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1459953.0" target="_TOP">Koehn, Marshall</a></td>
+
+            <td>K</td>
+
+
+            <td sortVal="3.0">Jr</td>
+            <td>13</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>9A</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1375063.0" target="_TOP">Kornbrath, Connor</a></td>
+
+            <td>P</td>
+
+
+            <td sortVal="3.0">Jr</td>
+            <td>12</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>80</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1224783.0" target="_TOP">Krieger-Coble, Henry</a></td>
+
+            <td>TE</td>
+
+
+            <td sortVal="3.0">Jr</td>
+            <td>10</td>
+            <td>3</td>
+        </tr>
+
+        <tr>
+            <td>9</td>
+            <td>Kulick, Drake</td>
+
+            <td>LB</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>48</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1459956.0" target="_TOP">Lindahl, Luke</a></td>
+
+            <td>LB</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>27</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1224787.0" target="_TOP">Lomax, Jordan</a></td>
+
+            <td>DB</td>
+
+
+            <td sortVal="3.0">Jr</td>
+            <td>13</td>
+            <td>12</td>
+        </tr>
+
+        <tr>
+            <td>37</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1224788.0" target="_TOP">Lowdermilk, John</a></td>
+
+            <td>DB</td>
+
+
+            <td sortVal="4.0">Sr</td>
+            <td>13</td>
+            <td>13</td>
+        </tr>
+
+        <tr>
+            <td>13</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1375199.0" target="_TOP">Mabin, Greg</a></td>
+
+            <td>DB</td>
+
+
+            <td sortVal="2.0">So</td>
+            <td>13</td>
+            <td>12</td>
+        </tr>
+
+        <tr>
+            <td>30</td>
+            <td>Manders, Steve</td>
+
+            <td>LB</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>11</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1155971.0" target="_TOP">Martin-Manley, Kevonte</a></td>
+
+            <td>WR</td>
+
+
+            <td sortVal="4.0">Sr</td>
+            <td>13</td>
+            <td>10</td>
+        </tr>
+
+        <tr>
+            <td>83</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1374525.0" target="_TOP">McCarron, Riley</a></td>
+
+            <td>WR</td>
+
+
+            <td sortVal="2.0">So</td>
+            <td>7</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>94</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1224790.0" target="_TOP">McMinn, Riley</a></td>
+
+            <td>DL</td>
+
+
+            <td sortVal="3.0">Jr</td>
+            <td>2</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>34</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1375098.0" target="_TOP">Meier, Nate</a></td>
+
+            <td>DL</td>
+
+
+            <td sortVal="3.0">Jr</td>
+            <td>13</td>
+            <td>13</td>
+        </tr>
+
+        <tr>
+            <td>31</td>
+            <td>Mends, Aaron</td>
+
+            <td>LB</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>85</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1459957.0" target="_TOP">Mitchell, Derrick, Jr.</a></td>
+
+            <td>WR</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>6</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>5B</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1459958.0" target="_TOP">Myers, Boone</a></td>
+
+            <td>OL</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>4</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>44</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1602095.0" target="_TOP">Niemann, Ben</a></td>
+
+            <td></td>
+
+
+            <td sortVal="0.0">N/A</td>
+            <td>13</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>95</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1375203.0" target="_TOP">Ott, Drew</a></td>
+
+            <td>DL</td>
+
+
+            <td sortVal="3.0">Jr</td>
+            <td>13</td>
+            <td>13</td>
+        </tr>
+
+        <tr>
+            <td>20</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1579996.0" target="_TOP">Outsey, Jameer</a></td>
+
+            <td>LB</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>10</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1459970.0" target="_TOP">Parker, Jonathan</a></td>
+
+            <td>RB</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>13</td>
+            <td>1</td>
+        </tr>
+
+        <tr>
+            <td>92</td>
+            <td>Pekar, Peter</td>
+
+            <td>TE</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>39</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1375168.0" target="_TOP">Perry, Travis</a></td>
+
+            <td>LB</td>
+
+
+            <td sortVal="3.0">Jr</td>
+            <td>10</td>
+            <td>2</td>
+        </tr>
+
+        <tr>
+            <td>42</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1224792.0" target="_TOP">Plewa, Macon</a></td>
+
+            <td>RB</td>
+
+
+            <td sortVal="3.0">Jr</td>
+            <td>8</td>
+            <td>2</td>
+        </tr>
+
+        <tr>
+            <td>22</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1459972.0" target="_TOP">Powell, Damond</a></td>
+
+            <td>WR</td>
+
+
+            <td sortVal="4.0">Sr</td>
+            <td>13</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>8C</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1374617.0" target="_TOP">Rathjen, Wil</a></td>
+
+            <td>DL</td>
+
+
+            <td sortVal="4.0">Sr</td>
+            <td>3</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1459974.0" target="_TOP">Rucker, Malik</a></td>
+
+            <td>DB</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>6</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>15</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1224795.0" target="_TOP">Rudock, Jake</a></td>
+
+            <td>QB</td>
+
+
+            <td sortVal="3.0">Jr</td>
+            <td>12</td>
+            <td>12</td>
+        </tr>
+
+        <tr>
+            <td>68</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1155936.0" target="_TOP">Scherff, Brandon</a></td>
+
+            <td>OL</td>
+
+
+            <td sortVal="4.0">Sr</td>
+            <td>13</td>
+            <td>13</td>
+        </tr>
+
+        <tr>
+            <td>77</td>
+            <td>Sealby, Reid</td>
+
+            <td>OL</td>
+
+
+            <td sortVal="2.0">So</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>58</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1375173.0" target="_TOP">Simmons, Eric</a></td>
+
+            <td>OL</td>
+
+
+            <td sortVal="3.0">Jr</td>
+            <td>13</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1375197.0" target="_TOP">Smith, Tevaun</a></td>
+
+            <td>WR</td>
+
+
+            <td sortVal="3.0">Jr</td>
+            <td>13</td>
+            <td>9</td>
+        </tr>
+
+        <tr>
+            <td>9B</td>
+            <td>Snyder, Brandon</td>
+
+            <td>DB</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>6</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1459977.0" target="_TOP">Spearman, Reggie</a></td>
+
+            <td>LB</td>
+
+
+            <td sortVal="2.0">So</td>
+            <td>11</td>
+            <td>7</td>
+        </tr>
+
+        <tr>
+            <td>49</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1224816.0" target="_TOP">Spears, Melvin</a></td>
+
+            <td>DL</td>
+
+
+            <td sortVal="3.0">Jr</td>
+            <td>4</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>2B</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1459978.0" target="_TOP">Stone, Andrew</a></td>
+
+            <td>WR</td>
+
+
+            <td sortVal="4.0">Sr</td>
+            <td>4</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>19</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1579995.0" target="_TOP">Taylor, Miles</a></td>
+
+            <td>DB</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>13</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>90</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1155972.0" target="_TOP">Trinca-Pasat, Louis</a></td>
+
+            <td>DL</td>
+
+
+            <td sortVal="4.0">Sr</td>
+            <td>13</td>
+            <td>13</td>
+        </tr>
+
+        <tr>
+            <td>5A</td>
+            <td>Truitt, Omar</td>
+
+            <td>DB</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>75</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1224817.0" target="_TOP">Tsopanides, Dean</a></td>
+
+            <td>DL</td>
+
+
+            <td sortVal="3.0">Jr</td>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>89</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1459992.0" target="_TOP">VandeBerg, Matt</a></td>
+
+            <td>WR</td>
+
+
+            <td sortVal="2.0">So</td>
+            <td>12</td>
+            <td>1</td>
+        </tr>
+
+        <tr>
+            <td>91</td>
+            <td>Venckus-Cucchia, Daumantas</td>
+
+            <td>DL</td>
+
+
+            <td sortVal="2.0">So</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>25</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1459993.0" target="_TOP">Wadley, Akrum</a></td>
+
+            <td>RB</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>8</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>65</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1224818.0" target="_TOP">Walsh, Jordan</a></td>
+
+            <td>OL</td>
+
+
+            <td sortVal="3.0">Jr</td>
+            <td>13</td>
+            <td>10</td>
+        </tr>
+
+        <tr>
+            <td>26</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1459994.0" target="_TOP">Ward, Kevin</a></td>
+
+            <td>DB</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>73</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1375182.0" target="_TOP">Ward, Ryan</a></td>
+
+            <td>OL</td>
+
+
+            <td sortVal="2.0">So</td>
+            <td>11</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>32</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1459995.0" target="_TOP">Warfield, Solomon</a></td>
+
+            <td>DB</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>45</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1224819.0" target="_TOP">Weisman, Mark</a></td>
+
+            <td>RB</td>
+
+
+            <td sortVal="4.0">Sr</td>
+            <td>13</td>
+            <td>12</td>
+        </tr>
+
+        <tr>
+            <td>3B</td>
+            <td>Wellik, Andrew</td>
+
+            <td>RB</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>79</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1459997.0" target="_TOP">Welsh, Sean</a></td>
+
+            <td>OL</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>13</td>
+            <td>9</td>
+        </tr>
+
+        <tr>
+            <td>8</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1579992.0" target="_TOP">Wiegers, Tyler</a></td>
+
+            <td>QB</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>18</td>
+            <td><a href="/player?game_sport_year_ctl_id=11980&amp;stats_player_seq=1459998.0" target="_TOP">Willies, Derrick</a></td>
+
+            <td>WR</td>
+
+
+            <td sortVal="1.0">Fr</td>
+            <td>5</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>7A</td>
+            <td>Zaun, Drew</td>
+
+            <td>WR</td>
+
+
+            <td sortVal="4.0">Sr</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+
+        </tbody>
+    </table>
+
+
+
+</div>
+
+<div id="footer" class="footer">
+    <div>&copy; 2015 NCAA
+	  <span>
+		<a href="http://www.ncaa.org/about/ncaaorg-terms-use" target=_blank>Terms and Conditions</a>
+	  </span>
+    </div>
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-2045383-4");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+<script>
+    $j("body").on("click", ".showMask", (function() {
+       $j('#contentArea').mask('Loading...');
+    }));
+</script>
+</html>
