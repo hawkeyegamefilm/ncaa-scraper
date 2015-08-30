@@ -45,3 +45,4 @@ Temporary Items
 .gradle
 build
 *.iml
+gradle/*

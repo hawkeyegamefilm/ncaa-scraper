@@ -1,4 +1,5 @@
 import com.footballscience.scraper.PlayScraper
+import spock.lang.Ignore
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -32,9 +33,10 @@ class PlayScraperTest extends Specification {
 
     }
 
+    @Ignore
     def "create csv test"() {
         when:
-        String result = scrapper.createCSVFromMap(scrapper.getJsonFromUrl(testUrl))
+        String result = scrapper.createPlayRowCSV(scrapper.getJsonFromUrl(testUrl))
 
         then:
         result
@@ -54,7 +56,7 @@ class PlayScraperTest extends Specification {
     @Unroll
     def "caclulate Spot"() {
         setup:
-        scrapper.createIdMap([id: 71], [id:920])
+        scrapper.populateRosters([id:"71"],[id: "920"])
 
         when:
         Integer spot = scrapper.calculateSpot(driveText, teamId)

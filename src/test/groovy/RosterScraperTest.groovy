@@ -1,6 +1,7 @@
 import com.footballscience.scraper.RosterScraper
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
+import spock.lang.Ignore
 import spock.lang.Specification
 
 class RosterScraperTest extends Specification {
@@ -41,6 +42,7 @@ class RosterScraperTest extends Specification {
         println RosterScraper.getResource("results.csv").text
     }
 
+    @Ignore
     def "run load"() {
         when:
         rosterScraper.runLoad()

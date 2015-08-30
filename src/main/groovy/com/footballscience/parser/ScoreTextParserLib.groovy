@@ -1,5 +1,6 @@
 package com.footballscience.parser
 
+import com.footballscience.domain.Pass
 import com.footballscience.domain.Rush
 
 class ScoreTextParserLib {
@@ -9,8 +10,8 @@ class ScoreTextParserLib {
      */
     static PlayType determinePlayType(String gameId, Integer teamId, Integer playNum, Integer ytg, String scoreText, Map rosters) {
         if(isPass(scoreText)) {
+            Pass pass = createPassRow(gameId, teamId, playNum, ytg, scoreText, rosters)
             PlayType.PASS
-            createPassRow(gameId, teamId, playNum, ytg, scoreText, rosters)
         }
         else if(scoreText.contains("punts")) {
             PlayType.PUNT
@@ -30,18 +31,20 @@ class ScoreTextParserLib {
         else if(scoreText.contains("Conversion") ||scoreText.contains("conversion") ) {
             //parse this like a normal play for 2 points
             if(isPass(scoreText)) {
-                //process pass
+                Pass pass = createPassRow(gameId, teamId, playNum, ytg, scoreText, rosters)
             } else {
-                createRushRow(gameId, teamId, playNum, ytg, scoreText, rosters)
+                Rush rush = createRushRow(gameId, teamId, playNum, ytg, scoreText, rosters)
             }
+            PlayType.ATTEMPT
+            //persist rush or pass row on conversation attempt
         }
         else if(scoreText.contains("Timeout") || scoreText.contains("timeout") || scoreText.contains("TIMEOUT")) {
             //currently don't see this in the ncaa site data
             PlayType.TIMEOUT
         } else {
             //must be a rush attempt
-            PlayType.RUSH
             createRushRow(gameId, teamId, playNum, ytg, scoreText, rosters)
+            PlayType.RUSH
         }
     }
 
@@ -49,8 +52,8 @@ class ScoreTextParserLib {
         return scoreText.contains("incomplete") || scoreText.contains("complete")
     }
 
-    static Rush createPassRow(String gameId, Integer teamId, Integer playNum, Integer ytg, String scoreText, Map rosters) {
-
+    static Pass createPassRow(String gameId, Integer teamId, Integer playNum, Integer ytg, String scoreText, Map rosters) {
+        return new Pass()
     }
 
     static Rush createRushRow(String gameId, Integer teamId, Integer playNum, Integer ytg, String scoreText, Map rosters) {
@@ -60,33 +63,48 @@ class ScoreTextParserLib {
         //look up player id
         String playerId = rosters.get(teamId.toString()).find {
             it.uniform_number.contains(jerseyNumber) && it.lastname == lastName && it.firstname.substring(0,1) == firstInitial
-        }.player_id
+        }?.player_id
 
-        String yards = scoreText.substring(scoreText.indexOf("for")+4,scoreText.indexOf("yard")).trim()
-        Integer firstDown = 0
-        if(Integer.parseInt(yards) >= ytg) {
-            firstDown = 1
-        }
         Integer touchdown = 0
         if(scoreText.contains("Touchdown") || scoreText.contains("touchdown")) {
             touchdown = 1
         }
-        Integer sack = 0
-        if(scoreText.contains("sack") || scoreText.contains("Sack")) {
-            sack = 1
-        }
+
         Integer fumble = 0
         Integer fumbleLost = 0
         if(scoreText.contains("FUMBLES")) {
             fumble = 1
             fumbleLost = calculateFumbleLost(scoreText, teamId, rosters)
         }
+
+        String yards
+        if(touchdown) {
+            yards = scoreText.substring(scoreText.indexOf("runs")+4,scoreText.indexOf("yard")).trim()
+        } else {
+            //handle no gain cases
+            if (scoreText.contains("no gain")) {
+                yards = 0
+            } else {
+                yards = scoreText.substring(scoreText.indexOf("for")+4,scoreText.indexOf("yard"))?.trim()
+            }
+        }
+
+        Integer firstDown = 0
+        if(Integer.parseInt(yards) >= ytg) {
+            firstDown = 1
+        }
+
+        Integer sack = 0
+        if(scoreText.contains("sack") || scoreText.contains("Sack")) {
+            sack = 1
+        }
+
         Integer safety = 0
         if(scoreText.contains("SAFETY") || scoreText.contains("safety")) {
             safety = 1
         }
 
-        return new Rush(gameid: gameId, playNum: playNum, teamId: teamId, playerId: playerId.toInteger(), attempt: 1, yards: yards, touchdown: touchdown, firstDown: firstDown, sack: sack, fumble: fumble, fumbleLost: fumbleLost, safety: safety)
+        return new Rush(gameid: gameId, playNum: playNum, teamId: teamId, playerId: playerId ? playerId as Integer : 0, attempt: 1, yards: yards ? yards as Integer : 0, touchdown: touchdown, firstDown: firstDown, sack: sack, fumble: fumble, fumbleLost: fumbleLost, safety: safety)
     }
 
     static int calculateFumbleLost(String scoreText,Integer teamId, Map rosters) {

@@ -30,15 +30,18 @@ class PlayScraper {
     }
 
     void populateRosters(Map hometeam, Map awayteam) {
+        if(!parserDAO) {
+            parserDAO = new ParserDAO()
+        }
         List hometeamRoster = parserDAO.getRosterBySeasonTeamId(hometeam.id)
         homeTeamId = hometeamRoster[0].team_id
         List awayteamRoster = parserDAO.getRosterBySeasonTeamId(awayteam.id)
         awayTeamId = awayteamRoster[0].team_id
         rosters = [homeTeamId: hometeamRoster, awayTeamId: awayteamRoster]
-        abrMap.put(hometeam.id, homeTeamAbr)
-        abrMap.put(awayteam.id, awayTeamAbr)
+        abrMap.put(hometeam.id as Integer, homeTeamAbr)
+        abrMap.put(awayteam.id as Integer, awayTeamAbr)
         idMap.put(homeTeamId.toInteger(),hometeam.id)
-        idMap.put(awayTeamId.toInteger(),hometeam.id.id)
+        idMap.put(awayTeamId.toInteger(),awayteam.id)
     }
 
     Map getJsonFromUrl(String url) {
@@ -58,7 +61,7 @@ class PlayScraper {
         jsonp.replace("callbackWrapper(", "").replace(");", "")
     }
 
-    String createCSVFromMap(Map game) {
+    String createPlayRowCSV(Map game) {
         StringBuffer rows = new StringBuffer()
         Map hometeam = game.meta.teams.find { it.homeTeam = 'true'}
         Map awayteam = game.meta.teams.find { it.homeTeam = 'false'}

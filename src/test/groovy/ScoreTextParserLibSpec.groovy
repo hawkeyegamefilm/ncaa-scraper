@@ -1,7 +1,9 @@
 import com.footballscience.database.ParserDAO
+import com.footballscience.domain.Pass
 import com.footballscience.domain.Rush
 import com.footballscience.parser.PlayType
 import com.footballscience.parser.ScoreTextParserLib
+import spock.lang.Ignore
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -14,7 +16,7 @@ class ScoreTextParserLibSpec extends Specification {
 
     def "correctly defines playtype"() {
         when:
-        PlayType playType = ScoreTextParserLib.determinePlayType(scoreText)
+        PlayType playType = ScoreTextParserLib.determinePlayType("someid", 1,1, 10, scoreText, [:])
 
         then:
         playType == expectedPlayType
@@ -55,10 +57,10 @@ class ScoreTextParserLibSpec extends Specification {
         when:
         List roster = parserDAO.getRosterBySeasonTeamId(teamId)
         Map rosters = [("${teamId}".toString()): roster]
-        Integer integer = ScoreTextParserLib.calculateFumbleLost(scoreText, teamId.toInteger(), rosters)
+        Integer actual = ScoreTextParserLib.calculateFumbleLost(scoreText, teamId.toInteger(), rosters)
 
         then:
-        integer == expected
+        actual == expected
 
         cleanup:
         roster.clear()
@@ -73,7 +75,7 @@ class ScoreTextParserLibSpec extends Specification {
         "759"  | "2-C.Covington to IU 25, FUMBLES. 2-C.Covington to IU 25 for no gain (41-B.Bower,34-N.Meier)."                                                                                                                              | 0
     }
 
-    def "createRushRow functions correctly"() {
+    def "basics for createRushRow function correctly"() {
         setup:
         List roster = parserDAO.getRosterBySeasonTeamId(teamId.toString())
         Map rosters = [("${teamId}".toString()): roster]
@@ -84,13 +86,55 @@ class ScoreTextParserLibSpec extends Specification {
         then:
         rush.playerId == expectedPlayerId
         rush.firstDown == expectedFirstDown
+        rush.touchdown == expectedTD
+        rush.yards == expectedYards
 
         where:
-        scoreText                                                       | teamId | ytg | expectedPlayerId | expectedFirstDown
-        "5-D.Miller to UNI 45 for 1 yard (90-L.Trinca-Pasat)."          | 920    | 10  | 47226            | 0
-        "33-J.Canzeri to UNI 28 for 2 yards (44-M.O'Brien)."            | 71     | 10  | 41521            | 0
-        "5-D.Bullock to UNI 26 for 2 yards (44-M.O'Brien,46-J.Farley)." | 71     | 8   | 41520            | 0
+        scoreText                                                           | teamId | ytg | expectedPlayerId | expectedYards | expectedFirstDown | expectedTD
+        "5-D.Miller to UNI 45 for 1 yard (90-L.Trinca-Pasat)."              | 920    | 10  | 47226            | 1             | 0                 | 0
+        "33-J.Canzeri to UNI 28 for 2 yards (44-M.O'Brien)."                | 71     | 10  | 41521            | 2             | 0                 | 0
+        "5-D.Bullock to UNI 26 for 2 yards (44-M.O'Brien,46-J.Farley)."     | 71     | 8   | 41520            | 2             | 0                 | 0
+        "29-L.Daniels Jr. runs 13 yards for a touchdown."                   | 71     | 10  | 41524            | 13            | 1                 | 1
+        "7-D.Johnson to UNI 34 for 6 yards (27-J.Lomax,90-L.Trinca-Pasat)." | 920    | 10  | 47209            | 6             | 0                 | 0
+        "44-C.Artis-Payne to AUB 11 for no gain."                           | 827    | 10  | 34128            | 0             | 0                 | 0
+    }
 
+    def "one off fumble scenarios for createRushRow function correctly"() {
+        setup:
+        List roster = parserDAO.getRosterBySeasonTeamId(teamId.toString())
+        Map rosters = [("${teamId}".toString()): roster]
 
+        when:
+        Rush rush = ScoreTextParserLib.createRushRow("somegameid", teamId, 1, ytg, scoreText, rosters)
+
+        then:
+        rush.playerId == expectedPlayerId
+        rush.yards == expectedYards
+        rush.fumble == 1
+        rush.fumbleLost == expectedFumbleLost
+
+        where:
+        scoreText                                                                                    | teamId | ytg | expectedPlayerId | expectedYards | expectedFumbleLost
+        "10-J.Parker to IOW 35, FUMBLES (97-B.Dueitt). 97-B.Dueitt runs 35 yards for a touchdown."   | 71     | 10  | 41579            | 35            | 1
+        "14-B.Wallace scrambles to AUB 1, FUMBLES (24-D.Moncrief). 17-K.Frost to AUB 1 for no gain." | 1851   | 1   | 44690            | 0             | 1
+
+    }
+
+    @Ignore
+    def "basics for createPassRow functions correctly"() {
+        setup:
+        List roster = parserDAO.getRosterBySeasonTeamId(teamId.toString())
+        Map rosters = [("${teamId}".toString()): roster]
+        when:
+        Pass pass = ScoreTextParserLib.createPassRow("someid", teamId, 1, ytg, scoreText, rosters)
+
+        then:
+        pass.attempt
+
+        where:
+        scoreText                                                                                                                              | teamId | ytg
+        "17-S.Kollmorgen incomplete. Intended for 18-K.Vereen, INTERCEPTED by 41-B.Bower at IOW 47. 41-B.Bower runs ob at IOW 49 for 2 yards." | 920    | 9
+        "15-J.Rudock complete to 11-K.Martin-Manley. 11-K.Martin-Manley to UNI 45 for 6 yards."                                                | 71     | 10
+        "15-J.Rudock complete to 4-T.Smith. 4-T.Smith to UNI 18 for 8 yards (37-M.Busher)."                                                    | 71     | 6
     }
 }
