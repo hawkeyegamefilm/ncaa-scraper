@@ -11,9 +11,6 @@ class PlayScraper {
     String month
     String day
 
-    String homeTeamAbr = "IOW"
-    String awayTeamAbr = "UNI"
-
     String homeTeamId
     String awayTeamId
 
@@ -38,8 +35,8 @@ class PlayScraper {
         List awayteamRoster = parserDAO.getRosterBySeasonTeamId(awayteam.id)
         awayTeamId = awayteamRoster[0].team_id
         rosters = [homeTeamId: hometeamRoster, awayTeamId: awayteamRoster]
-        abrMap.put(hometeam.id as Integer, homeTeamAbr)
-        abrMap.put(awayteam.id as Integer, awayTeamAbr)
+        abrMap.put(hometeam.id as Integer, parserDAO.getAbreviationsByTeamId(hometeam.id))
+        abrMap.put(awayteam.id as Integer, parserDAO.getAbreviationsByTeamId(awayteam.id))
         idMap.put(homeTeamId.toInteger(),hometeam.id)
         idMap.put(awayTeamId.toInteger(),awayteam.id)
     }
@@ -61,7 +58,7 @@ class PlayScraper {
         jsonp.replace("callbackWrapper(", "").replace(");", "")
     }
 
-    String createPlayRowCSV(Map game) {
+    String createPlayRowsCSV(Map game) {
         StringBuffer rows = new StringBuffer()
         Map hometeam = game.meta.teams.find { it.homeTeam = 'true'}
         Map awayteam = game.meta.teams.find { it.homeTeam = 'false'}
@@ -85,8 +82,11 @@ class PlayScraper {
                     if(play.driveText) {
                         rows.append(downMap.get(play.driveText.substring(0,2))).append(",")
                         rows.append(play.driveText.substring(7,10).trim()).append(",")
+                        rows.append(calculateSpot(play.driveText,awayteam.id as Integer)).append(",")
+                    } else {
+                        rows.append(",,,")//dummy up data data exp
                     }
-                    rows.append(calculateSpot(play.driveText,awayteam.id)).append(",")
+
 
                     rows.append(play.scoreText)
                     rows.append(System.lineSeparator())

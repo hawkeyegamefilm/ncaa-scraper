@@ -1,5 +1,4 @@
 import com.footballscience.scraper.PlayScraper
-import spock.lang.Ignore
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -33,10 +32,9 @@ class PlayScraperTest extends Specification {
 
     }
 
-    @Ignore
     def "create csv test"() {
         when:
-        String result = scrapper.createPlayRowCSV(scrapper.getJsonFromUrl(testUrl))
+        String result = scrapper.createPlayRowsCSV(scrapper.getJsonFromUrl(testUrl))
 
         then:
         result

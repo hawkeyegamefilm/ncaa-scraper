@@ -20,4 +20,15 @@ class ParserDAOSpec extends Specification {
         cleanup:
         parserDAO.connection.close()
     }
+
+    def "test get abr"() {
+        when:
+        String abr = parserDAO.getAbreviationsByTeamId("71")
+
+        then:
+        abr == 'IOW'
+
+        cleanup:
+        parserDAO.connection.close()
+    }
 }
