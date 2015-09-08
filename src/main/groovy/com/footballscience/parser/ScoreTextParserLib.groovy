@@ -36,7 +36,7 @@ class ScoreTextParserLib {
                 Rush rush = createRushRow(gameId, teamId, playNum, ytg, scoreText, rosters)
             }
             PlayType.ATTEMPT
-            //persist rush or pass row on conversation attempt
+            //create csv rush or pass row to attempts table on conversation attempt
         }
         else if(scoreText.contains("Timeout") || scoreText.contains("timeout") || scoreText.contains("TIMEOUT")) {
             //currently don't see this in the ncaa site data
@@ -53,7 +53,75 @@ class ScoreTextParserLib {
     }
 
     static Pass createPassRow(String gameId, Integer teamId, Integer playNum, Integer ytg, String scoreText, Map rosters) {
-        return new Pass()
+        Pass pass = new Pass(gameId: gameId, teamId: teamId, playNum: playNum)
+        pass.passerId = lookupPasserId(scoreText, rosters, teamId)
+
+        pass.attempt = 1//just hard code for now, circle back & deal w/exceptions
+        String subScoreText = scoreText.substring(scoreText.indexOf(" "))//text after passer
+        if(scoreText.contains('complete to')) {
+            pass.completion = 1
+            //find the target
+            String receiverJerseyNumber = subScoreText.substring(subScoreText.indexOf('to')+2,subScoreText.indexOf("-")).trim()
+            String receiverFirstInitial = subScoreText.substring(subScoreText.indexOf("-")+1,subScoreText.indexOf("."))
+            String receiverLastName = subScoreText.substring(subScoreText.indexOf(".")+1,subScoreText.indexOf(". "))
+
+            pass.recieverId = getPlayerIdFromRosters(rosters, teamId, receiverJerseyNumber, receiverFirstInitial, receiverLastName)
+
+            if(scoreText.contains("touchdown")) {
+                pass.touchdown = 1
+                //need to do yards correctly for TD scenario
+            } else {
+                pass.touchdown = 0
+                pass.yards = subScoreText.substring(subScoreText.indexOf("for")+4,subScoreText.indexOf("yard")).trim() as Integer
+            }
+
+
+            if(pass.yards > ytg) {
+                pass.firstDown = 1
+            } else pass.firstDown = 0
+        } else {
+            pass.completion = 0
+            pass.yards = 0
+            pass.firstDown = 0
+            //find the target - different pattern
+            pass.passerId = lookupPasserId(scoreText, rosters, teamId)
+            String intendedForText = subScoreText.substring(subScoreText.indexOf(".")+1)
+
+            if(scoreText.contains('INTERCEPTED')) {
+                pass.interception = 1
+                //do some funky shit for INT row
+            } else {
+                pass.interception = 0
+                String receiverJerseyNumber = intendedForText.substring(intendedForText.indexOf('for')+4,intendedForText.indexOf("-"))
+                String receiverFirstInitial = intendedForText.substring(intendedForText.indexOf("-")+1,intendedForText.indexOf("."))
+                String receiverLastName = intendedForText.substring(intendedForText.indexOf(".")+1).replace(".", "")
+                pass.recieverId = getPlayerIdFromRosters(rosters, teamId, receiverJerseyNumber, receiverFirstInitial, receiverLastName)
+            }
+
+        }
+
+
+
+
+
+        if(scoreText.contains("FUMBLES")) {
+            pass.fumble = 1
+            pass.fumbleLost = calculateFumbleLost(scoreText, teamId, rosters)
+        }
+        return pass
+    }
+
+    protected static Integer lookupPasserId(String scoreText, Map rosters, int teamId) {
+        String passerJerseyNumber = scoreText.substring(0, scoreText.indexOf("-"))
+        String passerFirstInitial = scoreText.substring(scoreText.indexOf("-") + 1, scoreText.indexOf("."))
+        String passerLastName = scoreText.substring(scoreText.indexOf(".") + 1, scoreText.indexOf(" "))
+        return getPlayerIdFromRosters(rosters, teamId, passerJerseyNumber, passerFirstInitial, passerLastName)
+    }
+
+    protected static Integer getPlayerIdFromRosters(Map rosters, int teamId, String jerseyNumber, String firstInitial, String lastName) {
+        rosters.get(teamId.toString()).find {
+            it.uniform_number.contains(jerseyNumber) && it.lastname == lastName && it.firstname.substring(0, 1) == firstInitial
+        }?.player_id
     }
 
     static Rush createRushRow(String gameId, Integer teamId, Integer playNum, Integer ytg, String scoreText, Map rosters) {
@@ -61,9 +129,7 @@ class ScoreTextParserLib {
         String firstInitial = scoreText.substring(scoreText.indexOf("-")+1,scoreText.indexOf("."))
         String lastName = scoreText.substring(scoreText.indexOf(".")+1, scoreText.indexOf(" "))
         //look up player id
-        String playerId = rosters.get(teamId.toString()).find {
-            it.uniform_number.contains(jerseyNumber) && it.lastname == lastName && it.firstname.substring(0,1) == firstInitial
-        }?.player_id
+        String playerId = getPlayerIdFromRosters(rosters, teamId, jerseyNumber, firstInitial, lastName)
 
         Integer touchdown = 0
         if(scoreText.contains("Touchdown") || scoreText.contains("touchdown")) {

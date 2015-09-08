@@ -16,7 +16,7 @@ class ScoreTextParserLibSpec extends Specification {
 
     def "correctly defines playtype"() {
         when:
-        PlayType playType = ScoreTextParserLib.determinePlayType("someid", 1,1, 10, scoreText, [:])
+        PlayType playType = ScoreTextParserLib.determinePlayType("someid", 1, 1, 10, scoreText, [:])
 
         then:
         playType == expectedPlayType
@@ -120,8 +120,8 @@ class ScoreTextParserLibSpec extends Specification {
 
     }
 
-    @Ignore
-    def "basics for createPassRow functions correctly"() {
+    @Unroll
+    def "basic completions and incompletions for createPassRow function correctly"() {
         setup:
         List roster = parserDAO.getRosterBySeasonTeamId(teamId.toString())
         Map rosters = [("${teamId}".toString()): roster]
@@ -130,11 +130,35 @@ class ScoreTextParserLibSpec extends Specification {
 
         then:
         pass.attempt
+        pass.yards == yards
+        pass.firstDown == firstDown
+        pass.passerId == passerId
+        pass.recieverId == receiverId
 
         where:
-        scoreText                                                                                                                              | teamId | ytg
-        "17-S.Kollmorgen incomplete. Intended for 18-K.Vereen, INTERCEPTED by 41-B.Bower at IOW 47. 41-B.Bower runs ob at IOW 49 for 2 yards." | 920    | 9
-        "15-J.Rudock complete to 11-K.Martin-Manley. 11-K.Martin-Manley to UNI 45 for 6 yards."                                                | 71     | 10
-        "15-J.Rudock complete to 4-T.Smith. 4-T.Smith to UNI 18 for 8 yards (37-M.Busher)."                                                    | 71     | 6
+        scoreText                                                                               | teamId | ytg | yards | firstDown | passerId | receiverId
+        "15-J.Rudock complete to 11-K.Martin-Manley. 11-K.Martin-Manley to UNI 45 for 6 yards." | 71     | 10  | 6     | 0         | 41586    | 41569
+        "15-J.Rudock complete to 4-T.Smith. 4-T.Smith to UNI 18 for 8 yards (37-M.Busher)."     | 71     | 6   | 8     | 1         | 41586    | 41590
+        "15-J.Rudock incomplete. Intended for 82-R.Hamilton."                                   | 71     | 10  | 0     | 0         | 41586    | 41541
+    }
+
+    @Unroll
+    @Ignore
+    def "special cases for createPassRow function correctly"() {//fix here
+        setup:
+        List roster = parserDAO.getRosterBySeasonTeamId(teamId.toString())
+        Map rosters = [("${teamId}".toString()): roster]
+        when:
+        Pass pass = ScoreTextParserLib.createPassRow("someid", teamId, 1, ytg, scoreText, rosters)
+
+        then:
+        pass.attempt
+        pass.touchdown == touchdown
+        pass.interception == intercepted
+
+        where:
+        scoreText                                                                                                                              | teamId | ytg | touchdown | intercepted
+        "17-S.Kollmorgen incomplete. Intended for 18-K.Vereen, INTERCEPTED by 41-B.Bower at IOW 47. 41-B.Bower runs ob at IOW 49 for 2 yards." | 920    | 9   | 0         | 1
+        "15-J.Rudock complete to 22-D.Powell. 22-D.Powell runs 12 yards for a touchdown."                                                      | 71     | 12  | 1         | 0
     }
 }

@@ -1,7 +1,7 @@
 package com.footballscience.domain
 
 class Pass {
-    String gameid
+    String gameId
     Integer playNum
     Integer teamId
     Integer passerId
@@ -13,10 +13,12 @@ class Pass {
     Integer interception
     Integer firstDown
     Integer dropped
+    Integer fumble
+    Integer fumbleLost
 
     String toCsvRow() {
         StringBuffer buffer = new StringBuffer()
-        buffer.append(gameid).append(",")
+        buffer.append(gameId).append(",")
         buffer.append(playNum).append(",")
         buffer.append(teamId).append(",")
         buffer.append(passerId).append(",")
@@ -27,7 +29,9 @@ class Pass {
         buffer.append(touchdown).append(",")
         buffer.append(interception).append(",")
         buffer.append(firstDown).append(",")
-        buffer.append(dropped).append(System.lineSeparator())
+        buffer.append(dropped).append(",")
+        buffer.append(fumble).append(",")
+        buffer.append(fumbleLost).append(",").append(System.lineSeparator())
         buffer
     }
 }

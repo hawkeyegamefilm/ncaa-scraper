@@ -1,7 +1,6 @@
 package com.footballscience.scraper
 
 import com.footballscience.database.ParserDAO
-import com.footballscience.parser.ScoreTextParserLib
 import org.codehaus.jackson.map.ObjectMapper
 
 class PlayScraper {
@@ -86,7 +85,6 @@ class PlayScraper {
                     } else {
                         rows.append(",,,")//dummy up data data exp
                     }
-
 
                     rows.append(play.scoreText)
                     rows.append(System.lineSeparator())
