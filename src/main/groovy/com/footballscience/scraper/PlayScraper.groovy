@@ -83,7 +83,7 @@ class PlayScraper {
                         rows.append(play.driveText.substring(7,10).trim()).append(",")
                         rows.append(calculateSpot(play.driveText,awayteam.id as Integer)).append(",")
                     } else {
-                        rows.append(",,,")//dummy up data data exp
+                        rows.append(",,,")//dummy up missing data exception, ie kickoffs
                     }
 
                     rows.append(play.scoreText)

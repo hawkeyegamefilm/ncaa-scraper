@@ -1,6 +1,8 @@
 package com.footballscience.parser
 
+import com.footballscience.domain.Kickoff
 import com.footballscience.domain.Pass
+import com.footballscience.domain.Punt
 import com.footballscience.domain.Rush
 
 class ScoreTextParserLib {
@@ -14,22 +16,28 @@ class ScoreTextParserLib {
             PlayType.PASS
         }
         else if(scoreText.contains("punts")) {
+            Punt punt = createPuntRow(gameId, teamId, playNum, scoreText, rosters)
             PlayType.PUNT
         }
         else if(scoreText.contains("kicks")) {
+            //kick-off row
+            Kickoff kickoff = createKickOffRow(gameId, teamId, playNum, scoreText, rosters)
             PlayType.KICKOFF
         }
         else if(scoreText.contains("penalty") || scoreText.contains("Penalty") ) {
+            //parse out penalty details, write to separate table?
             PlayType.PENALTY
         }
         else if(scoreText.contains("Field Goal")) {
+            //write FG row
             PlayType.FIELD_GOAL
         }
         else if(scoreText.contains("extra point")) {
+            //write PAT row?
             PlayType.ATTEMPT
         }
         else if(scoreText.contains("Conversion") ||scoreText.contains("conversion") ) {
-            //parse this like a normal play for 2 points
+            //parse this like a normal play for 2 points? Just record success/failure
             if(isPass(scoreText)) {
                 Pass pass = createPassRow(gameId, teamId, playNum, ytg, scoreText, rosters)
             } else {
@@ -43,9 +51,15 @@ class ScoreTextParserLib {
             PlayType.TIMEOUT
         } else {
             //must be a rush attempt
-            createRushRow(gameId, teamId, playNum, ytg, scoreText, rosters)
+            Rush rush = createRushRow(gameId, teamId, playNum, ytg, scoreText, rosters)
             PlayType.RUSH
         }
+    }
+
+    static Kickoff createKickOffRow(String gameId, Integer teamId, Integer playNum, String scoreText, Map rosters) {}
+
+    static Punt createPuntRow(String gameId, Integer teamId, Integer playNum, String scoreText, Map rosters) {
+
     }
 
     static boolean isPass(String scoreText) {
@@ -60,6 +74,7 @@ class ScoreTextParserLib {
         String subScoreText = scoreText.substring(scoreText.indexOf(" "))//text after passer
         if(scoreText.contains('complete to')) {
             pass.completion = 1
+            pass.interception = 0
             //find the target
             String receiverJerseyNumber = subScoreText.substring(subScoreText.indexOf('to')+2,subScoreText.indexOf("-")).trim()
             String receiverFirstInitial = subScoreText.substring(subScoreText.indexOf("-")+1,subScoreText.indexOf("."))
@@ -69,6 +84,7 @@ class ScoreTextParserLib {
 
             if(scoreText.contains("touchdown")) {
                 pass.touchdown = 1
+                pass.yards = subScoreText.substring(subScoreText.indexOf("runs")+4,subScoreText.indexOf("yard")).trim() as Integer
                 //need to do yards correctly for TD scenario
             } else {
                 pass.touchdown = 0
@@ -83,6 +99,7 @@ class ScoreTextParserLib {
             pass.completion = 0
             pass.yards = 0
             pass.firstDown = 0
+            pass.touchdown = 0
             //find the target - different pattern
             pass.passerId = lookupPasserId(scoreText, rosters, teamId)
             String intendedForText = subScoreText.substring(subScoreText.indexOf(".")+1)
@@ -90,6 +107,13 @@ class ScoreTextParserLib {
             if(scoreText.contains('INTERCEPTED')) {
                 pass.interception = 1
                 //do some funky shit for INT row
+                String playerChunk = subScoreText.substring(subScoreText.indexOf("Intended for")+12,subScoreText.indexOf(","))
+
+                String intendedReceiverJerseyNumber = playerChunk.substring(0, playerChunk.indexOf("-")).trim()
+                String intendedReceiverFirstInitial = playerChunk.substring(playerChunk.indexOf("-")+1,playerChunk.indexOf("."))
+                String intendedReceiverLastName = playerChunk.substring(playerChunk.indexOf(".")+1)
+                pass.recieverId = getPlayerIdFromRosters(rosters, teamId, intendedReceiverJerseyNumber, intendedReceiverFirstInitial, intendedReceiverLastName)
+
             } else {
                 pass.interception = 0
                 String receiverJerseyNumber = intendedForText.substring(intendedForText.indexOf('for')+4,intendedForText.indexOf("-"))
@@ -99,10 +123,6 @@ class ScoreTextParserLib {
             }
 
         }
-
-
-
-
 
         if(scoreText.contains("FUMBLES")) {
             pass.fumble = 1
