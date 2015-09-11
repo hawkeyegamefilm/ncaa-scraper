@@ -21,7 +21,7 @@ class ScoreTextParserLib {
         }
         else if(scoreText.contains("kicks")) {
             //kick-off row
-            Kickoff kickoff = createKickOffRow(gameId, teamId, playNum, scoreText, rosters)
+            Kickoff kickoff = createKickoffRow(gameId, teamId, playNum, scoreText, rosters)
             PlayType.KICKOFF
         }
         else if(scoreText.contains("penalty") || scoreText.contains("Penalty") ) {
@@ -56,7 +56,28 @@ class ScoreTextParserLib {
         }
     }
 
-    static Kickoff createKickOffRow(String gameId, Integer teamId, Integer playNum, String scoreText, Map rosters) {}
+    static Kickoff createKickoffRow(String gameId, Integer kickingTeamId, Integer returningTeamId, String scoreText, Map rosters) {
+        Kickoff kickoff = new Kickoff(gameId: gameId)
+
+        kickoff.kickingTeamId = kickingTeamId
+        kickoff.returningTeamId = returningTeamId
+
+        kickoff.kickerId = lookupPasserId(scoreText, rosters, kickingTeamId)
+
+        kickoff.yards = scoreText.substring(scoreText.indexOf("kicks")+5, scoreText.indexOf("yards")).trim() as Integer
+
+        if(scoreText.contains("touchback") || scoreText.contains("Touchback")) {
+            kickoff.touchback = 1
+            kickoff.returnerId = 0
+            kickoff.returnYards = 0
+        } else {
+            String returnInfo = scoreText.substring(scoreText.indexOf(". ")+1).trim()
+            kickoff.returnerId = lookupPasserId(returnInfo, rosters, returningTeamId)
+            kickoff.returnYards = returnInfo.substring(returnInfo.indexOf('for')+4, returnInfo.indexOf("yards")).trim() as Integer
+        }
+
+        kickoff
+    }
 
     static Punt createPuntRow(String gameId, Integer teamId, Integer playNum, String scoreText, Map rosters) {
 
@@ -123,7 +144,6 @@ class ScoreTextParserLib {
                 String receiverLastName = intendedForText.substring(intendedForText.indexOf(".")+1).replace(".", "")
                 pass.recieverId = getPlayerIdFromRosters(rosters, teamId, receiverJerseyNumber, receiverFirstInitial, receiverLastName)
             }
-
         }
 
         if(scoreText.contains("FUMBLES")) {
@@ -143,9 +163,13 @@ class ScoreTextParserLib {
         return getPlayerIdFromRosters(rosters, teamId, passerJerseyNumber, passerFirstInitial, passerLastName)
     }
 
+    /*
+        Do comparison using lower case on last name, expect DB data to have mixed case data vs play by play
+        example Matt VandeBerg in Roster data vs Matt Vandeberg in play by play data
+     */
     protected static Integer getPlayerIdFromRosters(Map rosters, int teamId, String jerseyNumber, String firstInitial, String lastName) {
         rosters.get(teamId.toString()).find {
-            it.uniform_number.contains(jerseyNumber) && it.lastname == lastName && it.firstname.substring(0, 1) == firstInitial
+            it.uniform_number.contains(jerseyNumber) && it.lastname == lastName.toLowerCase() && it.firstname.substring(0, 1) == firstInitial
         }?.player_id
     }
 
@@ -235,9 +259,7 @@ class ScoreTextParserLib {
     }
 
     static boolean isRecoveringPlayerOnOwnRoster(Integer teamId,Integer number, String firstInitial, String lastName, Map rosters ) {
-        //implement me
         List offensiveTeam = rosters.get(teamId.toString())
-        //build a player look up
         if(playerFound(offensiveTeam, number, firstInitial, lastName)) {
             return 1
         }
@@ -247,12 +269,12 @@ class ScoreTextParserLib {
     static boolean playerFound(List team, Integer number, String firstInitial, String lastName) {
         return team.find {
             it.uniform_number.contains(number.toString()) &&
-            it.lastname == lastName &&
+            it.lastname == lastName.toLowerCase() &&
             it.firstname.substring(0,1) == firstInitial
         }
     }
 
-    private static Integer handleNumber(String subString) {
+    static Integer handleNumber(String subString) {
         Integer number
         try {
             number = subString.substring(0, subString.indexOf("-")).trim()?.toInteger()

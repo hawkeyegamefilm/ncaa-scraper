@@ -3,15 +3,16 @@ package com.footballscience.domain
 class Kickoff {
     String gameId
     Integer playNum
-    Integer teamId
+    Integer kickingTeamId
     Integer kickerId
     Integer attempt
     Integer yards
     Integer fairCatch
-    Integer touchBack
+    Integer touchback
     Integer oob
     Integer onside
     Integer onsideSuccess
+    Integer returningTeamId
     Integer returnerId
     Integer returnYards
     Integer fumble
@@ -23,15 +24,16 @@ class Kickoff {
         StringBuffer buffer = new StringBuffer()
         buffer.append(gameId).append(",")
         buffer.append(playNum).append(",")
-        buffer.append(teamId).append(",")
+        buffer.append(kickingTeamId).append(",")
         buffer.append(kickerId).append(",")
         buffer.append(attempt).append(",")
         buffer.append(yards).append(",")
         buffer.append(fairCatch).append(",")
-        buffer.append(touchBack).append(",")
+        buffer.append(touchback).append(",")
         buffer.append(oob).append(",")
         buffer.append(onside).append(",")
-        buffer.append(onsideSuccess)
+        buffer.append(onsideSuccess).append(",")
+        buffer.append(returningTeamId).append(",")
         buffer.append(returnerId).append(",")
         buffer.append(returnYards).append(",")
         buffer.append(fumble).append(",")

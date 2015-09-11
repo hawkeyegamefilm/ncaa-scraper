@@ -43,7 +43,7 @@ class RosterScraperTest extends Specification {
     }
 
     @Ignore
-    def "run load"() {
+    def "run load"() {//just for creating roster file
         when:
         rosterScraper.runLoad()
 

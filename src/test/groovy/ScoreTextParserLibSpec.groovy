@@ -1,4 +1,5 @@
 import com.footballscience.database.ParserDAO
+import com.footballscience.domain.Kickoff
 import com.footballscience.domain.Pass
 import com.footballscience.domain.Rush
 import com.footballscience.parser.PlayType
@@ -167,4 +168,53 @@ class ScoreTextParserLibSpec extends Specification {
         "15-J.Rudock complete to 17-J.Hillyer. 17-J.Hillyer to IOW 47, FUMBLES (49-B.McMakin). 37-M.Busher to IOW 41 for 6 yards. Penalty on UNI 2-M.Dorleant, Unsportsmanlike conduct, 15 yards, enforced at IOW 41." | 71     | 9   | 0         | 0           | 6     | 41544      | 1      | 1
         "15-J.Rudock complete to 4-T.Smith. 4-T.Smith to IOW 41, FUMBLES. to IOW 41 for no gain."                                                                                                                      | 71     | 10  | 0         | 0           | 0     | 41590      | 1      | 0
     }
+
+    @Unroll
+    def "basic scenarios for createKickoffRow"() {
+        setup:
+        List roster = parserDAO.getRosterBySeasonTeamId(kickingTeamId.toString())
+        List roster2 = parserDAO.getRosterBySeasonTeamId(returningTeamId.toString())
+        Map rosters = [("${kickingTeamId}".toString()): roster, ("${returningTeamId}".toString()): roster2]
+
+        when:
+        Kickoff kickoff = ScoreTextParserLib.createKickoffRow('someid', kickingTeamId, returningTeamId, scoreText, rosters)
+
+        then:
+        kickoff.kickingTeamId == kickingTeamId
+        kickoff.kickerId == kickerId
+        kickoff.yards == kickYards
+        kickoff.returnerId == returnerId
+        kickoff.returnYards == returnYards
+
+        where:
+        scoreText                                                                                 | kickingTeamId | returningTeamId | kickerId | kickYards | returnerId | returnYards | touchback
+        "40-M.Schmadeke kicks 56 yards from UNI 35. 45-M.Weisman to UNI 41 for 50 yards."         | 920           | 71              | 47249    | 56        | 41606      | 50          | 0
+        "1-M.Koehn kicks 57 yards from IOW 35. 5-D.Miller to UNI 28 for 20 yards (44-B.Niemann)." | 71            | 920             | 41560    | 57        | 47226      | 20          | 0
+        "40-M.Schmadeke kicks 65 yards from UNI 35 to IOW End Zone. touchback."                   | 920           | 71              | 47249    | 65        | 0          | 0           | 1
+        "1-M.Koehn kicks 65 yards from IOW 35 to UNI End Zone. touchback."                        | 71            | 920             | 41560    | 65        | 0          | 0           | 1
+    }
+
+    @Unroll
+    def "one off scenarios for createKickoffRow"() {
+        setup:
+        List roster = parserDAO.getRosterBySeasonTeamId(kickingTeamId.toString())
+        List roster2 = parserDAO.getRosterBySeasonTeamId(returningTeamId.toString())
+        Map rosters = [("${kickingTeamId}".toString()): roster, ("${returningTeamId}".toString()): roster2]
+
+        when:
+        Kickoff kickoff = ScoreTextParserLib.createKickoffRow('someid', kickingTeamId, returningTeamId, scoreText, rosters)
+
+        then:
+        kickoff.kickingTeamId == kickingTeamId
+        kickoff.kickerId == kickerId
+        kickoff.yards == kickYards
+        kickoff.returnerId == returnerId
+        kickoff.returnYards == returnYards
+
+        where:
+        scoreText                                                                                                                                                          | kickingTeamId | returningTeamId | kickerId | kickYards | returnerId | returnYards | touchback
+        "40-M.Schmadeke kicks 57 yards from UNI 35. 89-M.Vandeberg to IOW 31 for 23 yards (15-T.Omli). Penalty on IOW 36-C.Fisher, Holding, 10 yards, enforced at IOW 31." | 920           | 71              | 47249    | 57        | 41599      | 23          | 0
+    }
+
+
 }

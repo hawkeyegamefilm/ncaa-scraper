@@ -12,7 +12,7 @@ class ParserDAO {
     }
 
     List getRosterBySeasonTeamId(String seasonTeamId) {
-        List<Map<String, Object>> rs = handle.select("select p.* from player p, team t where p.team_id = t.team_id and t.14_team_id = ?",seasonTeamId)
+        List<Map<String, Object>> rs = handle.select("select p.player_id, p.team_id, lower(p.lastname) as lastname, p.firstname, p.uniform_number, p.class, p.position from player p, team t where p.team_id = t.team_id and t.14_team_id = ?",seasonTeamId)
 
         return rs
     }
