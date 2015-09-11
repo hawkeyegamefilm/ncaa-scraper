@@ -86,11 +86,13 @@ class ScoreTextParserLib {
                 pass.touchdown = 1
                 pass.yards = subScoreText.substring(subScoreText.indexOf("runs")+4,subScoreText.indexOf("yard")).trim() as Integer
                 //need to do yards correctly for TD scenario
+            } else if (scoreText.contains("no gain")) {
+                pass.touchdown = 0
+                pass.yards = 0
             } else {
                 pass.touchdown = 0
                 pass.yards = subScoreText.substring(subScoreText.indexOf("for")+4,subScoreText.indexOf("yard")).trim() as Integer
             }
-
 
             if(pass.yards > ytg) {
                 pass.firstDown = 1
@@ -127,6 +129,9 @@ class ScoreTextParserLib {
         if(scoreText.contains("FUMBLES")) {
             pass.fumble = 1
             pass.fumbleLost = calculateFumbleLost(scoreText, teamId, rosters)
+        } else {
+            pass.fumble = 0
+            pass.fumbleLost = 0
         }
         return pass
     }

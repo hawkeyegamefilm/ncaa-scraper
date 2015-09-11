@@ -66,13 +66,13 @@ class ScoreTextParserLibSpec extends Specification {
         roster.clear()
 
         where:
-        teamId | scoreText | expected
-        "71"   | "10-J.Parker to IOW 35, FUMBLES (97-B.Dueitt). 97-B.Dueitt runs 35 yards for a touchdown." | 1
-        "71"   | "1-S.Secor kicks 59 yards from BALL 35. 10-J.Parker to IOW 23, FUMBLES. 37-A.Taylor to IOW 23 for no gain." | 1
-        "2476" | "20-D.Nealy to IOW 47, FUMBLES (27-J.Lomax). to IOW 50 for no gain." | 0
-        "71"   | "15-J.Rudock complete to 4-T.Smith. 4-T.Smith to IOW 41, FUMBLES. to IOW 41 for no gain." | 0
+        teamId | scoreText                                                                                                                                                                                                                   | expected
+        "71"   | "10-J.Parker to IOW 35, FUMBLES (97-B.Dueitt). 97-B.Dueitt runs 35 yards for a touchdown."                                                                                                                                  | 1
+        "71"   | "1-S.Secor kicks 59 yards from BALL 35. 10-J.Parker to IOW 23, FUMBLES. 37-A.Taylor to IOW 23 for no gain."                                                                                                                 | 1
+        "2476" | "20-D.Nealy to IOW 47, FUMBLES (27-J.Lomax). to IOW 50 for no gain."                                                                                                                                                        | 0
+        "71"   | "15-J.Rudock complete to 4-T.Smith. 4-T.Smith to IOW 41, FUMBLES. to IOW 41 for no gain."                                                                                                                                   | 0
         "71"   | "1-C.Netten kicks 43 yards from ISU 35. 80-H.Krieger Coble 10-J.Parker 46-G.Kittle 80-H.Krieger Coble 45-M.Weisman 89-M.Vandeberg to IOW 18, FUMBLES. 1-C.Netten recovers at the IOW 18. 1-C.Netten to IOW 18 for no gain." | 1
-        "759"  | "2-C.Covington to IU 25, FUMBLES. 2-C.Covington to IU 25 for no gain (41-B.Bower,34-N.Meier)." | 0
+        "759"  | "2-C.Covington to IU 25, FUMBLES. 2-C.Covington to IU 25 for no gain (41-B.Bower,34-N.Meier)."                                                                                                                              | 0
     }
 
     def "basics for createRushRow function correctly"() {
@@ -90,13 +90,13 @@ class ScoreTextParserLibSpec extends Specification {
         rush.yards == expectedYards
 
         where:
-        scoreText                                                                                                               | teamId | ytg | expectedPlayerId | expectedYards | expectedFirstDown | expectedTD
-        "5-D.Miller to UNI 45 for 1 yard (90-L.Trinca-Pasat)."                                                                  | 920    | 10  | 47226            | 1             | 0                 | 0
-        "33-J.Canzeri to UNI 28 for 2 yards (44-M.O'Brien)."                                                                    | 71     | 10  | 41521            | 2             | 0                 | 0
-        "5-D.Bullock to UNI 26 for 2 yards (44-M.O'Brien,46-J.Farley)."                                                         | 71     | 8   | 41520            | 2             | 0                 | 0
-        "29-L.Daniels Jr. runs 13 yards for a touchdown."                                                                       | 71     | 10  | 41524            | 13            | 1                 | 1
-        "7-D.Johnson to UNI 34 for 6 yards (27-J.Lomax,90-L.Trinca-Pasat)."                                                     | 920    | 10  | 47209            | 6             | 0                 | 0
-        "44-C.Artis-Payne to AUB 11 for no gain."                                                                               | 827    | 10  | 34128            | 0             | 0                 | 0
+        scoreText                                                           | teamId | ytg | expectedPlayerId | expectedYards | expectedFirstDown | expectedTD
+        "5-D.Miller to UNI 45 for 1 yard (90-L.Trinca-Pasat)."              | 920    | 10  | 47226            | 1             | 0                 | 0
+        "33-J.Canzeri to UNI 28 for 2 yards (44-M.O'Brien)."                | 71     | 10  | 41521            | 2             | 0                 | 0
+        "5-D.Bullock to UNI 26 for 2 yards (44-M.O'Brien,46-J.Farley)."     | 71     | 8   | 41520            | 2             | 0                 | 0
+        "29-L.Daniels Jr. runs 13 yards for a touchdown."                   | 71     | 10  | 41524            | 13            | 1                 | 1
+        "7-D.Johnson to UNI 34 for 6 yards (27-J.Lomax,90-L.Trinca-Pasat)." | 920    | 10  | 47209            | 6             | 0                 | 0
+        "44-C.Artis-Payne to AUB 11 for no gain."                           | 827    | 10  | 34128            | 0             | 0                 | 0
     }
 
     def "one off fumble scenarios for createRushRow function correctly"() {
@@ -136,10 +136,10 @@ class ScoreTextParserLibSpec extends Specification {
         pass.recieverId == receiverId
 
         where:
-        scoreText                                                                                                                       | teamId | ytg | yards | firstDown | passerId | receiverId
-        "15-J.Rudock complete to 11-K.Martin-Manley. 11-K.Martin-Manley to UNI 45 for 6 yards."                                         | 71     | 10  | 6     | 0         | 41586    | 41569
-        "15-J.Rudock complete to 4-T.Smith. 4-T.Smith to UNI 18 for 8 yards (37-M.Busher)."                                             | 71     | 6   | 8     | 1         | 41586    | 41590
-        "15-J.Rudock incomplete. Intended for 82-R.Hamilton."                                                                           | 71     | 10  | 0     | 0         | 41586    | 41541
+        scoreText                                                                               | teamId | ytg | yards | firstDown | passerId | receiverId
+        "15-J.Rudock complete to 11-K.Martin-Manley. 11-K.Martin-Manley to UNI 45 for 6 yards." | 71     | 10  | 6     | 0         | 41586    | 41569
+        "15-J.Rudock complete to 4-T.Smith. 4-T.Smith to UNI 18 for 8 yards (37-M.Busher)."     | 71     | 6   | 8     | 1         | 41586    | 41590
+        "15-J.Rudock incomplete. Intended for 82-R.Hamilton."                                   | 71     | 10  | 0     | 0         | 41586    | 41541
     }
 
     @Unroll
@@ -156,11 +156,15 @@ class ScoreTextParserLibSpec extends Specification {
         pass.interception == intercepted
         pass.yards == yards
         pass.recieverId == receiverId
+        pass.fumble == fumble
+        pass.fumbleLost == fumbleLost
 
         where:
-        scoreText                                                                                                                              | teamId | ytg | touchdown | intercepted | yards | receiverId
-        "17-S.Kollmorgen incomplete. Intended for 18-K.Vereen, INTERCEPTED by 41-B.Bower at IOW 47. 41-B.Bower runs ob at IOW 49 for 2 yards." | 920    | 9   | 0         | 1           | 0     | 47261
-        "15-J.Rudock complete to 22-D.Powell. 22-D.Powell runs 12 yards for a touchdown."                                                      | 71     | 12  | 1         | 0           | 12    | 41583
-        "17-S.Kollmorgen complete to 18-K.Vereen. 18-K.Vereen runs 23 yards for a touchdown."                                                  | 920    | 3   | 1         | 0           | 23    | 47261
+        scoreText                                                                                                                                                                                                      | teamId | ytg | touchdown | intercepted | yards | receiverId | fumble | fumbleLost
+        "17-S.Kollmorgen incomplete. Intended for 18-K.Vereen, INTERCEPTED by 41-B.Bower at IOW 47. 41-B.Bower runs ob at IOW 49 for 2 yards."                                                                         | 920    | 9   | 0         | 1           | 0     | 47261      | 0      | 0
+        "15-J.Rudock complete to 22-D.Powell. 22-D.Powell runs 12 yards for a touchdown."                                                                                                                              | 71     | 12  | 1         | 0           | 12    | 41583      | 0      | 0
+        "17-S.Kollmorgen complete to 18-K.Vereen. 18-K.Vereen runs 23 yards for a touchdown."                                                                                                                          | 920    | 3   | 1         | 0           | 23    | 47261      | 0      | 0
+        "15-J.Rudock complete to 17-J.Hillyer. 17-J.Hillyer to IOW 47, FUMBLES (49-B.McMakin). 37-M.Busher to IOW 41 for 6 yards. Penalty on UNI 2-M.Dorleant, Unsportsmanlike conduct, 15 yards, enforced at IOW 41." | 71     | 9   | 0         | 0           | 6     | 41544      | 1      | 1
+        "15-J.Rudock complete to 4-T.Smith. 4-T.Smith to IOW 41, FUMBLES. to IOW 41 for no gain."                                                                                                                      | 71     | 10  | 0         | 0           | 0     | 41590      | 1      | 0
     }
 }
