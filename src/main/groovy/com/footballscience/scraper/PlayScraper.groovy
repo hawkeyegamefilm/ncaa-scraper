@@ -1,6 +1,8 @@
 package com.footballscience.scraper
 
 import com.footballscience.database.ParserDAO
+import com.footballscience.parser.PlayType
+import com.footballscience.parser.ScoreTextParserLib
 import org.codehaus.jackson.map.ObjectMapper
 
 class PlayScraper {
@@ -59,8 +61,8 @@ class PlayScraper {
 
     String createPlayRowsCSV(Map game) {
         StringBuffer rows = new StringBuffer()
-        Map hometeam = game.meta.teams.find { it.homeTeam = 'true'}
-        Map awayteam = game.meta.teams.find { it.homeTeam = 'false'}
+        Map hometeam = game.meta.teams.find { it.homeTeam == 'true'}
+        Map awayteam = game.meta.teams.find { it.homeTeam == 'false'}
         populateDataForRun(hometeam, awayteam)
         ArrayList teams = [hometeam.id, awayteam.id]
         String gameId = homeTeamId + awayTeamId + year + month + day
@@ -68,8 +70,12 @@ class PlayScraper {
         game.periods.eachWithIndex { period, periodIndex ->
             period.possessions.eachWithIndex { poss,possIndex ->
                 //gonna need to produce a drive row here
+                //add up play types from drive? probably best way to do it
                 poss.plays.eachWithIndex { play, playIndex ->
                     //write play rows based on cfbstats db
+                    String down
+                    String ytg
+                    String yfog
                     rows.append(gameId).append(",")
                     rows.append(playIndex).append(",")
                     rows.append(periodIndex).append(",")
@@ -79,14 +85,18 @@ class PlayScraper {
                     rows.append(play.visitingScore).append(",")
                     rows.append(play.homeScore).append(",")
                     if(play.driveText) {
-                        rows.append(downMap.get(play.driveText.substring(0,2))).append(",")
-                        rows.append(play.driveText.substring(7,10).trim()).append(",")
-                        rows.append(calculateSpot(play.driveText,awayteam.id as Integer)).append(",")
+                        down = downMap.get(play.driveText.substring(0,3))
+                        ytg = play.driveText.substring(7,10).trim()
+                        yfog = calculateSpot(play.driveText,awayteam.id as Integer)
+                        rows.append(down).append(",")
+                        rows.append(ytg).append(",")
+                        rows.append(yfog).append(",")
                     } else {
-                        rows.append(",,,")//dummy up missing data exception, ie kickoffs
+                        rows.append(",,,")//dummy up missing data exception, ie kickoffs, extra pts
                     }
+                    rows.append(ScoreTextParserLib.determinePlayType(gameId, poss.teamId as Integer, playIndex as Integer, ytg as Integer, play.scoreText, rosters))
 
-                    rows.append(play.scoreText)
+                    //rows.append(play.scoreText)
                     rows.append(System.lineSeparator())
                 }
             }
@@ -104,9 +114,5 @@ class PlayScraper {
         } else {
             return (50 - yardline) + 50
         }
-    }
-
-    String calculatePlayType(String scoreText) {
-
     }
 }

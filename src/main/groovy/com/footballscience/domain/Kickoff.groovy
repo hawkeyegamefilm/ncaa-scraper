@@ -10,8 +10,8 @@ class Kickoff {
     Integer fairCatch
     Integer touchback
     Integer oob
-    Integer onside
-    Integer onsideSuccess
+    Integer onside = 0
+    Integer onsideSuccess = 0
     Integer returningTeamId
     Integer returnerId
     Integer returnYards

@@ -163,6 +163,7 @@ class ScoreTextParserLibSpec extends Specification {
         where:
         scoreText                                                                                                                                                                                                      | teamId | ytg | touchdown | intercepted | yards | receiverId | fumble | fumbleLost
         "17-S.Kollmorgen incomplete. Intended for 18-K.Vereen, INTERCEPTED by 41-B.Bower at IOW 47. 41-B.Bower runs ob at IOW 49 for 2 yards."                                                                         | 920    | 9   | 0         | 1           | 0     | 47261      | 0      | 0
+        "17-S.Kollmorgen incomplete. INTERCEPTED by 13-G.Mabin at IOW 28. 13-G.Mabin to IOW 46 for 18 yards (17-S.Kollmorgen). Penalty on IOW 6-R.Spearman, Unsportsmanlike conduct, 15 yards, enforced at IOW 46."    | 920    | 17  | 0         | 1           | 0     | 0          | 0      | 0
         "15-J.Rudock complete to 22-D.Powell. 22-D.Powell runs 12 yards for a touchdown."                                                                                                                              | 71     | 12  | 1         | 0           | 12    | 41583      | 0      | 0
         "17-S.Kollmorgen complete to 18-K.Vereen. 18-K.Vereen runs 23 yards for a touchdown."                                                                                                                          | 920    | 3   | 1         | 0           | 23    | 47261      | 0      | 0
         "15-J.Rudock complete to 17-J.Hillyer. 17-J.Hillyer to IOW 47, FUMBLES (49-B.McMakin). 37-M.Busher to IOW 41 for 6 yards. Penalty on UNI 2-M.Dorleant, Unsportsmanlike conduct, 15 yards, enforced at IOW 41." | 71     | 9   | 0         | 0           | 6     | 41544      | 1      | 1
@@ -210,11 +211,37 @@ class ScoreTextParserLibSpec extends Specification {
         kickoff.yards == kickYards
         kickoff.returnerId == returnerId
         kickoff.returnYards == returnYards
+        kickoff.onside == onside
+        kickoff.onsideSuccess == onsideRecovery
 
         where:
-        scoreText                                                                                                                                                          | kickingTeamId | returningTeamId | kickerId | kickYards | returnerId | returnYards | touchback
-        "40-M.Schmadeke kicks 57 yards from UNI 35. 89-M.Vandeberg to IOW 31 for 23 yards (15-T.Omli). Penalty on IOW 36-C.Fisher, Holding, 10 yards, enforced at IOW 31." | 920           | 71              | 47249    | 57        | 41599      | 23          | 0
+        scoreText                                                                                                                                                          | kickingTeamId | returningTeamId | kickerId | kickYards | returnerId | returnYards | touchback | onside | onsideRecovery
+        "40-M.Schmadeke kicks 57 yards from UNI 35. 89-M.Vandeberg to IOW 31 for 23 yards (15-T.Omli). Penalty on IOW 36-C.Fisher, Holding, 10 yards, enforced at IOW 31." | 920           | 71              | 47249    | 57        | 41599      | 23          | 0         | 0      | 0
+        "1-M.Koehn kicks 7 yards from IOW 35. 88-P.Gallo to IOW 42 for no gain."                                                                                           | 71            | 2502            | 41560    | 7         | 43411      | 0           | 0         | 0      | 0
+//        "1-M.Koehn kicks 15 yards from IOW 35. to MAR 50 for no gain."                                                                                                     | 71            | 2502            | 41560    | 15        | 0          | 0           | 0         | 1      | 1
     }
 
+    @Unroll
+    def "oob kicks"() {
+        setup:
+        List roster = parserDAO.getRosterBySeasonTeamId(kickingTeamId.toString())
+        List roster2 = parserDAO.getRosterBySeasonTeamId(returningTeamId.toString())
+        Map rosters = [("${kickingTeamId}".toString()): roster, ("${returningTeamId}".toString()): roster2]
+
+        when:
+        Kickoff kickoff = ScoreTextParserLib.createKickoffRow('someid', kickingTeamId, returningTeamId, scoreText, rosters)
+
+        then:
+        kickoff.kickingTeamId == kickingTeamId
+        kickoff.kickerId == kickerId
+        kickoff.yards == kickYards
+        kickoff.returnerId == returnerId
+        kickoff.returnYards == returnYards
+        kickoff.oob == oob
+
+        where:
+        scoreText                                                               | kickingTeamId | returningTeamId | kickerId | kickYards | returnerId | returnYards | oob
+        "15-B.Craddock kicks 63 yards from MAR 35, out of bounds at the IOW 2." | 2502          | 71              | 43395    | 63        | 0          | 0           | 1
+    }
 
 }
