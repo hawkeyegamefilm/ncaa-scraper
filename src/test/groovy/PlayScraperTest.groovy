@@ -4,16 +4,16 @@ import spock.lang.Unroll
 
 class PlayScraperTest extends Specification {
 
-    PlayScraper scrapper
+    PlayScraper scraper
     String testUrl = 'http://data.ncaa.com/jsonp/game/football/fbs/2014/08/30/uni-iowa/pbp.json'
 
     def setup() {
-        scrapper = new PlayScraper()
+        scraper = new PlayScraper()
     }
 
     def 'test convert to map'() {
         when:
-        Map result = scrapper.getJsonFromUrl(testUrl)
+        Map result = scraper.getJsonFromUrl(testUrl)
 
         then:
         result.meta
@@ -24,7 +24,7 @@ class PlayScraperTest extends Specification {
 
     def 'strips tags correctly'() {
         when:
-        String result = scrapper.cleanupTags(readResourceText("sampleGame.json"))
+        String result = scraper.cleanupTags(readResourceText("sampleGame.json"))
 
         then:
         !result.contains("callbackWrapper(")
@@ -34,7 +34,7 @@ class PlayScraperTest extends Specification {
 
     def "create csv test"() {
         when:
-        String result = scrapper.createPlayRowsCSV(scrapper.getJsonFromUrl(testUrl))
+        String result = scraper.createPlayRowsCSV(scraper.getJsonFromUrl(testUrl))
 
         then:
         result
@@ -43,21 +43,21 @@ class PlayScraperTest extends Specification {
 
     def "populate global vars"() {
         when:
-        scrapper.populateDateVars(testUrl)
+        scraper.populateDateVars(testUrl)
 
         then:
-        scrapper.year == '2014'
-        scrapper.month == '08'
-        scrapper.day == '30'
+        scraper.year == '2014'
+        scraper.month == '08'
+        scraper.day == '30'
     }
 
     @Unroll
     def "caclulate Spot"() {
         setup:
-        scrapper.populateRosters([id:"71"],[id: "920"])
+        scraper.populateRosters([id:"71"],[id: "920"])
 
         when:
-        Integer spot = scrapper.calculateSpot(driveText, teamId)
+        Integer spot = scraper.calculateSpot(driveText, teamId)
 
         then:
         spot == expectedResult

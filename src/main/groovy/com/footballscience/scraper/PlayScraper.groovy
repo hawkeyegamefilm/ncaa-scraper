@@ -94,7 +94,9 @@ class PlayScraper {
                     } else {
                         rows.append(",,,")//dummy up missing data exception, ie kickoffs, extra pts
                     }
-                    rows.append(ScoreTextParserLib.determinePlayType(gameId, poss.teamId as Integer, playIndex as Integer, ytg as Integer, play.scoreText, rosters))
+
+                    Boolean onsideFlag = poss.plays.size > 1 ? true : false
+                    rows.append(ScoreTextParserLib.determinePlayType(gameId, poss.teamId as Integer, playIndex as Integer, ytg as Integer, play.scoreText, rosters, onsideFlag))
 
                     //rows.append(play.scoreText)
                     rows.append(System.lineSeparator())

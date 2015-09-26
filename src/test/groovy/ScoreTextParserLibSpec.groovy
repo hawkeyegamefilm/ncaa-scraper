@@ -17,7 +17,7 @@ class ScoreTextParserLibSpec extends Specification {
 
     def "correctly defines playtype"() {
         when:
-        PlayType playType = ScoreTextParserLib.determinePlayType("someid", 1, 1, 10, scoreText, [:])
+        PlayType playType = ScoreTextParserLib.determinePlayType("someid", 1, 1, 10, scoreText, [:], false)
 
         then:
         playType == expectedPlayType
@@ -178,7 +178,7 @@ class ScoreTextParserLibSpec extends Specification {
         Map rosters = [("${kickingTeamId}".toString()): roster, ("${returningTeamId}".toString()): roster2]
 
         when:
-        Kickoff kickoff = ScoreTextParserLib.createKickoffRow('someid', kickingTeamId, returningTeamId, scoreText, rosters)
+        Kickoff kickoff = ScoreTextParserLib.createKickoffRow('someid', kickingTeamId, returningTeamId, scoreText, onsideFlag, rosters)
 
         then:
         kickoff.kickingTeamId == kickingTeamId
@@ -188,11 +188,11 @@ class ScoreTextParserLibSpec extends Specification {
         kickoff.returnYards == returnYards
 
         where:
-        scoreText                                                                                 | kickingTeamId | returningTeamId | kickerId | kickYards | returnerId | returnYards | touchback
-        "40-M.Schmadeke kicks 56 yards from UNI 35. 45-M.Weisman to UNI 41 for 50 yards."         | 920           | 71              | 47249    | 56        | 41606      | 50          | 0
-        "1-M.Koehn kicks 57 yards from IOW 35. 5-D.Miller to UNI 28 for 20 yards (44-B.Niemann)." | 71            | 920             | 41560    | 57        | 47226      | 20          | 0
-        "40-M.Schmadeke kicks 65 yards from UNI 35 to IOW End Zone. touchback."                   | 920           | 71              | 47249    | 65        | 0          | 0           | 1
-        "1-M.Koehn kicks 65 yards from IOW 35 to UNI End Zone. touchback."                        | 71            | 920             | 41560    | 65        | 0          | 0           | 1
+        scoreText                                                                                 | kickingTeamId | returningTeamId | kickerId | kickYards | returnerId | returnYards | touchback | onsideFlag
+        "40-M.Schmadeke kicks 56 yards from UNI 35. 45-M.Weisman to UNI 41 for 50 yards."         | 920           | 71              | 47249    | 56        | 41606      | 50          | 0 | false
+        "1-M.Koehn kicks 57 yards from IOW 35. 5-D.Miller to UNI 28 for 20 yards (44-B.Niemann)." | 71            | 920             | 41560    | 57        | 47226      | 20          | 0 | false
+        "40-M.Schmadeke kicks 65 yards from UNI 35 to IOW End Zone. touchback."                   | 920           | 71              | 47249    | 65        | 0          | 0           | 1 | false
+        "1-M.Koehn kicks 65 yards from IOW 35 to UNI End Zone. touchback."                        | 71            | 920             | 41560    | 65        | 0          | 0           | 1 | false
     }
 
     @Unroll
@@ -203,7 +203,7 @@ class ScoreTextParserLibSpec extends Specification {
         Map rosters = [("${kickingTeamId}".toString()): roster, ("${returningTeamId}".toString()): roster2]
 
         when:
-        Kickoff kickoff = ScoreTextParserLib.createKickoffRow('someid', kickingTeamId, returningTeamId, scoreText, rosters)
+        Kickoff kickoff = ScoreTextParserLib.createKickoffRow('someid', kickingTeamId, returningTeamId, scoreText, onsideFlag, rosters)
 
         then:
         kickoff.kickingTeamId == kickingTeamId
@@ -215,10 +215,10 @@ class ScoreTextParserLibSpec extends Specification {
         kickoff.onsideSuccess == onsideRecovery
 
         where:
-        scoreText                                                                                                                                                          | kickingTeamId | returningTeamId | kickerId | kickYards | returnerId | returnYards | touchback | onside | onsideRecovery
-        "40-M.Schmadeke kicks 57 yards from UNI 35. 89-M.Vandeberg to IOW 31 for 23 yards (15-T.Omli). Penalty on IOW 36-C.Fisher, Holding, 10 yards, enforced at IOW 31." | 920           | 71              | 47249    | 57        | 41599      | 23          | 0         | 0      | 0
-        "1-M.Koehn kicks 7 yards from IOW 35. 88-P.Gallo to IOW 42 for no gain."                                                                                           | 71            | 2502            | 41560    | 7         | 43411      | 0           | 0         | 0      | 0
-//        "1-M.Koehn kicks 15 yards from IOW 35. to MAR 50 for no gain."                                                                                                     | 71            | 2502            | 41560    | 15        | 0          | 0           | 0         | 1      | 1
+        scoreText                                                                                                                                                          | kickingTeamId | returningTeamId | kickerId | kickYards | returnerId | returnYards | touchback | onside | onsideRecovery | onsideFlag
+        "40-M.Schmadeke kicks 57 yards from UNI 35. 89-M.Vandeberg to IOW 31 for 23 yards (15-T.Omli). Penalty on IOW 36-C.Fisher, Holding, 10 yards, enforced at IOW 31." | 920           | 71              | 47249    | 57        | 41599      | 23          | 0         | 0      | 0              | false
+        "1-M.Koehn kicks 7 yards from IOW 35. 88-P.Gallo to IOW 42 for no gain."                                                                                           | 71            | 2502            | 41560    | 7         | 43411      | 0           | 0         | 0      | 0              | false
+        "1-M.Koehn kicks 15 yards from IOW 35. to MAR 50 for no gain."                                                                                                     | 71            | 2502            | 41560    | 15        | 0          | 0           | 0         | 1      | 1              | true
     }
 
     @Unroll
@@ -229,7 +229,7 @@ class ScoreTextParserLibSpec extends Specification {
         Map rosters = [("${kickingTeamId}".toString()): roster, ("${returningTeamId}".toString()): roster2]
 
         when:
-        Kickoff kickoff = ScoreTextParserLib.createKickoffRow('someid', kickingTeamId, returningTeamId, scoreText, rosters)
+        Kickoff kickoff = ScoreTextParserLib.createKickoffRow('someid', kickingTeamId, returningTeamId, scoreText, onsideFlag, rosters)
 
         then:
         kickoff.kickingTeamId == kickingTeamId
@@ -240,8 +240,8 @@ class ScoreTextParserLibSpec extends Specification {
         kickoff.oob == oob
 
         where:
-        scoreText                                                               | kickingTeamId | returningTeamId | kickerId | kickYards | returnerId | returnYards | oob
-        "15-B.Craddock kicks 63 yards from MAR 35, out of bounds at the IOW 2." | 2502          | 71              | 43395    | 63        | 0          | 0           | 1
+        scoreText                                                               | kickingTeamId | returningTeamId | kickerId | kickYards | returnerId | returnYards | oob | onsideFlag
+        "15-B.Craddock kicks 63 yards from MAR 35, out of bounds at the IOW 2." | 2502          | 71              | 43395    | 63        | 0          | 0           | 1   | false
     }
 
 }

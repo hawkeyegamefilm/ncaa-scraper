@@ -5,12 +5,14 @@ import com.footballscience.domain.Pass
 import com.footballscience.domain.Punt
 import com.footballscience.domain.Rush
 
+import java.util.regex.Pattern
+
 class ScoreTextParserLib {
 
     /*
     Need to deal with the multiple teamid BS, passed in ID will need to be global one to write rows
      */
-    static PlayType determinePlayType(String gameId, Integer teamId, Integer playNum, Integer ytg, String scoreText, Map rosters) {
+    static PlayType determinePlayType(String gameId, Integer teamId, Integer playNum, Integer ytg, String scoreText, Map rosters, Boolean onsideFlag) {
         if(isPass(scoreText)) {
             Pass pass = createPassRow(gameId, teamId, playNum, ytg, scoreText, rosters)
             PlayType.PASS
@@ -19,7 +21,7 @@ class ScoreTextParserLib {
             PlayType.PUNT
         } else if(scoreText.contains("kicks")) {
             //kick-off row
-            Kickoff kickoff = createKickoffRow(gameId, teamId, playNum, scoreText, rosters)
+            Kickoff kickoff = createKickoffRow(gameId, teamId, playNum, scoreText, onsideFlag, rosters)
             PlayType.KICKOFF
         } else if(scoreText.contains("penalty") || scoreText.contains("Penalty") ) {
             //parse out penalty details, write to separate table?
@@ -53,7 +55,7 @@ class ScoreTextParserLib {
         }
     }
 
-    static Kickoff createKickoffRow(String gameId, Integer kickingTeamId, Integer returningTeamId, String scoreText, Map rosters) {
+    static Kickoff createKickoffRow(String gameId, Integer kickingTeamId, Integer returningTeamId, String scoreText, Boolean onsideFlag, Map rosters) {
         Kickoff kickoff = new Kickoff(gameId: gameId)
 
         kickoff.kickingTeamId = kickingTeamId
@@ -69,7 +71,9 @@ class ScoreTextParserLib {
             kickoff.returnYards = 0
         } else {
             String returnInfo = scoreText.substring(scoreText.indexOf(". ")+1).trim()
-            kickoff.returnerId = lookupLeadingPlayerId(returnInfo, rosters, returningTeamId)
+            if(hasLeadingPlayer(returnInfo)) {
+                kickoff.returnerId = lookupLeadingPlayerId(returnInfo, rosters, returningTeamId)
+            }
             if(kickoff.returnerId) {
                 if(scoreText.contains("no gain")) {
                     kickoff.returnYards = 0
@@ -88,13 +92,26 @@ class ScoreTextParserLib {
                     kickoff.returnYards = 0
                     if(kickoff.yards < 20 ) {//likely be an onside kick
                         kickoff.onside = 1
-
+                        //now figure out if it was recovered by the kicking team
+                        //need a reliable way to do this
+                        if(onsideFlag) {
+                            kickoff.onsideSuccess = 1
+                        }
                     }
                 }
             }
         }
 
         kickoff
+    }
+
+    /**
+     * Designed to detect if a String begins with a player reference ex:  00-A.Anderson
+     * @param text
+     * @return
+     */
+    static boolean hasLeadingPlayer(String text) {
+        return text.matches("^\\d{1,2}-[A-Z]\\.\\w{1,}\\s.*")
     }
 
     static Punt createPuntRow(String gameId, Integer teamId, Integer playNum, String scoreText, Map rosters) {
