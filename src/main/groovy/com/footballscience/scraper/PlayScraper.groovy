@@ -73,6 +73,7 @@ class PlayScraper {
                 //add up play types from drive? probably best way to do it
                 poss.plays.eachWithIndex { play, playIndex ->
                     //write play rows based on cfbstats db
+                    Integer defensiveTeamId = (teams - poss.teamId)[0] as Integer
                     String down
                     String ytg
                     String yfog
@@ -81,9 +82,9 @@ class PlayScraper {
                     rows.append(periodIndex).append(",")
                     rows.append(poss.time).append(",")
                     rows.append(poss.teamId).append(",")
-                    rows.append((teams - poss.teamId)[0]).append(",")
-                    rows.append(play.visitingScore).append(",")
-                    rows.append(play.homeScore).append(",")
+                    rows.append(defensiveTeamId).append(",")
+                    rows.append(play.visitingScore).append(",")//not sure this is correct
+                    rows.append(play.homeScore).append(",")//may need to invert these
                     if(play.driveText) {
                         down = downMap.get(play.driveText.substring(0,3))
                         ytg = play.driveText.substring(7,10).trim()
@@ -96,7 +97,7 @@ class PlayScraper {
                     }
 
                     Boolean onsideFlag = poss.plays.size > 1 ? true : false
-                    rows.append(ScoreTextParserLib.determinePlayType(gameId, poss.teamId as Integer, playIndex as Integer, ytg as Integer, play.scoreText, rosters, onsideFlag))
+                    rows.append(ScoreTextParserLib.determinePlayType(gameId, poss.teamId as Integer, defensiveTeamId, playIndex as Integer, ytg as Integer, play.scoreText, rosters, onsideFlag))
 
                     //rows.append(play.scoreText)
                     rows.append(System.lineSeparator())

@@ -1,6 +1,7 @@
 import com.footballscience.database.ParserDAO
 import com.footballscience.domain.Kickoff
 import com.footballscience.domain.Pass
+import com.footballscience.domain.Punt
 import com.footballscience.domain.Rush
 import com.footballscience.parser.PlayType
 import com.footballscience.parser.ScoreTextParserLib
@@ -17,7 +18,7 @@ class ScoreTextParserLibSpec extends Specification {
 
     def "correctly defines playtype"() {
         when:
-        PlayType playType = ScoreTextParserLib.determinePlayType("someid", 1, 1, 10, scoreText, [:], false)
+        PlayType playType = ScoreTextParserLib.determinePlayType("someid", 1, 2, 1, 10, scoreText, [:], false)
 
         then:
         playType == expectedPlayType
@@ -171,7 +172,7 @@ class ScoreTextParserLibSpec extends Specification {
     }
 
     @Unroll
-    def "basic scenarios for createKickoffRow"() {
+    def "basics for createKickoffRow"() {
         setup:
         List roster = parserDAO.getRosterBySeasonTeamId(kickingTeamId.toString())
         List roster2 = parserDAO.getRosterBySeasonTeamId(returningTeamId.toString())
@@ -189,14 +190,14 @@ class ScoreTextParserLibSpec extends Specification {
 
         where:
         scoreText                                                                                 | kickingTeamId | returningTeamId | kickerId | kickYards | returnerId | returnYards | touchback | onsideFlag
-        "40-M.Schmadeke kicks 56 yards from UNI 35. 45-M.Weisman to UNI 41 for 50 yards."         | 920           | 71              | 47249    | 56        | 41606      | 50          | 0 | false
-        "1-M.Koehn kicks 57 yards from IOW 35. 5-D.Miller to UNI 28 for 20 yards (44-B.Niemann)." | 71            | 920             | 41560    | 57        | 47226      | 20          | 0 | false
-        "40-M.Schmadeke kicks 65 yards from UNI 35 to IOW End Zone. touchback."                   | 920           | 71              | 47249    | 65        | 0          | 0           | 1 | false
-        "1-M.Koehn kicks 65 yards from IOW 35 to UNI End Zone. touchback."                        | 71            | 920             | 41560    | 65        | 0          | 0           | 1 | false
+        "40-M.Schmadeke kicks 56 yards from UNI 35. 45-M.Weisman to UNI 41 for 50 yards."         | 920           | 71              | 47249    | 56        | 41606      | 50          | 0         | false
+        "1-M.Koehn kicks 57 yards from IOW 35. 5-D.Miller to UNI 28 for 20 yards (44-B.Niemann)." | 71            | 920             | 41560    | 57        | 47226      | 20          | 0         | false
+        "40-M.Schmadeke kicks 65 yards from UNI 35 to IOW End Zone. touchback."                   | 920           | 71              | 47249    | 65        | 0          | 0           | 1         | false
+        "1-M.Koehn kicks 65 yards from IOW 35 to UNI End Zone. touchback."                        | 71            | 920             | 41560    | 65        | 0          | 0           | 1         | false
     }
 
     @Unroll
-    def "one off scenarios for createKickoffRow"() {
+    def "penaltys and onside kicks for createKickoffRow"() {
         setup:
         List roster = parserDAO.getRosterBySeasonTeamId(kickingTeamId.toString())
         List roster2 = parserDAO.getRosterBySeasonTeamId(returningTeamId.toString())
@@ -244,4 +245,73 @@ class ScoreTextParserLibSpec extends Specification {
         "15-B.Craddock kicks 63 yards from MAR 35, out of bounds at the IOW 2." | 2502          | 71              | 43395    | 63        | 0          | 0           | 1   | false
     }
 
+    @Unroll
+    def "basic scenarios for createPuntRow"() {
+        setup:
+        List roster = parserDAO.getRosterBySeasonTeamId(puntingTeamId.toString())
+        List roster2 = parserDAO.getRosterBySeasonTeamId(returningTeamId.toString())
+        Map rosters = [("${puntingTeamId}".toString()): roster, ("${returningTeamId}".toString()): roster2]
+
+        when:
+        Punt punt = ScoreTextParserLib.createPuntRow('someid', puntingTeamId, returningTeamId, playNum, scoreText, rosters)
+
+        then:
+        punt.punterId == expectedPunterId
+        punt.puntYards == expectedYards
+        punt.returnerId == expectedReturnerId
+        punt.returnYards == expectedReturnYards
+
+        where:
+        scoreText                                                                                         | puntingTeamId | returningTeamId | playNum | expectedPunterId | expectedYards | expectedReturnerId | expectedReturnYards
+        "90-L.Bieghler punts 45 yards from UNI 37. 89-M.Vandeberg to IOW 17 for -1 yard (39-B.Williams)." | 920           | 71              | 4       | 47172            | 45            | 41599              | -1
+        "16-D.Kidd punts 42 yards from IOW 23. 19-C.Owens to UNI 47 for 12 yards (27-J.Lomax)."           | 71            | 920             | 7       | 41555            | 42            | 47233              | 12
+    }
+
+    @Unroll
+    def "touchbacks, downed & faircatches for createPuntRow"() {
+        setup:
+        List roster = parserDAO.getRosterBySeasonTeamId(puntingTeamId.toString())
+        List roster2 = parserDAO.getRosterBySeasonTeamId(returningTeamId.toString())
+        Map rosters = [("${puntingTeamId}".toString()): roster, ("${returningTeamId}".toString()): roster2]
+
+        when:
+        Punt punt = ScoreTextParserLib.createPuntRow('someid', puntingTeamId, returningTeamId, playNum, scoreText, rosters)
+
+        then:
+        punt.punterId == expectedPunterId
+        punt.puntYards == expectedYards
+        punt.returnerId == expectedReturnerId
+        punt.returnYards == expectedReturnYards
+        punt.fairCatch == fairCatch
+        punt.touchBack == touchBack
+
+        where:
+        scoreText                                                                          | puntingTeamId | returningTeamId | playNum | expectedPunterId | expectedYards | expectedReturnerId | expectedReturnYards | fairCatch | touchBack | downed
+        "90-L.Bieghler punts 35 yards from IOW 44 to IOW 9, fair catch by 89-M.Vandeberg." | 920           | 71              | 2       | 47172            | 35            | 41599              | 0                   | 1         | 0         | 0
+        "16-D.Kidd punts 34 yards from IOW 14 to IOW 48, fair catch by 1-D.Hall."          | 71            | 920             | 4       | 41555            | 34            | 47200              | 0                   | 1         | 0         | 0
+        "18-N.Renfro punts 47 yards from IOW 47 to IOW End Zone. touchback."               | 2502          | 71              | 3       | 43452            | 47            | 0                  | 0                   | 0         | 1         | 0
+        "98-C.Kornbrath punts 28 yards from MAR 37 to the MAR 9, downed by 39-T.Perry."    | 71            | 2502            | 3       | 41561            | 28            | 0                  | 0                   | 0         | 0         | 1
+    }
+
+    def "out of bounds createPuntRow"() {
+        setup:
+        List roster = parserDAO.getRosterBySeasonTeamId(puntingTeamId.toString())
+        List roster2 = parserDAO.getRosterBySeasonTeamId(returningTeamId.toString())
+        Map rosters = [("${puntingTeamId}".toString()): roster, ("${returningTeamId}".toString()): roster2]
+
+        when:
+        Punt punt = ScoreTextParserLib.createPuntRow('someid', puntingTeamId, returningTeamId, 1, scoreText, rosters)
+
+        then:
+        punt.punterId == expectedPunterId
+        punt.puntYards == expectedYards
+        punt.returnerId == expectedReturnerId
+        punt.returnYards == expectedReturnYards
+        punt.oob == oob
+
+        where:
+        scoreText                                                                 | puntingTeamId | returningTeamId | expectedPunterId | expectedYards | expectedReturnerId | expectedReturnYards | oob
+        "12-K.Schmidt punts 35 yards from BALL 11, out of bounds at the BALL 46." | 1558          | 71              | 34419            | 35            | 0                  | 0                   | 1
+
+    }
 }

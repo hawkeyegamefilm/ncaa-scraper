@@ -5,19 +5,17 @@ import com.footballscience.domain.Pass
 import com.footballscience.domain.Punt
 import com.footballscience.domain.Rush
 
-import java.util.regex.Pattern
-
 class ScoreTextParserLib {
 
     /*
     Need to deal with the multiple teamid BS, passed in ID will need to be global one to write rows
      */
-    static PlayType determinePlayType(String gameId, Integer teamId, Integer playNum, Integer ytg, String scoreText, Map rosters, Boolean onsideFlag) {
+    static PlayType determinePlayType(String gameId, Integer teamId, Integer defensiveTeamId, Integer playNum, Integer ytg, String scoreText, Map rosters, Boolean onsideFlag) {
         if(isPass(scoreText)) {
             Pass pass = createPassRow(gameId, teamId, playNum, ytg, scoreText, rosters)
             PlayType.PASS
         } else if(scoreText.contains("punts")) {
-            Punt punt = createPuntRow(gameId, teamId, playNum, scoreText, rosters)
+            Punt punt = createPuntRow(gameId, teamId, defensiveTeamId, playNum, scoreText, rosters)
             PlayType.PUNT
         } else if(scoreText.contains("kicks")) {
             //kick-off row
@@ -101,7 +99,6 @@ class ScoreTextParserLib {
                 }
             }
         }
-
         kickoff
     }
 
@@ -114,8 +111,50 @@ class ScoreTextParserLib {
         return text.matches("^\\d{1,2}-[A-Z]\\.\\w{1,}\\s.*")
     }
 
-    static Punt createPuntRow(String gameId, Integer teamId, Integer playNum, String scoreText, Map rosters) {
+    static Punt createPuntRow(String gameId, Integer kickTeamId, Integer returningTeamId, Integer playNum, String scoreText, Map rosters) {
+        Punt punt = new Punt(gameId: gameId, teamId: kickTeamId, attempt: 1)
+        punt.playNum = playNum
+        punt.punterId = lookupLeadingPlayerId(scoreText, rosters, kickTeamId)//looks like punter numbers are often wrong, maybe if this misses try selecting my pos + name only
+        punt.puntYards = scoreText.substring(scoreText.indexOf("punts")+5, scoreText.indexOf("yards")).trim() as Integer
 
+        if (scoreText.contains('fair catch')) {
+            punt.returnYards = 0
+            punt.fairCatch = 1
+            punt.touchBack = 0
+            punt.oob = 0
+            punt.downed = 0
+            //find returnerId at end of the string
+            String returnerString = scoreText.substring(scoreText.indexOf('fair catch by')+13).trim()
+            String returnerJerseyNumber = returnerString.substring(0, returnerString.indexOf("-"))
+            String returnerFirstInitial = returnerString.substring(returnerString.indexOf("-") + 1, returnerString.indexOf("."))
+            String returnerLastName = returnerString.substring(returnerString.indexOf(".")+1, returnerString.length()-1)
+            punt.returnerId = getPlayerIdFromRosters(rosters,returningTeamId,returnerJerseyNumber, returnerFirstInitial, returnerLastName)
+        } else if(scoreText.contains('touchback')) {
+            punt.returnerId = 0
+            punt.returnYards = 0
+            punt.fairCatch = 0
+            punt.touchBack = 1
+            punt.oob = 0
+        } else if(scoreText.contains('downed by')) {
+            punt.returnerId = 0
+            punt.returnYards = 0
+            punt.fairCatch = 0
+            punt.touchBack = 0
+            punt.downed = 1
+            punt.oob = 0
+        } else if (scoreText.contains('out of bounds')) {
+            punt.returnerId = 0
+            punt.returnYards = 0
+            punt.fairCatch = 0
+            punt.touchBack = 0
+            punt.downed = 0
+            punt.oob = 1
+        } else  {
+            String returnString = scoreText.substring(scoreText.indexOf(". " )+2)
+            punt.returnerId = lookupLeadingPlayerId(returnString, rosters, returningTeamId)
+            punt.returnYards = returnString.substring(returnString.indexOf("for")+4,returnString.indexOf("yard"))?.trim() as Integer
+        }
+        punt
     }
 
     static boolean isPass(String scoreText) {
