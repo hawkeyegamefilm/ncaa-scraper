@@ -312,6 +312,26 @@ class ScoreTextParserLibSpec extends Specification {
         where:
         scoreText                                                                 | puntingTeamId | returningTeamId | expectedPunterId | expectedYards | expectedReturnerId | expectedReturnYards | oob
         "12-K.Schmidt punts 35 yards from BALL 11, out of bounds at the BALL 46." | 1558          | 71              | 34419            | 35            | 0                  | 0                   | 1
+    }
 
+    def "parse tackler block"() {
+        setup:
+        Integer defenseTeamId = 920
+        Integer offenseTeamId = 71
+        List roster = parserDAO.getRosterBySeasonTeamId(offenseTeamId.toString())
+        List roster2 = parserDAO.getRosterBySeasonTeamId(defenseTeamId.toString())
+        Map rosters = [("${offenseTeamId}".toString()): roster, ("${defenseTeamId}".toString()): roster2]
+
+        when:
+        List result = ScoreTextParserLib.parseTacklerBlock(scoreText, rosters, defenseTeamId)
+
+        then:
+        result == expected
+
+        where:
+        scoreText                                                       | expected
+//        "5-D.Bullock to UNI 26 for 2 yards (44-M.O'Brien,46-J.Farley)." | "44-M.O'Brien,46-J.Farley"
+        "5-D.Bullock to UNI 26 for 2 yards (44-M.O'Brien,46-J.Farley)." | [47231,47193]
+        "5-D.Bullock to UNI 26 for 2 yards (44-M.O'Brien)." | [47231]
     }
 }

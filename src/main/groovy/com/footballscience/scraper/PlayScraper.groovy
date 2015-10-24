@@ -60,12 +60,18 @@ class PlayScraper {
     }
 
     String createPlayRowsCSV(Map game) {
-        StringBuffer rows = new StringBuffer()
+        StringBuffer playRows = new StringBuffer()
+        StringBuffer driveRows = new StringBuffer()
         Map hometeam = game.meta.teams.find { it.homeTeam == 'true'}
         Map awayteam = game.meta.teams.find { it.homeTeam == 'false'}
         populateDataForRun(hometeam, awayteam)
         ArrayList teams = [hometeam.id, awayteam.id]
         String gameId = homeTeamId + awayTeamId + year + month + day
+        String down
+        String ytg
+        String yfog
+        String startYfog
+        Integer defensiveTeamId
 
         game.periods.eachWithIndex { period, periodIndex ->
             period.possessions.eachWithIndex { poss,possIndex ->
@@ -73,38 +79,54 @@ class PlayScraper {
                 //add up play types from drive? probably best way to do it
                 poss.plays.eachWithIndex { play, playIndex ->
                     //write play rows based on cfbstats db
-                    Integer defensiveTeamId = (teams - poss.teamId)[0] as Integer
-                    String down
-                    String ytg
-                    String yfog
-                    rows.append(gameId).append(",")
-                    rows.append(playIndex).append(",")
-                    rows.append(periodIndex).append(",")
-                    rows.append(poss.time).append(",")
-                    rows.append(poss.teamId).append(",")
-                    rows.append(defensiveTeamId).append(",")
-                    rows.append(play.visitingScore).append(",")//not sure this is correct
-                    rows.append(play.homeScore).append(",")//may need to invert these
+                    defensiveTeamId = (teams - poss.teamId)[0] as Integer
+
+                    playRows.append(gameId).append(",")
+                    playRows.append(playIndex).append(",")
+                    playRows.append(periodIndex).append(",")
+                    playRows.append(poss.time).append(",")
+                    playRows.append(poss.teamId).append(",")
+                    playRows.append(defensiveTeamId).append(",")
+                    playRows.append(play.visitingScore).append(",")//not sure this is correct
+                    playRows.append(play.homeScore).append(",")//may need to invert these
                     if(play.driveText) {
+                        if(playIndex == 0) {
+                            startYfog = calculateSpot(play.driveText,awayteam.id as Integer)
+                        }
                         down = downMap.get(play.driveText.substring(0,3))
                         ytg = play.driveText.substring(7,10).trim()
                         yfog = calculateSpot(play.driveText,awayteam.id as Integer)
-                        rows.append(down).append(",")
-                        rows.append(ytg).append(",")
-                        rows.append(yfog).append(",")
+                        playRows.append(down).append(",")
+                        playRows.append(ytg).append(",")
+                        playRows.append(yfog).append(",")
                     } else {
-                        rows.append(",,,")//dummy up missing data exception, ie kickoffs, extra pts
+                        playRows.append(",,,")//dummy up missing data exception, ie kickoffs, extra pts
                     }
 
-                    Boolean onsideFlag = poss.plays.size > 1 ? true : false
-                    rows.append(ScoreTextParserLib.determinePlayType(gameId, poss.teamId as Integer, defensiveTeamId, playIndex as Integer, ytg as Integer, play.scoreText, rosters, onsideFlag))
+                    Boolean onsideFlag = poss.plays.size > 1 //trying to flag onsides
+                    playRows.append(ScoreTextParserLib.determinePlayType(gameId, poss.teamId as Integer, defensiveTeamId, playIndex as Integer, ytg as Integer, play.scoreText, rosters, onsideFlag))
 
                     //rows.append(play.scoreText)
-                    rows.append(System.lineSeparator())
+                    playRows.append(System.lineSeparator())
                 }
+//                driveRows.append(gameId).append(",")
+//                driveRows.append(possIndex).append(",")
+//                driveRows.append(poss.teamId).append(",")
+//                driveRows.append(poss.periodIndex).append(",")
+//                driveRows.append(poss.time).append(",")
+//                driveRows.append(yfog).append(",")
+//                driveRows.append(startType).append(",")//startType
+//                driveRows.append(endPeriod).append(",")//endPeriod
+//                driveRows.append(endClock).append(",")//endClock
+//                driveRows.append(endSpot).append(",")//endSpot
+//                driveRows.append(endType).append(",")//endType
+//                driveRows.append(poss.plays.size()).append(",")//startType
+//                driveRows.append(poss.plays.size()).append(",")//drive yards
+//                driveRows.append(poss.plays.size()).append(",")//TOP
+
             }
         }
-        rows.toString()
+        playRows.toString()
     }
 
     Integer calculateSpot(String driveText, Integer teamId) {

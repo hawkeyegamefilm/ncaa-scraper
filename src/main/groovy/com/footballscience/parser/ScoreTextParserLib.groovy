@@ -239,10 +239,15 @@ class ScoreTextParserLib {
     }
 
     protected static Integer lookupLeadingPlayerId(String scoreText, Map rosters, int teamId) {
-        String passerJerseyNumber = scoreText.substring(0, scoreText.indexOf("-"))
-        String passerFirstInitial = scoreText.substring(scoreText.indexOf("-") + 1, scoreText.indexOf("."))
-        String passerLastName = scoreText.substring(scoreText.indexOf(".") + 1, scoreText.indexOf(" "))
-        return getPlayerIdFromRosters(rosters, teamId, passerJerseyNumber, passerFirstInitial, passerLastName)
+        String playerJerseyNumber = scoreText.substring(0, scoreText.indexOf("-"))
+        String playerFirstInitial = scoreText.substring(scoreText.indexOf("-") + 1, scoreText.indexOf("."))
+        String playerLastName
+        if(scoreText.contains(" ")) {//conditions where player followed by whole pbp string
+            playerLastName = scoreText.substring(scoreText.indexOf(".") + 1, scoreText.indexOf(" "))
+        } else {// no spaces, just read to EOL
+            playerLastName = scoreText.substring(scoreText.indexOf(".") + 1)
+        }
+        return getPlayerIdFromRosters(rosters, teamId, playerJerseyNumber, playerFirstInitial, playerLastName)
     }
 
     /*
@@ -364,6 +369,14 @@ class ScoreTextParserLib {
             return null//no recovery
         }
         number
+    }
+
+    static List parseTacklerBlock(String scoreText, Map rosters, Integer defenseTeamId) {
+        String tacklerText = scoreText.substring(scoreText.indexOf("(")+1, scoreText.indexOf(")"))
+        List tacklerIds = tacklerText.split(",").collect {
+            lookupLeadingPlayerId(it.trim(), rosters, defenseTeamId)
+        }
+        tacklerIds
     }
 
 }
