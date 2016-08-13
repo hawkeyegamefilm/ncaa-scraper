@@ -1,7 +1,7 @@
 package com.footballscience.scraper
 
 import com.footballscience.database.ParserDAO
-import com.footballscience.parser.PlayType
+import com.footballscience.domain.DriveStart
 import com.footballscience.parser.ScoreTextParserLib
 import org.codehaus.jackson.map.ObjectMapper
 
@@ -72,13 +72,29 @@ class PlayScraper {
         String yfog
         String startYfog
         Integer defensiveTeamId
+        String driveStartType
+        String driveEndTime
+        Boolean multiplePeriodDriveScenario
 
         game.periods.eachWithIndex { period, periodIndex ->
             period.possessions.eachWithIndex { poss,possIndex ->
                 //gonna need to produce a drive row here
                 //add up play types from drive? probably best way to do it
+                if(possIndex == period.possessions.length  ) {
+                    //last drive of period
+                    //check to see if poss bridges
+                    multiplePeriodDriveScenario = true
+                }
+
                 poss.plays.eachWithIndex { play, playIndex ->
                     //write play rows based on cfbstats db
+                    //calculate driveStart type here on index = 0
+                    if(possIndex == 0) { //opening kick
+                        driveStartType = DriveStart.KICKOFF
+                    } else {
+                        //peak back at previous type endType?
+                        driveStartType = period.possessions[possIndex-1].endType
+                    }
                     defensiveTeamId = (teams - poss.teamId)[0] as Integer
 
                     playRows.append(gameId).append(",")
@@ -109,20 +125,32 @@ class PlayScraper {
                     //rows.append(play.scoreText)
                     playRows.append(System.lineSeparator())
                 }
-//                driveRows.append(gameId).append(",")
-//                driveRows.append(possIndex).append(",")
-//                driveRows.append(poss.teamId).append(",")
-//                driveRows.append(poss.periodIndex).append(",")
-//                driveRows.append(poss.time).append(",")
-//                driveRows.append(yfog).append(",")
-//                driveRows.append(startType).append(",")//startType
-//                driveRows.append(endPeriod).append(",")//endPeriod
+
+                //"Game Code","Drive Number","Team Code","Start Period","Start Clock","Start Spot","Start Reason","End Period","End Clock","End Spot","End Reason","Plays","Yards","Time Of Possession","Red Zone Attempt"
+
+                driveRows.append(gameId).append(",")
+                driveRows.append(possIndex).append(",")
+                driveRows.append(poss.teamId).append(",")
+                driveRows.append(poss.periodIndex).append(",")
+                driveRows.append(poss.time).append(",")
+                driveRows.append(startYfog).append(",")
+                driveRows.append(driveStartType).append(",")//startType
+
+                if(!multiplePeriodDriveScenario) {
+                    driveRows.append(periodIndex).append(",")//endPeriod
+
+                } else {
+                    driveRows.append(periodIndex+1).append(",")//endPeriod
+                    //toggle another iteration of plays and append to existing drive row data
+                }
+
 //                driveRows.append(endClock).append(",")//endClock
 //                driveRows.append(endSpot).append(",")//endSpot
 //                driveRows.append(endType).append(",")//endType
 //                driveRows.append(poss.plays.size()).append(",")//startType
 //                driveRows.append(poss.plays.size()).append(",")//drive yards
 //                driveRows.append(poss.plays.size()).append(",")//TOP
+
 
             }
         }

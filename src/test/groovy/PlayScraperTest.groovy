@@ -72,8 +72,6 @@ class PlayScraperTest extends Specification {
         "1st and 10 at UNI30" | 920    | 30
     }
 
-
-
     static String readResourceText(String resourcePath) {
         URL url = PlayScraperTest.getResource(resourcePath)
         assert url, "resource not found: ${resourcePath}"
