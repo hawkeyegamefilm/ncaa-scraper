@@ -32,6 +32,6 @@ class Pass {
         buffer.append(dropped).append(",")
         buffer.append(fumble).append(",")
         buffer.append(fumbleLost).append(",").append(System.lineSeparator())
-        buffer
+        buffer.toString()
     }
 }

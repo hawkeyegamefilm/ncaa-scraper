@@ -37,7 +37,7 @@ class Punt {
         buffer.append(fumble).append(",")
         buffer.append(fumbleLost).append(",")
         buffer.append(safety).append(System.lineSeparator())
-        buffer
+        buffer.toString()
     }
 
 }

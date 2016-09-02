@@ -1,9 +1,20 @@
 package com.footballscience.scraper
 
 import com.footballscience.database.ParserDAO
-import com.footballscience.domain.DriveStart
+import com.footballscience.domain.Drive
+import com.footballscience.domain.DriveType
+import com.footballscience.domain.Play
+import com.footballscience.parser.PlayType
 import com.footballscience.parser.ScoreTextParserLib
+import org.apache.commons.lang3.StringUtils
 import org.codehaus.jackson.map.ObjectMapper
+
+/*
+Next steps
+1) Refactor play extract to object/map
+    Need to defer writing drive rows based upon switches from Plays
+2)
+ */
 
 class PlayScraper {
 
@@ -20,7 +31,7 @@ class PlayScraper {
 
     Map rosters
 
-    Map downMap = ["1st": 1, "2nd": 2, "3rd": 3, "4th": 4]
+    Map<String, Integer> downMap = ["1st": 1, "2nd": 2, "3rd": 3, "4th": 4]
     ParserDAO parserDAO
 
     void populateDataForRun(Map hometeam, Map awayteam) {
@@ -44,6 +55,12 @@ class PlayScraper {
 
     Map getJsonFromUrl(String url) {
         populateDateVars(url)
+        String json = url.toURL().text
+        objectMapper.readValue(json, Map)
+    }
+
+    Map getJsonPFromUrl(String url) {
+        populateDateVars(url)
         String jsonp = url.toURL().text
         objectMapper.readValue(cleanupTags(jsonp), Map)
     }
@@ -59,7 +76,7 @@ class PlayScraper {
         jsonp.replace("callbackWrapper(", "").replace(");", "")
     }
 
-    String createPlayRowsCSV(Map game) {
+    List<Drive> createPlayRowsCSV(Map game) {
         StringBuffer playRows = new StringBuffer()
         StringBuffer driveRows = new StringBuffer()
         Map hometeam = game.meta.teams.find { it.homeTeam == 'true'}
@@ -67,94 +84,120 @@ class PlayScraper {
         populateDataForRun(hometeam, awayteam)
         ArrayList teams = [hometeam.id, awayteam.id]
         String gameId = homeTeamId + awayTeamId + year + month + day
-        String down
-        String ytg
-        String yfog
-        String startYfog
+        Integer down
+        Integer ytg
+        Integer yfog
+        Integer startYfog
         Integer defensiveTeamId
         String driveStartType
         String driveEndTime
         Boolean multiplePeriodDriveScenario
+        List plays
+        Integer globalPlayCount = 0
+        List drives = []
 
-        game.periods.eachWithIndex { period, periodIndex ->
-            period.possessions.eachWithIndex { poss,possIndex ->
-                //gonna need to produce a drive row here
-                //add up play types from drive? probably best way to do it
-                if(possIndex == period.possessions.length  ) {
+        Drive currentDrive
+        Drive drivePlusOne
+
+        Boolean appendToExistingDrive
+
+        game.periods.eachWithIndex { Map period, Integer periodIndex ->
+            period.possessions.eachWithIndex { Map poss, Integer possIndex ->
+
+                if((possIndex+1) == period.possessions.size() ) {
                     //last drive of period
                     //check to see if poss bridges
                     multiplePeriodDriveScenario = true
+                    println "MULTITHINGY"
+
+                    if(!appendToExistingDrive) {
+                        plays = [] //reset array per drive
+                    }
+                } else {
+                    //normal init
+                    if(!appendToExistingDrive) {
+                        plays = [] //reset array per drive
+                    }
+                    multiplePeriodDriveScenario = false
                 }
 
-                poss.plays.eachWithIndex { play, playIndex ->
-                    //write play rows based on cfbstats db
+                if(multiplePeriodDriveScenario) {
+                    //use poss and poss + 1 and manually roll fwd? or just code to keep state for two poss groups
+                } else {
+                    //execute as it does now
+                }
+                poss.plays.eachWithIndex { Map play, Integer playIndex ->
+                    globalPlayCount++
+
+                    //write play objects based on cfbstats db
                     //calculate driveStart type here on index = 0
-                    if(possIndex == 0) { //opening kick
-                        driveStartType = DriveStart.KICKOFF
+                    if(possIndex == 0 && ([0,2].contains(periodIndex))) { //opening kick of game or half
+                        driveStartType = DriveType.KICKOFF
                     } else {
                         //peak back at previous type endType?
                         driveStartType = period.possessions[possIndex-1].endType
                     }
                     defensiveTeamId = (teams - poss.teamId)[0] as Integer
 
-                    playRows.append(gameId).append(",")
-                    playRows.append(playIndex).append(",")
-                    playRows.append(periodIndex).append(",")
-                    playRows.append(poss.time).append(",")
-                    playRows.append(poss.teamId).append(",")
-                    playRows.append(defensiveTeamId).append(",")
-                    playRows.append(play.visitingScore).append(",")//not sure this is correct
-                    playRows.append(play.homeScore).append(",")//may need to invert these
                     if(play.driveText) {
                         if(playIndex == 0) {
                             startYfog = calculateSpot(play.driveText,awayteam.id as Integer)
                         }
                         down = downMap.get(play.driveText.substring(0,3))
-                        ytg = play.driveText.substring(7,10).trim()
+                        ytg = Integer.parseInt(play.driveText.substring(7,10).trim())
                         yfog = calculateSpot(play.driveText,awayteam.id as Integer)
-                        playRows.append(down).append(",")
-                        playRows.append(ytg).append(",")
-                        playRows.append(yfog).append(",")
                     } else {
-                        playRows.append(",,,")//dummy up missing data exception, ie kickoffs, extra pts
+                        down = null
+                        ytg = null
+                        yfog = null
                     }
 
                     Boolean onsideFlag = poss.plays.size > 1 //trying to flag onsides
-                    playRows.append(ScoreTextParserLib.determinePlayType(gameId, poss.teamId as Integer, defensiveTeamId, playIndex as Integer, ytg as Integer, play.scoreText, rosters, onsideFlag))
-
-                    //rows.append(play.scoreText)
-                    playRows.append(System.lineSeparator())
+                    PlayType playType = ScoreTextParserLib.determinePlayType(gameId, poss.teamId as Integer, defensiveTeamId, playIndex as Integer, ytg as Integer, play.scoreText, rosters, onsideFlag)
+                    plays.add(new Play(gameId: gameId, playIndex: globalPlayCount, periodIndex: periodIndex, time: ScoreTextParserLib.convertTimeStringToSeconds(poss.time), teamId: cleanString(poss.teamId as String), defensiveTeamId: defensiveTeamId, visitingScore: cleanString(play.visitingScore as String), homeScore: cleanString(play.homeScore as String),down:down, ytg: ytg, yfog: yfog, playType: playType, driveNumber: possIndex, drivePlay: playIndex, fullScoreText:play.scoreText, driveText: play.driveText))
                 }
 
-                //"Game Code","Drive Number","Team Code","Start Period","Start Clock","Start Spot","Start Reason","End Period","End Clock","End Spot","End Reason","Plays","Yards","Time Of Possession","Red Zone Attempt"
-
-                driveRows.append(gameId).append(",")
-                driveRows.append(possIndex).append(",")
-                driveRows.append(poss.teamId).append(",")
-                driveRows.append(poss.periodIndex).append(",")
-                driveRows.append(poss.time).append(",")
-                driveRows.append(startYfog).append(",")
-                driveRows.append(driveStartType).append(",")//startType
-
+                Integer timeValue = poss.time ? ScoreTextParserLib.convertTimeStringToSeconds(poss.time) : 0
+                Integer endPeriodIndex
                 if(!multiplePeriodDriveScenario) {
-                    driveRows.append(periodIndex).append(",")//endPeriod
-
+                    endPeriodIndex = periodIndex
                 } else {
-                    driveRows.append(periodIndex+1).append(",")//endPeriod
-                    //toggle another iteration of plays and append to existing drive row data
+                    //add another iteration of plays and append to existing drive row data
+                    endPeriodIndex= periodIndex + 1
                 }
 
+                if(!appendToExistingDrive) {
+                    currentDrive = new Drive(gameId: gameId, driveNumber: possIndex,teamId: poss.teamId as Integer, startPeriod: poss.periodIndex, startClock: timeValue, startSpot: startYfog, startType: driveStartType, endPeriod: endPeriodIndex, plays: plays)
+                } else {
+                    println "this happened"//should just roll into previously created object
+                }
+
+                  //information in current drive insufficient, need to peak at drive N+1, also multi-period drive to consider
 //                driveRows.append(endClock).append(",")//endClock
 //                driveRows.append(endSpot).append(",")//endSpot
 //                driveRows.append(endType).append(",")//endType
 //                driveRows.append(poss.plays.size()).append(",")//startType
 //                driveRows.append(poss.plays.size()).append(",")//drive yards
 //                driveRows.append(poss.plays.size()).append(",")//TOP
-
-
+                if(currentDrive && !appendToExistingDrive) {
+                    drives.add(currentDrive)
+                }
+                if(multiplePeriodDriveScenario) {
+                    appendToExistingDrive = true//next time around use existing drive
+                } else {
+                    appendToExistingDrive=false //normal swing around
+                }
             }
         }
-        playRows.toString()
+        drives
+    }
+
+    static Integer cleanString(String scoreField) {
+        if(StringUtils.isEmpty(scoreField)) {
+            return 0
+        } else {
+            return Integer.parseInt(scoreField)
+        }
     }
 
     Integer calculateSpot(String driveText, Integer teamId) {

@@ -1,11 +1,11 @@
 import com.footballscience.database.ParserDAO
 import com.footballscience.domain.Kickoff
 import com.footballscience.domain.Pass
+import com.footballscience.domain.Play
 import com.footballscience.domain.Punt
 import com.footballscience.domain.Rush
 import com.footballscience.parser.PlayType
 import com.footballscience.parser.ScoreTextParserLib
-import spock.lang.Ignore
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -331,7 +331,53 @@ class ScoreTextParserLibSpec extends Specification {
         where:
         scoreText                                                       | expected
 //        "5-D.Bullock to UNI 26 for 2 yards (44-M.O'Brien,46-J.Farley)." | "44-M.O'Brien,46-J.Farley"
-        "5-D.Bullock to UNI 26 for 2 yards (44-M.O'Brien,46-J.Farley)." | [47231,47193]
-        "5-D.Bullock to UNI 26 for 2 yards (44-M.O'Brien)." | [47231]
+        "5-D.Bullock to UNI 26 for 2 yards (44-M.O'Brien,46-J.Farley)." | [47231, 47193]
+        "5-D.Bullock to UNI 26 for 2 yards (44-M.O'Brien)."             | [47231]
+    }
+
+    @Unroll
+    def "create play object"() {
+        when:
+        Play play = ScoreTextParserLib.createPlay("1", "4", "1", "540", "72", "75", "0", "0", "1", "10", "75", playType, "1", "2", "SomeScoretext")
+
+        then:
+        play.gameId == "1"
+        play.playIndex == "4"
+        play.periodIndex == "1"
+        play.time == "540"
+        play.teamId == "72"
+        play.defensiveTeamId == "75"
+        play.visitingScore == "0"
+        play.homeScore == "0"
+
+        play.down == "1"
+        play.ytg == "10"
+        play.yfog == "75"
+
+        play.driveNumber == "1"
+        play.drivePlay == "2"
+        play.fullScoreText == "SomeScoretext"
+
+        where:
+        playType << [PlayType.KICKOFF, PlayType.RUSH]
+    }
+
+    @Unroll
+    def "parse time to integer from mm:ss format"() {
+        when:
+        Integer result = ScoreTextParserLib.convertTimeStringToSeconds(timeString)
+
+        then:
+        result == expected
+
+        where:
+        timeString | expected
+        null       | 0
+        ""         | 0
+        "15:00"    | 900
+        "13:00"    | 780
+        "13:59"    | 839
+        "00:02"    | 2
+        "00:59"    | 59
     }
 }

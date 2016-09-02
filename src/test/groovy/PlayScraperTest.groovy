@@ -1,3 +1,5 @@
+import com.footballscience.domain.Drive
+import com.footballscience.domain.Play
 import com.footballscience.scraper.PlayScraper
 import spock.lang.Specification
 import spock.lang.Unroll
@@ -5,7 +7,7 @@ import spock.lang.Unroll
 class PlayScraperTest extends Specification {
 
     PlayScraper scraper
-    String testUrl = 'http://data.ncaa.com/jsonp/game/football/fbs/2014/08/30/uni-iowa/pbp.json'
+    String testUrl = 'http://data.ncaa.com/game/football/fbs/2014/08/30/uni-iowa/pbp.json'
 
     def setup() {
         scraper = new PlayScraper()
@@ -34,11 +36,15 @@ class PlayScraperTest extends Specification {
 
     def "create csv test"() {
         when:
-        String result = scraper.createPlayRowsCSV(scraper.getJsonFromUrl(testUrl))
+        List<Drive> result = scraper.createPlayRowsCSV(scraper.getJsonFromUrl(testUrl))
 
         then:
         result
-        println result
+        result.eachWithIndex { Drive drive, Integer dIndex ->
+            println "--------------${dIndex}-----------------"
+            drive.plays.each { Play play -> println play.toCsvRow()}
+            println "--------------END-----------------"
+        }
     }
 
     def "populate global vars"() {

@@ -1,6 +1,6 @@
 package com.footballscience.domain
 
 
-enum DriveStart {
+enum DriveType {
     KICKOFF,PUNT,DOWNS,INTERCEPTION,FUMBLE, MISSED_FG
 }

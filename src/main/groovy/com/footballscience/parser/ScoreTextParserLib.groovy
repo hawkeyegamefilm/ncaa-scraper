@@ -1,9 +1,13 @@
 package com.footballscience.parser
 
+import com.footballscience.domain.Drive
+import com.footballscience.domain.DriveType
 import com.footballscience.domain.Kickoff
 import com.footballscience.domain.Pass
+import com.footballscience.domain.Play
 import com.footballscience.domain.Punt
 import com.footballscience.domain.Rush
+import org.apache.commons.lang3.StringUtils
 
 class ScoreTextParserLib {
 
@@ -377,6 +381,23 @@ class ScoreTextParserLib {
             lookupLeadingPlayerId(it.trim(), rosters, defenseTeamId)
         }
         tacklerIds
+    }
+
+    static Play createPlay(String gameId, String playIndex, String periodIndex, String time, String teamId, String defensiveTeamId, String visitingScore, String homeScore, String down, String ytg, String yfog, PlayType playType, String driveNumber, String drivePlay, String scoreText) {
+        new Play(gameId: gameId, playIndex: playIndex, periodIndex: periodIndex, time: time, teamId: teamId, defensiveTeamId: defensiveTeamId, visitingScore: visitingScore, homeScore: homeScore,down:down, ytg: ytg, yfog: yfog, playType: playType, driveNumber: driveNumber, drivePlay: drivePlay, fullScoreText:scoreText )
+    }
+    static Drive createDrive(String gameId, Integer driveNumber, Integer teamId, Integer startPeriod, Integer startClock, Integer startSpot, DriveType startType, Integer endPeriod, Integer endClock, Integer endSpot, DriveType endType, Integer numberOfPlays, Integer yards, Integer top, Boolean rzDrive, List plays) {
+        new Drive(gameId: gameId, driveNumber: driveNumber, teamId: teamId, startPeriod: startPeriod, startClock: startClock,startSpot: startSpot, startType: startType, endPeriod: endPeriod, endClock: endClock, endSpot: endSpot, endType: endType, yards: yards, top: top, rzDrive: rzDrive ? 1:0, plays: plays )
+    }
+
+    static Integer convertTimeStringToSeconds(String timeString) {
+        if(StringUtils.isEmpty(timeString)) {
+            println timeString
+            Integer mins = timeString.substring(0, timeString.indexOf(":")).toInteger()
+            Integer seconds = timeString.substring(timeString.indexOf(":")+1).toInteger()
+            return (mins * 60) + seconds
+        }
+        return 0
     }
 
 }
