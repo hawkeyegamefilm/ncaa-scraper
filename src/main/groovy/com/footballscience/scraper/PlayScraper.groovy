@@ -104,31 +104,18 @@ class PlayScraper {
         game.periods.eachWithIndex { Map period, Integer periodIndex ->
             period.possessions.eachWithIndex { Map poss, Integer possIndex ->
 
-                if((possIndex+1) == period.possessions.size() ) {
-                    //last drive of period
-                    //check to see if poss bridges
+                if((possIndex+1) == period.possessions.size() && periodIndex != 1  ) { //last possession of period
                     multiplePeriodDriveScenario = true
-                    println "MULTITHINGY"
-
-                    if(!appendToExistingDrive) {
-                        plays = [] //reset array per drive
-                    }
                 } else {
-                    //normal init
-                    if(!appendToExistingDrive) {
-                        plays = [] //reset array per drive
-                    }
                     multiplePeriodDriveScenario = false
                 }
 
-                if(multiplePeriodDriveScenario) {
-                    //use poss and poss + 1 and manually roll fwd? or just code to keep state for two poss groups
-                } else {
-                    //execute as it does now
+                if(!appendToExistingDrive) {
+                    plays = [] //reset array per drive
                 }
+
                 poss.plays.eachWithIndex { Map play, Integer playIndex ->
                     globalPlayCount++
-
                     //write play objects based on cfbstats db
                     //calculate driveStart type here on index = 0
                     if(possIndex == 0 && ([0,2].contains(periodIndex))) { //opening kick of game or half
@@ -168,10 +155,7 @@ class PlayScraper {
 
                 if(!appendToExistingDrive) {
                     currentDrive = new Drive(gameId: gameId, driveNumber: possIndex,teamId: poss.teamId as Integer, startPeriod: poss.periodIndex, startClock: timeValue, startSpot: startYfog, startType: driveStartType, endPeriod: endPeriodIndex, plays: plays)
-                } else {
-                    println "this happened"//should just roll into previously created object
                 }
-
                   //information in current drive insufficient, need to peak at drive N+1, also multi-period drive to consider
 //                driveRows.append(endClock).append(",")//endClock
 //                driveRows.append(endSpot).append(",")//endSpot
