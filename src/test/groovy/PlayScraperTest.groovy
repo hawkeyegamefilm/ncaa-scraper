@@ -1,6 +1,7 @@
 import com.footballscience.domain.Drive
 import com.footballscience.domain.Play
 import com.footballscience.scraper.PlayScraper
+import org.codehaus.jackson.map.ObjectMapper
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -8,9 +9,11 @@ class PlayScraperTest extends Specification {
 
     PlayScraper scraper
     String testUrl = 'http://data.ncaa.com/game/football/fbs/2014/08/30/uni-iowa/pbp.json'
+    ObjectMapper objectMapper
 
     def setup() {
         scraper = new PlayScraper()
+        objectMapper = new ObjectMapper()
     }
 
     def 'test convert to map'() {
@@ -45,6 +48,16 @@ class PlayScraperTest extends Specification {
             drive.plays.each { Play play -> println play.toCsvRow()}
             println "--------------END-----------------"
         }
+    }
+
+    def "create csv test - local file"() {
+        when:
+        PlayScraper scraper = new PlayScraper(year: "2016", month: "8", day: "30")
+        List<Drive> result = scraper.createPlayRowsCSV(objectMapper.readValue(readResourceText("sampleGame.json"), Map))
+
+        then:
+        result
+        result.size() == 26
     }
 
     def "populate global vars"() {

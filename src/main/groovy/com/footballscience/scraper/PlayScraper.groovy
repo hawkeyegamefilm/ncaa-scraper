@@ -67,9 +67,9 @@ class PlayScraper {
 
     void populateDateVars(String url) {
         String[] tokens = url.tokenize("/")
-        year = tokens[6]
-        month = tokens[7]
-        day = tokens[8]
+        year = tokens[5]
+        month = tokens[6]
+        day = tokens[7]
     }
 
     String cleanupTags(String jsonp) {
@@ -79,8 +79,8 @@ class PlayScraper {
     List<Drive> createPlayRowsCSV(Map game) {
         StringBuffer playRows = new StringBuffer()
         StringBuffer driveRows = new StringBuffer()
-        Map hometeam = game.meta.teams.find { it.homeTeam == 'true'}
-        Map awayteam = game.meta.teams.find { it.homeTeam == 'false'}
+        Map hometeam = game.meta.teams.find { it.homeTeam == 'true'} as Map
+        Map awayteam = game.meta.teams.find { it.homeTeam == 'false'} as Map
         populateDataForRun(hometeam, awayteam)
         ArrayList teams = [hometeam.id, awayteam.id]
         String gameId = homeTeamId + awayTeamId + year + month + day
@@ -166,7 +166,7 @@ class PlayScraper {
                 if(currentDrive && !appendToExistingDrive) {
                     drives.add(currentDrive)
                 }
-                if(multiplePeriodDriveScenario) {
+                if(multiplePeriodDriveScenario || appendScenario(currentDrive)) {
                     appendToExistingDrive = true//next time around use existing drive
                 } else {
                     appendToExistingDrive=false //normal swing around
@@ -174,6 +174,13 @@ class PlayScraper {
             }
         }
         drives
+    }
+
+    boolean appendScenario(Drive currentDrive) {
+        if(currentDrive.plays.size() == 1 && currentDrive.plays.get(0).playType == PlayType.KICKOFF) {
+            return true
+        }
+        return false
     }
 
     static Integer cleanString(String scoreField) {
