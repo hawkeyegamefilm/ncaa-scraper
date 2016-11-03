@@ -37,9 +37,9 @@ class PlayScraperTest extends Specification {
 
     }
 
-    def "create csv test"() {
+    def "parseGameByDrives - println test "() {
         when:
-        List<Drive> result = scraper.createPlayRowsCSV(scraper.getJsonFromUrl(testUrl))
+        List<Drive> result = scraper.parseGameByDrives(scraper.getJsonFromUrl(testUrl))
 
         then:
         result
@@ -50,10 +50,20 @@ class PlayScraperTest extends Specification {
         }
     }
 
+    def "parseGameByDrives - validate drives "() {
+        when:
+        List<Drive> result = scraper.parseGameByDrives(scraper.getJsonFromUrl(testUrl))
+
+        then:
+        result
+        result.eachWithIndex { Drive drive, Integer dIndex ->
+            println drive.toCsvRow()
+        }
+    }
     def "create csv test - local file"() {
         when:
         PlayScraper scraper = new PlayScraper(year: "2016", month: "8", day: "30")
-        List<Drive> result = scraper.createPlayRowsCSV(objectMapper.readValue(readResourceText("sampleGame.json"), Map))
+        List<Drive> result = scraper.parseGameByDrives(objectMapper.readValue(readResourceText("sampleGame.json"), Map))
 
         then:
         result

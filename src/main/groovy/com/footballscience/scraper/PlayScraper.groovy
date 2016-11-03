@@ -76,7 +76,12 @@ class PlayScraper {
         jsonp.replace("callbackWrapper(", "").replace(");", "")
     }
 
-    List<Drive> createPlayRowsCSV(Map game) {
+    /*
+    It may be easier to just do post processing rather than try to drive+1 peeking to fill in missing data
+    Will need to handle multiple fields this way.
+
+     */
+    List<Drive> parseGameByDrives(Map game) {
         StringBuffer playRows = new StringBuffer()
         StringBuffer driveRows = new StringBuffer()
         Map hometeam = game.meta.teams.find { it.homeTeam == 'true'} as Map
@@ -97,7 +102,6 @@ class PlayScraper {
         List drives = []
 
         Drive currentDrive
-        Drive drivePlusOne
 
         Boolean appendToExistingDrive
 
@@ -154,7 +158,16 @@ class PlayScraper {
                 }
 
                 if(!appendToExistingDrive) {
-                    currentDrive = new Drive(gameId: gameId, driveNumber: possIndex,teamId: poss.teamId as Integer, startPeriod: poss.periodIndex, startClock: timeValue, startSpot: startYfog, startType: driveStartType, endPeriod: endPeriodIndex, plays: plays)
+                    //should be able to safely do drive post processing here
+                    /*
+                        gameId,driveNumber,teamId, startPeriod, startClock, startSpot, startType, endPeriod, endClock, endSpot, endType, yards, top, rzDrive, plays
+
+                     */
+                    Play lastPlay = plays.get(plays.size()-1)//pop off last play
+                    //need a method to examine last play and reliably create driveType element for endType
+                    DriveType endType = ScoreTextParserLib.determineEndType(lastPlay)
+
+                    currentDrive = new Drive(gameId: gameId, driveNumber: possIndex,teamId: poss.teamId as Integer, startPeriod: poss.periodIndex, startClock: timeValue, startSpot: startYfog, startType: driveStartType, endPeriod: endPeriodIndex, endType:endType, plays: plays)
                 }
                   //information in current drive insufficient, need to peak at drive N+1, also multi-period drive to consider
 //                driveRows.append(endClock).append(",")//endClock
@@ -175,6 +188,7 @@ class PlayScraper {
         }
         drives
     }
+
 
     boolean appendScenario(Drive currentDrive) {
         if(currentDrive.plays.size() == 1 && currentDrive.plays.get(0).playType == PlayType.KICKOFF) {

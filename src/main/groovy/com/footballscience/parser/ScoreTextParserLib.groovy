@@ -205,7 +205,7 @@ class ScoreTextParserLib {
             pass.passerId = lookupLeadingPlayerId(scoreText, rosters, teamId)
             String intendedForText = subScoreText.substring(subScoreText.indexOf(".")+1)
 
-            if(scoreText.contains('INTERCEPTED')) {
+            if(wasIntercepted(scoreText)) {
                 pass.interception = 1
                 //do some funky shit for INT row
                 if(subScoreText.indexOf("Intended for") == -1) {//no target on the INT line
@@ -232,7 +232,7 @@ class ScoreTextParserLib {
             }
         }
 
-        if(scoreText.contains("FUMBLES")) {
+        if(wasFumbled(scoreText)) {
             pass.fumble = 1
             pass.fumbleLost = calculateFumbleLost(scoreText, teamId, rosters)
         } else {
@@ -240,6 +240,14 @@ class ScoreTextParserLib {
             pass.fumbleLost = 0
         }
         return pass
+    }
+
+    private static boolean wasIntercepted(String scoreText) {
+        scoreText.contains('INTERCEPTED')
+    }
+
+    private static boolean wasFumbled(String scoreText) {
+        scoreText.contains('FUMBLES')
     }
 
     protected static Integer lookupLeadingPlayerId(String scoreText, Map rosters, int teamId) {
@@ -383,21 +391,42 @@ class ScoreTextParserLib {
         tacklerIds
     }
 
-    static Play createPlay(String gameId, String playIndex, String periodIndex, String time, String teamId, String defensiveTeamId, String visitingScore, String homeScore, String down, String ytg, String yfog, PlayType playType, String driveNumber, String drivePlay, String scoreText) {
-        new Play(gameId: gameId, playIndex: playIndex, periodIndex: periodIndex, time: time, teamId: teamId, defensiveTeamId: defensiveTeamId, visitingScore: visitingScore, homeScore: homeScore,down:down, ytg: ytg, yfog: yfog, playType: playType, driveNumber: driveNumber, drivePlay: drivePlay, fullScoreText:scoreText )
-    }
-    static Drive createDrive(String gameId, Integer driveNumber, Integer teamId, Integer startPeriod, Integer startClock, Integer startSpot, DriveType startType, Integer endPeriod, Integer endClock, Integer endSpot, DriveType endType, Integer numberOfPlays, Integer yards, Integer top, Boolean rzDrive, List plays) {
-        new Drive(gameId: gameId, driveNumber: driveNumber, teamId: teamId, startPeriod: startPeriod, startClock: startClock,startSpot: startSpot, startType: startType, endPeriod: endPeriod, endClock: endClock, endSpot: endSpot, endType: endType, yards: yards, top: top, rzDrive: rzDrive ? 1:0, plays: plays )
-    }
-
     static Integer convertTimeStringToSeconds(String timeString) {
-        if(StringUtils.isEmpty(timeString)) {
-            println timeString
-            Integer mins = timeString.substring(0, timeString.indexOf(":")).toInteger()
+        if(!StringUtils.isEmpty(timeString)) {
+            String minsString = timeString.substring(0, timeString.indexOf(":"))
+            Integer mins = minsString ? minsString.toInteger() : 0
             Integer seconds = timeString.substring(timeString.indexOf(":")+1).toInteger()
             return (mins * 60) + seconds
         }
         return 0
+    }
+
+    static DriveType determineEndType(Play play) {
+        DriveType value
+        if (play) {
+            if(play.playType == PlayType.PUNT) {//punts
+                value =  DriveType.PUNT
+            } else if(play.playType == PlayType.ATTEMPT) {//touchdown
+                value = DriveType.TOUCHDOWN
+            } else if (play.playType == PlayType.FIELD_GOAL) {
+                //determine if missed or made by exmining score/text - MISSED_FG, FIELD_GOAL
+                if(play.fullScoreText.toLowerCase().contains("no good")) {
+                    value = DriveType.MISSED_FG
+                } else  {
+                    value = DriveType.FIELD_GOAL
+                }
+            } else if (play.playType == PlayType.PASS && wasIntercepted(play.fullScoreText)) {
+                value = DriveType.INTERCEPTION
+            }  else if (play.fullScoreText && wasFumbled(play.fullScoreText)) {
+                value = DriveType.FUMBLE
+            } else {
+                //must be downs
+                value = DriveType.DOWNS
+            }
+        }
+
+        value
+
     }
 
 }

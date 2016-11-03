@@ -1,4 +1,5 @@
 import com.footballscience.database.ParserDAO
+import com.footballscience.domain.DriveType
 import com.footballscience.domain.Kickoff
 import com.footballscience.domain.Pass
 import com.footballscience.domain.Play
@@ -330,36 +331,8 @@ class ScoreTextParserLibSpec extends Specification {
 
         where:
         scoreText                                                       | expected
-//        "5-D.Bullock to UNI 26 for 2 yards (44-M.O'Brien,46-J.Farley)." | "44-M.O'Brien,46-J.Farley"
         "5-D.Bullock to UNI 26 for 2 yards (44-M.O'Brien,46-J.Farley)." | [47231, 47193]
         "5-D.Bullock to UNI 26 for 2 yards (44-M.O'Brien)."             | [47231]
-    }
-
-    @Unroll
-    def "create play object"() {
-        when:
-        Play play = ScoreTextParserLib.createPlay("1", "4", "1", "540", "72", "75", "0", "0", "1", "10", "75", playType, "1", "2", "SomeScoretext")
-
-        then:
-        play.gameId == "1"
-        play.playIndex == "4"
-        play.periodIndex == "1"
-        play.time == "540"
-        play.teamId == "72"
-        play.defensiveTeamId == "75"
-        play.visitingScore == "0"
-        play.homeScore == "0"
-
-        play.down == "1"
-        play.ytg == "10"
-        play.yfog == "75"
-
-        play.driveNumber == "1"
-        play.drivePlay == "2"
-        play.fullScoreText == "SomeScoretext"
-
-        where:
-        playType << [PlayType.KICKOFF, PlayType.RUSH]
     }
 
     @Unroll
@@ -379,5 +352,27 @@ class ScoreTextParserLibSpec extends Specification {
         "13:59"    | 839
         "00:02"    | 2
         "00:59"    | 59
+        ":51"      | 51
+    }
+
+    @Unroll
+    def "determineDriveEndType from lastPlay"() {
+        when:
+        DriveType result = ScoreTextParserLib.determineEndType(lastPlay)
+
+        then:
+        result == expected
+
+        where:
+        lastPlay                                                                                                                                             | expected
+        null                                                                                                                                                 | null
+        new Play()                                                                                                                                           | DriveType.DOWNS
+        new Play(playType: PlayType.PUNT, fullScoreText: "90-L.Bieghler punts 45 yards from UNI 37. 89-M.Vandeberg to IOW 17 for -1 yard (39-B.Williams).")  | DriveType.PUNT
+        new Play(playType: PlayType.PUNT, fullScoreText: "95-N.Pritchard punts 13 yards from MAR 6 blocked by 31-A.Mends. 14-D.King to MAR 19 for no gain.") | DriveType.PUNT
+        new Play(playType: PlayType.PASS, fullScoreText: "11-P.Hills incomplete. INTERCEPTED by 27-J.Lomax at IOW 3. 27-J.Lomax to IOW 3 for no gain.")      | DriveType.INTERCEPTION
+        new Play(playType: PlayType.RUSH, fullScoreText: "45-B.Ross to IOW 35, FUMBLES (13-G.Mabin). 19-M.Taylor to IOW 38 for no gain.")                    | DriveType.FUMBLE
+        new Play(playType: PlayType.PASS, fullScoreText: "15-J.Rudock incomplete. Intended for 5-D.Bullock.")                                                | DriveType.DOWNS
+        new Play(playType: PlayType.FIELD_GOAL, fullScoreText: "40-M.Schmadeke 37 yards Field Goal is Good.")                                                | DriveType.FIELD_GOAL
+        new Play(playType: PlayType.FIELD_GOAL, fullScoreText: "40-M.Schmadeke 37 yards Field Goal is no Good.")                                                | DriveType.MISSED_FG
     }
 }
