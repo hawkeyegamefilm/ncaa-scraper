@@ -53,6 +53,35 @@ class RosterScraperTest extends Specification {
         println RosterScraper.getResource("results.csv").text
     }
 
+    def "find football url on org summary page"() {
+        setup:
+        Document doc = Jsoup.parse(RosterScraperTest.getResource("sampleOrgSummary.html").text)
+
+        when:
+        String result = rosterScraper.getFootballUrl(doc)
+
+        then:
+        result == "/teams/449824"
+    }
+
+    def "find roster url on team summary page"() {
+        setup:
+        Document doc = Jsoup.parse(RosterScraperTest.getResource("sampleTeamHomepage.html").text)
+
+        when:
+        String result = rosterScraper.findRosterPathOnTeamPage(doc)
+
+        then:
+        result == "/team/306/roster/14280"
+    }
+
+    def "url path test"() {
+        when:
+        String relativeRosterUrl = rosterScraper.findRosterUrlbyOrg("306")
+        then:
+        relativeRosterUrl == "/team/306/roster/14280"
+    }
+
     @Ignore
     def "run load"() {//just for creating roster file
         when:

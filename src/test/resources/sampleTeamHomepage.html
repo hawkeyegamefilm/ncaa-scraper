@@ -1,0 +1,1084 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>NCAA Statistics</title>
+    <link href="/assets/application-b5452c388135e23e2289501247a731ee.css" media="all" rel="stylesheet" type="text/css" />
+    <script src="/assets/application-feb57eaacce52a3c3afc81fe5e4546f2.js" type="text/javascript"></script>
+    <meta content="authenticity_token" name="csrf-param" />
+    <meta content="8SjavTMISeHMj0mzmpH9S/BgcEyNyOe3q12hz4zHmEU=" name="csrf-token" />
+    <style>
+tfoot tr:nth-child(n+2){
+  border: initial;
+  font-weight: initial;
+}
+
+tfoot tr:nth-child(n+2) td{
+  border: initial;
+  font-weight: initial;
+}
+    </style>
+
+</head>
+
+<script>
+
+  $.ajaxSetup ({
+    // Disable caching of AJAX responses
+    cache: false
+  });
+
+  function changeSport(field){
+    var el = $(field);
+    var tmList = el.parent().next().find('.new-team-year')[0];
+    if (tmList == null){
+      tmList = el.nextAll('.new-team-year')[0];
+    }
+    $.ajax({
+      url: "/game_sport_year_ctls/"+el.val()+"/available_teams",
+      dataType: "script",
+      success: function(data, status){
+        $(tmList).empty();
+        $(tmList).append(("<option value=''>Select team</option>"));
+        $.each(JSON.parse(data), function(k, v){
+          $(tmList).append($("<option></option>")
+              .attr("value", v["id"])
+              .text(v["member_org"]["name_tabular"]));
+        });
+        $(tmList).trigger("chosen:updated");
+      }
+    });
+  }
+
+    function set_process_styles(fld, start_color, end_color){
+       $('#'+fld).effect('highlight', {color: '#99CC99'}, 6000);
+    }
+
+    var downImage = "/assets/down12.gif";
+    var rightImage = "/assets/right12.gif";
+
+    function highlight(div_id){
+      $(div_id).effect('highlight', {color: '#99CC99'}, 6000);
+    }
+
+    function show_hide_rows(attr_val, link_id){
+      $('#'+attr_val).toggle();
+      if ($('#'+attr_val).is(':visible')) {
+        $('#'+link_id).attr('src', downImage);
+      }else{
+        $('#'+link_id).attr('src', rightImage);
+      }
+    }
+
+    function mask(label){
+      $('body').mask(label);
+    }
+    function unmask(){
+      $('body').unmask();
+    }
+
+    var winHeight = "auto";
+    var winWidth = "auto";
+    var maxHeight = 700;
+    var maxWidth = 1400;
+    var minHeight = 100;
+    var minWidth = 200;
+
+    var modalOptions = {"width": winWidth,
+                        "height": winHeight,
+                        "maxHeight": maxHeight,
+                        "maxWidth": maxWidth,
+                        "minHeight": minHeight,
+                        "minWidth": minWidth};
+
+    function dialog(url, title){
+
+      $("#stats_app_dialog").dialog({modal:true, minWidth:minWidth, minHeight:minHeight, maxWidth:maxWidth, maxHeight:maxHeight, width:winWidth, height:winHeight, title:title, closeOnEscape: false});
+
+      modalOptions.title = title;
+
+      $("#stats_app_dialog").dialog("option", modalOptions);
+
+      $("#stats_app_dialog").html("Loading...");
+      $("#stats_app_dialog").load(url).dialog('open');
+    }
+
+    function addDatePicker(){
+    $('.adddatepicker').each(function(i, obj){
+      $(obj).datepicker({
+        showOn: 'both',
+        buttonImage: '/assets/calendar.gif',
+        buttonImageOnly: true,
+      });
+    });
+    }
+
+   $(document).ready(function() {
+     addDatePicker();
+     $('.chosen-select').chosen({allow_single_deselect: true, search_contains: true});
+   });
+
+   function setClassInputFields(){
+     addDatePicker();
+     $('.chosen-select').chosen({allow_single_deselect: true, search_contains: true});
+   }
+
+  </script>
+<body id="body" onload="if (top != self) { top.location=self.location; }">
+<div id="header"><img alt="Titlebar_logo" height="81" src="/assets/titlebar_logo-d1d40bd2268e265b6a42cacb7bb117e9.jpg" style="float: left" width="104" />
+    <h1>
+        <span id="title1">NCAA</span><br/>
+        <span id="title2">Statistics</span>
+    </h1>
+
+
+    <div id="nav">
+        <ul>
+            <li id="notactive">
+                <a href="/rankings?academic_year=2019&amp;sport_code=MFB"><span>National Rankings</span></a>
+            </li>
+            <li id="notactive">
+                <a href="/active_career_leaders/show_summary_from_rankings?academic_year=2019&amp;sport_code=MFB"><span>Active Career Leaders</span></a>
+            </li>
+            <li id="notactive">
+                <a href="/contests/scoreboards"><span>Scoreboard</span></a>
+            </li>
+            <li id="notactive">
+                <a href="/head_coaches"><span>Head Coaches</span></a>
+            </li>
+            <li id="team_search">
+                <script>
+  $(function() {
+    $( "#org_name" ).autocomplete({
+      source: '/team/search',
+      select: function( event, ui ) {
+        $("#org_id").val(ui.item.vid);
+        $("#id").val(ui.item.vid);
+        $('#sport_btn').click();
+      }
+    });
+  });
+</script>
+
+                <span style="display:inline; float:right;">
+  <form accept-charset="UTF-8" action="/team/index" id="change_team_form" method="post" onsubmit="mask(&#x27;Loading&#x27;);" style="display:inline;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="8SjavTMISeHMj0mzmpH9S/BgcEyNyOe3q12hz4zHmEU=" /></div>
+  <div style="display:none;">
+  <input id="sport_btn" name="commit" type="submit" value="Submit" />
+  </div>
+    <div id="team_autocomplete" class="ui-widget">
+      <span style="color: #ccc;">Team Search:</span>
+      <input id="org_name" name="org_name" style="width:200px" type="text" />
+      <input id="org_id" name="org_id" type="hidden" />
+    </div>
+</form></span>
+            </li>
+            <li>
+                <a href="http://twitter.com/ncaastats" target="TWITTER"><img alt="Twitter" height="17" src="/assets/twitter-6586be4273539dff7a95e70ebdf1a846.png" width="46" /></a>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+<div id="contentarea">
+    <div id="stats_app_dialog" style="display:none;">
+    </div>
+    <div id="message_box" class="teams"  style="display: none" >
+        <span class="message_box_success"></span>
+        <span class="message_box_error"></span>
+    </div>
+    <script>
+  function submit_form(val){
+    curr_action = '/teams/';
+    $('#change_sport_form').attr("action", curr_action + val);
+    $('#team_sport_btn').click();
+  }
+  $(function() {
+    $( "#org_sport_name" ).autocomplete({
+      source: '/team/14280/sport_sponsored_search',
+      select: function( event, ui ) {
+        $("#sport_search_org_id").val(ui.item.vid);
+        //curr_action = '/teams/'.replace("306", ui.item.vid);
+        curr_action = '/teams/'+ui.item.vid;
+        //$('#change_sport_form').attr("action", curr_action + $('#sport_list').val());
+        $('#change_sport_form').attr("action", curr_action);
+        $('#team_sport_btn').click();
+      }
+    });
+  });
+</script>
+
+    <fieldset>
+        <legend><a href="http://www.iuhoosiers.com" target="ATHLETICS_URL">Indiana Hoosiers</a> (4-3) </legend>
+        <div>
+            <form accept-charset="UTF-8" action="http://stats.ncaa.org" id="change_sport_form" method="get" onsubmit="mask(&#x27;Loading&#x27;);"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+                <select id="year_list" name="year_id" onchange="submit_form(this.value);"><option value="449824" selected="selected">2018-19</option>
+                    <option value="113566">2017-18</option>
+                    <option value="66620">2016-17</option>
+                    <option value="19654">2015-16</option>
+                    <option value="83592">2014-15</option>
+                    <option value="62722">2013-14</option>
+                    <option value="15987">2012-13</option>
+                    <option value="137757">2011-12</option>
+                    <option value="137150">2010-11</option>
+                    <option value="405287">2009-10</option>
+                    <option value="254717">2008-09</option>
+                    <option value="404603">2007-08</option>
+                    <option value="254044">2006-07</option>
+                    <option value="136481">2005-06</option>
+                    <option value="334413">2004-05</option>
+                    <option value="135774">2003-04</option>
+                    <option value="127386">2002-03</option>
+                    <option value="360322">2001-02</option>
+                    <option value="218461">2000-01</option>
+                    <option value="217796">1999-00</option>
+                    <option value="368238">1998-99</option>
+                    <option value="135113">1997-98</option>
+                    <option value="217141">1996-97</option>
+                    <option value="134461">1995-96</option>
+                    <option value="253398">1994-95</option>
+                    <option value="176515">1993-94</option>
+                    <option value="175865">1992-93</option>
+                    <option value="367588">1991-92</option>
+                    <option value="366936">1990-91</option>
+                    <option value="366289">1989-90</option>
+                    <option value="133814">1988-89</option>
+                    <option value="133177">1987-88</option>
+                    <option value="333779">1986-87</option>
+                    <option value="365658">1985-86</option>
+                    <option value="216513">1984-85</option>
+                    <option value="252769">1983-84</option>
+                    <option value="132551">1982-83</option>
+                    <option value="252148">1981-82</option>
+                    <option value="365040">1980-81</option>
+                    <option value="131936">1979-80</option>
+                    <option value="364426">1978-79</option>
+                    <option value="175252">1977-78</option>
+                    <option value="297127">1976-77</option>
+                    <option value="131332">1975-76</option>
+                    <option value="215907">1974-75</option>
+                    <option value="363823">1973-74</option>
+                    <option value="251554">1972-73</option>
+                    <option value="130747">1971-72</option>
+                    <option value="296545">1970-71</option>
+                    <option value="174671">1969-70</option>
+                    <option value="130170">1968-69</option>
+                    <option value="404021">1967-68</option>
+                    <option value="295970">1966-67</option>
+                    <option value="250977">1965-66</option>
+                    <option value="295401">1964-65</option>
+                    <option value="215334">1963-64</option>
+                    <option value="294842">1962-63</option>
+                    <option value="174116">1961-62</option>
+                    <option value="214783">1960-61</option>
+                    <option value="214230">1959-60</option>
+                    <option value="294290">1958-59</option>
+                    <option value="129615">1957-58</option>
+                    <option value="129071">1956-57</option>
+                    <option value="333215">1955-56</option>
+                    <option value="403472">1954-55</option>
+                    <option value="402934">1953-54</option>
+                    <option value="213687">1952-53</option>
+                    <option value="293744">1951-52</option>
+                    <option value="213144">1950-51</option>
+                    <option value="250425">1949-50</option>
+                    <option value="332675">1948-49</option>
+                    <option value="402396">1947-48</option>
+                    <option value="363269">1946-47</option>
+                    <option value="293231">1945-46</option>
+                    <option value="212633">1944-45</option>
+                    <option value="173599">1943-44</option>
+                    <option value="212132">1942-43</option>
+                    <option value="401878">1941-42</option>
+                    <option value="249902">1940-41</option>
+                    <option value="128548">1939-40</option>
+                    <option value="173092">1938-39</option>
+                    <option value="401370">1937-38</option>
+                    <option value="362760">1936-37</option>
+                    <option value="249392">1935-36</option>
+                    <option value="332162">1934-35</option>
+                    <option value="172590">1933-34</option>
+                    <option value="248893">1932-33</option>
+                    <option value="292728">1931-32</option>
+                    <option value="362259">1930-31</option>
+                    <option value="248401">1929-30</option>
+                    <option value="128050">1928-29</option>
+                    <option value="292243">1927-28</option>
+                    <option value="211647">1926-27</option>
+                    <option value="361788">1925-26</option>
+                    <option value="211187">1924-25</option>
+                    <option value="361343">1923-24</option>
+                    <option value="172140">1922-23</option>
+                    <option value="210763">1921-22</option>
+                    <option value="360930">1920-21</option>
+                    <option value="210363">1919-20</option>
+                    <option value="369403">1918-19</option>
+                    <option value="177583">1917-18</option>
+                    <option value="139404">1916-17</option>
+                    <option value="298672">1915-16</option>
+                    <option value="298308">1914-15</option>
+                    <option value="406553">1913-14</option>
+                    <option value="139054">1912-13</option>
+                    <option value="297971">1911-12</option>
+                    <option value="138725">1910-11</option>
+                    <option value="369064">1909-10</option>
+                    <option value="255895">1908-09</option>
+                    <option value="219532">1907-08</option>
+                    <option value="255590">1906-07</option>
+                    <option value="406244">1905-06</option>
+                    <option value="138417">1904-05</option>
+                    <option value="138122">1903-04</option>
+                    <option value="219240">1902-03</option>
+                    <option value="177286">1901-02</option>
+                    <option value="405968">1900-01</option>
+                    <option value="334975">1899-00</option>
+                    <option value="368793">1898-99</option>
+                    <option value="255323">1897-98</option>
+                    <option value="297705">1896-97</option>
+                    <option value="177044">1895-96</option>
+                    <option value="219009">1894-95</option>
+                    <option value="139781">1893-94</option>
+                    <option value="219841">1892-93</option>
+                    <option value="177894">1891-92</option>
+                    <option value="256236">1890-91</option>
+                    <option value="298963">1889-90</option>
+                    <option value="335170">1888-89</option>
+                    <option value="139684">1887-88</option></select>
+                <select id="sport_list" name="sport_id" onchange="submit_form(this.value);"><option value="441672">Women&#x27;s Soccer</option>
+                    <option value="449824" selected="selected">Football</option>
+                    <option value="450579">Men&#x27;s Basketball</option>
+                    <option value="442649">Field Hockey</option>
+                    <option value="440754">Men&#x27;s Soccer</option>
+                    <option value="451678">Women&#x27;s Basketball</option>
+                    <option value="448756">Women&#x27;s Volleyball</option></select>
+                <a href="/teams/history/MFB/306">Team History</a> |
+                <a href="/teams/coaches_summary/MFB/306">Coaches Summary</a>
+
+                <div style="display:none;">
+                    <input id="team_sport_btn" name="commit" type="submit" value="Submit" />
+                </div>
+                <span id="tst" style="float:right;">
+    <div id="team_sport_autocomplete" class="ui-widget">
+      Teams Sponsoring Football:
+      <input id="org_sport_name" name="org_sport_name" style="width:200px" type="text" />
+      <input id="sport_search_org_id" name="org_id" type="hidden" />
+    </div>
+  </span>
+            </form></div>
+        <div style="clear: both;">
+            <div id="facility_div" style="width: 48%; float: left">
+                <div id="team_venues_449824">
+                    <fieldset>
+                        <legend>Stadium</legend>
+                        <div id="team_venue_229083">
+                            <label>Name</label> Memorial
+                            <br/>
+                            <label>Surface</label> Turf<br/>
+                            <label>Capacity</label> 52,929<br/>
+                            <label>Year Built</label> 1960<br/>
+                            <label>Primary Venue</label> true<br/>
+                        </div>
+
+                    </fieldset>
+                </div>
+
+            </div>
+            <div id="head_coaches_div" style="width: 48%; float: right">
+                <fieldset>
+                    <legend>Head Coach</legend>
+                    <label for="Name:">Name:</label> <a href="/people/45950?sport_code=MFB">Tom Allen</a><br/>
+                    <label for="Alma_Mater:">Alma mater:</label> Maranatha Baptist - 1992<br/>
+                    <label for="Seasons:">Seasons:</label> 3<br/>
+                    <label for="Record:">Record:</label> 9-11<br/>
+                    <span class="italic">
+  *Record and year's coaching are thru games of 10/18/2018
+  </span>
+                </fieldset>
+
+            </div>
+        </div>
+    </fieldset>
+    <br/>
+
+
+    Schedule/Results |
+    <a href="/team/306/roster/14280">Roster</a> |
+    <a href="/team/306/stats/14280">Team Statistics</a> |
+    <a href="/player/game_by_game?game_sport_year_ctl_id=14280&amp;org_id=306&amp;stats_player_seq=-100">Game By Game</a> |
+    <!--
+    <a href="/team/team_game_highs?org_id=306&amp;sport_year_ctl_id=14280">Game Highs</a> |
+    <a href="/team/conf_game_highs?org_id=306&amp;sport_year_ctl_id=14280">Conf Game Highs</a> |
+    <a href="/player/player_rank_history?game_sport_year_ctl_id=14280&amp;index_start=0&amp;org_id=306&amp;stat_seq_to_chart=0&amp;stats_player_seq=-100">Ranking Trends</a> |
+    <a href="/player/team_player_rank_yearly_history?game_sport_year_ctl_id=14280&amp;index_start=0&amp;org_id=306&amp;stat_seq_to_chart=0&amp;stats_player_seq=-100">Team Final Trends</a> |
+    -->
+    <a href="/rankings/ranking_summary?academic_year=2019&amp;division=11&amp;org_id=306&amp;ranking_period=27&amp;sport_code=MFB">Ranking Summary</a>
+
+
+    <table width="90%">
+        <!--
+        <tr>
+          <td colspan="2">
+                  <script>
+        function submit_form(val){
+          curr_action = 'http://stats.ncaa.org/teams/';
+          $('#change_sport_form').attr("action", curr_action + val);
+          $('#team_sport_btn').click();
+        }
+            </script>
+
+      <form accept-charset="UTF-8" action="http://stats.ncaa.org/teams" id="change_sport_form" method="get" onsubmit="mask(&#x27;Loading&#x27;);"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <select id="sport_list" name="id" onchange="submit_form(this.value);"><option value="139684">1887-88</option>
+      <option value="335170">1888-89</option>
+      <option value="298963">1889-90</option>
+      <option value="256236">1890-91</option>
+      <option value="177894">1891-92</option>
+      <option value="219841">1892-93</option>
+      <option value="139781">1893-94</option>
+      <option value="219009">1894-95</option>
+      <option value="177044">1895-96</option>
+      <option value="297705">1896-97</option>
+      <option value="255323">1897-98</option>
+      <option value="368793">1898-99</option>
+      <option value="334975">1899-00</option>
+      <option value="405968">1900-01</option>
+      <option value="177286">1901-02</option>
+      <option value="219240">1902-03</option>
+      <option value="138122">1903-04</option>
+      <option value="138417">1904-05</option>
+      <option value="406244">1905-06</option>
+      <option value="255590">1906-07</option>
+      <option value="219532">1907-08</option>
+      <option value="255895">1908-09</option>
+      <option value="369064">1909-10</option>
+      <option value="138725">1910-11</option>
+      <option value="297971">1911-12</option>
+      <option value="139054">1912-13</option>
+      <option value="406553">1913-14</option>
+      <option value="298308">1914-15</option>
+      <option value="298672">1915-16</option>
+      <option value="139404">1916-17</option>
+      <option value="177583">1917-18</option>
+      <option value="369403">1918-19</option>
+      <option value="210363">1919-20</option>
+      <option value="360930">1920-21</option>
+      <option value="210763">1921-22</option>
+      <option value="172140">1922-23</option>
+      <option value="361343">1923-24</option>
+      <option value="211187">1924-25</option>
+      <option value="361788">1925-26</option>
+      <option value="211647">1926-27</option>
+      <option value="292243">1927-28</option>
+      <option value="128050">1928-29</option>
+      <option value="248401">1929-30</option>
+      <option value="362259">1930-31</option>
+      <option value="292728">1931-32</option>
+      <option value="248893">1932-33</option>
+      <option value="172590">1933-34</option>
+      <option value="332162">1934-35</option>
+      <option value="249392">1935-36</option>
+      <option value="362760">1936-37</option>
+      <option value="401370">1937-38</option>
+      <option value="173092">1938-39</option>
+      <option value="128548">1939-40</option>
+      <option value="249902">1940-41</option>
+      <option value="401878">1941-42</option>
+      <option value="212132">1942-43</option>
+      <option value="173599">1943-44</option>
+      <option value="212633">1944-45</option>
+      <option value="293231">1945-46</option>
+      <option value="363269">1946-47</option>
+      <option value="402396">1947-48</option>
+      <option value="332675">1948-49</option>
+      <option value="250425">1949-50</option>
+      <option value="213144">1950-51</option>
+      <option value="293744">1951-52</option>
+      <option value="213687">1952-53</option>
+      <option value="402934">1953-54</option>
+      <option value="403472">1954-55</option>
+      <option value="333215">1955-56</option>
+      <option value="129071">1956-57</option>
+      <option value="129615">1957-58</option>
+      <option value="294290">1958-59</option>
+      <option value="214230">1959-60</option>
+      <option value="214783">1960-61</option>
+      <option value="174116">1961-62</option>
+      <option value="294842">1962-63</option>
+      <option value="215334">1963-64</option>
+      <option value="295401">1964-65</option>
+      <option value="250977">1965-66</option>
+      <option value="295970">1966-67</option>
+      <option value="404021">1967-68</option>
+      <option value="130170">1968-69</option>
+      <option value="174671">1969-70</option>
+      <option value="296545">1970-71</option>
+      <option value="130747">1971-72</option>
+      <option value="251554">1972-73</option>
+      <option value="363823">1973-74</option>
+      <option value="215907">1974-75</option>
+      <option value="131332">1975-76</option>
+      <option value="297127">1976-77</option>
+      <option value="175252">1977-78</option>
+      <option value="364426">1978-79</option>
+      <option value="131936">1979-80</option>
+      <option value="365040">1980-81</option>
+      <option value="252148">1981-82</option>
+      <option value="132551">1982-83</option>
+      <option value="252769">1983-84</option>
+      <option value="216513">1984-85</option>
+      <option value="365658">1985-86</option>
+      <option value="333779">1986-87</option>
+      <option value="133177">1987-88</option>
+      <option value="133814">1988-89</option>
+      <option value="366289">1989-90</option>
+      <option value="366936">1990-91</option>
+      <option value="367588">1991-92</option>
+      <option value="175865">1992-93</option>
+      <option value="176515">1993-94</option>
+      <option value="253398">1994-95</option>
+      <option value="134461">1995-96</option>
+      <option value="217141">1996-97</option>
+      <option value="135113">1997-98</option>
+      <option value="368238">1998-99</option>
+      <option value="217796">1999-00</option>
+      <option value="218461">2000-01</option>
+      <option value="360322">2001-02</option>
+      <option value="127386">2002-03</option>
+      <option value="135774">2003-04</option>
+      <option value="334413">2004-05</option>
+      <option value="136481">2005-06</option>
+      <option value="254044">2006-07</option>
+      <option value="404603">2007-08</option>
+      <option value="254717">2008-09</option>
+      <option value="405287">2009-10</option>
+      <option value="137150">2010-11</option>
+      <option value="137757">2011-12</option>
+      <option value="15987">2012-13</option>
+      <option value="62722">2013-14</option>
+      <option value="83592">2014-15</option>
+      <option value="19654">2015-16</option>
+      <option value="66620">2016-17</option>
+      <option value="113566">2017-18</option>
+      <option value="449824" selected="selected">2018-19</option></select>
+        <div style="display:none;">
+        <input id="team_sport_btn" name="commit" type="submit" value="Submit" />
+        </div>
+      </form>
+          </td>
+        </tr>
+        -->
+        <tr>
+            <td width="50%" valign="top">
+                <table class="mytable" width="100%" align="center">
+                    <tr class="heading">
+                        <td colspan="3">Schedule/Results
+                        </td>
+                    </tr>
+                    <tr class="grey_heading">
+                        <th width="8%">Date</th>
+                        <th width="20%" align="center">Opponent</th>
+                        <th width="6%" align="center">Result</th>
+                    </tr>
+                    <tr >
+                        <td class="smtext">09/01/2018</td>
+                        <td class="smtext">
+
+                            <a href="/team/231/14280">@ FIU </a>
+                        </td>
+                        <td class="smtext" nowrap>
+                            <a href="http://www.ncaa.com/game/football/fbs/2018/09/01/indiana-fiu#boxscore" class="skipMask" target="TURNER_BOX">W 38 - 28 </a>
+                        </td>
+
+
+                    </tr>
+
+                    <tr >
+                        <td class="smtext">09/08/2018</td>
+                        <td class="smtext">
+
+                            <a href="/team/746/14280"> Virginia </a>
+                        </td>
+                        <td class="smtext" nowrap>
+                            <a href="http://www.ncaa.com/game/football/fbs/2018/09/08/virginia-indiana#boxscore" class="skipMask" target="TURNER_BOX">W 20 - 16 </a>
+                        </td>
+
+
+                    </tr>
+
+                    <tr >
+                        <td class="smtext">09/15/2018</td>
+                        <td class="smtext">
+
+                            <a href="/team/47/14280"> Ball St. </a>
+                        </td>
+                        <td class="smtext" nowrap>
+                            <a href="http://www.ncaa.com/game/football/fbs/2018/09/15/ball-st-indiana#boxscore" class="skipMask" target="TURNER_BOX">W 38 - 10 </a>
+                        </td>
+
+
+                    </tr>
+
+                    <tr >
+                        <td class="smtext">09/22/2018</td>
+                        <td class="smtext">
+
+                            <a href="/team/416/14280"> Michigan St. </a>
+                        </td>
+                        <td class="smtext" nowrap>
+                            <a href="http://www.ncaa.com/game/football/fbs/2018/09/22/michigan-st-indiana#boxscore" class="skipMask" target="TURNER_BOX">L 21 - 35 </a>
+                        </td>
+
+
+                    </tr>
+
+                    <tr >
+                        <td class="smtext">09/29/2018</td>
+                        <td class="smtext">
+
+                            <a href="/team/587/14280">@ Rutgers </a>
+                        </td>
+                        <td class="smtext" nowrap>
+                            <a href="http://www.ncaa.com/game/football/fbs/2018/09/29/indiana-rutgers#boxscore" class="skipMask" target="TURNER_BOX">W 24 - 17 </a>
+                        </td>
+
+
+                    </tr>
+
+                    <tr >
+                        <td class="smtext">10/06/2018</td>
+                        <td class="smtext">
+
+                            <a href="/team/518/14280">@ Ohio St. </a>
+                        </td>
+                        <td class="smtext" nowrap>
+                            <a href="http://www.ncaa.com/game/football/fbs/2018/10/06/indiana-ohio-st#boxscore" class="skipMask" target="TURNER_BOX">L 26 - 49 </a>
+                        </td>
+
+
+                    </tr>
+
+                    <tr >
+                        <td class="smtext">10/13/2018</td>
+                        <td class="smtext">
+
+                            <a href="/team/312/14280"> Iowa </a>
+                        </td>
+                        <td class="smtext" nowrap>
+                            <a href="http://www.ncaa.com/game/football/fbs/2018/10/13/iowa-indiana#boxscore" class="skipMask" target="TURNER_BOX">L 16 - 42 </a>
+                        </td>
+
+
+                    </tr>
+
+                    <tr >
+                        <td class="smtext">10/20/2018</td>
+                        <td class="smtext">
+
+                            <a href="/teams/449867"> Penn St. </a>
+                        </td>
+                        <td class="smtext" nowrap>
+                            -
+                        </td>
+
+
+                    </tr>
+
+                    <tr >
+                        <td class="smtext">10/26/2018</td>
+                        <td class="smtext">
+
+                            <a href="/teams/449843">@  Minnesota </a>
+                        </td>
+                        <td class="smtext" nowrap>
+                            -
+                        </td>
+
+
+                    </tr>
+
+                    <tr >
+                        <td class="smtext">11/10/2018</td>
+                        <td class="smtext">
+
+                            <a href="/teams/449835"> Maryland </a>
+                        </td>
+                        <td class="smtext" nowrap>
+                            -
+                        </td>
+
+
+                    </tr>
+
+                    <tr >
+                        <td class="smtext">11/17/2018</td>
+                        <td class="smtext">
+
+                            <a href="/teams/449841">@  Michigan </a>
+                        </td>
+                        <td class="smtext" nowrap>
+                            -
+                        </td>
+
+
+                    </tr>
+
+                    <tr >
+                        <td class="smtext">11/24/2018</td>
+                        <td class="smtext">
+
+                            <a href="/teams/449869"> Purdue </a>
+                        </td>
+                        <td class="smtext" nowrap>
+                            -
+                        </td>
+
+
+                    </tr>
+
+                </table>
+            </td>
+
+            <td width="50%" valign="top">
+                <table class="mytable" width="100%">
+                    <tr class="heading">
+                        <td colspan="3">Team Stats - Through games 10/18/2018</td>
+                    </tr>
+                    <tr class="grey_heading">
+                        <td>Stat</td>
+                        <td>Rank</td>
+                        <td>Value</td>
+                    </tr>
+                    <tr>
+                        <td><a href="/rankings/MFB/2019/11/21/27" class="skipMask" target="Rankings">Total Offense</a></td>
+                        <td align="right">75</td>
+                        <td align="right">
+                            399.6
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/rankings/MFB/2019/11/23/27" class="skipMask" target="Rankings">Rushing Offense</a></td>
+                        <td align="right">93</td>
+                        <td align="right">
+                            149.7
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/rankings/MFB/2019/11/25/27" class="skipMask" target="Rankings">Passing Offense</a></td>
+                        <td align="right">53</td>
+                        <td align="right">
+                            249.9
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/rankings/MFB/2019/11/465/27" class="skipMask" target="Rankings">Team Passing Efficiency</a></td>
+                        <td align="right">68</td>
+                        <td align="right">
+                            134.26
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/rankings/MFB/2019/11/27/27" class="skipMask" target="Rankings">Scoring Offense</a></td>
+                        <td align="right">T-86</td>
+                        <td align="right">
+                            26.1
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/rankings/MFB/2019/11/22/27" class="skipMask" target="Rankings">Total Defense</a></td>
+                        <td align="right">69</td>
+                        <td align="right">
+                            385.3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/rankings/MFB/2019/11/24/27" class="skipMask" target="Rankings">Rushing Defense</a></td>
+                        <td align="right">68</td>
+                        <td align="right">
+                            157.7
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/rankings/MFB/2019/11/695/27" class="skipMask" target="Rankings">Passing Yards Allowed</a></td>
+                        <td align="right">71</td>
+                        <td align="right">
+                            227.6
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/rankings/MFB/2019/11/40/27" class="skipMask" target="Rankings">Team Passing Efficiency Defense</a></td>
+                        <td align="right">88</td>
+                        <td align="right">
+                            140.10
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/rankings/MFB/2019/11/28/27" class="skipMask" target="Rankings">Scoring Defense</a></td>
+                        <td align="right">79</td>
+                        <td align="right">
+                            28.1
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/rankings/MFB/2019/11/29/27" class="skipMask" target="Rankings">Turnover Margin</a></td>
+                        <td align="right">T-39</td>
+                        <td align="right">
+                            0.43
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/rankings/MFB/2019/11/699/27" class="skipMask" target="Rankings">3rd Down Conversion Pct</a></td>
+                        <td align="right">43</td>
+                        <td align="right">
+                            0.427
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/rankings/MFB/2019/11/700/27" class="skipMask" target="Rankings">4th Down Conversion Pct</a></td>
+                        <td align="right">T-69</td>
+                        <td align="right">
+                            0.500
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/rankings/MFB/2019/11/701/27" class="skipMask" target="Rankings">3rd Down Conversion Pct Defense</a></td>
+                        <td align="right">80</td>
+                        <td align="right">
+                            0.400
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/rankings/MFB/2019/11/702/27" class="skipMask" target="Rankings">4th Down Conversion Pct Defense</a></td>
+                        <td align="right">127</td>
+                        <td align="right">
+                            0.786
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/rankings/MFB/2019/11/703/27" class="skipMask" target="Rankings">Red Zone Offense</a></td>
+                        <td align="right">T-110</td>
+                        <td align="right">
+                            0.767
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/rankings/MFB/2019/11/704/27" class="skipMask" target="Rankings">Red Zone Defense</a></td>
+                        <td align="right">T-106</td>
+                        <td align="right">
+                            0.909
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/rankings/MFB/2019/11/98/27" class="skipMask" target="Rankings">Net Punting</a></td>
+                        <td align="right">71</td>
+                        <td align="right">
+                            37.48
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/rankings/MFB/2019/11/97/27" class="skipMask" target="Rankings">Punt Returns</a></td>
+                        <td align="right">33</td>
+                        <td align="right">
+                            12.55
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/rankings/MFB/2019/11/96/27" class="skipMask" target="Rankings">Kickoff Returns</a></td>
+                        <td align="right">108</td>
+                        <td align="right">
+                            18.14
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/rankings/MFB/2019/11/693/27" class="skipMask" target="Rankings">First Downs Offense</a></td>
+                        <td align="right">T-14</td>
+                        <td align="right">
+                            164
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/rankings/MFB/2019/11/694/27" class="skipMask" target="Rankings">First Downs Defense</a></td>
+                        <td align="right">109</td>
+                        <td align="right">
+                            152
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/rankings/MFB/2019/11/697/27" class="skipMask" target="Rankings">Fewest Penalties Per Game</a></td>
+                        <td align="right">54</td>
+                        <td align="right">
+                            6.14
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/rankings/MFB/2019/11/698/27" class="skipMask" target="Rankings">Fewest Penalty Yards Per Game</a></td>
+                        <td align="right">91</td>
+                        <td align="right">
+                            65.14
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/rankings/MFB/2019/11/705/27" class="skipMask" target="Rankings">Time of Possession</a></td>
+                        <td align="right">68</td>
+                        <td align="right">
+                            &nbsp;&nbsp;&nbsp;29:52
+                        </td>
+                    </tr>
+                    <tr class="grey_heading">
+                        <td colspan="3"><a href="/rankings/ranking_summary?academic_year=2019.0&amp;division=11.0&amp;game_high=N&amp;org_id=306&amp;ranking_period=27&amp;sport_code=MFB&amp;team_individual=T" class="skipMask" target="RANKINGS_WIN">View Complete Ranking Summary</a></td>
+                    </tr>
+                </table>
+                <br/>
+
+                <table class="mytable" width="100%">
+                    <tr class="heading">
+                        <td colspan="3">Individual Leaders</td>
+                    </tr>
+                    <tr class="grey_heading">
+                        <td>Stat</td>
+                        <td>Player</td>
+                        <td>Value</td>
+                    </tr>
+                    <tr>
+                        <td>APY</td>
+                        <td>
+                            <a href="/player/index?game_sport_year_ctl_id=14280&amp;stats_player_seq=2031106">Stevie Scott</a>
+                        </td>
+                        <td align="right">604</td>
+                    </tr>
+                    <tr>
+                        <td>FGM</td>
+                        <td>
+                            <a href="/player/index?game_sport_year_ctl_id=14280&amp;stats_player_seq=1811149">Logan Justus</a>
+                        </td>
+                        <td align="right">8</td>
+                    </tr>
+                    <tr>
+                        <td>Int</td>
+                        <td>
+                            <a href="/player/index?game_sport_year_ctl_id=14280&amp;stats_player_seq=1937178">Thomas Allen</a>
+                        </td>
+                        <td align="right">1</td>
+                    </tr>
+                    <tr>
+                        <td>Pass <br/>Eff</td>
+                        <td>
+                            <a href="/player/index?game_sport_year_ctl_id=14280&amp;stats_player_seq=2031058">Michael Penix Jr.</a>
+                        </td>
+                        <td align="right">172.00</td>
+                    </tr>
+                    <tr>
+                        <td>Points</td>
+                        <td>
+                            <a href="/player/index?game_sport_year_ctl_id=14280&amp;stats_player_seq=1811149">Logan Justus</a>
+                        </td>
+                        <td align="right">43</td>
+                    </tr>
+                    <tr>
+                        <td>Punt Avg</td>
+                        <td>
+                            <a href="/player/index?game_sport_year_ctl_id=14280&amp;stats_player_seq=1937207">Haydon Whitehead</a>
+                        </td>
+                        <td align="right">289.7</td>
+                    </tr>
+                    <tr>
+                        <td>Punt Ret Yds</td>
+                        <td>
+                            <a href="/player/index?game_sport_year_ctl_id=14280&amp;stats_player_seq=1832222">J. Harris II</a>
+                        </td>
+                        <td align="right">138</td>
+                    </tr>
+                    <tr>
+                        <td>Rec</td>
+                        <td>
+                            <a href="/player/index?game_sport_year_ctl_id=14280&amp;stats_player_seq=1832222">J. Harris II</a>
+                        </td>
+                        <td align="right">24</td>
+                    </tr>
+                    <tr>
+                        <td>Receiving<br/>Yards</td>
+                        <td>
+                            <a href="/player/index?game_sport_year_ctl_id=14280&amp;stats_player_seq=1674603">Nick Westbrook</a>
+                        </td>
+                        <td align="right">289</td>
+                    </tr>
+                    <tr>
+                        <td>Rush <br>Net Yards</td>
+                        <td>
+                            <a href="/player/index?game_sport_year_ctl_id=14280&amp;stats_player_seq=2031106">Stevie Scott</a>
+                        </td>
+                        <td align="right">557</td>
+                    </tr>
+                    <tr>
+                        <td>Sacks</td>
+                        <td>
+                            <a href="/player/index?game_sport_year_ctl_id=14280&amp;stats_player_seq=1797508">Marcelino Ball</a>
+                        </td>
+                        <td align="right">2.0</td>
+                    </tr>
+                    <tr>
+                        <td>Tackles</td>
+                        <td>
+                            <a href="/player/index?game_sport_year_ctl_id=14280&amp;stats_player_seq=1586556">Dameon Willis, Jr.</a>
+                        </td>
+                        <td align="right">37</td>
+                    </tr>
+                    <tr>
+                        <td>Tot Off</td>
+                        <td>
+                            <a href="/player/index?game_sport_year_ctl_id=14280&amp;stats_player_seq=1811156">Peyton Ramsey</a>
+                        </td>
+                        <td align="right">1,813</td>
+                    </tr>
+                    <tr class="grey_heading">
+                        <td colspan="3"><a href="/team/306/stats/14280">Team Stats</a></td>
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+<div class="footer"></div>
+
+</body>
+<script>
+      //ui-datepicker = calendar month prev/next buttons,
+      //ui-corner-all = autocomplete dropdown results
+      //paginate_button = datatables
+    function skipMask(obj){
+      if (obj.hasClass('chosen-single') || obj.hasClass('skipMask') || obj.hasClass('ui-datepicker-prev') || obj.hasClass('ui-datepicker-next') || obj.hasClass('ui-corner-all') || obj.hasClass('paginate_button') || obj.hasClass('dt-button')){
+        return true;
+      }else{
+        return false;
+      }
+    }
+
+    $(document).ajaxComplete(function(){
+      unmask();
+    });
+/*
+    $("form").on('submit', function(event){
+      if (skipMask($(this))){
+        return;
+      }else{
+        mask('Loading');
+      }
+    });
+    */
+    $(document).on('click', 'a', function(){
+      if (skipMask($(this))){
+        return;
+      }else{
+        mask('Loading');
+      }
+    });
+    $(document).on('click', 'input.green', function(){
+      if (skipMask($(this))){
+        return;
+      }else{
+        mask('Loading');
+      }
+    });
+  </script>
+</html>

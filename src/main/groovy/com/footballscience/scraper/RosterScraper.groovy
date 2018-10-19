@@ -10,6 +10,37 @@ class RosterScraper {
     String baseUrl = "http://stats.ncaa.org/team/roster/11980?org_id="
     String resourcePath
 
+    String orgBaseUrl2018 = "http://stats.ncaa.org/team/"
+    String baseStatsUrl = "http://stats.ncaa.org"
+
+    String findRosterUrlbyOrg(String orgId) {
+        Document orgSummaryPage = Jsoup.connect(orgBaseUrl2018+orgId).timeout(50000).get()
+        String teamRelativePath = getFootballUrl(orgSummaryPage)
+
+        Document teamSummaryPage = Jsoup.connect(baseStatsUrl+teamRelativePath).timeout(50000).get()
+        String rosterPath = findRosterPathOnTeamPage(teamSummaryPage)
+
+        return rosterPath
+    }
+
+    String findRosterPathOnTeamPage(Document teamSummaryPage) {
+        Element rosterAnchor = teamSummaryPage.select("a").find { Element element ->
+            if(element.getElementsContainingText("Roster").size() > 0 ) {
+                return element
+            }
+        }
+        return rosterAnchor.attr("href")
+    }
+
+
+    static String getFootballUrl(Document orgSummaryPage) {
+        Element footballAnchor = orgSummaryPage.select("a").find { Element element ->
+            if(element.getElementsContainingText("Football").size() > 0) {
+                return element
+            }
+        }
+        return footballAnchor.attr("href")
+    }
 
     void runLoad() {
         writeFile(harvestAllRosters())
