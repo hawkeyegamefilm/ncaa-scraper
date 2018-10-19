@@ -1,6 +1,5 @@
 package com.footballscience.parser
 
-import com.footballscience.domain.Drive
 import com.footballscience.domain.DriveType
 import com.footballscience.domain.Kickoff
 import com.footballscience.domain.Pass
@@ -103,7 +102,7 @@ class ScoreTextParserLib {
                 }
             }
         }
-        kickoff
+        return kickoff
     }
 
     /**

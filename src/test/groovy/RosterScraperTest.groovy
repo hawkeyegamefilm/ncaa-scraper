@@ -23,6 +23,17 @@ class RosterScraperTest extends Specification {
         results == RosterScraperTest.getResource("expectedRoster.csv").text
     }
 
+    def "scrapes html correctly and produces csv for 2018 roster"() {
+        setup:
+        Document doc = Jsoup.parse(RosterScraperTest.getResource("sampleRoster2018.html").text)
+
+        when:
+        String results = rosterScraper.createCSVRowFromHtml(doc, "306")
+
+        then:
+        results == RosterScraperTest.getResource("expectedRoster2018.csv").text
+    }
+
     def "loads orgs from resource"() {
         when:
         List orgs = rosterScraper.getAllOrgIds()

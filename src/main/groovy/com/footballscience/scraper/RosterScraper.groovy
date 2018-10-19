@@ -65,6 +65,6 @@ class RosterScraper {
             }
             buffer.append(System.lineSeparator())
         }
-        buffer.toString()
+        buffer.toString().trim()
     }
 }
