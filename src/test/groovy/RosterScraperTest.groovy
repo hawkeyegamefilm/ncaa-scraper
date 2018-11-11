@@ -91,4 +91,13 @@ class RosterScraperTest extends Specification {
         1 == 1
     }
 
+    @Ignore
+    def "run load 2k18"() {//just for creating roster file
+        when:
+        rosterScraper.runLoad2018()
+
+        then:
+        1 == 1
+    }
+
 }

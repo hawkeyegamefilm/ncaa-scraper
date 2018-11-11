@@ -18,6 +18,7 @@ class Punt {
     Integer fumbleLost
     Integer safety
     Integer touchdown
+    Integer blockerId
 
     String toCsvRow() {
         StringBuffer buffer = new StringBuffer()

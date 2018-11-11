@@ -40,7 +40,8 @@ class ScoreTextParserLibSpec extends Specification {
     @Unroll
     def "playerFound functions correctly"() {
         setup:
-        List roster = parserDAO.getRosterBySeasonTeamId("71")
+        List roster = loadRoster("cfbstats_14", 71 as String)
+
         when:
         Boolean result = ScoreTextParserLib.playerFound(roster, number, firstInit, lastName)
 
@@ -58,7 +59,7 @@ class ScoreTextParserLibSpec extends Specification {
     @Unroll
     def "fumbleLost functions correctly"() {
         when:
-        List roster = parserDAO.getRosterBySeasonTeamId(teamId)
+        List roster = loadRoster("cfbstats_14", teamId.toString())
         Map rosters = [("${teamId}".toString()): roster]
         Integer actual = ScoreTextParserLib.calculateFumbleLost(scoreText, teamId.toInteger(), rosters)
 
@@ -78,9 +79,10 @@ class ScoreTextParserLibSpec extends Specification {
         "759"  | "2-C.Covington to IU 25, FUMBLES. 2-C.Covington to IU 25 for no gain (41-B.Bower,34-N.Meier)."                                                                                                                              | 0
     }
 
+    @Unroll
     def "basics for createRushRow function correctly"() {
         setup:
-        List roster = parserDAO.getRosterBySeasonTeamId(teamId.toString())
+        List roster = loadRoster("cfbstats_14", teamId.toString())
         Map rosters = [("${teamId}".toString()): roster]
 
         when:
@@ -104,7 +106,7 @@ class ScoreTextParserLibSpec extends Specification {
 
     def "one off fumble scenarios for createRushRow function correctly"() {
         setup:
-        List roster = parserDAO.getRosterBySeasonTeamId(teamId.toString())
+        List roster = loadRoster("cfbstats_14", teamId.toString())
         Map rosters = [("${teamId}".toString()): roster]
 
         when:
@@ -123,10 +125,29 @@ class ScoreTextParserLibSpec extends Specification {
 
     }
 
+    def "kneel down rushes"() {
+        setup:
+        List roster = parserDAO.getRosterBySeasonTeamId(teamId.toString())
+        Map rosters = [("${teamId}".toString()): roster]
+
+        when:
+        Rush rush = ScoreTextParserLib.createRushRow("somegameid", teamId, 1, ytg, scoreText, rosters)
+
+        then:
+        rush.playerId == expectedPlayerId
+        rush.yards == expectedYards
+        rush.kneelDown == kneelDown
+
+        where:
+        scoreText                        | teamId | ytg | expectedPlayerId | expectedYards | kneelDown
+        "kneels at IOW 29 for -3 yards." | 71     | 10  | null             | -3            | 1
+    }
+
+
     @Unroll
     def "basic completions and incompletions for createPassRow function correctly"() {
         setup:
-        List roster = parserDAO.getRosterBySeasonTeamId(teamId.toString())
+        List roster = loadRoster("cfbstats_14", teamId.toString())
         Map rosters = [("${teamId}".toString()): roster]
         when:
         Pass pass = ScoreTextParserLib.createPassRow("someid", teamId, 1, ytg, scoreText, rosters)
@@ -148,7 +169,7 @@ class ScoreTextParserLibSpec extends Specification {
     @Unroll
     def "special cases for createPassRow function correctly"() {
         setup:
-        List roster = parserDAO.getRosterBySeasonTeamId(teamId.toString())
+        List roster = loadRoster("cfbstats_14", teamId.toString())
         Map rosters = [("${teamId}".toString()): roster]
         when:
         Pass pass = ScoreTextParserLib.createPassRow("someid", teamId, 1, ytg, scoreText, rosters)
@@ -175,8 +196,8 @@ class ScoreTextParserLibSpec extends Specification {
     @Unroll
     def "basics for createKickoffRow"() {
         setup:
-        List roster = parserDAO.getRosterBySeasonTeamId(kickingTeamId.toString())
-        List roster2 = parserDAO.getRosterBySeasonTeamId(returningTeamId.toString())
+        List roster = loadRoster("cfbstats_14", kickingTeamId as String)
+        List roster2 = loadRoster("cfbstats_14", returningTeamId as String)
         Map rosters = [("${kickingTeamId}".toString()): roster, ("${returningTeamId}".toString()): roster2]
 
         when:
@@ -200,8 +221,8 @@ class ScoreTextParserLibSpec extends Specification {
     @Unroll
     def "penaltys and onside kicks for createKickoffRow"() {
         setup:
-        List roster = parserDAO.getRosterBySeasonTeamId(kickingTeamId.toString())
-        List roster2 = parserDAO.getRosterBySeasonTeamId(returningTeamId.toString())
+        List roster = loadRoster("cfbstats_14", kickingTeamId as String)
+        List roster2 = loadRoster("cfbstats_14", returningTeamId as String)
         Map rosters = [("${kickingTeamId}".toString()): roster, ("${returningTeamId}".toString()): roster2]
 
         when:
@@ -226,8 +247,8 @@ class ScoreTextParserLibSpec extends Specification {
     @Unroll
     def "oob kicks"() {
         setup:
-        List roster = parserDAO.getRosterBySeasonTeamId(kickingTeamId.toString())
-        List roster2 = parserDAO.getRosterBySeasonTeamId(returningTeamId.toString())
+        List roster = loadRoster("cfbstats_14", kickingTeamId as String)
+        List roster2 = loadRoster("cfbstats_14", returningTeamId as String)
         Map rosters = [("${kickingTeamId}".toString()): roster, ("${returningTeamId}".toString()): roster2]
 
         when:
@@ -249,8 +270,8 @@ class ScoreTextParserLibSpec extends Specification {
     @Unroll
     def "basic scenarios for createPuntRow"() {
         setup:
-        List roster = parserDAO.getRosterBySeasonTeamId(puntingTeamId.toString())
-        List roster2 = parserDAO.getRosterBySeasonTeamId(returningTeamId.toString())
+        List roster = loadRoster("cfbstats_14", puntingTeamId as String)
+        List roster2 = loadRoster("cfbstats_14", returningTeamId as String)
         Map rosters = [("${puntingTeamId}".toString()): roster, ("${returningTeamId}".toString()): roster2]
 
         when:
@@ -271,8 +292,8 @@ class ScoreTextParserLibSpec extends Specification {
     @Unroll
     def "touchbacks, downed & faircatches for createPuntRow"() {
         setup:
-        List roster = parserDAO.getRosterBySeasonTeamId(puntingTeamId.toString())
-        List roster2 = parserDAO.getRosterBySeasonTeamId(returningTeamId.toString())
+        List roster = loadRoster("cfbstats_14", puntingTeamId as String)
+        List roster2 = loadRoster("cfbstats_14", returningTeamId as String)
         Map rosters = [("${puntingTeamId}".toString()): roster, ("${returningTeamId}".toString()): roster2]
 
         when:
@@ -296,8 +317,8 @@ class ScoreTextParserLibSpec extends Specification {
 
     def "out of bounds createPuntRow"() {
         setup:
-        List roster = parserDAO.getRosterBySeasonTeamId(puntingTeamId.toString())
-        List roster2 = parserDAO.getRosterBySeasonTeamId(returningTeamId.toString())
+        List roster = loadRoster("cfbstats_14", puntingTeamId as String)
+        List roster2 = loadRoster("cfbstats_14", returningTeamId as String)
         Map rosters = [("${puntingTeamId}".toString()): roster, ("${returningTeamId}".toString()): roster2]
 
         when:
@@ -315,12 +336,35 @@ class ScoreTextParserLibSpec extends Specification {
         "12-K.Schmidt punts 35 yards from BALL 11, out of bounds at the BALL 46." | 1558          | 71              | 34419            | 35            | 0                  | 0                   | 1
     }
 
+    def "blocked punt"() {
+        setup:
+        List roster = parserDAO.getRosterBySeasonTeamId(puntingTeamId.toString())
+        List roster2 = parserDAO.getRosterBySeasonTeamId(returningTeamId.toString())
+        Map rosters = [("${puntingTeamId}".toString()): roster, ("${returningTeamId}".toString()): roster2]
+
+        when:
+        Punt punt = ScoreTextParserLib.createPuntRow('someid', puntingTeamId, returningTeamId, 1, scoreText, rosters)
+
+        then:
+        punt.punterId == expectedPunterId
+        punt.puntYards == expectedYards
+        punt.returnerId == expectedReturnerId
+        punt.returnYards == expectedReturnYards
+        punt.oob == oob
+        punt.blocked == 1
+
+        where:
+        scoreText                                                                 | puntingTeamId | returningTeamId | expectedPunterId | expectedYards | expectedReturnerId | expectedReturnYards | oob
+        "punts 0 yards from IOW 33 blocked by 9-J.Wesley. to IOW 23 for no gain." | 71            | 1645            | null             | 0          | 0               | 0                | 0
+    }
+
+
     def "parse tackler block"() {
         setup:
         Integer defenseTeamId = 920
         Integer offenseTeamId = 71
-        List roster = parserDAO.getRosterBySeasonTeamId(offenseTeamId.toString())
-        List roster2 = parserDAO.getRosterBySeasonTeamId(defenseTeamId.toString())
+        List roster = loadRoster("cfbstats_14", offenseTeamId as String)
+        List roster2 = loadRoster("cfbstats_14", defenseTeamId as String)
         Map rosters = [("${offenseTeamId}".toString()): roster, ("${defenseTeamId}".toString()): roster2]
 
         when:
@@ -374,5 +418,17 @@ class ScoreTextParserLibSpec extends Specification {
         new Play(playType: PlayType.PASS, fullScoreText: "15-J.Rudock incomplete. Intended for 5-D.Bullock.")                                                | DriveType.DOWNS
         new Play(playType: PlayType.FIELD_GOAL, fullScoreText: "40-M.Schmadeke 37 yards Field Goal is Good.")                                                | DriveType.FIELD_GOAL
         new Play(playType: PlayType.FIELD_GOAL, fullScoreText: "40-M.Schmadeke 37 yards Field Goal is no Good.")                                                | DriveType.MISSED_FG
+    }
+
+    def "test schema lookup"() {
+        when:
+        List roster = loadRoster("cfbstats_14", "71")
+
+        then:
+        roster != null
+    }
+
+    List loadRoster(String schema, String teamId) {
+        parserDAO.getRosterBySeasonTeamIdAndSchema(schema,teamId)
     }
 }

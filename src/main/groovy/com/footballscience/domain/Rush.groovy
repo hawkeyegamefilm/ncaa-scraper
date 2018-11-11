@@ -13,6 +13,7 @@ class Rush {
     Integer fumble
     Integer fumbleLost
     Integer safety
+    Integer kneelDown
 
     String toCsvRow() {
         StringBuffer buffer = new StringBuffer()

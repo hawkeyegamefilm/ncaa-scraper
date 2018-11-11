@@ -14,7 +14,7 @@ class ParserDAOSpec extends Specification {
         List roster = parserDAO.getRosterBySeasonTeamId("71")
 
         then:
-        roster.size() == 98
+        roster.size() == 121
         roster[0].team_id == 312
 
         cleanup:

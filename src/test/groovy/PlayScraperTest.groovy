@@ -9,6 +9,7 @@ class PlayScraperTest extends Specification {
 
     PlayScraper scraper
     String testUrl = 'http://data.ncaa.com/game/football/fbs/2014/08/30/uni-iowa/pbp.json'
+    String testUrl2018 = 'https://data.ncaa.com/game/football/fbs/2018/09/01/northern-ill-iowa/pbp.json'
     ObjectMapper objectMapper
 
     def setup() {
@@ -39,7 +40,7 @@ class PlayScraperTest extends Specification {
 
     def "parseGameByDrives - println test "() {
         when:
-        List<Drive> result = scraper.parseGameByDrives(scraper.getJsonFromUrl(testUrl))
+        List<Drive> result = scraper.parseGameByDrives(scraper.getJsonFromUrl(testUrl2018))
 
         then:
         result
@@ -52,7 +53,7 @@ class PlayScraperTest extends Specification {
 
     def "parseGameByDrives - validate drives "() {
         when:
-        List<Drive> result = scraper.parseGameByDrives(scraper.getJsonFromUrl(testUrl))
+        List<Drive> result = scraper.parseGameByDrives(scraper.getJsonFromUrl(testUrl2018))
 
         then:
         result

@@ -117,7 +117,33 @@ class ScoreTextParserLib {
     static Punt createPuntRow(String gameId, Integer kickTeamId, Integer returningTeamId, Integer playNum, String scoreText, Map rosters) {
         Punt punt = new Punt(gameId: gameId, teamId: kickTeamId, attempt: 1)
         punt.playNum = playNum
-        punt.punterId = lookupLeadingPlayerId(scoreText, rosters, kickTeamId)//looks like punter numbers are often wrong, maybe if this misses try selecting my pos + name only
+
+        if(scoreText.contains("blocked")) {
+            punt.puntYards = 0
+            punt.fairCatch = 0
+            punt.oob = 0
+            punt.returnerId = 0
+            punt.returnYards = 0
+            //block scenario, can be missing punter from front
+            if(scoreText.startsWith("punts 0 yards")) {
+                //found missing punter scenario
+                punt.blocked = 1
+                if(scoreText.contains("blocked by ")) {
+                    String blockString = scoreText.substring(scoreText.indexOf("blocked by")+11)
+                    String blockerString = blockString.substring(0, blockString.indexOf(" "))
+                    String blockerJerseyNumer = blockerString.substring(0, blockerString.indexOf("-"))
+                    String blockerFirstInitial = blockerString.substring(blockerString.indexOf("-") + 1, blockerString.indexOf("."))
+                    String blockerLastName = blockerString.substring(blockerString.indexOf(".")+1, blockerString.length()-1)
+                    punt.blockerId = getPlayerIdFromRosters(rosters,returningTeamId,blockerJerseyNumer, blockerFirstInitial, blockerLastName)
+                }
+
+            } else {
+                //need to find other blocked punt scenarios
+            }
+            return punt
+        }
+
+        punt.punterId = lookupLeadingPlayerId(scoreText, rosters, kickTeamId)//looks like punter numbers are often wrong, maybe if this misses try selecting by pos + name only
         punt.puntYards = scoreText.substring(scoreText.indexOf("punts")+5, scoreText.indexOf("yards")).trim() as Integer
 
         if (scoreText.contains('fair catch')) {
@@ -157,7 +183,7 @@ class ScoreTextParserLib {
             punt.returnerId = lookupLeadingPlayerId(returnString, rosters, returningTeamId)
             punt.returnYards = returnString.substring(returnString.indexOf("for")+4,returnString.indexOf("yard"))?.trim() as Integer
         }
-        punt
+        return punt
     }
 
     static boolean isPass(String scoreText) {
@@ -272,6 +298,14 @@ class ScoreTextParserLib {
     }
 
     static Rush createRushRow(String gameId, Integer teamId, Integer playNum, Integer ytg, String scoreText, Map rosters) {
+        //filter kneel downs
+        if(scoreText.contains("kneels")) {
+            //find the yards still
+            //for -3 yards.
+            String yards = scoreText.substring(scoreText.indexOf("for")+3,scoreText.indexOf("yard")).trim()
+            return new Rush(gameid: gameId, playNum: playNum, teamId: teamId, kneelDown: 1, yards: Integer.parseInt(yards))
+
+        }
         String jerseyNumber = scoreText.substring(0, scoreText.indexOf("-"))
         String firstInitial = scoreText.substring(scoreText.indexOf("-")+1,scoreText.indexOf("."))
         String lastName = scoreText.substring(scoreText.indexOf(".")+1, scoreText.indexOf(" "))

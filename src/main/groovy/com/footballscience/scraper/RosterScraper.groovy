@@ -14,10 +14,10 @@ class RosterScraper {
     String baseStatsUrl = "http://stats.ncaa.org"
 
     String findRosterUrlbyOrg(String orgId) {
-        Document orgSummaryPage = Jsoup.connect(orgBaseUrl2018+orgId).timeout(50000).get()
+        Document orgSummaryPage = Jsoup.connect(orgBaseUrl2018+orgId).timeout(30000).get()
         String teamRelativePath = getFootballUrl(orgSummaryPage)
 
-        Document teamSummaryPage = Jsoup.connect(baseStatsUrl+teamRelativePath).timeout(50000).get()
+        Document teamSummaryPage = Jsoup.connect(baseStatsUrl+teamRelativePath).timeout(30000).get()
         String rosterPath = findRosterPathOnTeamPage(teamSummaryPage)
 
         return rosterPath
@@ -44,6 +44,22 @@ class RosterScraper {
 
     void runLoad() {
         writeFile(harvestAllRosters())
+    }
+
+    void runLoad2018() {
+        writeFile(harvestAllRosters2018())
+    }
+
+    String harvestAllRosters2018() {
+        StringBuffer buffer = new StringBuffer()
+        List orgIds = getAllOrgIds()
+        orgIds.each {
+            String footballUrl = findRosterUrlbyOrg(it)
+            Document doc = Jsoup.connect(baseStatsUrl+footballUrl).timeout(30000).get()
+            buffer.append(createCSVRowFromHtml(doc, it))
+            buffer.append(System.lineSeparator())
+        }
+        buffer.toString()
     }
 
     String harvestAllRosters() {
@@ -73,7 +89,7 @@ class RosterScraper {
     }
 
     String createBatchFileByOrgId(String orgId) {
-        Document doc = Jsoup.connect(baseUrl+orgId).timeout(50000).get()
+        Document doc = Jsoup.connect(baseUrl+orgId).timeout(30000).get()
         return createCSVRowFromHtml(doc, orgId)
     }
 
