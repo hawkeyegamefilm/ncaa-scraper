@@ -101,7 +101,7 @@ class PlayScraperTest extends Specification {
         }
 
         ikmRushes.size() == 16
-        ikmYards == 62
+        ikmYards == 62//this fails until yards parse correctly
         iowaRushes.size() == 48
     }
 

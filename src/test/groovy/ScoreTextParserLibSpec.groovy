@@ -169,8 +169,8 @@ class ScoreTextParserLibSpec extends Specification {
 
         where:
         scoreText                                                                                                                                        | expected
-        "21-I.Kelly-Martin pushed ob at NIL 46 for 4 yards (8-M.Williams). Penalty on IOW 38-T.Hockenson, Holding, 10 yards, enforced at NIL 46."        | "NIL46"
-        "21-I.Kelly-Martin pushed ob at NIL 13 for 45 yards (3-J.Embry). Penalty on IOW 59-R.Reynolds, Illegal low block, 15 yards, enforced at IOW 46." | "IOW46"
+        "21-I.Kelly-Martin pushed ob at NIL 46 for 4 yards (8-M.Williams). Penalty on IOW 38-T.Hockenson, Holding, 10 yards, enforced at NIL 46."        | " NIL46"
+        "21-I.Kelly-Martin pushed ob at NIL 13 for 45 yards (3-J.Embry). Penalty on IOW 59-R.Reynolds, Illegal low block, 15 yards, enforced at IOW 46." | " IOW46"
     }
 
 

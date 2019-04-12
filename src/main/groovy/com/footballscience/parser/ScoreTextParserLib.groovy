@@ -87,7 +87,7 @@ class ScoreTextParserLib {
                 Pass pass = createPassRow(gameId, teamId, playNum, ytg, scoreText, rosters)
                 returnMap.put(PlayType.ATTEMPT, pass)
             } else {
-                Rush rush = createRushRow(gameId, teamId, playNum, ytg, scoreText, rosters, yfog)
+                Rush rush = createRushRow(gameId, teamId, playNum, ytg, scoreText, rosters, yfog,abrMap)
                 returnMap.put(PlayType.ATTEMPT, rush)
             }
             //create csv rush or pass row to attempts table on conversation attempt
@@ -96,7 +96,7 @@ class ScoreTextParserLib {
             returnMap.put(PlayType.TIMEOUT, null)
         } else {
             //must be a rush attempt
-            Rush rush = createRushRow(gameId, teamId, playNum, ytg, scoreText, rosters, yfog)
+            Rush rush = createRushRow(gameId, teamId, playNum, ytg, scoreText, rosters, yfog, abrMap)
             returnMap.put(PlayType.RUSH, rush)
         }
         return returnMap
@@ -408,7 +408,7 @@ class ScoreTextParserLib {
             //use start yardline = yfog, then calculate yards from 'enforced at' spot
             String enforcedSpot = getEnforcedSpot(scoreText)
             int endingYfog = calculateSpot(abrMap,enforcedSpot,1645)
-            yards = yfog - endingYfog
+            yards = Math.abs(yfog - endingYfog)
 
         }
 
