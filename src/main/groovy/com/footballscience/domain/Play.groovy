@@ -20,6 +20,10 @@ class Play {
 
     String fullScoreText
     String driveText
+    Rush rush
+    Pass pass
+    Kickoff kickoff
+    Punt punt
 
 
     String toCsvRow() {

@@ -1,5 +1,8 @@
 import com.footballscience.domain.Drive
+import com.footballscience.domain.Game
 import com.footballscience.domain.Play
+import com.footballscience.parser.PlayType
+import com.footballscience.parser.ScoreTextParserLib
 import com.footballscience.scraper.PlayScraper
 import org.codehaus.jackson.map.ObjectMapper
 import spock.lang.Specification
@@ -48,8 +51,60 @@ class PlayScraperTest extends Specification {
             println "--------------${dIndex}-----------------"
             drive.plays.each { Play play -> println play.toCsvRow()}
             println "--------------END-----------------"
+//            drive.plays.each { Play play ->
+//                if(play.playType == PlayType.RUSH && play.teamId == 71) {
+//                    println(play.driveNumber)
+//                    println(play.down)
+//                    println(play.ytg)
+//
+//                }
+//            }
         }
     }
+
+    def "create game from drives"() {
+        when:
+        List<Drive> result = scraper.parseGameByDrives(scraper.getJsonFromUrl(testUrl2018))
+        Game gameResult = ScoreTextParserLib.createGameFromDrives(result)
+
+        then:
+        gameResult.homeScore == 33
+        gameResult.visitorScore == 7
+        gameResult.drives.size() == 27
+
+        //find rushing total for Iowa
+        List<Drive> iowaDrives = gameResult.drives.collect { Drive drive ->
+            if(drive.teamId == 71) { return drive}
+        }.findAll()
+        iowaDrives.size() == 14
+
+        List<Play> iowaRushes = []
+
+        for(Drive drive: iowaDrives) {
+            for(Play play: drive.plays) {
+                if(play.playType == PlayType.RUSH) {
+                    iowaRushes.add(play)
+                }
+            }
+        }
+
+//        List<Play> iowaRushes = iowaDrives.each { Drive drive ->
+//            return drive.plays.collect { Play play ->
+//                if(play.playType == PlayType.RUSH){return play}
+//            }
+//        }
+        List<Play> ikmRushes = iowaRushes.findAll{ it.fullScoreText.contains("21-I.Kelly-Martin")}
+        ikmRushes.each {println(it.fullScoreText)}
+        int ikmYards = 0
+        for(Play play: ikmRushes) {
+            ikmYards += play.rush.yards
+        }
+
+        ikmRushes.size() == 16
+        ikmYards == 62
+        iowaRushes.size() == 48
+    }
+
 
     def "parseGameByDrives - validate drives "() {
         when:
@@ -79,27 +134,6 @@ class PlayScraperTest extends Specification {
         scraper.year == '2014'
         scraper.month == '08'
         scraper.day == '30'
-    }
-
-    @Unroll
-    def "caclulate Spot"() {
-        setup:
-        scraper.populateRosters([id:"71"],[id: "920"])
-
-        when:
-        Integer spot = scraper.calculateSpot(driveText, teamId)
-
-        then:
-        spot == expectedResult
-
-        where:
-        driveText             | teamId | expectedResult
-        "1st and 10 at UNI35" | 71     | 65
-        "1st and 10 at UNI41" | 71     | 59
-        "1st and 10 at UNI30" | 71     | 70
-        "1st and 10 at UNI35" | 920    | 35
-        "1st and 10 at UNI41" | 920    | 41
-        "1st and 10 at UNI30" | 920    | 30
     }
 
     static String readResourceText(String resourcePath) {

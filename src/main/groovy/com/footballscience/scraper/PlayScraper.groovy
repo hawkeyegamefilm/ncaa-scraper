@@ -105,6 +105,8 @@ class PlayScraper {
 
         Boolean appendToExistingDrive
 
+        Map<PlayType, Object> mappedPlay = new LinkedHashMap<>()
+
         game.periods.eachWithIndex { Map period, Integer periodIndex ->
             period.possessions.eachWithIndex { Map poss, Integer possIndex ->
 
@@ -132,11 +134,11 @@ class PlayScraper {
 
                     if(play.driveText) {
                         if(playIndex == 0) {
-                            startYfog = calculateSpot(play.driveText,awayteam.id as Integer)
+                            startYfog = ScoreTextParserLib.calculateSpot(abrMap, play.driveText,awayteam.id as Integer)
                         }
                         down = downMap.get(play.driveText.substring(0,3))
                         ytg = Integer.parseInt(play.driveText.substring(7,10).trim())
-                        yfog = calculateSpot(play.driveText,awayteam.id as Integer)
+                        yfog = ScoreTextParserLib.calculateSpot(abrMap, play.driveText,awayteam.id as Integer)
                     } else {
                         down = null
                         ytg = null
@@ -144,8 +146,10 @@ class PlayScraper {
                     }
 
                     Boolean onsideFlag = poss.plays.size > 1 //trying to flag onsides
-                    PlayType playType = ScoreTextParserLib.determinePlayType(gameId, poss.teamId as Integer, defensiveTeamId, playIndex as Integer, ytg as Integer, play.scoreText, rosters, onsideFlag)
-                    plays.add(new Play(gameId: gameId, playIndex: globalPlayCount, periodIndex: periodIndex, time: ScoreTextParserLib.convertTimeStringToSeconds(poss.time), teamId: cleanString(poss.teamId as String), defensiveTeamId: defensiveTeamId, visitingScore: cleanString(play.visitingScore as String), homeScore: cleanString(play.homeScore as String),down:down, ytg: ytg, yfog: yfog, playType: playType, driveNumber: possIndex, drivePlay: playIndex, fullScoreText:play.scoreText, driveText: play.driveText))
+                    mappedPlay = ScoreTextParserLib.determinePlayTypeAndMapPlay(gameId, poss.teamId as Integer, defensiveTeamId, playIndex as Integer, ytg as Integer, play.scoreText, rosters, onsideFlag, yfog, abrMap)
+                    Play playObject = new Play(gameId: gameId, playIndex: globalPlayCount, periodIndex: periodIndex, time: ScoreTextParserLib.convertTimeStringToSeconds(poss.time), teamId: cleanString(poss.teamId as String), defensiveTeamId: defensiveTeamId, visitingScore: cleanString(play.visitingScore as String), homeScore: cleanString(play.homeScore as String),down:down, ytg: ytg, yfog: yfog, playType: mappedPlay.keySet()[0], driveNumber: possIndex, drivePlay: playIndex, fullScoreText:play.scoreText, driveText: play.driveText)
+                    ScoreTextParserLib.addMappedPlayToDomainObject(mappedPlay,playObject)
+                    plays.add(playObject)
                 }
 
                 Integer timeValue = poss.time ? ScoreTextParserLib.convertTimeStringToSeconds(poss.time) : 0
@@ -202,18 +206,6 @@ class PlayScraper {
             return 0
         } else {
             return Integer.parseInt(scoreField)
-        }
-    }
-
-    Integer calculateSpot(String driveText, Integer teamId) {
-        String last = driveText.substring(driveText.lastIndexOf(" "))
-        String teamString = last.replaceAll("[0-9]", "").trim()
-        Integer yardline = last.replaceAll("[A-Za-z]", "").toInteger()
-
-        if(abrMap.get(teamId) == teamString) {
-            return yardline
-        } else {
-            return (50 - yardline) + 50
         }
     }
 }

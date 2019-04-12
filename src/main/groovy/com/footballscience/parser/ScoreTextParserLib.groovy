@@ -1,6 +1,8 @@
 package com.footballscience.parser
 
+import com.footballscience.domain.Drive
 import com.footballscience.domain.DriveType
+import com.footballscience.domain.Game
 import com.footballscience.domain.Kickoff
 import com.footballscience.domain.Pass
 import com.footballscience.domain.Play
@@ -13,47 +15,91 @@ class ScoreTextParserLib {
     /*
     Need to deal with the multiple teamid BS, passed in ID will need to be global one to write rows
      */
-    static PlayType determinePlayType(String gameId, Integer teamId, Integer defensiveTeamId, Integer playNum, Integer ytg, String scoreText, Map rosters, Boolean onsideFlag) {
+//    static PlayType determinePlayType(String gameId, Integer teamId, Integer defensiveTeamId, Integer playNum, Integer ytg, String scoreText, Map rosters, Boolean onsideFlag) {
+//        if(isPass(scoreText)) {
+//            Pass pass = createPassRow(gameId, teamId, playNum, ytg, scoreText, rosters)
+//            PlayType.PASS
+//        } else if(scoreText.contains("punts")) {
+//            Punt punt = createPuntRow(gameId, teamId, defensiveTeamId, playNum, scoreText, rosters)
+//            PlayType.PUNT
+//        } else if(scoreText.contains("kicks")) {
+//            //kick-off row
+//            Kickoff kickoff = createKickoffRow(gameId, teamId, playNum, scoreText, onsideFlag, rosters)
+//            PlayType.KICKOFF
+//        } else if((scoreText.contains("penalty") || scoreText.contains("Penalty") && !scoreText.contains("enforced")) ) {
+//            //parse out penalty details, write to separate table?
+//            //treat 'no play' rows discreetly
+//            if(scoreText.contains('No Play')) {
+//                //write the row?
+//                PlayType.PENALTY//have to account for holding penalties that are accepted + enforced, not denoted w/No Play
+//            }
+//
+//        } else if(scoreText.contains("Field Goal")) {
+//            //write FG row
+//            PlayType.FIELD_GOAL
+//        } else if(scoreText.contains("extra point")) {
+//            //write PAT row?
+//            PlayType.ATTEMPT
+//        } else if(scoreText.contains("Conversion") ||scoreText.contains("conversion") ) {
+//            //parse this like a normal play for 2 points? Just record success/failure
+//            if(isPass(scoreText)) {
+//                Pass pass = createPassRow(gameId, teamId, playNum, ytg, scoreText, rosters)
+//            } else {
+//                Rush rush = createRushRow(gameId, teamId, playNum, ytg, scoreText, rosters)
+//            }
+//            PlayType.ATTEMPT
+//            //create csv rush or pass row to attempts table on conversation attempt
+//        } else if(scoreText.contains("Timeout") || scoreText.contains("timeout") || scoreText.contains("TIMEOUT")) {
+//            //currently don't see this in the ncaa site data
+//            PlayType.TIMEOUT
+//        } else {
+//            //must be a rush attempt
+//            Rush rush = createRushRow(gameId, teamId, playNum, ytg, scoreText, rosters)
+//            PlayType.RUSH
+//        }
+//    }
+
+    static Map<PlayType,Object> determinePlayTypeAndMapPlay(String gameId, Integer teamId, Integer defensiveTeamId, Integer playNum, Integer ytg, String scoreText, Map rosters, Boolean onsideFlag, Integer yfog, Map abrMap) {
+        Map returnMap = [:]
         if(isPass(scoreText)) {
             Pass pass = createPassRow(gameId, teamId, playNum, ytg, scoreText, rosters)
-            PlayType.PASS
+            returnMap.put(PlayType.PASS, pass)
         } else if(scoreText.contains("punts")) {
             Punt punt = createPuntRow(gameId, teamId, defensiveTeamId, playNum, scoreText, rosters)
-            PlayType.PUNT
+            returnMap.put(PlayType.PUNT, punt)
         } else if(scoreText.contains("kicks")) {
             //kick-off row
             Kickoff kickoff = createKickoffRow(gameId, teamId, playNum, scoreText, onsideFlag, rosters)
-            PlayType.KICKOFF
-        } else if(scoreText.contains("penalty") || scoreText.contains("Penalty") ) {
+            returnMap.put(PlayType.KICKOFF, kickoff)
+        } else if((scoreText.contains("penalty") || scoreText.contains("Penalty")) && scoreText.contains('No Play')) {
             //parse out penalty details, write to separate table?
             //treat 'no play' rows discreetly
-            if(scoreText.contains('No Play')) {
-                //write the row?
-            }
-            PlayType.PENALTY
+            returnMap.put(PlayType.PENALTY, null)
         } else if(scoreText.contains("Field Goal")) {
             //write FG row
-            PlayType.FIELD_GOAL
+            returnMap.put(PlayType.FIELD_GOAL, null)
         } else if(scoreText.contains("extra point")) {
             //write PAT row?
-            PlayType.ATTEMPT
+            returnMap.put(PlayType.ATTEMPT, null)
         } else if(scoreText.contains("Conversion") ||scoreText.contains("conversion") ) {
             //parse this like a normal play for 2 points? Just record success/failure
             if(isPass(scoreText)) {
                 Pass pass = createPassRow(gameId, teamId, playNum, ytg, scoreText, rosters)
+                returnMap.put(PlayType.ATTEMPT, pass)
             } else {
-                Rush rush = createRushRow(gameId, teamId, playNum, ytg, scoreText, rosters)
+                Rush rush = createRushRow(gameId, teamId, playNum, ytg, scoreText, rosters, yfog)
+                returnMap.put(PlayType.ATTEMPT, rush)
             }
-            PlayType.ATTEMPT
             //create csv rush or pass row to attempts table on conversation attempt
         } else if(scoreText.contains("Timeout") || scoreText.contains("timeout") || scoreText.contains("TIMEOUT")) {
             //currently don't see this in the ncaa site data
-            PlayType.TIMEOUT
+            returnMap.put(PlayType.TIMEOUT, null)
         } else {
             //must be a rush attempt
-            Rush rush = createRushRow(gameId, teamId, playNum, ytg, scoreText, rosters)
-            PlayType.RUSH
+            Rush rush = createRushRow(gameId, teamId, playNum, ytg, scoreText, rosters, yfog)
+            returnMap.put(PlayType.RUSH, rush)
         }
+        return returnMap
     }
 
     static Kickoff createKickoffRow(String gameId, Integer kickingTeamId, Integer returningTeamId, String scoreText, Boolean onsideFlag, Map rosters) {
@@ -297,7 +343,12 @@ class ScoreTextParserLib {
         }?.player_id
     }
 
-    static Rush createRushRow(String gameId, Integer teamId, Integer playNum, Integer ytg, String scoreText, Map rosters) {
+    static String getEnforcedSpot(String scoreText) {
+        String tailString = scoreText.substring(scoreText.indexOf("enforced at")+11, scoreText.lastIndexOf(".")).replace(" ", "")
+        return " "+tailString
+    }
+
+    static Rush createRushRow(String gameId, Integer teamId, Integer playNum, Integer ytg, String scoreText, Map rosters, Integer yfog, Map abrMap) {
         //filter kneel downs
         if(scoreText.contains("kneels")) {
             //find the yards still
@@ -350,6 +401,17 @@ class ScoreTextParserLib {
         if(scoreText.contains("SAFETY") || scoreText.contains("safety")) {
             safety = 1
         }
+
+        //penalty mods
+        if(scoreText.contains("penalty") || scoreText.contains("Penalty")) {
+            //this is an insane one off; calculate from enforced spot
+            //use start yardline = yfog, then calculate yards from 'enforced at' spot
+            String enforcedSpot = getEnforcedSpot(scoreText)
+            int endingYfog = calculateSpot(abrMap,enforcedSpot,1645)
+            yards = yfog - endingYfog
+
+        }
+
 
         return new Rush(gameid: gameId, playNum: playNum, teamId: teamId, playerId: playerId ? playerId as Integer : 0, attempt: 1, yards: yards ? yards as Integer : 0, touchdown: touchdown, firstDown: firstDown, sack: sack, fumble: fumble, fumbleLost: fumbleLost, safety: safety)
     }
@@ -459,7 +521,58 @@ class ScoreTextParserLib {
         }
 
         value
+    }
+
+    static void addMappedPlayToDomainObject(Map<PlayType, Object> mappedPlay, Play play) {
+        switch (mappedPlay.keySet()[0]) {
+            case PlayType.RUSH:
+                play.rush = mappedPlay.get(PlayType.RUSH) as Rush
+                break
+            case PlayType.PASS:
+                play.pass = mappedPlay.get(PlayType.PASS) as Pass
+                break
+            case PlayType.KICKOFF:
+                play.kickoff = mappedPlay.get(PlayType.KICKOFF) as Kickoff
+                break
+            case PlayType.PUNT:
+                play.punt = mappedPlay.get(PlayType.PUNT) as Punt
+                break
+            default:
+                break
+        }
 
     }
 
+    static Game createGameFromDrives(List<Drive> drives) {
+        Game game = new Game()
+        game.drives = drives
+        //find scores by walking back to last scoring play?
+        boolean scoreFound = false
+
+        Drive lastScoringDrive = drives.reverse().find { Drive drive ->
+            return drive.plays.find { Play play ->
+                if(play.homeScore != 0 || play.visitingScore != 0) {
+                    return play
+                }
+
+            }
+        }
+        Play lastScoringPlay = lastScoringDrive.plays.last()
+        game.homeScore = lastScoringPlay.homeScore
+        game.visitorScore = lastScoringPlay.visitingScore
+
+        return game
+    }
+
+    static Integer calculateSpot(Map abrMap, String driveText, Integer awayTeamId) {
+        String last = driveText.substring(driveText.lastIndexOf(" "))
+        String teamString = last.replaceAll("[0-9]", "").trim()
+        Integer yardline = last.replaceAll("[A-Za-z]", "").toInteger()
+
+        if(abrMap.get(awayTeamId) == teamString) {
+            return yardline
+        } else {
+            return (50 - yardline) + 50
+        }
+    }
 }

@@ -16,7 +16,7 @@ class Drive {
     Integer top
     Integer rzDrive
 
-    List plays
+    List<Play> plays
 
     String toCsvRow() {
         StringBuffer buffer = new StringBuffer()
