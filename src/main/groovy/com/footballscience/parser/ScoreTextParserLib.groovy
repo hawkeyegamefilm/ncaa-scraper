@@ -61,7 +61,11 @@ class ScoreTextParserLib {
 
     static Map<PlayType,Object> determinePlayTypeAndMapPlay(String gameId, Integer teamId, Integer defensiveTeamId, Integer playNum, Integer ytg, String scoreText, Map rosters, Boolean onsideFlag, Integer yfog, Map abrMap) {
         Map returnMap = [:]
-        if(isPass(scoreText)) {
+        if((scoreText.contains("penalty") || scoreText.contains("Penalty")) && scoreText.contains('No Play')) {//Need to box these out first so they don't included in play counts
+            //parse out penalty details, write to separate table?
+            //treat 'no play' rows discreetly
+            returnMap.put(PlayType.PENALTY, null)
+        } else if(isPass(scoreText)) {
             Pass pass = createPassRow(gameId, teamId, playNum, ytg, scoreText, rosters)
             returnMap.put(PlayType.PASS, pass)
         } else if(scoreText.contains("punts")) {

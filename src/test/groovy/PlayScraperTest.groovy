@@ -79,11 +79,14 @@ class PlayScraperTest extends Specification {
         iowaDrives.size() == 14
 
         List<Play> iowaRushes = []
+        List<Play> iowaPasses = []
 
         for(Drive drive: iowaDrives) {
             for(Play play: drive.plays) {
                 if(play.playType == PlayType.RUSH) {
                     iowaRushes.add(play)
+                } else if(play.playType == PlayType.PASS) {
+                    iowaPasses.add(play)
                 }
             }
         }
@@ -94,7 +97,7 @@ class PlayScraperTest extends Specification {
 //            }
 //        }
         List<Play> ikmRushes = iowaRushes.findAll{ it.fullScoreText.contains("21-I.Kelly-Martin")}
-        ikmRushes.each {println(it.fullScoreText)}
+        iowaPasses.each {println(it.fullScoreText)}
         int ikmYards = 0
         for(Play play: ikmRushes) {
             ikmYards += play.rush.yards
@@ -103,6 +106,7 @@ class PlayScraperTest extends Specification {
         ikmRushes.size() == 16
         ikmYards == 62//this fails until yards parse correctly
         iowaRushes.size() == 48
+        iowaPasses.size() == 25
     }
 
 
