@@ -353,14 +353,23 @@ class ScoreTextParserLib {
     }
 
     static Rush createRushRow(String gameId, Integer teamId, Integer playNum, Integer ytg, String scoreText, Map rosters, Integer yfog, Map abrMap) {
+        String yards
         //filter kneel downs
         if(scoreText.contains("kneels")) {
             //find the yards still
-            //for -3 yards.
-            String yards = scoreText.substring(scoreText.indexOf("for")+3,scoreText.indexOf("yard")).trim()
+            yards = scoreText.substring(scoreText.indexOf("for")+3,scoreText.indexOf("yard")).trim()
             return new Rush(gameid: gameId, playNum: playNum, teamId: teamId, kneelDown: 1, yards: Integer.parseInt(yards))
 
         }
+
+        Integer sack = 0
+        if(scoreText.contains("sack") || scoreText.contains("Sack") || scoreText.contains("sacked")) {
+            //have to parse out yards, same as kneel down
+//            yards = scoreText.substring(scoreText.indexOf("for")+4,scoreText.indexOf("yard"))?.trim()
+//            return new Rush(gameid: gameId, playNum: playNum, teamId: teamId, sack: 1, yards: Integer.parseInt(yards))
+            sack = 1
+        }
+
         String jerseyNumber = scoreText.substring(0, scoreText.indexOf("-"))
         String firstInitial = scoreText.substring(scoreText.indexOf("-")+1,scoreText.indexOf("."))
         String lastName = scoreText.substring(scoreText.indexOf(".")+1, scoreText.indexOf(" "))
@@ -379,12 +388,11 @@ class ScoreTextParserLib {
             fumbleLost = calculateFumbleLost(scoreText, teamId, rosters)
         }
 
-        String yards
         if(touchdown) {
             yards = scoreText.substring(scoreText.indexOf("runs")+4,scoreText.indexOf("yard")).trim()
         } else {
             //handle no gain cases
-            if (scoreText.contains("no gain")) {
+            if (scoreText.contains("no gain") && sack == 0) {
                 yards = 0
             } else {
                 yards = scoreText.substring(scoreText.indexOf("for")+4,scoreText.indexOf("yard"))?.trim()
@@ -394,11 +402,6 @@ class ScoreTextParserLib {
         Integer firstDown = 0
         if(Integer.parseInt(yards) >= ytg) {
             firstDown = 1
-        }
-
-        Integer sack = 0
-        if(scoreText.contains("sack") || scoreText.contains("Sack")) {
-            sack = 1
         }
 
         Integer safety = 0
@@ -415,7 +418,6 @@ class ScoreTextParserLib {
             yards = Math.abs(yfog - endingYfog)
 
         }
-
 
         return new Rush(gameid: gameId, playNum: playNum, teamId: teamId, playerId: playerId ? playerId as Integer : 0, attempt: 1, yards: yards ? yards as Integer : 0, touchdown: touchdown, firstDown: firstDown, sack: sack, fumble: fumble, fumbleLost: fumbleLost, safety: safety)
     }

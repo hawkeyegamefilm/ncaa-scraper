@@ -160,6 +160,23 @@ class ScoreTextParserLibSpec extends Specification {
     }
 
     @Unroll
+    def "sack scenarios"() {
+        when:
+        Rush rush = ScoreTextParserLib.createRushRow("somegameid", teamId, 1, ytg, scoreText, [:], yfog, [71:"IOW", 1645: "NIL"])
+
+        then:
+        rush.playerId == expectedPlayerId
+        rush.yards == expectedYards
+
+        where:
+        scoreText                                                                                                                | teamId | ytg | expectedPlayerId | expectedYards | yfog
+        "4-N.Stanley sacked at IOW 49 for -4 yards, FUMBLES (15-S.Smith). 38-T.Hockenson to IOW 49 for no gain."                 | 71     | 10  | 0                | -4            | 53
+        "15-M.Childers sacked at NIL 24 for -10 yards (40-P.Hesse)."                                                             | 1645   | 4   | 0                | -10           | 34
+        "15-M.Childers sacked at NIL 9 for -15 yards, FUMBLES (34-K.Welch). 15-M.Childers to NIL 9 for no gain."                 | 1645   | 4   | 0                | -15           | 24
+        "15-M.Childers sacked at NIL 26 for -12 yards, FUMBLES (94-A.Epenesa). 57-C.Golston to NIL 26 for no gain (65-N.Veloz)." | 1645   | 8   | 0                | -12           | 24
+    }
+
+    @Unroll
     def "enforce spot string"() {
         when:
         String actual = ScoreTextParserLib.getEnforcedSpot(scoreText)
