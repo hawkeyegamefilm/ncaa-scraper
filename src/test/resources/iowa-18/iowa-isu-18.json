@@ -1,0 +1,1131 @@
+{
+  "inputMD5Sum": "0ae10e77785312eaa9051dd3713ace07",
+  "updatedTimestamp": "2018-09-09 09:59:37 ET",
+  "meta": {
+    "title": "PLAY-BY-PLAY",
+    "teams": [
+      {
+        "homeTeam": "false",
+        "id": "2476",
+        "color": "#A6192E",
+        "shortname": "Iowa State",
+        "seoName": "iowa-st",
+        "sixCharAbbr": "IOWAST"
+      },
+      {
+        "homeTeam": "true",
+        "id": "71",
+        "color": "#010101",
+        "shortname": "Iowa",
+        "seoName": "iowa",
+        "sixCharAbbr": "IOWA"
+      }
+    ]
+  },
+  "periods": [
+    {
+      "title": "1ST",
+      "shortTitle": "1st",
+      "possessions": [
+        {
+          "teamId": "71",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "41-C.Francis kicks 65 yards from ISU 35 to IOW End Zone. touchback.",
+              "driveText": "1st and 10 at ISU35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Team penalty on IOW, Delay of game, 5 yards, enforced at IOW 25. No Play.",
+              "driveText": "1st and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to IOW 27 for 7 yards (2-W.Harvey).",
+              "driveText": "1st and 15 at IOW20",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to IOW 31 for 4 yards (1-D.Payne).",
+              "driveText": "2nd and 8 at IOW27",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 6-I.Smith-Marsette.",
+              "driveText": "3rd and 4 at IOW31",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "7-C.Rastetter punts 41 yards from IOW 31 Downed at the ISU 28.",
+              "driveText": "4th and 4 at IOW31",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2476",
+          "time": "13:31",
+          "plays": [
+            {
+              "scoreText": "17-K.Kempt complete to 32-D.Montgomery. 32-D.Montgomery to ISU 33 for 5 yards (48-J.Hockaday).",
+              "driveText": "1st and 10 at ISU28",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-K.Kempt complete to 8-D.Jones. 8-D.Jones to IOW 36 for 31 yards (49-N.Niemann).",
+              "driveText": "2nd and 5 at ISU33",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "32-D.Montgomery to IOW 35 for 1 yard (11-M.Ojemudia).",
+              "driveText": "1st and 10 at IOW36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "32-D.Montgomery to IOW 31 for 4 yards (90-S.Brincks).",
+              "driveText": "2nd and 9 at IOW35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "32-D.Montgomery to IOW 25 for 6 yards (98-A.Nelson).",
+              "driveText": "3rd and 5 at IOW31",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-K.Kempt complete to 32-D.Montgomery. 32-D.Montgomery to IOW 17 for 8 yards (48-J.Hockaday).",
+              "driveText": "1st and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "32-D.Montgomery to IOW 13 for 4 yards (11-M.Ojemudia,49-N.Niemann).",
+              "driveText": "2nd and 2 at IOW17",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-S.Croney to IOW 12 for 1 yard (11-M.Ojemudia).",
+              "driveText": "1st and 10 at IOW13",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-K.Kempt complete to 25-S.Croney. 25-S.Croney to IOW 2 for 10 yards (8-M.Hankins,48-J.Hockaday).",
+              "driveText": "2nd and 9 at IOW12",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-K.Kempt complete to 89-D.Souhner. 89-D.Souhner to IOW 2 for no gain (8-M.Hankins).",
+              "driveText": "1st and 2 at IOW2",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "32-D.Montgomery to IOW 1 for 1 yard (32-D.Colbert).",
+              "driveText": "2nd and 2 at IOW2",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-K.Kempt incomplete. Intended for 18-H.Butler.",
+              "driveText": "3rd and 1 at IOW1",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Penalty on ISU 54-J.Mueller, False start, 5 yards, enforced at IOW 1. No Play.",
+              "driveText": "4th and 1 at IOW1",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "96-C.Assalley 23 yards Field Goal is Good.",
+              "driveText": "4th and 6 at IOW13",
+              "visitingScore": "3",
+              "homeScore": "0"
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "06:42",
+          "plays": [
+            {
+              "scoreText": "41-C.Francis kicks 65 yards from ISU 35 to IOW End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to IOW 26 for 1 yard (42-M.Spears,3-J.Bailey).",
+              "driveText": "1st and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 87-N.Fant. 87-N.Fant to IOW 30 for 4 yards (23-M.Rose).",
+              "driveText": "2nd and 9 at IOW26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley pushed ob at IOW 36 for 6 yards (1-D.Payne).",
+              "driveText": "3rd and 5 at IOW30",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to IOW 37 for 1 yard (50-E.Uwazurike,2-W.Harvey).",
+              "driveText": "1st and 10 at IOW36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 6-I.Smith-Marsette.",
+              "driveText": "2nd and 9 at IOW37",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to IOW 34 for -3 yards (3-J.Bailey,2-W.Harvey).",
+              "driveText": "3rd and 9 at IOW37",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "7-C.Rastetter punts 51 yards from IOW 34 Downed at the ISU 15.",
+              "driveText": "4th and 12 at IOW34",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2476",
+          "time": "03:22",
+          "plays": [
+            {
+              "scoreText": "32-D.Montgomery to ISU 16 for 1 yard (48-J.Hockaday,96-M.Nelson).",
+              "driveText": "1st and 10 at ISU15",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-K.Kempt incomplete. Intended for 32-D.Montgomery.",
+              "driveText": "2nd and 9 at ISU16",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-K.Kempt sacked at ISU 7 for -9 yards (49-N.Niemann).",
+              "driveText": "3rd and 9 at ISU16",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "13-C.Dunn punts 14 yards from ISU 7, out of bounds at the ISU 21.",
+              "driveText": "4th and 18 at ISU7",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "02:08",
+          "plays": [
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 87-N.Fant.",
+              "driveText": "1st and 10 at ISU21",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley to ISU 20 for 1 yard (50-E.Uwazurike).",
+              "driveText": "2nd and 10 at ISU21",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 12-B.Smith.",
+              "driveText": "3rd and 9 at ISU20",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "91-M.Recinos 38 yards Field Goal is No Good.",
+              "driveText": "4th and 9 at ISU28",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2476",
+          "time": "01:03",
+          "plays": [
+            {
+              "scoreText": "32-D.Montgomery to ISU 31 for 11 yards (11-M.Ojemudia,49-N.Niemann).",
+              "driveText": "1st and 10 at ISU20",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-K.Kempt to ISU 31 for no gain (94-A.Epenesa).",
+              "driveText": "1st and 10 at ISU31",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "2ND",
+      "shortTitle": "2nd",
+      "possessions": [
+        {
+          "teamId": "2476",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "32-D.Montgomery to ISU 34 for 3 yards (90-S.Brincks,95-C.Lattimore).",
+              "driveText": "2nd and 10 at ISU31",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-K.Kempt incomplete. Intended for 18-H.Butler.",
+              "driveText": "3rd and 7 at ISU34",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "13-C.Dunn punts 37 yards from ISU 34 to IOW 29, fair catch by 27-A.Hooker.",
+              "driveText": "4th and 7 at ISU34",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "14:07",
+          "plays": [
+            {
+              "scoreText": "10-M.Sargent to IOW 30 for 1 yard (12-G.Eisworth).",
+              "driveText": "1st and 10 at IOW29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 6-I.Smith-Marsette. Penalty on ISU 12-G.Eisworth, Holding, 10 yards, enforced at IOW 30. No Play.",
+              "driveText": "2nd and 9 at IOW30",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to IOW 41 for 1 yard (2-W.Harvey).",
+              "driveText": "1st and 10 at IOW40",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 87-N.Fant. 87-N.Fant pushed ob at IOW 49 for 8 yards (33-B.Lewis).",
+              "driveText": "2nd and 9 at IOW41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 36-B.Ross. 36-B.Ross to ISU 47 for 4 yards (42-M.Spears).",
+              "driveText": "3rd and 1 at IOW49",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to ISU 36 for 11 yards (11-L.White).",
+              "driveText": "1st and 10 at ISU47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to ISU 37 for -1 yard (23-M.Rose).",
+              "driveText": "1st and 10 at ISU36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 87-N.Fant.",
+              "driveText": "2nd and 11 at ISU37",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 38-T.Hockenson. 38-T.Hockenson to ISU 33 for 4 yards (33-B.Lewis,1-D.Payne).",
+              "driveText": "3rd and 11 at ISU37",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley punts 25 yards from ISU 33, out of bounds at the ISU 8.",
+              "driveText": "4th and 7 at ISU33",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2476",
+          "time": "09:46",
+          "plays": [
+            {
+              "scoreText": "32-D.Montgomery to ISU 8 for no gain (48-J.Hockaday,40-P.Hesse).",
+              "driveText": "1st and 10 at ISU8",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "32-D.Montgomery to ISU 8 for no gain (48-J.Hockaday,40-P.Hesse).",
+              "driveText": "2nd and 10 at ISU8",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-K.Kempt complete to 23-M.Eaton. 23-M.Eaton to ISU 15 for 7 yards (11-M.Ojemudia).",
+              "driveText": "3rd and 10 at ISU8",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "13-C.Dunn punts 13 yards from ISU 15, out of bounds at the ISU 28.",
+              "driveText": "4th and 3 at ISU15",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "07:34",
+          "plays": [
+            {
+              "scoreText": "28-T.Young to ISU 22 for 6 yards (1-D.Payne).",
+              "driveText": "1st and 10 at ISU28",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to ISU 18 for 4 yards (12-G.Eisworth).",
+              "driveText": "2nd and 4 at ISU22",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 38-T.Hockenson. 38-T.Hockenson to ISU 12 for 6 yards (11-L.White).",
+              "driveText": "1st and 10 at ISU18",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 38-T.Hockenson.",
+              "driveText": "2nd and 4 at ISU12",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to ISU 13 for -1 yard (3-J.Bailey,11-L.White).",
+              "driveText": "3rd and 4 at ISU12",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "91-M.Recinos 31 yards Field Goal is Good.",
+              "driveText": "4th and 5 at ISU21",
+              "visitingScore": "3",
+              "homeScore": "3"
+            }
+          ]
+        },
+        {
+          "teamId": "2476",
+          "time": "05:18",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 65 yards from IOW 35 to ISU End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "32-D.Montgomery to ISU 23 for -2 yards (27-A.Hooker,40-P.Hesse). Penalty on ISU 11-C.Allen, Holding, 10 yards, enforced at ISU 25. No Play.",
+              "driveText": "1st and 10 at ISU25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "32-D.Montgomery to ISU 15 for no gain (98-A.Nelson,30-J.Gervase).",
+              "driveText": "1st and 20 at ISU15",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-K.Kempt complete to 14-T.Milton. 14-T.Milton to ISU 30 for 15 yards (49-N.Niemann).",
+              "driveText": "2nd and 20 at ISU15",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-K.Kempt complete to 14-T.Milton. 14-T.Milton to ISU 42 for 12 yards (8-M.Hankins).",
+              "driveText": "3rd and 5 at ISU30",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "32-D.Montgomery to ISU 45 for 3 yards (98-A.Nelson,49-N.Niemann).",
+              "driveText": "1st and 10 at ISU42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-K.Kempt sacked at ISU 36 for -9 yards (96-M.Nelson).",
+              "driveText": "2nd and 7 at ISU45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "32-D.Montgomery to ISU 36 for no gain (32-D.Colbert,94-A.Epenesa).",
+              "driveText": "3rd and 16 at ISU36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "13-C.Dunn punts 58 yards from ISU 36, out of bounds at the IOW 6.",
+              "driveText": "4th and 16 at ISU36",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "01:25",
+          "plays": [
+            {
+              "scoreText": "10-M.Sargent to IOW 8 for 2 yards (76-R.Lima,23-M.Rose).",
+              "driveText": "1st and 10 at IOW6",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to IOW 10 for 2 yards (23-M.Rose).",
+              "driveText": "2nd and 8 at IOW8",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to IOW 15 for 5 yards (12-G.Eisworth).",
+              "driveText": "3rd and 6 at IOW10",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "3RD",
+      "shortTitle": "3rd",
+      "possessions": [
+        {
+          "teamId": "2476",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 65 yards from IOW 35 to ISU End Zone. touchback.",
+              "driveText": "4th and 1 at IOW35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-K.Kempt complete to 18-H.Butler. 18-H.Butler to ISU 29 for 4 yards (8-M.Hankins).",
+              "driveText": "1st and 10 at ISU25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-K.Kempt incomplete. Intended for 18-H.Butler.",
+              "driveText": "2nd and 6 at ISU29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-K.Kempt complete to 32-D.Montgomery. 32-D.Montgomery to ISU 31 for 2 yards (32-D.Colbert).",
+              "driveText": "3rd and 6 at ISU29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "13-C.Dunn punts 35 yards from ISU 31 Downed at the IOW 34.",
+              "driveText": "4th and 4 at ISU31",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "13:27",
+          "plays": [
+            {
+              "scoreText": "28-T.Young to IOW 45 for 11 yards (33-B.Lewis).",
+              "driveText": "1st and 10 at IOW34",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to IOW 46 for 1 yard (3-J.Bailey,23-M.Rose).",
+              "driveText": "1st and 10 at IOW45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 38-T.Hockenson. 38-T.Hockenson to IOW 48 for 2 yards (12-G.Eisworth,23-M.Rose).",
+              "driveText": "2nd and 9 at IOW46",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 19-M.Cooper. 19-M.Cooper to ISU 49 for 3 yards (23-M.Rose).",
+              "driveText": "3rd and 7 at IOW48",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "7-C.Rastetter punts 40 yards from ISU 49, out of bounds at the ISU 9.",
+              "driveText": "4th and 4 at ISU49",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2476",
+          "time": "10:46",
+          "plays": [
+            {
+              "scoreText": "17-K.Kempt complete to 23-M.Eaton. 23-M.Eaton to ISU 13 for 4 yards (27-A.Hooker).",
+              "driveText": "1st and 10 at ISU9",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "32-D.Montgomery to ISU 14 for 1 yard (98-A.Nelson,27-A.Hooker).",
+              "driveText": "2nd and 6 at ISU13",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-K.Kempt incomplete. Intended for 8-D.Jones. Penalty on ISU 74-B.Meeker, Holding, declined.",
+              "driveText": "3rd and 5 at ISU14",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "13-C.Dunn punts 57 yards from ISU 14. 14-K.Groeneweg to IOW 30 for 1 yard (1-D.Payne).",
+              "driveText": "4th and 5 at ISU14",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "09:06",
+          "plays": [
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 6-I.Smith-Marsette.",
+              "driveText": "1st and 10 at IOW30",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 6-I.Smith-Marsette. 6-I.Smith-Marsette to ISU 25 for 45 yards (11-L.White).",
+              "driveText": "2nd and 10 at IOW30",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent pushed ob at ISU 25 for no gain (12-G.Eisworth). Penalty on IOW 49-N.Niemann, Chop block, 15 yards, enforced at ISU 25. No Play.",
+              "driveText": "1st and 10 at ISU25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 38-T.Hockenson. 38-T.Hockenson to ISU 35 for 5 yards (12-G.Eisworth,23-M.Rose).",
+              "driveText": "1st and 25 at ISU40",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 14-K.Groeneweg. 14-K.Groeneweg to ISU 30 for 5 yards (23-M.Rose).",
+              "driveText": "2nd and 20 at ISU35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 14-K.Groeneweg.",
+              "driveText": "3rd and 15 at ISU30",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "91-M.Recinos 48 yards Field Goal is Good.",
+              "driveText": "4th and 15 at ISU38",
+              "visitingScore": "3",
+              "homeScore": "6"
+            }
+          ]
+        },
+        {
+          "teamId": "2476",
+          "time": "06:34",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 65 yards from IOW 35 to ISU End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-S.Croney to ISU 26 for 1 yard (57-C.Golston).",
+              "driveText": "1st and 10 at ISU25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-K.Kempt complete to 18-H.Butler. 18-H.Butler pushed ob at ISU 34 for 8 yards (8-M.Hankins).",
+              "driveText": "2nd and 9 at ISU26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-S.Croney to ISU 35 for 1 yard (96-M.Nelson,48-J.Hockaday).",
+              "driveText": "3rd and 1 at ISU34",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Penalty on IOW 94-A.Epenesa, Offside, 5 yards, enforced at ISU 35. No Play.",
+              "driveText": "1st and 10 at ISU35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "32-D.Montgomery to ISU 44 for 4 yards (30-J.Gervase,94-A.Epenesa).",
+              "driveText": "1st and 5 at ISU40",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-K.Kempt complete to 14-T.Milton. 14-T.Milton to ISU 48 for 4 yards (11-M.Ojemudia,27-A.Hooker).",
+              "driveText": "2nd and 1 at ISU44",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-K.Kempt sacked at ISU 41 for -7 yards (94-A.Epenesa).",
+              "driveText": "1st and 10 at ISU48",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-K.Kempt complete to 82-L.Akers. 82-L.Akers to IOW 48 for 11 yards (8-M.Hankins,27-A.Hooker).",
+              "driveText": "2nd and 17 at ISU41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-K.Kempt complete to 11-C.Allen. 11-C.Allen to IOW 43 for 5 yards (48-J.Hockaday).",
+              "driveText": "3rd and 6 at IOW48",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-K.Kempt incomplete. Intended for 18-H.Butler.",
+              "driveText": "4th and 1 at IOW43",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "01:58",
+          "plays": [
+            {
+              "scoreText": "28-T.Young to IOW 46 for 3 yards (42-M.Spears).",
+              "driveText": "1st and 10 at IOW43",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 84-N.Easley.",
+              "driveText": "2nd and 7 at IOW46",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 87-N.Fant. 87-N.Fant to ISU 46 for 8 yards (2-W.Harvey).",
+              "driveText": "3rd and 7 at IOW46",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to ISU 44 for 2 yards (42-M.Spears,12-G.Eisworth).",
+              "driveText": "1st and 10 at ISU46",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to ISU 33 for 11 yards (58-S.Benton,1-D.Payne).",
+              "driveText": "2nd and 8 at ISU44",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "4TH",
+      "shortTitle": "4th",
+      "possessions": [
+        {
+          "teamId": "71",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "10-M.Sargent to ISU 32 for 1 yard (33-B.Lewis).",
+              "driveText": "1st and 10 at ISU33",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 84-N.Easley.",
+              "driveText": "2nd and 9 at ISU32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 84-N.Easley.",
+              "driveText": "3rd and 9 at ISU32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "91-M.Recinos 50 yards Field Goal is No Good.",
+              "driveText": "4th and 9 at ISU40",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2476",
+          "time": "13:56",
+          "plays": [
+            {
+              "scoreText": "32-D.Montgomery to ISU 35 for 3 yards (48-J.Hockaday).",
+              "driveText": "1st and 10 at ISU32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-Z.Noland incomplete. Intended for 23-M.Eaton.",
+              "driveText": "2nd and 7 at ISU35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-Z.Noland complete to 11-C.Allen. 11-C.Allen to ISU 42 for 7 yards (27-A.Hooker).",
+              "driveText": "3rd and 7 at ISU35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "32-D.Montgomery to IOW 48 for 10 yards (32-D.Colbert). Penalty on ISU 75-S.Foster, Holding, 10 yards, enforced at ISU 44.",
+              "driveText": "1st and 10 at ISU42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-Z.Noland complete to 23-M.Eaton. 23-M.Eaton pushed ob at ISU 41 for 7 yards (8-M.Hankins).",
+              "driveText": "1st and 18 at ISU34",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-Z.Noland complete to 11-C.Allen. 11-C.Allen to ISU 47 for 6 yards (27-A.Hooker).",
+              "driveText": "2nd and 11 at ISU41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-Z.Noland incomplete. Intended for 18-H.Butler.",
+              "driveText": "3rd and 5 at ISU47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "13-C.Dunn punts 36 yards from ISU 47, out of bounds at the IOW 17.",
+              "driveText": "4th and 5 at ISU47",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "11:17",
+          "plays": [
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 87-N.Fant.",
+              "driveText": "1st and 10 at IOW17",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to IOW 18 for 1 yard (50-E.Uwazurike,33-B.Lewis).",
+              "driveText": "2nd and 10 at IOW17",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 38-T.Hockenson. 38-T.Hockenson to IOW 27 for 9 yards (6-D.Ruth).",
+              "driveText": "3rd and 9 at IOW18",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 87-N.Fant. 87-N.Fant to IOW 38 for 11 yards.",
+              "driveText": "1st and 10 at IOW27",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to IOW 42 for 4 yards (42-M.Spears).",
+              "driveText": "1st and 10 at IOW38",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 14-K.Groeneweg. Penalty on IOW 36-B.Ross, Holding, 10 yards, enforced at IOW 42. No Play.",
+              "driveText": "2nd and 6 at IOW42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 84-N.Easley. 84-N.Easley to IOW 47 for 15 yards (2-W.Harvey).",
+              "driveText": "2nd and 16 at IOW32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "36-B.Ross to ISU 49 for 4 yards (42-M.Spears).",
+              "driveText": "3rd and 1 at IOW47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to ISU 45 for 4 yards (23-M.Rose,11-L.White).",
+              "driveText": "1st and 10 at ISU49",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 38-T.Hockenson. 38-T.Hockenson to ISU 38 for 7 yards (42-M.Spears).",
+              "driveText": "2nd and 6 at ISU45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to ISU 38 for no gain (89-M.Leo).",
+              "driveText": "1st and 10 at ISU38",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to ISU 32 for 6 yards (89-M.Leo).",
+              "driveText": "2nd and 10 at ISU38",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 12-B.Smith. 12-B.Smith to ISU 2 for 30 yards (1-D.Payne).",
+              "driveText": "3rd and 4 at ISU32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent runs 2 yards for a touchdown.",
+              "driveText": "1st and 2 at ISU2",
+              "visitingScore": "3",
+              "homeScore": "12"
+            },
+            {
+              "scoreText": "91-M.Recinos extra point is good.",
+              "driveText": "",
+              "visitingScore": "3",
+              "homeScore": "13"
+            }
+          ]
+        },
+        {
+          "teamId": "2476",
+          "time": "04:47",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 63 yards from IOW 35. 3-K.Nwangwu to ISU 26 for 24 yards (8-M.Hankins,18-J.Milani).",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-Z.Noland incomplete. Intended for 11-L.White. Penalty on IOW 40-P.Hesse, Roughing the passer, 15 yards, enforced at ISU 26. No Play.",
+              "driveText": "1st and 10 at ISU26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-Z.Noland incomplete. Intended for 25-S.Croney.",
+              "driveText": "1st and 10 at ISU41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-Z.Noland complete to 82-L.Akers. 82-L.Akers to IOW 49 for 10 yards. Penalty on ISU 75-S.Foster, Holding, 10 yards, enforced at ISU 41. No Play.",
+              "driveText": "2nd and 10 at ISU41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-Z.Noland incomplete. Intended for 18-H.Butler.",
+              "driveText": "2nd and 20 at ISU31",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Penalty on ISU 74-B.Meeker, False start, 5 yards, enforced at ISU 31. No Play.",
+              "driveText": "3rd and 20 at ISU31",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-Z.Noland incomplete. Intended for 18-H.Butler.",
+              "driveText": "3rd and 25 at ISU26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "13-C.Dunn punts 43 yards from ISU 26 to IOW 31, fair catch by. Penalty on ISU 1-D.Payne, Fair catch interference, 15 yards, enforced at IOW 31.",
+              "driveText": "4th and 25 at ISU26",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "03:33",
+          "plays": [
+            {
+              "scoreText": "28-T.Young to IOW 47 for 1 yard (23-M.Rose).",
+              "driveText": "1st and 10 at IOW46",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to IOW 47 for no gain (23-M.Rose).",
+              "driveText": "2nd and 9 at IOW47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to IOW 48 for 1 yard (50-E.Uwazurike,2-W.Harvey).",
+              "driveText": "3rd and 9 at IOW47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "7-C.Rastetter punts 37 yards from IOW 48 to ISU 15, fair catch by 14-T.Milton. Team penalty on IOW, Illegal Procedure, 5 yards, enforced at ISU 15.",
+              "driveText": "4th and 8 at IOW48",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2476",
+          "time": "02:32",
+          "plays": [
+            {
+              "scoreText": "4-Z.Noland complete to 18-H.Butler. 18-H.Butler to ISU 43 for 23 yards (30-J.Gervase).",
+              "driveText": "1st and 10 at ISU20",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-Z.Noland incomplete. Intended for 11-C.Allen.",
+              "driveText": "1st and 10 at ISU43",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-Z.Noland sacked at ISU 40 for -3 yards, FUMBLES (94-A.Epenesa). 57-C.Golston to ISU 33 for 7 yards (8-D.Jones).",
+              "driveText": "2nd and 10 at ISU43",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "01:53",
+          "plays": [
+            {
+              "scoreText": "28-T.Young to ISU 31 for 2 yards.",
+              "driveText": "1st and 10 at ISU33",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "36-B.Ross to ISU 30 for 1 yard (2-W.Harvey).",
+              "driveText": "2nd and 8 at ISU31",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to ISU 27 for 3 yards (2-W.Harvey).",
+              "driveText": "3rd and 7 at ISU30",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

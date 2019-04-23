@@ -11,6 +11,7 @@ import com.footballscience.domain.Rush
 import org.apache.commons.lang3.StringUtils
 
 class ScoreTextParserLib {
+    static char dash = '-'
 
     /*
     Need to deal with the multiple teamid BS, passed in ID will need to be global one to write rows
@@ -203,18 +204,22 @@ class ScoreTextParserLib {
             punt.oob = 0
             punt.downed = 0
             //find returnerId at end of the string
-            String returnerString = scoreText.substring(scoreText.indexOf('fair catch by')+13).trim()
-            String returnerJerseyNumber = returnerString.substring(0, returnerString.indexOf("-"))
-            String returnerFirstInitial = returnerString.substring(returnerString.indexOf("-") + 1, returnerString.indexOf("."))
-            String returnerLastName = returnerString.substring(returnerString.indexOf(".")+1, returnerString.length()-1)
-            punt.returnerId = getPlayerIdFromRosters(rosters,returningTeamId,returnerJerseyNumber, returnerFirstInitial, returnerLastName)
+            if(!scoreText.contains("fair catch by.")) {
+                //this is a bad scenario and the scorer missed who made the fair catch or omitted it
+                String returnerString = scoreText.substring(scoreText.indexOf('fair catch by')+13).trim()
+                String returnerJerseyNumber = returnerString.substring(0, returnerString.indexOf("-"))
+                String returnerFirstInitial = returnerString.substring(returnerString.indexOf("-") + 1, returnerString.indexOf("."))
+                String returnerLastName = returnerString.substring(returnerString.indexOf(".")+1, returnerString.length()-1)
+                punt.returnerId = getPlayerIdFromRosters(rosters,returningTeamId,returnerJerseyNumber, returnerFirstInitial, returnerLastName)
+            }
+
         } else if(scoreText.contains('touchback')) {
             punt.returnerId = 0
             punt.returnYards = 0
             punt.fairCatch = 0
             punt.touchBack = 1
             punt.oob = 0
-        } else if(scoreText.contains('downed by')) {
+        } else if(scoreText.contains('downed by') || scoreText.contains("Downed") || scoreText.contains("downed")) {
             punt.returnerId = 0
             punt.returnYards = 0
             punt.fairCatch = 0
@@ -354,11 +359,12 @@ class ScoreTextParserLib {
 
     static Rush createRushRow(String gameId, Integer teamId, Integer playNum, Integer ytg, String scoreText, Map rosters, Integer yfog, Map abrMap) {
         String yards
+        int attempt = 1
         //filter kneel downs
         if(scoreText.contains("kneels")) {
             //find the yards still
             yards = scoreText.substring(scoreText.indexOf("for")+3,scoreText.indexOf("yard")).trim()
-            return new Rush(gameid: gameId, playNum: playNum, teamId: teamId, kneelDown: 1, yards: Integer.parseInt(yards))
+            return new Rush(gameid: gameId, playNum: playNum, teamId: teamId, attempt: attempt,  kneelDown: 1, yards: Integer.parseInt(yards))
 
         }
 
@@ -367,14 +373,23 @@ class ScoreTextParserLib {
             //have to parse out yards, same as kneel down
 //            yards = scoreText.substring(scoreText.indexOf("for")+4,scoreText.indexOf("yard"))?.trim()
 //            return new Rush(gameid: gameId, playNum: playNum, teamId: teamId, sack: 1, yards: Integer.parseInt(yards))
+            boolean recoveredOwnFumble
             sack = 1
+//            if(scoreText.contains("FUMBLES")) {//apparently this is not an attempt & gets omitted from stats if the QB does not recover the fumble himself, if he does, it is an attempt and log yards
+//                attempt = 0
+//                //come up with a way to parse out own fumbles and log yards/attempt correctly
+//            }
         }
 
-        String jerseyNumber = scoreText.substring(0, scoreText.indexOf("-"))
-        String firstInitial = scoreText.substring(scoreText.indexOf("-")+1,scoreText.indexOf("."))
-        String lastName = scoreText.substring(scoreText.indexOf(".")+1, scoreText.indexOf(" "))
-        //look up player id
-        String playerId = getPlayerIdFromRosters(rosters, teamId, jerseyNumber, firstInitial, lastName)
+        String playerId
+        if(scoreText.charAt(1) == dash || scoreText.charAt(2) == dash) {
+            String jerseyNumber = scoreText.substring(0, scoreText.indexOf("-"))
+            String firstInitial = scoreText.substring(scoreText.indexOf("-")+1,scoreText.indexOf("."))
+            String lastName = scoreText.substring(scoreText.indexOf(".")+1, scoreText.indexOf(" "))
+            //look up player id
+            playerId = getPlayerIdFromRosters(rosters, teamId, jerseyNumber, firstInitial, lastName)
+        }
+
 
         Integer touchdown = 0
         if(scoreText.contains("Touchdown") || scoreText.contains("touchdown")) {
@@ -419,7 +434,7 @@ class ScoreTextParserLib {
 
         }
 
-        return new Rush(gameid: gameId, playNum: playNum, teamId: teamId, playerId: playerId ? playerId as Integer : 0, attempt: 1, yards: yards ? yards as Integer : 0, touchdown: touchdown, firstDown: firstDown, sack: sack, fumble: fumble, fumbleLost: fumbleLost, safety: safety)
+        return new Rush(gameid: gameId, playNum: playNum, teamId: teamId, playerId: playerId ? playerId as Integer : 0, attempt: attempt, yards: yards ? yards as Integer : 0, touchdown: touchdown, firstDown: firstDown, sack: sack, fumble: fumble, fumbleLost: fumbleLost, safety: safety)
     }
 
     static int calculateFumbleLost(String scoreText,Integer teamId, Map rosters) {

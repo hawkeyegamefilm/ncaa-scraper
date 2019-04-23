@@ -1,0 +1,1245 @@
+{
+  "inputMD5Sum": "00b7f62ff008934564f497f73525d06f",
+  "updatedTimestamp": "2018-09-16 12:29:32 ET",
+  "meta": {
+    "title": "PLAY-BY-PLAY",
+    "teams": [
+      {
+        "homeTeam": "false",
+        "id": "920",
+        "color": "#470A68",
+        "shortname": "UNI",
+        "seoName": "uni",
+        "sixCharAbbr": "N IOWA"
+      },
+      {
+        "homeTeam": "true",
+        "id": "71",
+        "color": "#010101",
+        "shortname": "Iowa",
+        "seoName": "iowa",
+        "sixCharAbbr": "IOWA"
+      }
+    ]
+  },
+  "periods": [
+    {
+      "title": "1ST",
+      "shortTitle": "1st",
+      "possessions": [
+        {
+          "teamId": "71",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "43-A.Errthum kicks 65 yards from UNI 35 to IOW End Zone. touchback.",
+              "driveText": "1st and 10 at UNI35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 38-T.Hockenson. 38-T.Hockenson runs ob at IOW 33 for 8 yards.",
+              "driveText": "1st and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to IOW 41 for 8 yards (48-C.Kolarevic,98-B.Douglas).",
+              "driveText": "2nd and 2 at IOW33",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to UNI 48 for 11 yards (5-K.Sander).",
+              "driveText": "1st and 10 at IOW41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley sacked at IOW 45 for -7 yards (44-J.Brinkman).",
+              "driveText": "1st and 10 at UNI48",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 19-M.Cooper.",
+              "driveText": "2nd and 17 at IOW45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Team penalty on IOW, Delay of game, 5 yards, enforced at IOW 45. No Play.",
+              "driveText": "3rd and 17 at IOW45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to IOW 46 for 6 yards (48-C.Kolarevic,9-X.Williams).",
+              "driveText": "3rd and 22 at IOW40",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Penalty on IOW 8-M.Hankins, False start, 5 yards, enforced at IOW 46. No Play.",
+              "driveText": "4th and 16 at IOW46",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "7-C.Rastetter punts 37 yards from IOW 41 to the UNI 22, downed by 8-M.Hankins.",
+              "driveText": "4th and 21 at IOW41",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "920",
+          "time": "12:18",
+          "plays": [
+            {
+              "scoreText": "8-M.Weymiller to UNI 25 for 3 yards (40-P.Hesse,48-J.Hockaday).",
+              "driveText": "1st and 10 at UNI22",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "8-M.Weymiller to UNI 27 for 2 yards (40-P.Hesse,98-A.Nelson).",
+              "driveText": "2nd and 7 at UNI25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-C.Howell incomplete. Intended for 8-M.Weymiller.",
+              "driveText": "3rd and 5 at UNI27",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "88-M.Kuntz punts 57 yards from UNI 27. 14-K.Groeneweg to IOW 45 for 29 yards (48-C.Kolarevic). Penalty on IOW 52-A.Jones, Holding, 8 yards, enforced at IOW 16.",
+              "driveText": "4th and 5 at UNI27",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "10:46",
+          "plays": [
+            {
+              "scoreText": "10-M.Sargent to IOW 13 for 5 yards (44-J.Brinkman).",
+              "driveText": "1st and 10 at IOW8",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 84-N.Easley. 84-N.Easley to IOW 25 for 12 yards (48-C.Kolarevic).",
+              "driveText": "2nd and 5 at IOW13",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-K.Groeneweg pushed ob at IOW 36 for 11 yards (5-K.Sander).",
+              "driveText": "1st and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to IOW 41 for 5 yards (39-D.Ferch).",
+              "driveText": "1st and 10 at IOW36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 84-N.Easley.",
+              "driveText": "2nd and 5 at IOW41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 84-N.Easley. 84-N.Easley to IOW 48 for 7 yards (39-D.Ferch,5-K.Sander).",
+              "driveText": "3rd and 5 at IOW41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to IOW 49 for 1 yard (7-R.Neal).",
+              "driveText": "1st and 10 at IOW48",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 87-N.Fant. 87-N.Fant to UNI 8 for 43 yards (23-A.Allen).",
+              "driveText": "2nd and 9 at IOW49",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to UNI 5 for 3 yards (44-J.Brinkman,23-A.Allen).",
+              "driveText": "1st and 8 at UNI8",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 87-N.Fant. 87-N.Fant runs 5 yards for a touchdown.",
+              "driveText": "2nd and 5 at UNI5",
+              "visitingScore": "0",
+              "homeScore": "6"
+            },
+            {
+              "scoreText": "91-M.Recinos extra point is good.",
+              "driveText": "",
+              "visitingScore": "0",
+              "homeScore": "7"
+            }
+          ]
+        },
+        {
+          "teamId": "920",
+          "time": "06:07",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 65 yards from IOW 35. 9-X.Williams to UNI 16 for 16 yards (9-G.Stone,8-M.Hankins).",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-C.Howell complete to 83-J.James. 83-J.James to UNI 26 for 10 yards (34-K.Welch).",
+              "driveText": "1st and 10 at UNI16",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-T.Allen to UNI 27 for 1 yard (40-P.Hesse).",
+              "driveText": "1st and 10 at UNI26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-C.Howell incomplete. Intended for 82-N.Fossey.",
+              "driveText": "2nd and 9 at UNI27",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-C.Howell incomplete. Intended for 86-B.Moore.",
+              "driveText": "3rd and 9 at UNI27",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "38-Z.Kibby punts 41 yards from UNI 27 to the IOW 32, downed by 27-A.Evans.",
+              "driveText": "4th and 9 at UNI27",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "04:50",
+          "plays": [
+            {
+              "scoreText": "10-M.Sargent pushed ob at IOW 39 for 7 yards (9-X.Williams).",
+              "driveText": "1st and 10 at IOW32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to IOW 42 for 3 yards (3-S.Lane). Penalty on IOW 66-L.Paulsen, Illegal low block, 15 yards, enforced at IOW 42.",
+              "driveText": "2nd and 3 at IOW39",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 19-M.Cooper. 19-M.Cooper to IOW 34 for 7 yards (98-B.Douglas,64-H.Applegate).",
+              "driveText": "2nd and 15 at IOW27",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 87-N.Fant. 87-N.Fant to UNI 47 for 19 yards (1-R.Lawrence,48-C.Kolarevic).",
+              "driveText": "3rd and 8 at IOW34",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 87-N.Fant. 87-N.Fant to UNI 18 for 29 yards (1-R.Lawrence).",
+              "driveText": "1st and 10 at UNI47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to UNI 19 for -1 yard (39-D.Ferch).",
+              "driveText": "1st and 10 at UNI18",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to UNI 11 for 8 yards (23-A.Allen).",
+              "driveText": "2nd and 11 at UNI19",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to UNI 10 for 1 yard (48-C.Kolarevic,23-A.Allen).",
+              "driveText": "3rd and 3 at UNI11",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 87-N.Fant. 87-N.Fant to UNI 7 for 3 yards.",
+              "driveText": "4th and 2 at UNI10",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to UNI 10 for -3 yards (98-B.Douglas,48-C.Kolarevic).",
+              "driveText": "1st and 7 at UNI7",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "2ND",
+      "shortTitle": "2nd",
+      "possessions": [
+        {
+          "teamId": "71",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "10-M.Sargent to UNI 2 for 8 yards (9-X.Williams).",
+              "driveText": "2nd and 10 at UNI10",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent runs 2 yards for a touchdown.",
+              "driveText": "3rd and 2 at UNI2",
+              "visitingScore": "0",
+              "homeScore": "13"
+            },
+            {
+              "scoreText": "91-M.Recinos extra point is good.",
+              "driveText": "",
+              "visitingScore": "0",
+              "homeScore": "14"
+            }
+          ]
+        },
+        {
+          "teamId": "920",
+          "time": "14:09",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 65 yards from IOW 35 to UNI End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-T.Allen to UNI 28 for 3 yards (48-J.Hockaday).",
+              "driveText": "1st and 10 at UNI25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-T.Allen to UNI 32 for 4 yards (95-C.Lattimore).",
+              "driveText": "2nd and 7 at UNI28",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-C.Howell to UNI 35 for 3 yards (95-C.Lattimore,34-K.Welch).",
+              "driveText": "3rd and 3 at UNI32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-C.Howell sacked at UNI 33 for -2 yards (94-A.Epenesa).",
+              "driveText": "1st and 10 at UNI35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-C.Howell complete to 86-B.Moore. 86-B.Moore to UNI 35 for 2 yards (48-J.Hockaday,34-K.Welch).",
+              "driveText": "2nd and 12 at UNI33",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-C.Howell complete to 83-J.James. 83-J.James to UNI 45 for 10 yards.",
+              "driveText": "3rd and 10 at UNI35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "to UNI 45, FUMBLES. 11-C.Howell to UNI 26 for no gain.",
+              "driveText": "1st and 10 at UNI26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-T.Allen to UNI 28 for 2 yards (94-A.Epenesa).",
+              "driveText": "2nd and 29 at UNI26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-C.Howell to UNI 29 for 1 yard (40-P.Hesse,57-C.Golston).",
+              "driveText": "3rd and 27 at UNI28",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "38-Z.Kibby punts 38 yards from UNI 29 to IOW 33, fair catch by 14-K.Groeneweg.",
+              "driveText": "4th and 26 at UNI29",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "08:35",
+          "plays": [
+            {
+              "scoreText": "4-N.Stanley complete to 84-N.Easley. 84-N.Easley runs ob at IOW 46 for 13 yards.",
+              "driveText": "1st and 10 at IOW33",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to UNI 49 for 5 yards (23-A.Allen,48-C.Kolarevic).",
+              "driveText": "1st and 10 at IOW46",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 87-N.Fant.",
+              "driveText": "2nd and 5 at UNI49",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 84-N.Easley. 84-N.Easley to UNI 45 for 4 yards (48-C.Kolarevic).",
+              "driveText": "3rd and 5 at UNI49",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "36-B.Ross to UNI 42 for 3 yards.",
+              "driveText": "4th and 1 at UNI45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent pushed ob at UNI 37 for 5 yards (1-R.Lawrence).",
+              "driveText": "1st and 10 at UNI42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to UNI 30 for 7 yards (23-A.Allen).",
+              "driveText": "2nd and 5 at UNI37",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 36-B.Ross. 36-B.Ross to UNI 20 for 10 yards (26-I.Nimmers).",
+              "driveText": "1st and 10 at UNI30",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to UNI 18 for 2 yards (39-D.Ferch,5-K.Sander).",
+              "driveText": "1st and 10 at UNI20",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to UNI 15 for 3 yards (64-H.Applegate).",
+              "driveText": "2nd and 8 at UNI18",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to UNI 11 for 4 yards (64-H.Applegate,48-C.Kolarevic).",
+              "driveText": "3rd and 5 at UNI15",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley to UNI 10 for 1 yard (64-H.Applegate).",
+              "driveText": "4th and 1 at UNI11",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to UNI 10 for no gain.",
+              "driveText": "1st and 10 at UNI10",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent runs 10 yards for a touchdown.",
+              "driveText": "2nd and 10 at UNI10",
+              "visitingScore": "0",
+              "homeScore": "20"
+            },
+            {
+              "scoreText": "91-M.Recinos extra point is good.",
+              "driveText": "",
+              "visitingScore": "0",
+              "homeScore": "21"
+            }
+          ]
+        },
+        {
+          "teamId": "920",
+          "time": "02:09",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 49 yards from IOW 35. 85-E.Nissen to UNI 26 for 10 yards (52-A.Jones). Penalty on IOW 52-A.Jones, Offside, 5 yards, enforced at UNI 26.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-C.Howell incomplete. Intended for 4-D.McShane.",
+              "driveText": "1st and 10 at UNI31",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-C.Howell incomplete. Intended for 4-D.McShane.",
+              "driveText": "2nd and 10 at UNI31",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-C.Howell incomplete. Intended for 83-J.James.",
+              "driveText": "3rd and 10 at UNI31",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "38-Z.Kibby punts 33 yards from UNI 31, out of bounds at the IOW 36.",
+              "driveText": "4th and 10 at UNI31",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "01:37",
+          "plays": [
+            {
+              "scoreText": "4-N.Stanley to IOW 39 for 3 yards (98-B.Douglas).",
+              "driveText": "1st and 10 at IOW36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 10-M.Sargent.",
+              "driveText": "2nd and 7 at IOW39",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 84-N.Easley. 84-N.Easley to IOW 47 for 8 yards (9-X.Williams).",
+              "driveText": "3rd and 7 at IOW39",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley sacked at IOW 37 for -10 yards (44-J.Brinkman).",
+              "driveText": "1st and 10 at IOW47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 12-B.Smith. 12-B.Smith pushed ob at UNI 47 for 16 yards (26-I.Nimmers).",
+              "driveText": "2nd and 20 at IOW37",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 38-T.Hockenson. 38-T.Hockenson to UNI 39 for 8 yards (39-D.Ferch,3-S.Lane).",
+              "driveText": "3rd and 4 at UNI47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 19-M.Cooper, INTERCEPTED by 23-A.Allen at UNI 32. 23-A.Allen to UNI 43 for 11 yards (19-M.Cooper). Penalty on UNI 39-D.Ferch, Personal Foul, 15 yards, enforced at UNI 43.",
+              "driveText": "1st and 10 at UNI39",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "920",
+          "time": "00:29",
+          "plays": [
+            {
+              "scoreText": "11-C.Howell incomplete. Intended for 4-D.McShane, INTERCEPTED by 11-M.Ojemudia at IOW 36. 11-M.Ojemudia to UNI 35 for 29 yards (6-T.Carey).",
+              "driveText": "1st and 10 at UNI28",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "00:12",
+          "plays": [
+            {
+              "scoreText": "4-N.Stanley complete to 84-N.Easley. 84-N.Easley to UNI 12 for 23 yards (5-K.Sander,39-D.Ferch).",
+              "driveText": "1st and 10 at UNI35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "91-M.Recinos 30 yards Field Goal is No Good. blocked by 7-R.Neal. touchback.",
+              "driveText": "1st and 10 at UNI20",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "3RD",
+      "shortTitle": "3rd",
+      "possessions": [
+        {
+          "teamId": "920",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 65 yards from IOW 35 to UNI End Zone. touchback.",
+              "driveText": "1st and 10 at IOW35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-T.Allen to UNI 27 for 2 yards (40-P.Hesse,48-J.Hockaday).",
+              "driveText": "1st and 10 at UNI25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-E.Dunne incomplete. Intended for 82-N.Fossey.",
+              "driveText": "2nd and 8 at UNI27",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-E.Dunne incomplete. Intended for 83-J.James.",
+              "driveText": "3rd and 8 at UNI27",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "38-Z.Kibby punts 37 yards from UNI 27. 14-K.Groeneweg runs ob at IOW 47 for 11 yards. Penalty on IOW 33-R.Moss, Illegal block in the back, 10 yards, enforced at IOW 34.",
+              "driveText": "4th and 8 at UNI27",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "14:10",
+          "plays": [
+            {
+              "scoreText": "4-N.Stanley complete to 12-B.Smith. 12-B.Smith pushed ob at IOW 32 for 8 yards (23-A.Allen).",
+              "driveText": "1st and 10 at IOW24",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 84-N.Easley. 84-N.Easley to IOW 44 for 12 yards (41-B.Thomas,5-K.Sander).",
+              "driveText": "2nd and 2 at IOW32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to IOW 50 for 6 yards (23-A.Allen).",
+              "driveText": "1st and 10 at IOW44",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to UNI 47 for 3 yards (48-C.Kolarevic).",
+              "driveText": "2nd and 4 at IOW50",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley to UNI 45 for 2 yards (98-B.Douglas).",
+              "driveText": "3rd and 1 at UNI47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to UNI 31 for 14 yards (5-K.Sander).",
+              "driveText": "1st and 10 at UNI45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 28-T.Young. 28-T.Young to UNI 29 for 2 yards.",
+              "driveText": "1st and 10 at UNI31",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Penalty on IOW 74-T.Wirfs, False start, 5 yards, enforced at UNI 29. No Play.",
+              "driveText": "2nd and 8 at UNI29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 84-N.Easley. 84-N.Easley to UNI 24 for 10 yards (48-C.Kolarevic).",
+              "driveText": "2nd and 13 at UNI34",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 84-N.Easley. 84-N.Easley to UNI 24 for no gain (5-K.Sander).",
+              "driveText": "3rd and 3 at UNI24",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "91-M.Recinos 42 yards Field Goal is Good.",
+              "driveText": "4th and 3 at UNI32",
+              "visitingScore": "0",
+              "homeScore": "24"
+            }
+          ]
+        },
+        {
+          "teamId": "920",
+          "time": "09:50",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 65 yards from IOW 35 to UNI End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-E.Dunne complete to 25-T.Allen. 25-T.Allen to UNI 32 for 7 yards (34-K.Welch).",
+              "driveText": "1st and 10 at UNI25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-T.Allen to UNI 32 for no gain (11-M.Ojemudia).",
+              "driveText": "2nd and 3 at UNI32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-E.Dunne complete to 6-T.Carey. 6-T.Carey to UNI 41, FUMBLES (30-J.Gervase). 34-K.Welch to UNI 41 for no gain.",
+              "driveText": "3rd and 3 at UNI32",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "08:46",
+          "plays": [
+            {
+              "scoreText": "10-M.Sargent to UNI 36 for 5 yards (39-D.Ferch).",
+              "driveText": "1st and 10 at UNI41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley to UNI 25 for 11 yards (39-D.Ferch).",
+              "driveText": "2nd and 5 at UNI36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent runs ob at UNI 14 for 11 yards.",
+              "driveText": "1st and 10 at UNI25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 84-N.Easley. 84-N.Easley runs 14 yards for a touchdown.",
+              "driveText": "1st and 10 at UNI14",
+              "visitingScore": "0",
+              "homeScore": "30"
+            },
+            {
+              "scoreText": "91-M.Recinos extra point is good.",
+              "driveText": "",
+              "visitingScore": "0",
+              "homeScore": "31"
+            }
+          ]
+        },
+        {
+          "teamId": "920",
+          "time": "07:03",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 65 yards from IOW 35 to UNI End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-E.Dunne complete to 25-T.Allen. 25-T.Allen to UNI 41 for 16 yards (34-K.Welch).",
+              "driveText": "1st and 10 at UNI25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-E.Dunne incomplete. Intended for 84-J.Scott.",
+              "driveText": "1st and 10 at UNI41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-T.Allen to UNI 43 for 2 yards (91-B.Reiff,34-K.Welch).",
+              "driveText": "2nd and 10 at UNI41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-E.Dunne complete to 82-N.Fossey. 82-N.Fossey to IOW 36 for 21 yards (8-M.Hankins).",
+              "driveText": "3rd and 8 at UNI43",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-E.Dunne complete to 25-T.Allen. 25-T.Allen to IOW 31 for 5 yards (34-K.Welch).",
+              "driveText": "1st and 10 at IOW36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-E.Dunne complete to 85-E.Nissen. 85-E.Nissen to IOW 23 for 8 yards (8-M.Hankins,34-K.Welch).",
+              "driveText": "2nd and 5 at IOW31",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-T.Allen to IOW 23 for no gain (48-J.Hockaday).",
+              "driveText": "1st and 10 at IOW23",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-E.Dunne sacked at IOW 28 for -5 yards (95-C.Lattimore).",
+              "driveText": "2nd and 10 at IOW23",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-E.Dunne incomplete. Intended for 82-N.Fossey.",
+              "driveText": "3rd and 15 at IOW28",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "43-A.Errthum 45 yards Field Goal is No Good.",
+              "driveText": "4th and 15 at IOW35",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "03:20",
+          "plays": [
+            {
+              "scoreText": "4-N.Stanley complete to 10-M.Sargent. 10-M.Sargent to UNI 24 for 48 yards (47-E.Smith).",
+              "driveText": "1st and 10 at IOW28",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "84-N.Easley runs ob at UNI 15 for 9 yards.",
+              "driveText": "1st and 10 at UNI24",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young runs 15 yards for a touchdown.",
+              "driveText": "2nd and 1 at UNI15",
+              "visitingScore": "0",
+              "homeScore": "37"
+            },
+            {
+              "scoreText": "91-M.Recinos extra point is good.",
+              "driveText": "",
+              "visitingScore": "0",
+              "homeScore": "38"
+            }
+          ]
+        },
+        {
+          "teamId": "920",
+          "time": "01:59",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 65 yards from IOW 35 to UNI End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-E.Dunne sacked at UNI 21 for -4 yards (91-B.Reiff).",
+              "driveText": "1st and 10 at UNI25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-E.Dunne complete to 4-D.McShane. 4-D.McShane runs ob at UNI 45 for 24 yards.",
+              "driveText": "2nd and 14 at UNI21",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-T.Allen to UNI 47 for 2 yards (48-J.Hockaday,32-D.Colbert).",
+              "driveText": "1st and 10 at UNI45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-E.Dunne complete to 82-N.Fossey. 82-N.Fossey to IOW 46 for 7 yards (8-M.Hankins).",
+              "driveText": "2nd and 8 at UNI47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-T.Allen to IOW 45 for 1 yard (30-J.Gervase).",
+              "driveText": "3rd and 1 at IOW46",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "4TH",
+      "shortTitle": "4th",
+      "possessions": [
+        {
+          "teamId": "920",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "14-E.Dunne complete to 86-B.Moore. 86-B.Moore to IOW 33 for 12 yards (8-M.Hankins).",
+              "driveText": "1st and 10 at IOW45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Penalty on IOW 48-J.Hockaday, Personal Foul, 15 yards, enforced at IOW 33. No Play.",
+              "driveText": "1st and 10 at IOW33",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-E.Dunne incomplete. Intended for 86-B.Moore.",
+              "driveText": "1st and 10 at IOW18",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-T.Allen to IOW 11 for 7 yards (96-M.Nelson).",
+              "driveText": "2nd and 10 at IOW18",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-E.Dunne complete to 25-T.Allen. 25-T.Allen to IOW 5 for 6 yards (30-J.Gervase).",
+              "driveText": "3rd and 3 at IOW11",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-E.Dunne complete to 86-B.Moore. 86-B.Moore to IOW 1 for 4 yards (8-M.Hankins). Penalty on UNI 83-J.James, Pass interference, 15 yards, enforced at IOW 5. No Play.",
+              "driveText": "1st and 5 at IOW5",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-E.Dunne incomplete. Intended for 83-J.James.",
+              "driveText": "1st and 20 at IOW20",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-E.Dunne complete to 86-B.Moore. 86-B.Moore to IOW 12 for 8 yards (57-C.Golston).",
+              "driveText": "2nd and 20 at IOW20",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-E.Dunne incomplete. Intended for 86-B.Moore. Penalty on IOW 30-J.Gervase, Pass interference, 10 yards, enforced at IOW 12. No Play.",
+              "driveText": "3rd and 12 at IOW12",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Penalty on UNI 86-B.Moore, False start, 5 yards, enforced at IOW 2. No Play.",
+              "driveText": "1st and 2 at IOW2",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-T.Allen to IOW 6 for 1 yard (95-C.Lattimore).",
+              "driveText": "1st and 7 at IOW7",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-T.Allen to IOW 4 for 2 yards (94-A.Epenesa,27-A.Hooker).",
+              "driveText": "2nd and 6 at IOW6",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-E.Dunne complete to 86-B.Moore. 86-B.Moore runs 4 yards for a touchdown.",
+              "driveText": "3rd and 4 at IOW4",
+              "visitingScore": "6",
+              "homeScore": "38"
+            },
+            {
+              "scoreText": "43-A.Errthum extra point is good.",
+              "driveText": "",
+              "visitingScore": "7",
+              "homeScore": "38"
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "11:12",
+          "plays": [
+            {
+              "scoreText": "43-A.Errthum kicks 65 yards from UNI 35 to IOW End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "2-P.Mansell scrambles to IOW 38 for 13 yards (91-B.Wells).",
+              "driveText": "1st and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "30-H.Geil to IOW 42 for 4 yards (23-A.Allen).",
+              "driveText": "1st and 10 at IOW38",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "30-H.Geil to IOW 42 for no gain (48-C.Kolarevic,3-S.Lane).",
+              "driveText": "2nd and 6 at IOW42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "2-P.Mansell complete to 3-T.Tracy. 3-T.Tracy to UNI 36 for 22 yards (5-K.Sander).",
+              "driveText": "3rd and 6 at IOW42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "30-H.Geil to UNI 37 for -1 yard (39-D.Ferch,7-R.Neal).",
+              "driveText": "1st and 10 at UNI36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "30-H.Geil to UNI 30 for 7 yards (7-R.Neal).",
+              "driveText": "2nd and 11 at UNI37",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "2-P.Mansell incomplete. Intended for 19-M.Cooper, INTERCEPTED by 39-D.Ferch at UNI 24. 39-D.Ferch to UNI 35 for 11 yards (2-P.Mansell).",
+              "driveText": "3rd and 4 at UNI30",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "920",
+          "time": "07:39",
+          "plays": [
+            {
+              "scoreText": "14-E.Dunne complete to 86-B.Moore. 86-B.Moore to UNI 41 for 6 yards (49-N.Niemann,18-D.Cook).",
+              "driveText": "1st and 10 at UNI35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-E.Dunne complete to 83-J.James. 83-J.James pushed ob at UNI 47 for 6 yards (11-M.Ojemudia).",
+              "driveText": "2nd and 4 at UNI41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-E.Dunne complete to 85-E.Nissen. 85-E.Nissen to IOW 45 for 8 yards (11-M.Ojemudia,32-D.Colbert).",
+              "driveText": "1st and 10 at UNI47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-E.Dunne complete to 87-J.Rima. 87-J.Rima to IOW 5 for 40 yards (11-M.Ojemudia).",
+              "driveText": "2nd and 2 at IOW45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-E.Dunne incomplete. Intended for 87-J.Rima.",
+              "driveText": "1st and 5 at IOW5",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-E.Dunne complete to 85-E.Nissen. 85-E.Nissen runs 5 yards for a touchdown.",
+              "driveText": "2nd and 5 at IOW5",
+              "visitingScore": "13",
+              "homeScore": "38"
+            },
+            {
+              "scoreText": "43-A.Errthum extra point is good.",
+              "driveText": "",
+              "visitingScore": "14",
+              "homeScore": "38"
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "05:25",
+          "plays": [
+            {
+              "scoreText": "43-A.Errthum kicks 65 yards from UNI 35 to IOW End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "30-H.Geil to IOW 30 for 5 yards (39-D.Ferch). Penalty on IOW 42-S.Beyer, Holding, 10 yards, enforced at IOW 26.",
+              "driveText": "1st and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "2-P.Mansell complete to 89-N.Ragaini. 89-N.Ragaini to IOW 23 for 7 yards (26-I.Nimmers).",
+              "driveText": "1st and 19 at IOW16",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "2-P.Mansell sacked at IOW 16 for -7 yards, FUMBLES (7-R.Neal). 39-N.Wieting to IOW 16 for no gain.",
+              "driveText": "2nd and 12 at IOW23",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "30-H.Geil to IOW 23 for 7 yards (95-S.Thomas).",
+              "driveText": "3rd and 19 at IOW16",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "7-C.Rastetter punts 33 yards from IOW 23. 9-X.Williams to UNI 49 for 5 yards (18-J.Milani).",
+              "driveText": "4th and 12 at IOW23",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "920",
+          "time": "02:53",
+          "plays": [
+            {
+              "scoreText": "14-E.Dunne incomplete. Intended for 4-D.McShane.",
+              "driveText": "1st and 10 at UNI49",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-E.Dunne incomplete. Intended for 6-T.Carey.",
+              "driveText": "2nd and 10 at UNI49",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-E.Dunne complete to 83-J.James. 83-J.James to IOW 43 for 8 yards (33-R.Moss).",
+              "driveText": "3rd and 10 at UNI49",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-E.Dunne incomplete. Intended for 83-J.James.",
+              "driveText": "4th and 2 at IOW43",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "02:17",
+          "plays": [
+            {
+              "scoreText": "30-H.Geil to IOW 44 for 1 yard (48-C.Kolarevic).",
+              "driveText": "1st and 10 at IOW43",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "30-H.Geil to IOW 49 for 5 yards (23-A.Allen).",
+              "driveText": "2nd and 9 at IOW44",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "30-H.Geil to UNI 49 for 2 yards (44-J.Brinkman).",
+              "driveText": "3rd and 4 at IOW49",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "30-H.Geil to IOW 49 for -2 yards (98-B.Douglas).",
+              "driveText": "4th and 2 at UNI49",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

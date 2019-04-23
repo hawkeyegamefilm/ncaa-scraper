@@ -62,28 +62,51 @@ class PlayScraperTest extends Specification {
         }
     }
 
-    def "create game from drives"() {
+    def "validate '18 Iowa game results from stats"() {
         when:
-        List<Drive> result = scraper.parseGameByDrives(scraper.getJsonFromUrl(testUrl2018))
+        List<Drive> result = scraper.parseGameByDrives(objectMapper.readValue(readResourceText(gameUrl), Map))
         Game gameResult = ScoreTextParserLib.createGameFromDrives(result)
 
         then:
-        gameResult.homeScore == 33
-        gameResult.visitorScore == 7
-        gameResult.drives.size() == 27
+        gameResult.homeScore == expectedHomeScore
+        gameResult.visitorScore == expectedVisitorScore
+        gameResult.drives.size() == expectedDrives
 
+        where:
+        gameUrl                    | expectedDrives | expectedIowaDrives | expectedHomeScore | expectedVisitorScore
+        'iowa-18/iowa-niu-18.json' | 27             | 14                 | 33                | 7
+        'iowa-18/iowa-isu-18.json' | 23             | 12                 | 13                | 3
+        'iowa-18/iowa-uni-18.json' | 23             | 12                 | 38                | 14
+
+    }
+
+    //scraper.parseGameByDrives(objectMapper.readValue(readResourceText("sampleGame.json"), Map))
+    /**
+     * Iowa vs NIU : No errors found
+     * Iowa vs ISU : Two bad plays found in json
+     *      "4-N.Stanley sacked at ISU 39 for -2 yards, FUMBLES (42-M.Spears). 3-J.Bailey to ISU 35 for no gain." - play never happened
+     *      "4-N.Stanley complete to 38-T.Hockenson. 38-T.Hockenson to IOW 26 for 8 yards (6-D.Ruth)." - play is replaced by correct yardage one play below, 9y instead of 8
+     * Iowa vs UNI
+     * @return
+     */
+    @Unroll
+    def "validate '18 Iowa rushes from stats"() {
+        when:
+        List<Drive> result = scraper.parseGameByDrives(objectMapper.readValue(readResourceText(gameUrl), Map))
+        Game gameResult = ScoreTextParserLib.createGameFromDrives(result)
+
+        then:
         //find rushing total for Iowa
         List<Drive> iowaDrives = gameResult.drives.collect { Drive drive ->
             if(drive.teamId == 71) { return drive}
         }.findAll()
-        iowaDrives.size() == 14
 
         List<Play> iowaRushes = []
         List<Play> iowaPasses = []
 
         for(Drive drive: iowaDrives) {
             for(Play play: drive.plays) {
-                if(play.playType == PlayType.RUSH) {
+                if(play.playType == PlayType.RUSH && play.rush.attempt == 1) {
                     iowaRushes.add(play)
                 } else if(play.playType == PlayType.PASS) {
                     iowaPasses.add(play)
@@ -91,36 +114,79 @@ class PlayScraperTest extends Specification {
             }
         }
 
-//        List<Play> iowaRushes = iowaDrives.each { Drive drive ->
-//            return drive.plays.collect { Play play ->
-//                if(play.playType == PlayType.RUSH){return play}
-//            }
-//        }
         List<Play> ikmRushes = iowaRushes.findAll{ it.fullScoreText.contains("21-I.Kelly-Martin")}
-//        iowaPasses.each {println(it.fullScoreText)}
-        int ikmYards = 0
-        for(Play play: ikmRushes) {
-            ikmYards += play.rush.yards
-        }
+        List<Play> tyRushes = iowaRushes.findAll{ it.fullScoreText.contains("28-T.Young")}
+        List<Play> msRushes = iowaRushes.findAll{ it.fullScoreText.contains("10-M.Sargent")}
+        List<Play> stanleyRushes = iowaRushes.findAll{ it.fullScoreText.contains("4-N.Stanley")}
 
-        ikmRushes.size() == 16
-        ikmYards == 62//this fails until yards parse correctly
+        int ikmYards = 0
+        if(ikmRushes.size() > 0) {
+            ikmRushes.each {ikmYards += it.rush.yards}
+        }
+        ikmRushes.size() == expectedIkmRushes
+        ikmYards == expectedIkmYards
+
+        int tyYards = 0
+
+        tyRushes.each { tyYards += it.rush.yards}
+        tyRushes.size() == expectedTYRushes
+        tyYards == expectedTYYards
+
+
+        int msYards = 0
+        msRushes.each {msYards += it.rush.yards}
+        msRushes.size() == expectedMSRushes
+        msYards == expectedMSYards
+
         int iowaRushYards = 0
-        iowaRushes.size() == 48
+        iowaRushes.size() == expectedIowaRushes
         for(Play play: iowaRushes) {
             iowaRushYards += play.rush.yards
         }
-        iowaRushYards == 209
+        iowaRushYards == expectedIowaRushYards
 
+        where:
+        gameUrl                    | expectedIowaRushes| expectedIowaRushYards | expectedIkmRushes | expectedIkmYards  | expectedTYRushes | expectedTYYards | expectedMSRushes | expectedMSYards | expectedStanleyRushes | expectedStanleyYards
+        'iowa-18/iowa-niu-18.json' | 48                | 209                   | 16                | 62                | 8                | 84              | 12               | 40              | 3                     | 3
+        'iowa-18/iowa-isu-18.json' | 36                | 105                   | 0                 | 0                 | 21               | 68              | 11               | 25              | 2                     | 7
+        'iowa-18/iowa-uni-18.json' | 50                | 207                   | 0                 | 0                 | 14               | 82              | 15               | 72              | 6                     | 0
+    }
+
+    @Unroll
+    def "validate '18 Iowa passes from stats"() {
+        when:
+        List<Drive> result = scraper.parseGameByDrives(objectMapper.readValue(readResourceText(gameUrl), Map))
+        Game gameResult = ScoreTextParserLib.createGameFromDrives(result)
+
+        then:
+        //find rushing total for Iowa
+        List<Drive> iowaDrives = gameResult.drives.collect { Drive drive ->
+            if(drive.teamId == 71) { return drive}
+        }.findAll()
+
+        List<Play> iowaPasses = []
+
+        for(Drive drive: iowaDrives) {
+            for(Play play: drive.plays) {
+                if(play.playType == PlayType.PASS) {
+                    iowaPasses.add(play)
+                }
+            }
+        }
         //passes
-        iowaPasses.size() == 25
+        iowaPasses.size() == expectedIowaPasses
         int passYards = 0
         for(Play play: iowaPasses) {
             passYards += play.pass.yards
         }
-        passYards == 143
-    }
+        passYards == expectedIowaPassYards
 
+        where:
+        gameUrl                    | expectedIowaPasses | expectedIowaPassYards
+        'iowa-18/iowa-niu-18.json' | 25                 | 143
+        'iowa-18/iowa-isu-18.json' | 28                 | 166
+        'iowa-18/iowa-uni-18.json' | 31                 | 338
+    }
 
     def "parseGameByDrives - validate drives "() {
         when:
