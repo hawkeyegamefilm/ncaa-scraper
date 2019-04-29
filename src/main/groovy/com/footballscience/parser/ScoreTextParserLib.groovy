@@ -169,6 +169,7 @@ class ScoreTextParserLib {
         Punt punt = new Punt(gameId: gameId, teamId: kickTeamId, attempt: 1)
         punt.playNum = playNum
 
+
         if(scoreText.contains("blocked")) {
             punt.puntYards = 0
             punt.fairCatch = 0
@@ -234,9 +235,18 @@ class ScoreTextParserLib {
             punt.downed = 0
             punt.oob = 1
         } else  {
-            String returnString = scoreText.substring(scoreText.indexOf(". " )+2)
-            punt.returnerId = lookupLeadingPlayerId(returnString, rosters, returningTeamId)
-            punt.returnYards = returnString.substring(returnString.indexOf("for")+4,returnString.indexOf("yard"))?.trim() as Integer
+            if(wasFumbled(scoreText)) {//fumbles are a 1 off, examine scoreText and add to test
+                punt.fairCatch = 0
+                punt.touchBack = 0
+                punt.oob = 0
+                punt.fumble = 1
+                punt.fumbleLost = calculateFumbleLost(scoreText, returningTeamId, rosters)
+            } else {
+                String returnString = scoreText.substring(scoreText.indexOf(". " )+2)
+                punt.returnerId = lookupLeadingPlayerId(returnString, rosters, returningTeamId)
+                punt.returnYards = returnString.substring(returnString.indexOf("for")+4,returnString.indexOf("yard"))?.trim() as Integer
+            }
+
         }
         return punt
     }
@@ -370,14 +380,10 @@ class ScoreTextParserLib {
 
         Integer sack = 0
         if(scoreText.contains("sack") || scoreText.contains("Sack") || scoreText.contains("sacked")) {
-            //have to parse out yards, same as kneel down
-//            yards = scoreText.substring(scoreText.indexOf("for")+4,scoreText.indexOf("yard"))?.trim()
-//            return new Rush(gameid: gameId, playNum: playNum, teamId: teamId, sack: 1, yards: Integer.parseInt(yards))
-            boolean recoveredOwnFumble
             sack = 1
-//            if(scoreText.contains("FUMBLES")) {//apparently this is not an attempt & gets omitted from stats if the QB does not recover the fumble himself, if he does, it is an attempt and log yards
+//            if(scoreText.contains("FUMBLES")) {
 //                attempt = 0
-//                //come up with a way to parse out own fumbles and log yards/attempt correctly
+//                //come up with a way to parse out own fumbles and log yards/attempt correctly if this matters?
 //            }
         }
 
@@ -426,12 +432,13 @@ class ScoreTextParserLib {
 
         //penalty mods
         if(scoreText.contains("penalty") || scoreText.contains("Penalty")) {
-            //this is an insane one off; calculate from enforced spot
-            //use start yardline = yfog, then calculate yards from 'enforced at' spot
-            String enforcedSpot = getEnforcedSpot(scoreText)
-            int endingYfog = calculateSpot(abrMap,enforcedSpot,1645)
-            yards = Math.abs(yfog - endingYfog)
-
+            if(!scoreText.contains("Intentional grounding")) {
+                //this is an insane one off; calculate from enforced spot
+                //use start yardline = yfog, then calculate yards from 'enforced at' spot
+                String enforcedSpot = getEnforcedSpot(scoreText)
+                int endingYfog = calculateSpot(abrMap,enforcedSpot,1645)
+                yards = Math.abs(yfog - endingYfog)
+            }
         }
 
         return new Rush(gameid: gameId, playNum: playNum, teamId: teamId, playerId: playerId ? playerId as Integer : 0, attempt: attempt, yards: yards ? yards as Integer : 0, touchdown: touchdown, firstDown: firstDown, sack: sack, fumble: fumble, fumbleLost: fumbleLost, safety: safety)

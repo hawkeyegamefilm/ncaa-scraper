@@ -73,10 +73,11 @@ class PlayScraperTest extends Specification {
         gameResult.drives.size() == expectedDrives
 
         where:
-        gameUrl                    | expectedDrives | expectedIowaDrives | expectedHomeScore | expectedVisitorScore
-        'iowa-18/iowa-niu-18.json' | 27             | 14                 | 33                | 7
-        'iowa-18/iowa-isu-18.json' | 23             | 12                 | 13                | 3
-        'iowa-18/iowa-uni-18.json' | 23             | 12                 | 38                | 14
+        gameUrl                     | expectedDrives | expectedIowaDrives | expectedHomeScore | expectedVisitorScore
+        'iowa-18/iowa-niu-18.json'  | 27             | 14                 | 33                | 7
+        'iowa-18/iowa-isu-18.json'  | 23             | 12                 | 13                | 3
+        'iowa-18/iowa-uni-18.json'  | 23             | 12                 | 38                | 14
+        'iowa-18/iowa-wisc-18.json' | 19             | 9                  | 17                | 28
 
     }
 
@@ -138,6 +139,11 @@ class PlayScraperTest extends Specification {
         msRushes.size() == expectedMSRushes
         msYards == expectedMSYards
 
+        int stanleyYards = 0
+        stanleyRushes.each {stanleyYards += it.rush.yards}
+        stanleyRushes.size() == expectedStanleyRushes
+        stanleyYards == expectedStanleyYards
+
         int iowaRushYards = 0
         iowaRushes.size() == expectedIowaRushes
         for(Play play: iowaRushes) {
@@ -146,10 +152,11 @@ class PlayScraperTest extends Specification {
         iowaRushYards == expectedIowaRushYards
 
         where:
-        gameUrl                    | expectedIowaRushes| expectedIowaRushYards | expectedIkmRushes | expectedIkmYards  | expectedTYRushes | expectedTYYards | expectedMSRushes | expectedMSYards | expectedStanleyRushes | expectedStanleyYards
-        'iowa-18/iowa-niu-18.json' | 48                | 209                   | 16                | 62                | 8                | 84              | 12               | 40              | 3                     | 3
-        'iowa-18/iowa-isu-18.json' | 36                | 105                   | 0                 | 0                 | 21               | 68              | 11               | 25              | 2                     | 7
-        'iowa-18/iowa-uni-18.json' | 50                | 207                   | 0                 | 0                 | 14               | 82              | 15               | 72              | 6                     | 0
+        gameUrl                     | expectedIowaRushes | expectedIowaRushYards | expectedIkmRushes | expectedIkmYards | expectedTYRushes | expectedTYYards | expectedMSRushes | expectedMSYards | expectedStanleyRushes | expectedStanleyYards
+        'iowa-18/iowa-niu-18.json'  | 48                 | 209                   | 16                | 62               | 8                | 84              | 12               | 40              | 3                     | 3
+        'iowa-18/iowa-isu-18.json'  | 36                 | 105                   | 0                 | 0                | 21               | 68              | 11               | 25              | 2                     | 7
+        'iowa-18/iowa-uni-18.json'  | 50                 | 207                   | 0                 | 0                | 14               | 82              | 15               | 72              | 6                     | 0
+        'iowa-18/iowa-wisc-18.json' | 31                 | 148                   | 14                | 72               | 6                | 34              | 6                | 14              | 2                     | 2
     }
 
     @Unroll
@@ -182,10 +189,11 @@ class PlayScraperTest extends Specification {
         passYards == expectedIowaPassYards
 
         where:
-        gameUrl                    | expectedIowaPasses | expectedIowaPassYards
-        'iowa-18/iowa-niu-18.json' | 25                 | 143
-        'iowa-18/iowa-isu-18.json' | 28                 | 166
-        'iowa-18/iowa-uni-18.json' | 31                 | 338
+        gameUrl                     | expectedIowaPasses | expectedIowaPassYards
+        'iowa-18/iowa-niu-18.json'  | 25                 | 143
+        'iowa-18/iowa-isu-18.json'  | 28                 | 166
+        'iowa-18/iowa-uni-18.json'  | 31                 | 338
+        'iowa-18/iowa-wisc-18.json' | 23                 | 256
     }
 
     def "parseGameByDrives - validate drives "() {

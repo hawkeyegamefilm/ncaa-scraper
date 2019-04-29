@@ -161,19 +161,39 @@ class ScoreTextParserLibSpec extends Specification {
 
     @Unroll
     def "sack scenarios"() {
+        setup:
+        List roster = parserDAO.getRosterBySeasonTeamId(teamId.toString())
+        Map rosters = [("${teamId}".toString()): roster]
         when:
-        Rush rush = ScoreTextParserLib.createRushRow("somegameid", teamId, 1, ytg, scoreText, [:], yfog, [71:"IOW", 1645: "NIL"])
+        Rush rush = ScoreTextParserLib.createRushRow("somegameid", teamId, 1, ytg, scoreText, rosters, yfog, [71:"IOW", 1645: "NIL"])
 
         then:
         rush.playerId == expectedPlayerId
         rush.yards == expectedYards
+        rush.sack == 1
+        rush.fumble == fumble
+        rush.fumbleLost == fumbleLost
 
         where:
-        scoreText                                                                                                                | teamId | ytg | expectedPlayerId | expectedYards | yfog
-        "4-N.Stanley sacked at IOW 49 for -4 yards, FUMBLES (15-S.Smith). 38-T.Hockenson to IOW 49 for no gain."                 | 71     | 10  | 0                | -4            | 53
-        "15-M.Childers sacked at NIL 24 for -10 yards (40-P.Hesse)."                                                             | 1645   | 4   | 0                | -10           | 34
-        "15-M.Childers sacked at NIL 9 for -15 yards, FUMBLES (34-K.Welch). 15-M.Childers to NIL 9 for no gain."                 | 1645   | 4   | 0                | -15           | 24
-        "15-M.Childers sacked at NIL 26 for -12 yards, FUMBLES (94-A.Epenesa). 57-C.Golston to NIL 26 for no gain (65-N.Veloz)." | 1645   | 8   | 0                | -12           | 24
+        scoreText                                                                                                                | teamId | ytg | expectedPlayerId | expectedYards | yfog | fumble | fumbleLost
+        "4-N.Stanley sacked at IOW 49 for -4 yards, FUMBLES (15-S.Smith). 38-T.Hockenson to IOW 49 for no gain."                 | 71     | 10  | 9233                | -4            | 53   | 1      | 0
+        "15-M.Childers sacked at NIL 24 for -10 yards (40-P.Hesse)."                                                             | 1645   | 4   | 15050                | -10           | 34   | 0      | 0
+        "15-M.Childers sacked at NIL 9 for -15 yards, FUMBLES (34-K.Welch). 15-M.Childers to NIL 9 for no gain."                 | 1645   | 4   | 15050                | -15           | 24   | 1      | 0
+        "15-M.Childers sacked at NIL 26 for -12 yards, FUMBLES (94-A.Epenesa). 57-C.Golston to NIL 26 for no gain (65-N.Veloz)." | 1645   | 8   | 15050                | -12           | 24   | 1      | 1
+    }
+
+    def "sack intentional grounding"() {
+        when:
+        Rush rush = ScoreTextParserLib.createRushRow("somegameid", teamId, 1, ytg, scoreText, [:], yfog, [71:"IOW", 498: "WIS"])
+
+        then:
+        rush.playerId == expectedPlayerId
+        rush.yards == expectedYards
+        rush.sack == 1
+
+        where:
+        scoreText                                                                                                                                            | teamId | ytg | expectedPlayerId | expectedYards | yfog
+        "12-A.Hornibrook sacked at WIS 44 for -13 yards. Penalty on WIS 12-A.Hornibrook, Intentional grounding, 0 yards, enforced at WIS 44. (98-A.Nelson)." | 498    | 13  | 0                | -13            | 54
     }
 
     @Unroll
@@ -403,6 +423,26 @@ class ScoreTextParserLibSpec extends Specification {
         where:
         scoreText                                                                 | puntingTeamId | returningTeamId | expectedPunterId | expectedYards | expectedReturnerId | expectedReturnYards | oob
         "punts 0 yards from IOW 33 blocked by 9-J.Wesley. to IOW 23 for no gain." | 71            | 1645            | null             | 0          | 0               | 0                | 0
+    }
+
+    def "fumble during punt"() {
+        setup:
+        List roster = parserDAO.getRosterBySeasonTeamId(puntingTeamId.toString())
+        List roster2 = parserDAO.getRosterBySeasonTeamId(returningTeamId.toString())
+        Map rosters = [("${puntingTeamId}".toString()): roster, ("${returningTeamId}".toString()): roster2]
+
+        when:
+        Punt punt = ScoreTextParserLib.createPuntRow("someid", 1, 2, 1, scoreText, rosters)
+
+        then:
+        punt.puntYards == expectedYards
+        punt.fumble == expectedFumble
+        punt.fumbleLost == expectedFumbleLost
+
+
+        where:
+        scoreText                                                                                                                  | puntingTeamId | returningTeamId  | expectedYards | expectedFumble | expectedFumbleLost
+        "15-A.Lotti punts 44 yards from WIS 24. 14-K.Groeneweg to WIS 45, FUMBLES (14-D.Dixon). 14-D.Dixon to WIS 45 for no gain." | 498           | 71               | 44            | 1              | 1
     }
 
 

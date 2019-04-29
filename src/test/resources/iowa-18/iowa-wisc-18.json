@@ -1,0 +1,1095 @@
+{
+  "inputMD5Sum": "03aba1bc31089ba68002f8bcaa7cfa2c",
+  "updatedTimestamp": "2018-09-23 13:00:06 ET",
+  "meta": {
+    "title": "PLAY-BY-PLAY",
+    "teams": [
+      {
+        "homeTeam": "false",
+        "id": "498",
+        "color": "#BA0C2F",
+        "shortname": "Wisconsin",
+        "seoName": "wisconsin",
+        "sixCharAbbr": "WISC"
+      },
+      {
+        "homeTeam": "true",
+        "id": "71",
+        "color": "#010101",
+        "shortname": "Iowa",
+        "seoName": "iowa",
+        "sixCharAbbr": "IOWA"
+      }
+    ]
+  },
+  "periods": [
+    {
+      "title": "1ST",
+      "shortTitle": "1st",
+      "possessions": [
+        {
+          "teamId": "498",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 65 yards from IOW 35 to WIS End Zone. touchback.",
+              "driveText": "1st and 10 at IOW35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "23-J.Taylor to WIS 32 for 7 yards (30-J.Gervase).",
+              "driveText": "1st and 10 at WIS25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "23-J.Taylor to WIS 34 for 2 yards (90-S.Brincks,48-J.Hockaday).",
+              "driveText": "2nd and 3 at WIS32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "37-G.Groshek to WIS 35 for 1 yard (49-N.Niemann).",
+              "driveText": "3rd and 1 at WIS34",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "12-A.Hornibrook complete to 4-A.Taylor. 4-A.Taylor runs ob at WIS 44 for 9 yards.",
+              "driveText": "1st and 10 at WIS35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "23-J.Taylor to IOW 50 for 6 yards (40-P.Hesse,27-A.Hooker).",
+              "driveText": "2nd and 1 at WIS44",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "23-J.Taylor to IOW 46 for 4 yards (34-K.Welch,27-A.Hooker).",
+              "driveText": "1st and 10 at IOW50",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "23-J.Taylor to IOW 44 for 2 yards (98-A.Nelson,48-J.Hockaday).",
+              "driveText": "2nd and 6 at IOW46",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "12-A.Hornibrook incomplete. Intended for 6-D.Davis.",
+              "driveText": "3rd and 4 at IOW44",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-A.Lotti punts 29 yards from IOW 44 to IOW 15, fair catch by 14-K.Groeneweg.",
+              "driveText": "4th and 4 at IOW44",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "10:29",
+          "plays": [
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 24 for 9 yards (8-D.Harrell).",
+              "driveText": "1st and 10 at IOW15",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 24 for no gain (97-I.Loudermilk,56-Z.Baun).",
+              "driveText": "2nd and 1 at IOW24",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "36-B.Ross to IOW 27 for 3 yards (59-T.Johnson).",
+              "driveText": "3rd and 1 at IOW24",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 29 for 2 yards (59-T.Johnson,43-R.Connelly).",
+              "driveText": "1st and 10 at IOW27",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 38-T.Hockenson. 38-T.Hockenson to WIS 47 for 24 yards (8-D.Harrell).",
+              "driveText": "2nd and 8 at IOW29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to WIS 42 for 5 yards (99-O.Sagapolu,92-M.Henningsen).",
+              "driveText": "1st and 10 at WIS47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 84-N.Easley. Penalty on WIS 8-D.Harrell, Pass interference, 8 yards, enforced at WIS 42. No Play.",
+              "driveText": "2nd and 5 at WIS42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "6-I.Smith-Marsette runs ob at WIS 14 for 20 yards.",
+              "driveText": "1st and 10 at WIS34",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to WIS 10 for 4 yards (9-S.Nelson,91-B.Williams).",
+              "driveText": "1st and 10 at WIS14",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to WIS 12 for -2 yards (97-I.Loudermilk).",
+              "driveText": "2nd and 6 at WIS10",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 21-I.Kelly-Martin. 21-I.Kelly-Martin to WIS 5 for 7 yards (59-T.Johnson).",
+              "driveText": "3rd and 8 at WIS12",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley to WIS 5 for no gain (54-C.Orr).",
+              "driveText": "4th and 1 at WIS5",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "498",
+          "time": "04:41",
+          "plays": [
+            {
+              "scoreText": "23-J.Taylor to WIS 14 for 9 yards (98-A.Nelson).",
+              "driveText": "1st and 10 at WIS5",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "23-J.Taylor to WIS 20 for 6 yards (30-J.Gervase,40-P.Hesse).",
+              "driveText": "2nd and 1 at WIS14",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Deal to WIS 26 for 6 yards (48-J.Hockaday,40-P.Hesse).",
+              "driveText": "1st and 10 at WIS20",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Deal to WIS 33 for 7 yards (34-K.Welch,11-M.Ojemudia).",
+              "driveText": "2nd and 4 at WIS26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "12-A.Hornibrook incomplete. Intended for 4-A.Taylor.",
+              "driveText": "1st and 10 at WIS33",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "23-J.Taylor to WIS 36 for 3 yards (40-P.Hesse,49-N.Niemann).",
+              "driveText": "2nd and 10 at WIS33",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "12-A.Hornibrook complete to 84-J.Ferguson. 84-J.Ferguson to IOW 47 for 17 yards (30-J.Gervase).",
+              "driveText": "3rd and 7 at WIS36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "37-G.Groshek to IOW 42 for 5 yards (34-K.Welch,98-A.Nelson).",
+              "driveText": "1st and 10 at IOW47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "23-J.Taylor to IOW 39 for 3 yards (48-J.Hockaday,95-C.Lattimore).",
+              "driveText": "2nd and 5 at IOW42",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "2ND",
+      "shortTitle": "2nd",
+      "possessions": [
+        {
+          "teamId": "498",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "12-A.Hornibrook complete to 45-A.Ingold. 45-A.Ingold to IOW 6 for 33 yards (34-K.Welch).",
+              "driveText": "3rd and 2 at IOW39",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "12-A.Hornibrook complete to 84-J.Ferguson. 84-J.Ferguson runs 6 yards for a touchdown.",
+              "driveText": "1st and 6 at IOW6",
+              "visitingScore": "6",
+              "homeScore": "0"
+            },
+            {
+              "scoreText": "27-R.Gaglianone extra point is good.",
+              "driveText": "",
+              "visitingScore": "7",
+              "homeScore": "0"
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "14:31",
+          "plays": [
+            {
+              "scoreText": "39-Z.Hintze kicks 65 yards from WIS 35 to IOW End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 44 for 19 yards (43-R.Connelly).",
+              "driveText": "1st and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 44 for no gain (43-R.Connelly).",
+              "driveText": "1st and 10 at IOW44",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 6-I.Smith-Marsette. 6-I.Smith-Marsette to WIS 43 for 13 yards (20-F.Hicks).",
+              "driveText": "2nd and 10 at IOW44",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to WIS 42 for 1 yard (43-R.Connelly,56-Z.Baun).",
+              "driveText": "1st and 10 at WIS43",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "14-K.Groeneweg pushed ob at WIS 39 for 3 yards (14-D.Dixon).",
+              "driveText": "2nd and 9 at WIS42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to WIS 42 for -3 yards (53-T.Edwards).",
+              "driveText": "3rd and 6 at WIS39",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "7-C.Rastetter punts 31 yards from WIS 42 to WIS 11, fair catch by 16-J.Dunn.",
+              "driveText": "4th and 9 at WIS42",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "498",
+          "time": "10:49",
+          "plays": [
+            {
+              "scoreText": "23-J.Taylor to WIS 17 for 6 yards (30-J.Gervase,27-A.Hooker).",
+              "driveText": "1st and 10 at WIS11",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "23-J.Taylor to WIS 29 for 12 yards (8-M.Hankins).",
+              "driveText": "2nd and 4 at WIS17",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "12-A.Hornibrook complete to 3-K.Pryor. 3-K.Pryor to WIS 29 for no gain (11-M.Ojemudia).",
+              "driveText": "1st and 10 at WIS29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "23-J.Taylor pushed ob at WIS 46 for 17 yards (34-K.Welch).",
+              "driveText": "2nd and 10 at WIS29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Deal to WIS 47 for 1 yard (34-K.Welch).",
+              "driveText": "1st and 10 at WIS46",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "12-A.Hornibrook complete to 37-G.Groshek. 37-G.Groshek to IOW 46 for 7 yards (34-K.Welch,48-J.Hockaday).",
+              "driveText": "2nd and 9 at WIS47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "12-A.Hornibrook incomplete. Intended for 3-K.Pryor.",
+              "driveText": "3rd and 2 at IOW46",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-A.Lotti punts 35 yards from IOW 46. 14-K.Groeneweg pushed ob at IOW 23 for 12 yards (53-T.Edwards).",
+              "driveText": "4th and 2 at IOW46",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "06:42",
+          "plays": [
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 12-B.Smith. Penalty on WIS 20-F.Hicks, Pass interference, 10 yards, enforced at IOW 23. No Play.",
+              "driveText": "1st and 10 at IOW23",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to IOW 39 for 6 yards (76-K.Lyles).",
+              "driveText": "1st and 10 at IOW33",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 6-I.Smith-Marsette.",
+              "driveText": "2nd and 4 at IOW39",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Penalty on IOW 4-N.Stanley, Delay of game, 5 yards, enforced at IOW 39. No Play.",
+              "driveText": "3rd and 4 at IOW39",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 38-T.Hockenson. 38-T.Hockenson to WIS 20 for 46 yards (20-F.Hicks). Penalty on WIS 20-F.Hicks, Pass interference, declined.",
+              "driveText": "3rd and 9 at IOW34",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 87-N.Fant. 87-N.Fant runs 20 yards for a touchdown.",
+              "driveText": "1st and 10 at WIS20",
+              "visitingScore": "7",
+              "homeScore": "6"
+            },
+            {
+              "scoreText": "91-M.Recinos extra point is good.",
+              "driveText": "",
+              "visitingScore": "7",
+              "homeScore": "7"
+            }
+          ]
+        },
+        {
+          "teamId": "498",
+          "time": "05:15",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 65 yards from IOW 35. 1-A.Cruickshank to WIS 22 for 22 yards (52-A.Jones).",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "12-A.Hornibrook complete to 23-J.Taylor. 23-J.Taylor to WIS 27 for 5 yards (49-N.Niemann).",
+              "driveText": "1st and 10 at WIS22",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "23-J.Taylor to WIS 24 for -3 yards (57-C.Golston).",
+              "driveText": "2nd and 5 at WIS27",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "12-A.Hornibrook incomplete. Intended for 37-G.Groshek.",
+              "driveText": "3rd and 8 at WIS24",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-A.Lotti punts 44 yards from WIS 24. 14-K.Groeneweg to WIS 45, FUMBLES (14-D.Dixon). 14-D.Dixon to WIS 45 for no gain.",
+              "driveText": "4th and 8 at WIS24",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "23-J.Taylor to IOW 50 for 5 yards (30-J.Gervase).",
+              "driveText": "1st and 10 at WIS45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "23-J.Taylor to IOW 49 for 1 yard (94-A.Epenesa,11-M.Ojemudia).",
+              "driveText": "2nd and 5 at IOW50",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "12-A.Hornibrook complete to 37-G.Groshek. 37-G.Groshek pushed ob at IOW 44 for 5 yards (34-K.Welch). Penalty on WIS 63-M.Deiter, Holding, 10 yards, enforced at IOW 49. No Play.",
+              "driveText": "3rd and 4 at IOW49",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "12-A.Hornibrook complete to 37-G.Groshek. 37-G.Groshek to WIS 48 for 7 yards (27-A.Hooker).",
+              "driveText": "3rd and 14 at WIS41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-A.Lotti punts 49 yards from WIS 48 to IOW 3, fair catch by 14-K.Groeneweg.",
+              "driveText": "4th and 7 at WIS48",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "00:56",
+          "plays": [
+            {
+              "scoreText": "21-I.Kelly-Martin pushed ob at IOW 21 for 18 yards (25-E.Burrell).",
+              "driveText": "1st and 10 at IOW3",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 6-I.Smith-Marsette.",
+              "driveText": "1st and 10 at IOW21",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 29 for 8 yards (54-C.Orr).",
+              "driveText": "2nd and 10 at IOW21",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "3RD",
+      "shortTitle": "3rd",
+      "possessions": [
+        {
+          "teamId": "71",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "39-Z.Hintze kicks 65 yards from WIS 35 to IOW End Zone. touchback.",
+              "driveText": "3rd and 2 at WIS35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley scrambles to IOW 27 for 2 yards (43-R.Connelly).",
+              "driveText": "1st and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 28 for 1 yard (99-O.Sagapolu).",
+              "driveText": "2nd and 8 at IOW27",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 6-I.Smith-Marsette. 6-I.Smith-Marsette pushed ob at IOW 40 for 12 yards (8-D.Harrell).",
+              "driveText": "3rd and 7 at IOW28",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to IOW 44 for 4 yards (97-I.Loudermilk).",
+              "driveText": "1st and 10 at IOW40",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin pushed ob at IOW 49 for 5 yards (14-D.Dixon).",
+              "driveText": "2nd and 6 at IOW44",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 38-T.Hockenson. 38-T.Hockenson to WIS 6 for 45 yards (20-F.Hicks).",
+              "driveText": "3rd and 1 at IOW49",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 19-M.Cooper.",
+              "driveText": "1st and 6 at WIS6",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to WIS 2 for 4 yards (54-C.Orr).",
+              "driveText": "2nd and 6 at WIS6",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to WIS 6 for -4 yards (43-R.Connelly).",
+              "driveText": "3rd and 2 at WIS2",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "91-M.Recinos 24 yards Field Goal is Good.",
+              "driveText": "4th and 6 at WIS14",
+              "visitingScore": "7",
+              "homeScore": "10"
+            }
+          ]
+        },
+        {
+          "teamId": "498",
+          "time": "10:12",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 65 yards from IOW 35 to WIS End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "23-J.Taylor to WIS 29 for 4 yards (32-D.Colbert).",
+              "driveText": "1st and 10 at WIS25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "23-J.Taylor to WIS 37 for 8 yards (98-A.Nelson,27-A.Hooker).",
+              "driveText": "2nd and 6 at WIS29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "12-A.Hornibrook complete to 84-J.Ferguson. 84-J.Ferguson to IOW 40 for 23 yards (8-M.Hankins).",
+              "driveText": "1st and 10 at WIS37",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Team penalty on WIS, 12 men in the huddle, 5 yards, enforced at IOW 40. No Play.",
+              "driveText": "1st and 10 at IOW40",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "23-J.Taylor to IOW 43 for 2 yards (40-P.Hesse,11-M.Ojemudia).",
+              "driveText": "1st and 15 at IOW45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "12-A.Hornibrook sacked at WIS 44 for -13 yards. Penalty on WIS 12-A.Hornibrook, Intentional grounding, 0 yards, enforced at WIS 44. (98-A.Nelson).",
+              "driveText": "2nd and 13 at IOW43",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "37-G.Groshek to IOW 47 for 9 yards (48-J.Hockaday).",
+              "driveText": "3rd and 26 at WIS44",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-A.Lotti punts 37 yards from IOW 47. 42-S.Beyer to IOW 10, FUMBLES. 26-T.Blaylock to IOW 10 for no gain.",
+              "driveText": "4th and 17 at IOW47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "23-J.Taylor to IOW 8 for 2 yards (96-M.Nelson).",
+              "driveText": "1st and 10 at IOW10",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "3-K.Pryor to IOW 12 for -4 yards (11-M.Ojemudia,49-N.Niemann).",
+              "driveText": "2nd and 8 at IOW8",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "12-A.Hornibrook complete to 6-D.Davis. 6-D.Davis runs 12 yards for a touchdown.",
+              "driveText": "3rd and 12 at IOW12",
+              "visitingScore": "13",
+              "homeScore": "10"
+            },
+            {
+              "scoreText": "27-R.Gaglianone extra point is good.",
+              "driveText": "",
+              "visitingScore": "14",
+              "homeScore": "10"
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "05:12",
+          "plays": [
+            {
+              "scoreText": "39-Z.Hintze kicks 65 yards from WIS 35 to IOW End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to IOW 27 for 2 yards (99-O.Sagapolu).",
+              "driveText": "1st and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 12-B.Smith. 12-B.Smith to IOW 41 for 14 yards (21-C.Williams).",
+              "driveText": "2nd and 8 at IOW27",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to IOW 46 for 5 yards (92-M.Henningsen,14-D.Dixon).",
+              "driveText": "1st and 10 at IOW41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 87-N.Fant. 87-N.Fant pushed ob at WIS 46 for 8 yards (25-E.Burrell).",
+              "driveText": "2nd and 5 at IOW46",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Penalty on WIS 43-R.Connelly, Personal Foul, 15 yards, enforced at WIS 46. No Play.",
+              "driveText": "1st and 10 at WIS46",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to WIS 22 for 9 yards (91-B.Williams).",
+              "driveText": "1st and 10 at WIS31",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to WIS 12 for 10 yards (54-C.Orr,56-Z.Baun).",
+              "driveText": "2nd and 1 at WIS22",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 36-B.Ross. 36-B.Ross to WIS 1 for 11 yards (14-D.Dixon,9-S.Nelson).",
+              "driveText": "1st and 10 at WIS12",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 87-N.Fant. 87-N.Fant runs 1 yard for a touchdown.",
+              "driveText": "1st and 1 at WIS1",
+              "visitingScore": "14",
+              "homeScore": "16"
+            },
+            {
+              "scoreText": "91-M.Recinos extra point is good.",
+              "driveText": "",
+              "visitingScore": "14",
+              "homeScore": "17"
+            }
+          ]
+        },
+        {
+          "teamId": "498",
+          "time": "01:37",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 65 yards from IOW 35. 1-A.Cruickshank to WIS 20 for 20 yards (20-J.Brents). Penalty on WIS 26-T.Blaylock, Holding, 10 yards, enforced at WIS 20.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "23-J.Taylor to WIS 16 for 6 yards (32-D.Colbert,49-N.Niemann).",
+              "driveText": "1st and 10 at WIS10",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "23-J.Taylor to WIS 17 for 1 yard (57-C.Golston).",
+              "driveText": "2nd and 4 at WIS16",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "37-G.Groshek to WIS 22 for 5 yards (32-D.Colbert,98-A.Nelson).",
+              "driveText": "3rd and 3 at WIS17",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "4TH",
+      "shortTitle": "4th",
+      "possessions": [
+        {
+          "teamId": "498",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "28-T.Deal to WIS 36 for 14 yards (57-C.Golston).",
+              "driveText": "1st and 10 at WIS22",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "12-A.Hornibrook complete to 6-D.Davis. 6-D.Davis to IOW 49 for 15 yards (27-A.Hooker). Penalty on WIS 78-J.Erdmann, Holding, 10 yards, enforced at WIS 36. No Play.",
+              "driveText": "1st and 10 at WIS36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "37-G.Groshek to WIS 31 for 5 yards (27-A.Hooker).",
+              "driveText": "1st and 20 at WIS26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "12-A.Hornibrook complete to 4-A.Taylor. 4-A.Taylor pushed ob at WIS 49 for 18 yards (49-N.Niemann).",
+              "driveText": "2nd and 15 at WIS31",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "23-J.Taylor to IOW 46 for 5 yards (48-J.Hockaday,32-D.Colbert).",
+              "driveText": "1st and 10 at WIS49",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "12-A.Hornibrook to IOW 44 for 2 yards (40-P.Hesse).",
+              "driveText": "2nd and 5 at IOW46",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "12-A.Hornibrook incomplete. Intended for 84-J.Ferguson.",
+              "driveText": "3rd and 3 at IOW44",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-A.Lotti punts 32 yards from IOW 44 to IOW 12, fair catch by 14-K.Groeneweg.",
+              "driveText": "4th and 3 at IOW44",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "11:25",
+          "plays": [
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 38-T.Hockenson.",
+              "driveText": "1st and 10 at IOW12",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to IOW 19 for 7 yards (56-Z.Baun).",
+              "driveText": "2nd and 10 at IOW12",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 12-B.Smith.",
+              "driveText": "3rd and 3 at IOW19",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "7-C.Rastetter punts 37 yards from IOW 19 to WIS 44, fair catch by 16-J.Dunn.",
+              "driveText": "4th and 3 at IOW19",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "498",
+          "time": "10:29",
+          "plays": [
+            {
+              "scoreText": "28-T.Deal to IOW 50 for 6 yards (48-J.Hockaday,27-A.Hooker).",
+              "driveText": "1st and 10 at WIS44",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "12-A.Hornibrook complete to 23-J.Taylor. 23-J.Taylor pushed ob at IOW 49 for 1 yard (27-A.Hooker).",
+              "driveText": "2nd and 4 at IOW50",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "37-G.Groshek to IOW 49 for no gain (30-J.Gervase,49-N.Niemann).",
+              "driveText": "3rd and 3 at IOW49",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-A.Lotti punts 34 yards from IOW 49 Downed at the IOW 15.",
+              "driveText": "4th and 3 at IOW49",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "08:34",
+          "plays": [
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 23 for 8 yards (53-T.Edwards).",
+              "driveText": "1st and 10 at IOW15",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 20 for -3 yards (20-F.Hicks).",
+              "driveText": "2nd and 2 at IOW23",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 84-N.Easley. 84-N.Easley runs ob at IOW 42 for 22 yards.",
+              "driveText": "3rd and 5 at IOW20",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to IOW 47 for 5 yards (99-O.Sagapolu,53-T.Edwards).",
+              "driveText": "1st and 10 at IOW42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 6-I.Smith-Marsette.",
+              "driveText": "2nd and 5 at IOW47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 6-I.Smith-Marsette.",
+              "driveText": "3rd and 5 at IOW47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "7-C.Rastetter punts 46 yards from IOW 47. 16-J.Dunn to WIS 12 for 5 yards (50-J.Subbert).",
+              "driveText": "4th and 5 at IOW47",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "498",
+          "time": "05:40",
+          "plays": [
+            {
+              "scoreText": "28-T.Deal to WIS 20 for 8 yards (11-M.Ojemudia).",
+              "driveText": "1st and 10 at WIS12",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "37-G.Groshek to WIS 25 for 5 yards (48-J.Hockaday,49-N.Niemann).",
+              "driveText": "2nd and 2 at WIS20",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "12-A.Hornibrook complete to 3-K.Pryor. 3-K.Pryor to WIS 30 for 5 yards (20-J.Brents).",
+              "driveText": "1st and 10 at WIS25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "12-A.Hornibrook complete to 3-K.Pryor. 3-K.Pryor pushed ob at IOW 42 for 28 yards (11-M.Ojemudia).",
+              "driveText": "2nd and 5 at WIS30",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "23-J.Taylor to IOW 38 for 4 yards (98-A.Nelson,27-A.Hooker).",
+              "driveText": "1st and 10 at IOW42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "23-J.Taylor to IOW 37 for 1 yard (40-P.Hesse).",
+              "driveText": "2nd and 6 at IOW38",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "12-A.Hornibrook complete to 37-G.Groshek. 37-G.Groshek to IOW 32 for 5 yards (30-J.Gervase).",
+              "driveText": "3rd and 5 at IOW37",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "37-G.Groshek to IOW 29 for 3 yards (49-N.Niemann,27-A.Hooker).",
+              "driveText": "1st and 10 at IOW32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "12-A.Hornibrook complete to 84-J.Ferguson. 84-J.Ferguson to IOW 17 for 12 yards (32-D.Colbert).",
+              "driveText": "2nd and 7 at IOW29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "12-A.Hornibrook complete to 4-A.Taylor. 4-A.Taylor runs 17 yards for a touchdown.",
+              "driveText": "1st and 10 at IOW17",
+              "visitingScore": "20",
+              "homeScore": "17"
+            },
+            {
+              "scoreText": "27-R.Gaglianone extra point is good.",
+              "driveText": "",
+              "visitingScore": "21",
+              "homeScore": "17"
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "00:57",
+          "plays": [
+            {
+              "scoreText": "39-Z.Hintze kicks 60 yards from WIS 35. 14-K.Groeneweg to IOW 24 for 19 yards (25-E.Burrell,9-S.Nelson).",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 6-I.Smith-Marsette. 6-I.Smith-Marsette pushed ob at IOW 30 for 6 yards (31-M.Cone).",
+              "driveText": "1st and 10 at IOW24",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 84-N.Easley.",
+              "driveText": "2nd and 4 at IOW30",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 6-I.Smith-Marsette, INTERCEPTED by 53-T.Edwards at IOW 37. 53-T.Edwards to IOW 37 for no gain.",
+              "driveText": "3rd and 4 at IOW30",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "498",
+          "time": "00:38",
+          "plays": [
+            {
+              "scoreText": "45-A.Ingold to IOW 33 for 4 yards (20-J.Brents,30-J.Gervase).",
+              "driveText": "1st and 10 at IOW37",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "23-J.Taylor to IOW 33 for no gain (52-A.Jones,49-N.Niemann).",
+              "driveText": "2nd and 6 at IOW33",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "45-A.Ingold runs 33 yards for a touchdown.",
+              "driveText": "3rd and 6 at IOW33",
+              "visitingScore": "27",
+              "homeScore": "17"
+            },
+            {
+              "scoreText": "27-R.Gaglianone extra point is good.",
+              "driveText": "",
+              "visitingScore": "28",
+              "homeScore": "17"
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "00:22",
+          "plays": [
+            {
+              "scoreText": "39-Z.Hintze kicks 65 yards from WIS 35 to IOW End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 12-B.Smith. 12-B.Smith 84-N.Easley 10-M.Sargent 4-N.Stanley 38-T.Hockenson 6-I.Smith-Marsette to WIS 48 for 27 yards.",
+              "driveText": "1st and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

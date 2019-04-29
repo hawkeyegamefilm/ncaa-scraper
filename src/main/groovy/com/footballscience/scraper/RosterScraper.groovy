@@ -14,10 +14,10 @@ class RosterScraper {
     String baseStatsUrl = "http://stats.ncaa.org"
 
     String findRosterUrlbyOrg(String orgId) {
-        Document orgSummaryPage = Jsoup.connect(orgBaseUrl2018+orgId).timeout(30000).get()
+        Document orgSummaryPage = Jsoup.connect(orgBaseUrl2018+orgId).timeout(5000).get()
         String teamRelativePath = getFootballUrl(orgSummaryPage)
 
-        Document teamSummaryPage = Jsoup.connect(baseStatsUrl+teamRelativePath).timeout(30000).get()
+        Document teamSummaryPage = Jsoup.connect(baseStatsUrl+teamRelativePath).timeout(5000).get()
         String rosterPath = findRosterPathOnTeamPage(teamSummaryPage)
 
         return rosterPath
@@ -52,11 +52,12 @@ class RosterScraper {
 
     String harvestAllRosters2018() {
         StringBuffer buffer = new StringBuffer()
-        List orgIds = getAllOrgIds()
-        orgIds.each {
-            String footballUrl = findRosterUrlbyOrg(it)
-            Document doc = Jsoup.connect(baseStatsUrl+footballUrl).timeout(30000).get()
-            buffer.append(createCSVRowFromHtml(doc, it))
+        List<String> orgIds = getAllOrgIds()
+        orgIds.each { String orgId ->
+            println("hitting url for: $orgId")
+            String footballUrl = findRosterUrlbyOrg(orgId)
+            Document doc = Jsoup.connect(baseStatsUrl+footballUrl).timeout(5000).get()
+            buffer.append(createCSVRowFromHtml(doc, orgId))
             buffer.append(System.lineSeparator())
         }
         buffer.toString()
