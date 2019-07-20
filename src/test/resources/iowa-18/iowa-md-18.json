@@ -1,0 +1,1011 @@
+{
+  "inputMD5Sum": "c82f43f5bc56e93e30ca41ef6167efb9",
+  "updatedTimestamp": "2018-10-21 04:59:40 ET",
+  "meta": {
+    "title": "PLAY-BY-PLAY",
+    "teams": [
+      {
+        "homeTeam": "false",
+        "id": "2502",
+        "color": "#C8102E",
+        "shortname": "Maryland",
+        "seoName": "maryland",
+        "sixCharAbbr": "MD"
+      },
+      {
+        "homeTeam": "true",
+        "id": "71",
+        "color": "#010101",
+        "shortname": "Iowa",
+        "seoName": "iowa",
+        "sixCharAbbr": "IOWA"
+      }
+    ]
+  },
+  "periods": [
+    {
+      "title": "1ST",
+      "shortTitle": "1st",
+      "possessions": [
+        {
+          "teamId": "71",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "27-J.Petrino kicks 50 yards from MAR 35. 6-I.Smith-Marsette to IOW 28 for 13 yards (15-B.Cobbs).",
+              "driveText": "1st and 10 at MAR35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 34 for 6 yards (22-I.Davis,91-A.McLean).",
+              "driveText": "1st and 10 at IOW28",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 41 for 7 yards (22-I.Davis).",
+              "driveText": "2nd and 4 at IOW34",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 43 for 2 yards (50-M.Tanyi,9-B.Cowart).",
+              "driveText": "1st and 10 at IOW41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "84-N.Easley to IOW 41 for -2 yards.",
+              "driveText": "2nd and 8 at IOW43",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "6-I.Smith-Marsette pushed ob at MAR 43 for 16 yards (14-D.Jones).",
+              "driveText": "3rd and 10 at IOW41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent pushed ob at MAR 29 for 14 yards (20-A.Richardson).",
+              "driveText": "1st and 10 at MAR43",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to MAR 26 for 3 yards (6-J.Aniebonam,7-T.Ellis).",
+              "driveText": "1st and 10 at MAR29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 38-T.Hockenson, INTERCEPTED by 33-T.Watson at MAR 16. 33-T.Watson to MAR 26 for 10 yards (38-T.Hockenson).",
+              "driveText": "2nd and 7 at MAR26",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2502",
+          "time": "10:24",
+          "plays": [
+            {
+              "scoreText": "11-K.Hill complete to 9-J.Davenport. 9-J.Davenport to MAR 38 for 12 yards (34-K.Welch).",
+              "driveText": "1st and 10 at MAR26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "8-T.Fleet-Davis to MAR 45 for 7 yards (30-J.Gervase).",
+              "driveText": "1st and 10 at MAR38",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-K.Hill incomplete. Intended for 24-T. Johnson.",
+              "driveText": "2nd and 3 at MAR45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-K.Hill incomplete.",
+              "driveText": "3rd and 3 at MAR45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "88-W.Lees punts 32 yards from MAR 45 to IOW 23, fair catch by 14-K.Groeneweg.",
+              "driveText": "4th and 3 at MAR45",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "09:07",
+          "plays": [
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 25 for 2 yards (33-T.Watson).",
+              "driveText": "1st and 10 at IOW23",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin pushed ob at IOW 33 for 8 yards (33-T.Watson).",
+              "driveText": "2nd and 8 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 33 for no gain (33-T.Watson,91-A.McLean).",
+              "driveText": "1st and 10 at IOW33",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 84-N.Easley. 84-N.Easley pushed ob at IOW 48 for 15 yards (4-D.Savage).",
+              "driveText": "2nd and 10 at IOW33",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 87-N.Fant.",
+              "driveText": "1st and 10 at IOW48",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin pushed ob at MAR 42 for 10 yards (22-I.Davis,20-A.Richardson).",
+              "driveText": "2nd and 10 at IOW48",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to MAR 38 for 4 yards (4-D.Savage,95-L.Rogers).",
+              "driveText": "1st and 10 at MAR42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to MAR 35 for 3 yards (22-I.Davis,33-T.Watson).",
+              "driveText": "2nd and 6 at MAR38",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to MAR 34 for 1 yard (59-K.Howard,50-M.Tanyi).",
+              "driveText": "3rd and 3 at MAR35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 84-N.Easley. 84-N.Easley to MAR 22 for 12 yards (2-R.Davis,7-T.Ellis).",
+              "driveText": "4th and 2 at MAR34",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 84-N.Easley.",
+              "driveText": "1st and 10 at MAR22",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to MAR 18 for 4 yards (6-J.Aniebonam,33-T.Watson).",
+              "driveText": "2nd and 10 at MAR22",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 6-I.Smith-Marsette. 6-I.Smith-Marsette to MAR 11 for 7 yards (22-I.Davis).",
+              "driveText": "3rd and 6 at MAR18",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to MAR 7 for 4 yards (91-A.McLean).",
+              "driveText": "1st and 10 at MAR11",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to MAR 5 for 2 yards (9-B.Cowart,93-O.Saine).",
+              "driveText": "2nd and 6 at MAR7",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley scrambles to MAR 5 for no gain (6-J.Aniebonam).",
+              "driveText": "3rd and 4 at MAR5",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "91-M.Recinos 23 yards Field Goal is Good.",
+              "driveText": "4th and 4 at MAR5",
+              "visitingScore": "0",
+              "homeScore": "3"
+            }
+          ]
+        },
+        {
+          "teamId": "2502",
+          "time": "00:03",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 65 yards from IOW 35 to MAR End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Penalty on MAR 55-D.Gray, False start, 5 yards, enforced at MAR 25. No Play.",
+              "driveText": "1st and 10 at MAR25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-A.McFarland to MAR 22 for 2 yards (96-M.Nelson,40-P.Hesse).",
+              "driveText": "1st and 15 at MAR20",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "2ND",
+      "shortTitle": "2nd",
+      "possessions": [
+        {
+          "teamId": "2502",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "5-A.McFarland to MAR 18 for -4 yards (40-P.Hesse).",
+              "driveText": "2nd and 13 at MAR22",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-K.Hill incomplete. Intended for 7-D.Demus.",
+              "driveText": "3rd and 17 at MAR18",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "88-W.Lees punts 29 yards from MAR 18, out of bounds at the MAR 47.",
+              "driveText": "4th and 17 at MAR18",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "14:03",
+          "plays": [
+            {
+              "scoreText": "10-M.Sargent to MAR 43 for 4 yards (22-I.Davis).",
+              "driveText": "1st and 10 at MAR47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to MAR 34 for 9 yards (22-I.Davis,6-J.Aniebonam).",
+              "driveText": "2nd and 6 at MAR43",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent pushed ob at MAR 24 for 10 yards (22-I.Davis).",
+              "driveText": "1st and 10 at MAR34",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 38-T.Hockenson. 38-T.Hockenson to MAR 23 for 1 yard (52-O.Oluwatimi,6-J.Aniebonam).",
+              "driveText": "1st and 10 at MAR24",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to MAR 17 for 6 yards (91-A.McLean,4-D.Savage).",
+              "driveText": "2nd and 9 at MAR23",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to MAR 17 for no gain (9-B.Cowart,91-A.McLean).",
+              "driveText": "3rd and 3 at MAR17",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 87-N.Fant. 87-N.Fant to MAR 10 for 7 yards (4-D.Savage).",
+              "driveText": "4th and 3 at MAR17",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to MAR 7 for 3 yards (33-T.Watson,9-B.Cowart).",
+              "driveText": "1st and 10 at MAR10",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 87-N.Fant.",
+              "driveText": "2nd and 7 at MAR7",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 38-T.Hockenson.",
+              "driveText": "3rd and 7 at MAR7",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "91-M.Recinos 25 yards Field Goal is Good.",
+              "driveText": "4th and 7 at MAR7",
+              "visitingScore": "0",
+              "homeScore": "6"
+            }
+          ]
+        },
+        {
+          "teamId": "2502",
+          "time": "09:03",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 60 yards from IOW 35. 24-T. Johnson to MAR 25 for 20 yards (43-D.Doyle,23-D.Dafney).",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "6-J.Jones to MAR 32 for 7 yards (57-C.Golston,91-B.Reiff).",
+              "driveText": "1st and 10 at MAR25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-B.Cobbs to MAR 34 for 2 yards (34-K.Welch).",
+              "driveText": "2nd and 3 at MAR32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-K.Hill to MAR 36 for 2 yards (91-B.Reiff,96-M.Nelson).",
+              "driveText": "3rd and 1 at MAR34",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-A.McFarland to MAR 38 for 2 yards (34-K.Welch,33-R.Moss).",
+              "driveText": "1st and 10 at MAR36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-K.Hill complete to 82-A.Edwards. 82-A.Edwards pushed ob at MAR 43 for 5 yards (32-D.Colbert).",
+              "driveText": "2nd and 8 at MAR38",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-K.Hill complete to 12-T.Jacobs. 12-T.Jacobs pushed ob at IOW 46 for 11 yards (33-R.Moss).",
+              "driveText": "3rd and 3 at MAR43",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "8-T.Fleet-Davis to IOW 47 for -1 yard (94-A.Epenesa).",
+              "driveText": "1st and 10 at IOW46",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-K.Hill incomplete. Intended for 15-B.Cobbs, INTERCEPTED by 27-A.Hooker at IOW 29. 27-A.Hooker pushed ob at IOW 42 for 13 yards (24-T. Johnson).",
+              "driveText": "2nd and 11 at IOW47",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "04:17",
+          "plays": [
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 41 for -1 yard (14-D.Jones).",
+              "driveText": "1st and 10 at IOW42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 48 for 7 yards (33-T.Watson).",
+              "driveText": "2nd and 11 at IOW41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 38-T.Hockenson. 38-T.Hockenson to MAR 36 for 16 yards.",
+              "driveText": "3rd and 4 at IOW48",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to MAR 35 for 1 yard (22-I.Davis,93-O.Saine).",
+              "driveText": "1st and 10 at MAR36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 87-N.Fant.",
+              "driveText": "2nd and 9 at MAR35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley scrambles to MAR 22 for 13 yards (50-M.Tanyi).",
+              "driveText": "3rd and 9 at MAR35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 12-B.Smith.",
+              "driveText": "1st and 10 at MAR22",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 38-T.Hockenson. Penalty on MAR 9-B.Cowart, Personal Foul, 11 yards, enforced at MAR 22. No Play.",
+              "driveText": "2nd and 10 at MAR22",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 87-N.Fant.",
+              "driveText": "1st and 10 at MAR11",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to MAR 10 for 1 yard (93-O.Saine).",
+              "driveText": "2nd and 10 at MAR11",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 12-B.Smith. 12-B.Smith runs 10 yards for a touchdown. Penalty on MAR 7-T.Ellis, Pass interference, declined.",
+              "driveText": "3rd and 9 at MAR10",
+              "visitingScore": "0",
+              "homeScore": "12"
+            },
+            {
+              "scoreText": "91-M.Recinos extra point is good.",
+              "driveText": "",
+              "visitingScore": "0",
+              "homeScore": "13"
+            }
+          ]
+        },
+        {
+          "teamId": "2502",
+          "time": "00:08",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 36 yards from IOW 35. 32-B.Miller to MAR 36 for 7 yards (32-D.Colbert).",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-A.McFarland to MAR 37 for 1 yard (98-A.Nelson).",
+              "driveText": "1st and 10 at MAR36",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "3RD",
+      "shortTitle": "3rd",
+      "possessions": [
+        {
+          "teamId": "2502",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 65 yards from IOW 35 to MAR End Zone. touchback.",
+              "driveText": "2nd and 9 at IOW35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-K.Hill complete to 24-T. Johnson. 24-T. Johnson to MAR 25 for no gain (49-N.Niemann).",
+              "driveText": "1st and 10 at MAR25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "12-T.Jacobs to MAR 35 for 10 yards (32-D.Colbert). Penalty on MAR 55-D.Gray, Holding, 10 yards, enforced at MAR 25. No Play.",
+              "driveText": "2nd and 10 at MAR25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-K.Hill complete to 24-T. Johnson. 24-T. Johnson to MAR 17 for 2 yards (40-P.Hesse).",
+              "driveText": "2nd and 20 at MAR15",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-K.Hill incomplete. Intended for 12-T.Jacobs.",
+              "driveText": "3rd and 18 at MAR17",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "88-W.Lees punts 33 yards from MAR 17 to the MAR 50, downed by 44-C.Campbell. Team penalty on MAR, Illegal formation, 5 yards, enforced at MAR 50.",
+              "driveText": "4th and 18 at MAR17",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "12:48",
+          "plays": [
+            {
+              "scoreText": "28-T.Young to MAR 43 for 2 yards (33-T.Watson,9-B.Cowart).",
+              "driveText": "1st and 10 at MAR45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to MAR 42 for 1 yard (9-B.Cowart,91-A.McLean).",
+              "driveText": "2nd and 8 at MAR43",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 38-T.Hockenson. 38-T.Hockenson pushed ob at MAR 29 for 13 yards (33-T.Watson).",
+              "driveText": "3rd and 7 at MAR42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to MAR 30 for -1 yard (59-K.Howard,6-J.Aniebonam).",
+              "driveText": "1st and 10 at MAR29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 87-N.Fant. 87-N.Fant pushed ob at MAR 21 for 9 yards (4-D.Savage).",
+              "driveText": "2nd and 11 at MAR30",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "46-A.Kelly to MAR 18 for 3 yards (33-T.Watson,93-O.Saine).",
+              "driveText": "3rd and 2 at MAR21",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to MAR 16 for 2 yards (8-M.Lewis).",
+              "driveText": "1st and 10 at MAR18",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 14-K.Groeneweg.",
+              "driveText": "2nd and 8 at MAR16",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 21-I.Kelly-Martin. 21-I.Kelly-Martin to MAR 18 for -2 yards (33-T.Watson).",
+              "driveText": "3rd and 8 at MAR16",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "91-M.Recinos 36 yards Field Goal is Good.",
+              "driveText": "4th and 10 at MAR18",
+              "visitingScore": "0",
+              "homeScore": "16"
+            }
+          ]
+        },
+        {
+          "teamId": "2502",
+          "time": "07:37",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 65 yards from IOW 35 to MAR End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "3-T.Pigrome to MAR 31 for 6 yards (34-K.Welch,30-J.Gervase).",
+              "driveText": "1st and 10 at MAR25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-A.McFarland to MAR 26 for -5 yards (57-C.Golston).",
+              "driveText": "2nd and 4 at MAR31",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "3-T.Pigrome incomplete. Intended for 9-J.Davenport.",
+              "driveText": "3rd and 9 at MAR26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "88-W.Lees punts 35 yards from MAR 26 to the IOW 39, downed by 36-M.Oliveira.",
+              "driveText": "4th and 9 at MAR26",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "05:51",
+          "plays": [
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 42 for 3 yards (25-A.Brooks).",
+              "driveText": "1st and 10 at IOW39",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 84-N.Easley.",
+              "driveText": "2nd and 7 at IOW42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 87-N.Fant. 87-N.Fant to IOW 40 for -2 yards (4-D.Savage).",
+              "driveText": "3rd and 7 at IOW42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "7-C.Rastetter punts 45 yards from IOW 40. 12-T.Jacobs to MAR 10, FUMBLES. out of bounds at the MAR 10.",
+              "driveText": "4th and 9 at IOW40",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2502",
+          "time": "04:18",
+          "plays": [
+            {
+              "scoreText": "15-B.Cobbs to MAR 10 for no gain (49-N.Niemann).",
+              "driveText": "1st and 10 at MAR10",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "3-T.Pigrome to MAR End Zone, FUMBLES. 98-A.Nelson runs no gain for a touchdown.",
+              "driveText": "2nd and 10 at MAR10",
+              "visitingScore": "0",
+              "homeScore": "22"
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "03:31",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos extra point is good.",
+              "driveText": "",
+              "visitingScore": "0",
+              "homeScore": "23"
+            }
+          ]
+        },
+        {
+          "teamId": "2502",
+          "time": "03:31",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 61 yards from IOW 35. 24-T. Johnson to MAR 26 for 22 yards (28-J.Koerner,18-J.Milani).",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "3-T.Pigrome scrambles, runs ob at MAR 32 for 6 yards. Penalty on MAR 55-D.Gray, Holding, 10 yards, enforced at MAR 26. No Play.",
+              "driveText": "1st and 10 at MAR26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "24-T. Johnson to MAR 19 for 3 yards (32-D.Colbert,95-C.Lattimore).",
+              "driveText": "1st and 20 at MAR16",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "24-T. Johnson to MAR 29 for 10 yards (30-J.Gervase).",
+              "driveText": "2nd and 17 at MAR19",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-K.Hill complete to 6-J.Jones. 6-J.Jones to MAR 46 for 17 yards (9-G.Stone,30-J.Gervase).",
+              "driveText": "3rd and 7 at MAR29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "24-T. Johnson to MAR 47 for 1 yard (94-A.Epenesa,57-C.Golston).",
+              "driveText": "1st and 10 at MAR46",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-K.Hill incomplete. Intended for 9-J.Davenport.",
+              "driveText": "2nd and 9 at MAR47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Penalty on MAR 55-D.Gray, False start, 5 yards, enforced at MAR 47. No Play.",
+              "driveText": "3rd and 9 at MAR47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-K.Hill sacked at MAR 35 for -7 yards (40-P.Hesse).",
+              "driveText": "3rd and 14 at MAR42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "88-W.Lees punts 38 yards from MAR 35 to IOW 27, fair catch by 14-K.Groeneweg.",
+              "driveText": "4th and 21 at MAR35",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "4TH",
+      "shortTitle": "4th",
+      "possessions": [
+        {
+          "teamId": "71",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "28-T.Young to IOW 30 for 3 yards (6-J.Aniebonam,20-A.Richardson).",
+              "driveText": "1st and 10 at IOW27",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to IOW 36 for 6 yards (91-A.McLean).",
+              "driveText": "2nd and 7 at IOW30",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "46-A.Kelly to IOW 40 for 4 yards (9-B.Cowart,22-I.Davis).",
+              "driveText": "3rd and 1 at IOW36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to IOW 43 for 3 yards (33-T.Watson).",
+              "driveText": "1st and 10 at IOW40",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to IOW 46 for 3 yards (25-A.Brooks).",
+              "driveText": "2nd and 7 at IOW43",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 10-M.Sargent.",
+              "driveText": "3rd and 4 at IOW46",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "7-C.Rastetter punts 48 yards from IOW 46 to the MAR 6, downed by 14-K.Groeneweg.",
+              "driveText": "4th and 4 at IOW46",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2502",
+          "time": "11:14",
+          "plays": [
+            {
+              "scoreText": "24-T. Johnson to MAR 7 for 1 yard (40-P.Hesse,90-S.Brincks).",
+              "driveText": "1st and 10 at MAR6",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-D.Jones to MAR 14 for 7 yards (30-J.Gervase,33-R.Moss).",
+              "driveText": "2nd and 9 at MAR7",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-A.McFarland pushed ob at MAR 33 for 19 yards (34-K.Welch).",
+              "driveText": "3rd and 2 at MAR14",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-K.Hill incomplete. Intended for 9-J.Davenport.",
+              "driveText": "1st and 10 at MAR33",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-K.Hill incomplete. Intended for 82-A.Edwards.",
+              "driveText": "2nd and 10 at MAR33",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-K.Hill incomplete. Intended for 17-C.Okonokwo.",
+              "driveText": "3rd and 10 at MAR33",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "88-W.Lees punts 41 yards from MAR 33 to IOW 26, fair catch by 27-A.Hooker.",
+              "driveText": "4th and 10 at MAR33",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "08:47",
+          "plays": [
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 36 for 10 yards (22-I.Davis,33-T.Watson).",
+              "driveText": "1st and 10 at IOW26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 38 for 2 yards (14-D.Jones,93-O.Saine).",
+              "driveText": "1st and 10 at IOW36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "2-P.Mansell scrambles to IOW 43 for 5 yards (25-A.Brooks,20-A.Richardson).",
+              "driveText": "2nd and 8 at IOW38",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to MAR 50 for 7 yards (14-D.Jones).",
+              "driveText": "3rd and 3 at IOW43",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to MAR 46 for 4 yards (22-I.Davis).",
+              "driveText": "1st and 10 at MAR50",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to MAR 37 for 9 yards (33-T.Watson).",
+              "driveText": "2nd and 6 at MAR46",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "2-P.Mansell incomplete. Intended for 87-N.Fant.",
+              "driveText": "1st and 10 at MAR37",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to MAR 35 for 2 yards (30-D.Nchami,13-R.Lewis).",
+              "driveText": "2nd and 10 at MAR37",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "2-P.Mansell to MAR 33 for 2 yards (33-T.Watson,52-O.Oluwatimi).",
+              "driveText": "3rd and 8 at MAR35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "2-P.Mansell scrambles to MAR 23 for 10 yards (22-I.Davis).",
+              "driveText": "4th and 6 at MAR33",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to MAR 21 for 2 yards (59-K.Howard).",
+              "driveText": "1st and 10 at MAR23",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent pushed ob at MAR 19 for 2 yards (14-D.Jones).",
+              "driveText": "2nd and 8 at MAR21",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to MAR 16 for 3 yards (22-I.Davis).",
+              "driveText": "3rd and 6 at MAR19",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "7-S.Petras incomplete. Intended for 14-K.Groeneweg.",
+              "driveText": "4th and 3 at MAR16",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2502",
+          "time": "01:11",
+          "plays": [
+            {
+              "scoreText": "20-J.Leake to MAR 32 for 16 yards (30-J.Gervase).",
+              "driveText": "1st and 10 at MAR16",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "3-T.Pigrome to MAR 47 for 15 yards (27-A.Hooker).",
+              "driveText": "1st and 10 at MAR32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "3-T.Pigrome sacked at MAR 41 for -6 yards (94-A.Epenesa).",
+              "driveText": "1st and 10 at MAR47",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -15,6 +15,7 @@ class Drive {
     Integer yards
     Integer top
     Integer rzDrive
+    Integer extraPointOnlyDrive//these are 'drives' where a team scores a defensive TD and no 'drive' takes place
 
     List<Play> plays
 

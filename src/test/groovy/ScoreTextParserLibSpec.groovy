@@ -86,7 +86,7 @@ class ScoreTextParserLibSpec extends Specification {
         Map rosters = [("${teamId}".toString()): roster]
 
         when:
-        Rush rush = ScoreTextParserLib.createRushRow("somegameid", teamId, 1, ytg, scoreText, rosters, 0, [:])
+        Rush rush = ScoreTextParserLib.createRushRow("somegameid", teamId, 1, ytg, scoreText, rosters, 0, [:], "1")
 
         then:
         rush.playerId == expectedPlayerId
@@ -104,13 +104,15 @@ class ScoreTextParserLibSpec extends Specification {
         "44-C.Artis-Payne to AUB 11 for no gain."                           | 827    | 10  | 34128            | 0             | 0                 | 0
     }
 
+    @Unroll
     def "one off fumble scenarios for createRushRow function correctly"() {
         setup:
-        List roster = loadRoster("cfbstats_14", teamId.toString())
-        Map rosters = [("${teamId}".toString()): roster]
+        List roster = loadRoster(schema, teamId.toString())
+        Map rosters = [("${teamId}".toString()): roster, "${homeTeamId}": [:]]
+
 
         when:
-        Rush rush = ScoreTextParserLib.createRushRow("somegameid", teamId, 1, ytg, scoreText, rosters, 0, [:])
+        Rush rush = ScoreTextParserLib.createRushRow("somegameid", teamId, 1, ytg, scoreText, rosters, 63, [:], homeTeamId)
 
         then:
         rush.playerId == expectedPlayerId
@@ -119,9 +121,10 @@ class ScoreTextParserLibSpec extends Specification {
         rush.fumbleLost == expectedFumbleLost
 
         where:
-        scoreText                                                                                    | teamId | ytg | expectedPlayerId | expectedYards | expectedFumbleLost
-        "10-J.Parker to IOW 35, FUMBLES (97-B.Dueitt). 97-B.Dueitt runs 35 yards for a touchdown."   | 71     | 10  | 41579            | 35            | 1
-        "14-B.Wallace scrambles to AUB 1, FUMBLES (24-D.Moncrief). 17-K.Frost to AUB 1 for no gain." | 1851   | 1   | 44690            | 0             | 1
+        scoreText                                                                                    | teamId | ytg | expectedPlayerId | expectedYards | expectedFumbleLost | schema   | homeTeamId
+//        "10-J.Parker to IOW 35, FUMBLES (97-B.Dueitt). 97-B.Dueitt runs 35 yards for a touchdown."   | 71     | 10  | 41579            | 35            | 1                  | "cfbstats_14" | "71"
+//        "14-B.Wallace scrambles to AUB 1, FUMBLES (24-D.Moncrief). 17-K.Frost to AUB 1 for no gain." | 1851   | 1   | 44690            | 0             | 1                  | "cfbstats_14" | "827"
+        "21-I.Kelly-Martin to PSU 33, FUMBLES (6-C.Brown). 74-T.Wirfs to PSU 33 for no gain."        | 71     | 1   | 9181            | 4             | 0                  | "cfb_stats_18" | "2256"
 
     }
 
@@ -131,7 +134,7 @@ class ScoreTextParserLibSpec extends Specification {
         Map rosters = [("${teamId}".toString()): roster]
 
         when:
-        Rush rush = ScoreTextParserLib.createRushRow("somegameid", teamId, 1, ytg, scoreText, rosters, 68, [:])
+        Rush rush = ScoreTextParserLib.createRushRow("somegameid", teamId, 1, ytg, scoreText, rosters, 68, [:], "1")
 
         then:
         rush.playerId == expectedPlayerId
@@ -146,7 +149,7 @@ class ScoreTextParserLibSpec extends Specification {
     @Unroll
     def "penalty calculations for rush play"() {
         when:
-        Rush rush = ScoreTextParserLib.createRushRow("somegameid", teamId, 1, ytg, scoreText, [:], yfog, [71:"IOW", 1645: "NIL"])
+        Rush rush = ScoreTextParserLib.createRushRow("somegameid", teamId, 1, ytg, scoreText, ["71":[:], "1645": [:]], yfog, [71:"IOW", 1645: "NIL"], "71")
 
         then:
         rush.playerId == expectedPlayerId
@@ -165,7 +168,7 @@ class ScoreTextParserLibSpec extends Specification {
         List roster = parserDAO.getRosterBySeasonTeamId(teamId.toString())
         Map rosters = [("${teamId}".toString()): roster]
         when:
-        Rush rush = ScoreTextParserLib.createRushRow("somegameid", teamId, 1, ytg, scoreText, rosters, yfog, [71:"IOW", 1645: "NIL"])
+        Rush rush = ScoreTextParserLib.createRushRow("somegameid", teamId, 1, ytg, scoreText, rosters, yfog, [71:"IOW", 1645: "NIL"], homeTeamId)
 
         then:
         rush.playerId == expectedPlayerId
@@ -175,16 +178,16 @@ class ScoreTextParserLibSpec extends Specification {
         rush.fumbleLost == fumbleLost
 
         where:
-        scoreText                                                                                                                | teamId | ytg | expectedPlayerId | expectedYards | yfog | fumble | fumbleLost
-        "4-N.Stanley sacked at IOW 49 for -4 yards, FUMBLES (15-S.Smith). 38-T.Hockenson to IOW 49 for no gain."                 | 71     | 10  | 9233                | -4            | 53   | 1      | 0
-        "15-M.Childers sacked at NIL 24 for -10 yards (40-P.Hesse)."                                                             | 1645   | 4   | 15050                | -10           | 34   | 0      | 0
-        "15-M.Childers sacked at NIL 9 for -15 yards, FUMBLES (34-K.Welch). 15-M.Childers to NIL 9 for no gain."                 | 1645   | 4   | 15050                | -15           | 24   | 1      | 0
-        "15-M.Childers sacked at NIL 26 for -12 yards, FUMBLES (94-A.Epenesa). 57-C.Golston to NIL 26 for no gain (65-N.Veloz)." | 1645   | 8   | 15050                | -12           | 24   | 1      | 1
+        scoreText                                                                                                                | teamId | ytg | expectedPlayerId | expectedYards | yfog | fumble | fumbleLost | homeTeamId
+        "4-N.Stanley sacked at IOW 49 for -4 yards, FUMBLES (15-S.Smith). 38-T.Hockenson to IOW 49 for no gain."                 | 71     | 10  | 9233             | -4            | 53   | 1      | 0          | "71"
+        "15-M.Childers sacked at NIL 24 for -10 yards (40-P.Hesse)."                                                             | 1645   | 4   | 15050            | -10           | 34   | 0      | 0          | "71"
+        "15-M.Childers sacked at NIL 9 for -15 yards, FUMBLES (34-K.Welch). 15-M.Childers to NIL 9 for no gain."                 | 1645   | 4   | 15050            | -15           | 24   | 1      | 0          | "71"
+        "15-M.Childers sacked at NIL 26 for -12 yards, FUMBLES (94-A.Epenesa). 57-C.Golston to NIL 26 for no gain (65-N.Veloz)." | 1645   | 8   | 15050            | -12           | 24   | 1      | 1          | "71"
     }
 
     def "sack intentional grounding"() {
         when:
-        Rush rush = ScoreTextParserLib.createRushRow("somegameid", teamId, 1, ytg, scoreText, [:], yfog, [71:"IOW", 498: "WIS"])
+        Rush rush = ScoreTextParserLib.createRushRow("somegameid", teamId, 1, ytg, scoreText, [:], yfog, [71:"IOW", 498: "WIS"], homeTeamId)
 
         then:
         rush.playerId == expectedPlayerId
@@ -192,8 +195,24 @@ class ScoreTextParserLibSpec extends Specification {
         rush.sack == 1
 
         where:
-        scoreText                                                                                                                                            | teamId | ytg | expectedPlayerId | expectedYards | yfog
-        "12-A.Hornibrook sacked at WIS 44 for -13 yards. Penalty on WIS 12-A.Hornibrook, Intentional grounding, 0 yards, enforced at WIS 44. (98-A.Nelson)." | 498    | 13  | 0                | -13            | 54
+        scoreText                                                                                                                                            | teamId | ytg | expectedPlayerId | expectedYards | yfog | homeTeamId
+        "12-A.Hornibrook sacked at WIS 44 for -13 yards. Penalty on WIS 12-A.Hornibrook, Intentional grounding, 0 yards, enforced at WIS 44. (98-A.Nelson)." | 498    | 13  | 0                | -13            | 54  | "71"
+    }
+
+    def "fumbled rush in own EZ"() {
+        when:
+        Rush rush = ScoreTextParserLib.createRushRow("somegameid", teamId, 2, ytg, scoreText, [:], yfog, [:], "1")
+
+        then:
+        rush.attempt == 1
+        rush.yards == 0
+        rush.touchdown == 0
+        rush.fumble == 1
+        rush.fumbleLost == 1
+
+        where:
+        scoreText                                                                         | teamId | ytg | yfog
+        "3-T.Pigrome to MAR End Zone, FUMBLES. 98-A.Nelson runs no gain for a touchdown." | 1      | 10  | 4
     }
 
     @Unroll
@@ -217,7 +236,7 @@ class ScoreTextParserLibSpec extends Specification {
         List roster = loadRoster("cfbstats_14", teamId.toString())
         Map rosters = [("${teamId}".toString()): roster]
         when:
-        Pass pass = ScoreTextParserLib.createPassRow("someid", teamId, 1, ytg, scoreText, rosters)
+        Pass pass = ScoreTextParserLib.createPassRow("someid", teamId, 1, ytg, scoreText, rosters, [:], 0, "")
 
         then:
         pass.attempt
@@ -237,9 +256,10 @@ class ScoreTextParserLibSpec extends Specification {
     def "special cases for createPassRow function correctly"() {
         setup:
         List roster = loadRoster("cfbstats_14", teamId.toString())
-        Map rosters = [("${teamId}".toString()): roster]
+        List roster2 = loadRoster("cfbstats_14", teamId.toString())
+        Map rosters = [("${teamId}".toString()): roster, (team2Id as String): roster2]
         when:
-        Pass pass = ScoreTextParserLib.createPassRow("someid", teamId, 1, ytg, scoreText, rosters)
+        Pass pass = ScoreTextParserLib.createPassRow("someid", teamId, 1, ytg, scoreText, rosters, [:], yfog, "71")
 
         then:
         pass.attempt
@@ -251,13 +271,52 @@ class ScoreTextParserLibSpec extends Specification {
         pass.fumbleLost == fumbleLost
 
         where:
-        scoreText                                                                                                                                                                                                      | teamId | ytg | touchdown | intercepted | yards | receiverId | fumble | fumbleLost
-        "17-S.Kollmorgen incomplete. Intended for 18-K.Vereen, INTERCEPTED by 41-B.Bower at IOW 47. 41-B.Bower runs ob at IOW 49 for 2 yards."                                                                         | 920    | 9   | 0         | 1           | 0     | 47261      | 0      | 0
-        "17-S.Kollmorgen incomplete. INTERCEPTED by 13-G.Mabin at IOW 28. 13-G.Mabin to IOW 46 for 18 yards (17-S.Kollmorgen). Penalty on IOW 6-R.Spearman, Unsportsmanlike conduct, 15 yards, enforced at IOW 46."    | 920    | 17  | 0         | 1           | 0     | 0          | 0      | 0
-        "15-J.Rudock complete to 22-D.Powell. 22-D.Powell runs 12 yards for a touchdown."                                                                                                                              | 71     | 12  | 1         | 0           | 12    | 41583      | 0      | 0
-        "17-S.Kollmorgen complete to 18-K.Vereen. 18-K.Vereen runs 23 yards for a touchdown."                                                                                                                          | 920    | 3   | 1         | 0           | 23    | 47261      | 0      | 0
-        "15-J.Rudock complete to 17-J.Hillyer. 17-J.Hillyer to IOW 47, FUMBLES (49-B.McMakin). 37-M.Busher to IOW 41 for 6 yards. Penalty on UNI 2-M.Dorleant, Unsportsmanlike conduct, 15 yards, enforced at IOW 41." | 71     | 9   | 0         | 0           | 6     | 41544      | 1      | 1
-        "15-J.Rudock complete to 4-T.Smith. 4-T.Smith to IOW 41, FUMBLES. to IOW 41 for no gain."                                                                                                                      | 71     | 10  | 0         | 0           | 0     | 41590      | 1      | 0
+        scoreText                                                                                                                                                                                                      | teamId| team2Id | ytg | touchdown | intercepted | yards | receiverId | fumble | fumbleLost| yfog
+        "17-S.Kollmorgen incomplete. Intended for 18-K.Vereen, INTERCEPTED by 41-B.Bower at IOW 47. 41-B.Bower runs ob at IOW 49 for 2 yards."                                                                         | 920   | 71 | 9   | 0         | 1           | 0     | 47261      | 0      | 0| 0
+        "17-S.Kollmorgen incomplete. INTERCEPTED by 13-G.Mabin at IOW 28. 13-G.Mabin to IOW 46 for 18 yards (17-S.Kollmorgen). Penalty on IOW 6-R.Spearman, Unsportsmanlike conduct, 15 yards, enforced at IOW 46."    | 920   | 71 | 17  | 0         | 1           | 0     | 0          | 0      | 0| 0
+        "15-J.Rudock complete to 22-D.Powell. 22-D.Powell runs 12 yards for a touchdown."                                                                                                                              | 71    | 920 | 12  | 1         | 0           | 12    | 41583      | 0      | 0| 0
+        "17-S.Kollmorgen complete to 18-K.Vereen. 18-K.Vereen runs 23 yards for a touchdown."                                                                                                                          | 920   | 71 | 3   | 1         | 0           | 23    | 47261      | 0      | 0| 0
+        "15-J.Rudock complete to 17-J.Hillyer. 17-J.Hillyer to IOW 47, FUMBLES (49-B.McMakin). 37-M.Busher to IOW 41 for 6 yards. Penalty on UNI 2-M.Dorleant, Unsportsmanlike conduct, 15 yards, enforced at IOW 41." | 71    | 920 | 9   | 0         | 0           | 6     | 41544      | 1      | 1| 41
+        "15-J.Rudock complete to 4-T.Smith. 4-T.Smith to IOW 41, FUMBLES. to IOW 41 for no gain."                                                                                                                      | 71    | 920 | 10  | 0         | 0           | 0     | 41590      | 1      | 0| 59
+    }
+
+    def "one off pass scenario"() {
+        setup:
+        List roster = loadRoster("cfb_stats_18", teamId.toString())
+        Map rosters = [("${teamId}".toString()): roster]
+        when:
+        Pass pass = ScoreTextParserLib.createPassRow("someid", teamId, 1, ytg, scoreText, rosters, [:], 0, "")
+
+        then:
+        pass.attempt
+        pass.completion == 1
+        pass.passerId == passerId
+        pass.yards == 0
+
+        where:
+        scoreText                                                                                  | teamId | ytg | passerId
+        "11-K.Hill complete to 24-T. Johnson. 24-T. Johnson to MAR 25 for no gain (49-N.Niemann)." | 2502   | 10  | 11122
+    }
+
+    def "fumble on reception, self recovery and advance"() {
+        setup:
+        List roster = loadRoster("cfb_stats_18", teamId.toString())
+        Map rosters = [("${teamId}".toString()): roster, "2296": [:]]
+
+        when:
+        Pass pass = ScoreTextParserLib.createPassRow("someid", teamId, 1, ytg, scoreText, rosters, [71:"IOW", 2296: "PSU"], 39, "2296")
+
+        then:
+        pass.attempt
+        pass.completion == 1
+        pass.fumble == 1
+        pass.fumbleLost == 0
+        pass.yards == yards
+
+        where:
+        scoreText                                                                                                                       | teamId | ytg | yards
+        "4-N.Stanley complete to 38-T.Hockenson. 38-T.Hockenson to PSU 35, FUMBLES (7-K.Farmer). 38-T.Hockenson to PSU 29 for no gain." | 71     | 15  | 32
+
     }
 
     @Unroll
@@ -285,6 +344,10 @@ class ScoreTextParserLibSpec extends Specification {
         "1-M.Koehn kicks 65 yards from IOW 35 to UNI End Zone. touchback."                        | 71            | 920             | 41560    | 65        | 0          | 0           | 1         | false
     }
 
+    /**
+     * parsing onsides seems to be very touchy, very little to latch on to for positively IDing things
+     * @return
+     */
     @Unroll
     def "penaltys and onside kicks for createKickoffRow"() {
         setup:
@@ -308,7 +371,7 @@ class ScoreTextParserLibSpec extends Specification {
         scoreText                                                                                                                                                          | kickingTeamId | returningTeamId | kickerId | kickYards | returnerId | returnYards | touchback | onside | onsideRecovery | onsideFlag
         "40-M.Schmadeke kicks 57 yards from UNI 35. 89-M.Vandeberg to IOW 31 for 23 yards (15-T.Omli). Penalty on IOW 36-C.Fisher, Holding, 10 yards, enforced at IOW 31." | 920           | 71              | 47249    | 57        | 41599      | 23          | 0         | 0      | 0              | false
         "1-M.Koehn kicks 7 yards from IOW 35. 88-P.Gallo to IOW 42 for no gain."                                                                                           | 71            | 2502            | 41560    | 7         | 43411      | 0           | 0         | 0      | 0              | false
-        "1-M.Koehn kicks 15 yards from IOW 35. to MAR 50 for no gain."                                                                                                     | 71            | 2502            | 41560    | 15        | 0          | 0           | 0         | 1      | 1              | true
+//        "1-M.Koehn kicks 15 yards from IOW 35. to MAR 50 for no gain."                                                                                                     | 71            | 2502            | 41560    | 15        | 0          | 0           | 0         | 1      | 1              | true
     }
 
     @Unroll
@@ -334,6 +397,22 @@ class ScoreTextParserLibSpec extends Specification {
         "15-B.Craddock kicks 63 yards from MAR 35, out of bounds at the IOW 2." | 2502          | 71              | 43395    | 63        | 0          | 0           | 1   | false
     }
 
+    def "missing kicker on kickoff"() {
+        when:
+        Kickoff kickoff = ScoreTextParserLib.createKickoffRow('someid', kickingTeamId, returningTeamId, scoreText, true, [:])
+
+        then:
+        kickoff.kickingTeamId == kickingTeamId
+        kickoff.kickerId == kickerId
+        kickoff.yards == kickYards
+        kickoff.returnerId == returnerId
+        kickoff.returnYards == returnYards
+
+        where:
+        scoreText                                                                                | kickingTeamId | returningTeamId | kickerId | kickYards | returnerId | returnYards
+        "kicks 10 yards from MIN 35 to the MIN 45, downed by 27-A.Hooker to MIN 45 for no gain." | 2515          | 71              | -1    | 10        | 0          | 0
+    }
+
     @Unroll
     def "basic scenarios for createPuntRow"() {
         setup:
@@ -354,6 +433,26 @@ class ScoreTextParserLibSpec extends Specification {
         scoreText                                                                                         | puntingTeamId | returningTeamId | playNum | expectedPunterId | expectedYards | expectedReturnerId | expectedReturnYards
         "90-L.Bieghler punts 45 yards from UNI 37. 89-M.Vandeberg to IOW 17 for -1 yard (39-B.Williams)." | 920           | 71              | 4       | 47172            | 45            | 41599              | -1
         "16-D.Kidd punts 42 yards from IOW 23. 19-C.Owens to UNI 47 for 12 yards (27-J.Lomax)."           | 71            | 920             | 7       | 41555            | 42            | 47233              | 12
+    }
+
+    def "no gain scenario on punt"() {
+        setup:
+        List roster = loadRoster("cfb_stats_18", puntingTeamId as String)
+        List roster2 = loadRoster("cfb_stats_18", returningTeamId as String)
+        Map rosters = [("${puntingTeamId}".toString()): roster, ("${returningTeamId}".toString()): roster2]
+
+        when:
+        Punt punt = ScoreTextParserLib.createPuntRow('someid', puntingTeamId, returningTeamId, playNum, scoreText, rosters)
+
+        then:
+        punt.punterId == expectedPunterId
+        punt.puntYards == expectedYards
+        punt.returnerId == expectedReturnerId
+        punt.returnYards == expectedReturnYards
+
+        where:
+        scoreText                                                                                     | puntingTeamId | returningTeamId | playNum | expectedPunterId | expectedYards | expectedReturnerId | expectedReturnYards
+        "7-C.Rastetter punts 43 yards from IOW 26. 5-J.Harris to IU 31 for no gain (14-K.Groeneweg)." | 71            | 759             | 7       | 9212             | 43            | null               | 0
     }
 
     @Unroll

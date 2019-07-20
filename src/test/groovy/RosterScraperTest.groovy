@@ -1,6 +1,8 @@
 import com.footballscience.scraper.RosterScraper
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
+import org.jsoup.nodes.Element
+import org.jsoup.select.Elements
 import spock.lang.Ignore
 import spock.lang.Specification
 
@@ -79,7 +81,7 @@ class RosterScraperTest extends Specification {
         when:
         String relativeRosterUrl = rosterScraper.findRosterUrlbyOrg("306")
         then:
-        relativeRosterUrl == "/team/306/roster/14280"
+        relativeRosterUrl == "/team/306/roster/14900"
     }
 
     @Ignore

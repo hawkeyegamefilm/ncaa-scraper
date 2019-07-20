@@ -1,0 +1,1389 @@
+{
+  "inputMD5Sum": "c839aeffcc96868b3d8ab45775b6298d",
+  "updatedTimestamp": "2018-10-07 08:29:34 ET",
+  "meta": {
+    "title": "PLAY-BY-PLAY",
+    "teams": [
+      {
+        "homeTeam": "false",
+        "id": "71",
+        "color": "#010101",
+        "shortname": "Iowa",
+        "seoName": "iowa",
+        "sixCharAbbr": "IOWA"
+      },
+      {
+        "homeTeam": "true",
+        "id": "2515",
+        "color": "#861F41",
+        "shortname": "Minnesota",
+        "seoName": "minnesota",
+        "sixCharAbbr": "MINN"
+      }
+    ]
+  },
+  "periods": [
+    {
+      "title": "1ST",
+      "shortTitle": "1st",
+      "possessions": [
+        {
+          "teamId": "2515",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 40 yards from IOW 35 to MIN 25, fair catch by 82-D.Douglas.",
+              "driveText": "1st and 10 at IOW35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "24-M.Ibrahim to MIN 29 for 4 yards.",
+              "driveText": "1st and 10 at MIN25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad incomplete. Intended for 13-R.Bateman.",
+              "driveText": "2nd and 6 at MIN29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad sacked at MIN 24 for -5 yards (98-A.Nelson).",
+              "driveText": "3rd and 6 at MIN29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Penalty on MIN 27-C.Swenson, False start, 5 yards, enforced at MIN 24. No Play.",
+              "driveText": "4th and 11 at MIN24",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "47-J.Herbers punts 34 yards from MIN 19 to IOW 47, fair catch by 14-K.Groeneweg.",
+              "driveText": "4th and 16 at MIN19",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "13:29",
+          "plays": [
+            {
+              "scoreText": "4-N.Stanley complete to 84-N.Easley. 84-N.Easley to MIN 40 for 13 yards.",
+              "driveText": "1st and 10 at IOW47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to MIN 42 for -2 yards.",
+              "driveText": "1st and 10 at MIN40",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 12-B.Smith. 12-B.Smith to MIN 34 for 8 yards.",
+              "driveText": "2nd and 12 at MIN42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to MIN 32 for 2 yards.",
+              "driveText": "3rd and 4 at MIN34",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 6-I.Smith-Marsette. 6-I.Smith-Marsette pushed ob at MIN 23 for 9 yards.",
+              "driveText": "4th and 2 at MIN32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 21-I.Kelly-Martin.",
+              "driveText": "1st and 10 at MIN23",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to MIN 20 for 3 yards.",
+              "driveText": "2nd and 10 at MIN23",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 21-I.Kelly-Martin. 21-I.Kelly-Martin to MIN 5 for 15 yards.",
+              "driveText": "3rd and 7 at MIN20",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to MIN 3 for 2 yards.",
+              "driveText": "1st and 5 at MIN5",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 38-T.Hockenson. 38-T.Hockenson runs 3 yards for a touchdown.",
+              "driveText": "2nd and 3 at MIN3",
+              "visitingScore": "6",
+              "homeScore": "0"
+            },
+            {
+              "scoreText": "91-M.Recinos extra point is good.",
+              "driveText": "",
+              "visitingScore": "7",
+              "homeScore": "0"
+            }
+          ]
+        },
+        {
+          "teamId": "2515",
+          "time": "08:49",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 40 yards from IOW 35 to MIN 25, fair catch by 82-D.Douglas.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "24-M.Ibrahim to MIN 25 for no gain.",
+              "driveText": "1st and 10 at MIN25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad incomplete. Intended for 6-T.Johnson.",
+              "driveText": "2nd and 10 at MIN25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad complete to 24-M.Ibrahim. 24-M.Ibrahim to MIN 21 for -4 yards.",
+              "driveText": "3rd and 10 at MIN25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "47-J.Herbers punts 41 yards from MIN 21 Downed at the IOW 38.",
+              "driveText": "4th and 14 at MIN21",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "07:12",
+          "plays": [
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 40 for 2 yards.",
+              "driveText": "1st and 10 at IOW38",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 40 for no gain.",
+              "driveText": "2nd and 8 at IOW40",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 6-I.Smith-Marsette. 6-I.Smith-Marsette runs 60 yards for a touchdown.",
+              "driveText": "3rd and 8 at IOW40",
+              "visitingScore": "13",
+              "homeScore": "0"
+            },
+            {
+              "scoreText": "91-M.Recinos extra point is good.",
+              "driveText": "",
+              "visitingScore": "14",
+              "homeScore": "0"
+            }
+          ]
+        },
+        {
+          "teamId": "2515",
+          "time": "05:48",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 65 yards from IOW 35 to MIN End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "24-M.Ibrahim to MIN 26 for 1 yard.",
+              "driveText": "1st and 10 at MIN25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad incomplete. Intended for 6-T.Johnson.",
+              "driveText": "2nd and 9 at MIN26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Team penalty on IOW, 12 men in the huddle, 5 yards, enforced at MIN 26. No Play.",
+              "driveText": "3rd and 9 at MIN26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad complete to 6-T.Johnson. 6-T.Johnson to MIN 44 for 13 yards.",
+              "driveText": "3rd and 4 at MIN31",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "24-M.Ibrahim to IOW 48 for 8 yards.",
+              "driveText": "1st and 10 at MIN44",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-B.Williams to IOW 45 for 3 yards.",
+              "driveText": "2nd and 2 at IOW48",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-B.Williams to IOW 41 for 4 yards.",
+              "driveText": "1st and 10 at IOW45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad complete to 3-C.Autman-Bell. 3-C.Autman-Bell to IOW 7 for 34 yards.",
+              "driveText": "2nd and 6 at IOW41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-S.Green to IOW 4 for 3 yards.",
+              "driveText": "1st and 7 at IOW7",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-S.Green to IOW 3 for 1 yard.",
+              "driveText": "2nd and 4 at IOW4",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad complete to 13-R.Bateman. 13-R.Bateman runs 3 yards for a touchdown.",
+              "driveText": "3rd and 3 at IOW3",
+              "visitingScore": "14",
+              "homeScore": "6"
+            },
+            {
+              "scoreText": "38-E.Carpenter extra point is good.",
+              "driveText": "",
+              "visitingScore": "14",
+              "homeScore": "7"
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "00:58",
+          "plays": [
+            {
+              "scoreText": "38-E.Carpenter kicks 63 yards from MIN 35. 6-I.Smith-Marsette to IOW 36 for 34 yards.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 38 for 2 yards.",
+              "driveText": "1st and 10 at IOW36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 38 for no gain.",
+              "driveText": "2nd and 8 at IOW38",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "2ND",
+      "shortTitle": "2nd",
+      "possessions": [
+        {
+          "teamId": "71",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 21-I.Kelly-Martin.",
+              "driveText": "3rd and 8 at IOW38",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "7-C.Rastetter punts 45 yards from IOW 38 to the MIN 17, downed by 14-K.Groeneweg.",
+              "driveText": "4th and 8 at IOW38",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2515",
+          "time": "14:44",
+          "plays": [
+            {
+              "scoreText": "5-Z.Annexstad complete to 3-C.Autman-Bell. 3-C.Autman-Bell to MIN 33 for 16 yards.",
+              "driveText": "1st and 10 at MIN17",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "24-M.Ibrahim pushed ob at MIN 44 for 11 yards.",
+              "driveText": "1st and 10 at MIN33",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad sacked at MIN 33 for -11 yards (98-A.Nelson).",
+              "driveText": "1st and 10 at MIN44",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad sacked at MIN 30 for -3 yards (98-A.Nelson).",
+              "driveText": "2nd and 21 at MIN33",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad incomplete. Intended for 3-C.Autman-Bell.",
+              "driveText": "3rd and 24 at MIN30",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "47-J.Herbers punts 44 yards from MIN 30 to IOW 26, fair catch by 14-K.Groeneweg.",
+              "driveText": "4th and 24 at MIN30",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "12:03",
+          "plays": [
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 10-M.Sargent.",
+              "driveText": "1st and 10 at IOW26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to IOW 35 for 9 yards.",
+              "driveText": "2nd and 10 at IOW26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "36-B.Ross to IOW 40 for 5 yards.",
+              "driveText": "3rd and 1 at IOW35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 12-B.Smith. 12-B.Smith pushed ob at MIN 46 for 14 yards.",
+              "driveText": "1st and 10 at IOW40",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent pushed ob at MIN 35 for 11 yards.",
+              "driveText": "1st and 10 at MIN46",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to MIN 35 for no gain.",
+              "driveText": "1st and 10 at MIN35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 87-N.Fant. 87-N.Fant pushed ob at MIN 23 for 12 yards.",
+              "driveText": "2nd and 10 at MIN35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 84-N.Easley. 84-N.Easley to MIN 18 for 5 yards.",
+              "driveText": "1st and 10 at MIN23",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 6-I.Smith-Marsette.",
+              "driveText": "2nd and 5 at MIN18",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 12-B.Smith. 12-B.Smith to MIN 6 for 12 yards.",
+              "driveText": "3rd and 5 at MIN18",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to MIN 4 for 2 yards.",
+              "driveText": "1st and 6 at MIN6",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to MIN 4 for no gain.",
+              "driveText": "2nd and 4 at MIN4",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 38-T.Hockenson.",
+              "driveText": "3rd and 4 at MIN4",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "38-T.Hockenson runs 4 yards for a touchdown.",
+              "driveText": "4th and 4 at MIN4",
+              "visitingScore": "20",
+              "homeScore": "7"
+            },
+            {
+              "scoreText": "91-M.Recinos extra point is good.",
+              "driveText": "",
+              "visitingScore": "21",
+              "homeScore": "7"
+            }
+          ]
+        },
+        {
+          "teamId": "2515",
+          "time": "05:57",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 65 yards from IOW 35 to MIN End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad incomplete. Intended for 13-R.Bateman. Penalty on IOW 33-R.Moss, Pass interference, 15 yards, enforced at MIN 25. No Play.",
+              "driveText": "1st and 10 at MIN25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad complete to 3-C.Autman-Bell. 3-C.Autman-Bell to IOW 49 for 11 yards.",
+              "driveText": "1st and 10 at MIN40",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad complete to 13-R.Bateman. 13-R.Bateman to IOW 32 for 17 yards.",
+              "driveText": "1st and 10 at IOW49",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "24-M.Ibrahim to IOW 32 for no gain.",
+              "driveText": "1st and 10 at IOW32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad incomplete. Intended for 82-D.Douglas.",
+              "driveText": "2nd and 10 at IOW32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad incomplete. Intended for 3-C.Autman-Bell.",
+              "driveText": "3rd and 10 at IOW32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "38-E.Carpenter 49 yards Field Goal is Good.",
+              "driveText": "4th and 10 at IOW39",
+              "visitingScore": "21",
+              "homeScore": "10"
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "04:00",
+          "plays": [
+            {
+              "scoreText": "38-E.Carpenter kicks 65 yards from MIN 35 to IOW End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 25 for no gain.",
+              "driveText": "1st and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 87-N.Fant.",
+              "driveText": "2nd and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 21-I.Kelly-Martin.",
+              "driveText": "3rd and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "7-C.Rastetter punts 31 yards from IOW 25 to MIN 44, fair catch by 82-D.Douglas.",
+              "driveText": "4th and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2515",
+          "time": "03:01",
+          "plays": [
+            {
+              "scoreText": "5-Z.Annexstad incomplete. Intended for 3-C.Autman-Bell.",
+              "driveText": "1st and 10 at MIN44",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad complete to 24-M.Ibrahim. 24-M.Ibrahim to MIN 49 for 5 yards.",
+              "driveText": "2nd and 10 at MIN44",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad incomplete. Intended for 6-T.Johnson.",
+              "driveText": "3rd and 5 at MIN49",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "47-J.Herbers incomplete. Intended for 3-C.Autman-Bell.",
+              "driveText": "4th and 5 at MIN49",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "02:02",
+          "plays": [
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 6-I.Smith-Marsette.",
+              "driveText": "1st and 10 at MIN49",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 84-N.Easley. 84-N.Easley pushed ob at MIN 44 for 5 yards. Penalty on IOW 12-B.Smith, Holding, 10 yards, enforced at MIN 44.",
+              "driveText": "2nd and 10 at MIN49",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 84-N.Easley. 84-N.Easley to MIN 46 for 8 yards.",
+              "driveText": "2nd and 15 at IOW46",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 21-I.Kelly-Martin. 21-I.Kelly-Martin pushed ob at MIN 21 for 25 yards.",
+              "driveText": "3rd and 7 at MIN46",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 84-N.Easley. 84-N.Easley runs 21 yards for a touchdown.",
+              "driveText": "1st and 10 at MIN21",
+              "visitingScore": "27",
+              "homeScore": "10"
+            },
+            {
+              "scoreText": "91-M.Recinos extra point is good.",
+              "driveText": "",
+              "visitingScore": "28",
+              "homeScore": "10"
+            }
+          ]
+        },
+        {
+          "teamId": "2515",
+          "time": "01:35",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 65 yards from IOW 35 to MIN End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad sacked at MIN 20 for -5 yards (57-C.Golston).",
+              "driveText": "1st and 10 at MIN25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad complete to 6-T.Johnson. 6-T.Johnson to IOW 28 for 52 yards.",
+              "driveText": "2nd and 15 at MIN20",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad incomplete. Intended for 3-C.Autman-Bell, INTERCEPTED by 33-R.Moss at IOW 28. 33-R.Moss, touchback.",
+              "driveText": "1st and 10 at IOW28",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "01:12",
+          "plays": [
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 84-N.Easley, INTERCEPTED by 2-J.Huff at IOW 27. 2-J.Huff to IOW 6 for 21 yards.",
+              "driveText": "1st and 10 at IOW20",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2515",
+          "time": "01:02",
+          "plays": [
+            {
+              "scoreText": "5-Z.Annexstad incomplete. Intended for 13-R.Bateman.",
+              "driveText": "1st and 6 at IOW6",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad complete to 6-T.Johnson. 6-T.Johnson runs 6 yards for a touchdown.",
+              "driveText": "2nd and 6 at IOW6",
+              "visitingScore": "28",
+              "homeScore": "16"
+            },
+            {
+              "scoreText": "38-E.Carpenter extra point is good.",
+              "driveText": "",
+              "visitingScore": "28",
+              "homeScore": "17"
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "00:53",
+          "plays": [
+            {
+              "scoreText": "38-E.Carpenter kicks 30 yards from MIN 35, out of bounds at the IOW 35.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 87-N.Fant. 87-N.Fant to IOW 41 for 6 yards.",
+              "driveText": "1st and 10 at IOW35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 44 for 3 yards.",
+              "driveText": "2nd and 4 at IOW41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 84-N.Easley. 84-N.Easley to IOW 44 for no gain.",
+              "driveText": "3rd and 1 at IOW44",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "3RD",
+      "shortTitle": "3rd",
+      "possessions": [
+        {
+          "teamId": "71",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "38-E.Carpenter kicks 65 yards from MIN 35 to IOW End Zone. touchback.",
+              "driveText": "4th and 1 at MIN35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 12-B.Smith. 12-B.Smith to IOW 33 for 8 yards.",
+              "driveText": "1st and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to IOW 38 for 5 yards.",
+              "driveText": "2nd and 2 at IOW33",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 84-N.Easley.",
+              "driveText": "1st and 10 at IOW38",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to IOW 45 for 7 yards.",
+              "driveText": "2nd and 10 at IOW38",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 12-B.Smith. 12-B.Smith to MIN 29 for 26 yards. Penalty on MIN 4-T.Smith, Pass interference, declined.",
+              "driveText": "3rd and 3 at IOW45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to MIN 26 for 3 yards.",
+              "driveText": "1st and 10 at MIN29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 87-N.Fant. 87-N.Fant runs ob at MIN 22 for 4 yards.",
+              "driveText": "2nd and 7 at MIN26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 6-I.Smith-Marsette.",
+              "driveText": "3rd and 3 at MIN22",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "91-M.Recinos 40 yards Field Goal is Good.",
+              "driveText": "4th and 3 at MIN30",
+              "visitingScore": "31",
+              "homeScore": "17"
+            }
+          ]
+        },
+        {
+          "teamId": "2515",
+          "time": "11:41",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 60 yards from IOW 35, out of bounds at the MIN 5.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad incomplete. Intended for 13-R.Bateman.",
+              "driveText": "1st and 10 at MIN35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad complete to 13-R.Bateman. 13-R.Bateman to MIN 43 for 8 yards.",
+              "driveText": "2nd and 10 at MIN35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-S.Green to IOW 49 for 8 yards.",
+              "driveText": "3rd and 2 at MIN43",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Penalty on MIN 78-D.Faalele, False start, 5 yards, enforced at IOW 49. No Play.",
+              "driveText": "1st and 10 at IOW49",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "24-M.Ibrahim to IOW 50 for 4 yards.",
+              "driveText": "1st and 15 at MIN46",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad complete to 13-R.Bateman. 13-R.Bateman to IOW 44 for 6 yards.",
+              "driveText": "2nd and 11 at IOW50",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad incomplete. Intended for 3-J.Gibson.",
+              "driveText": "3rd and 5 at IOW44",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "47-J.Herbers punts 32 yards from IOW 44 to IOW 12, fair catch by 14-K.Groeneweg.",
+              "driveText": "4th and 5 at IOW44",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "08:52",
+          "plays": [
+            {
+              "scoreText": "28-T.Young to IOW 13 for 1 yard.",
+              "driveText": "1st and 10 at IOW12",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley sacked at IOW 10 for -3 yards, FUMBLES (45-C.Coughlin). 41-T.Barber to IOW 3 for 7 yards.",
+              "driveText": "2nd and 9 at IOW13",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2515",
+          "time": "08:12",
+          "plays": [
+            {
+              "scoreText": "17-S.Green to IOW 1 for 2 yards.",
+              "driveText": "1st and 3 at IOW3",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-S.Green runs 1 yard for a touchdown.",
+              "driveText": "2nd and 1 at IOW1",
+              "visitingScore": "31",
+              "homeScore": "23"
+            },
+            {
+              "scoreText": "38-E.Carpenter extra point is good.",
+              "driveText": "",
+              "visitingScore": "31",
+              "homeScore": "24"
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "07:36",
+          "plays": [
+            {
+              "scoreText": "38-E.Carpenter kicks 65 yards from MIN 35. 6-I.Smith-Marsette to IOW 49 for 49 yards.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to MIN 36 for 15 yards.",
+              "driveText": "1st and 10 at IOW49",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete.",
+              "driveText": "1st and 10 at MIN36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to MIN 35 for 1 yard.",
+              "driveText": "2nd and 10 at MIN36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 38-T.Hockenson. 38-T.Hockenson to MIN 19 for 16 yards.",
+              "driveText": "3rd and 9 at MIN35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to MIN 11 for 8 yards.",
+              "driveText": "1st and 10 at MIN19",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to MIN 8 for 3 yards.",
+              "driveText": "2nd and 2 at MIN11",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 6-I.Smith-Marsette.",
+              "driveText": "1st and 8 at MIN8",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to MIN 5 for 3 yards.",
+              "driveText": "2nd and 8 at MIN8",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 87-N.Fant. 87-N.Fant runs 5 yards for a touchdown.",
+              "driveText": "3rd and 5 at MIN5",
+              "visitingScore": "37",
+              "homeScore": "24"
+            },
+            {
+              "scoreText": "91-M.Recinos extra point is good.",
+              "driveText": "",
+              "visitingScore": "38",
+              "homeScore": "24"
+            }
+          ]
+        },
+        {
+          "teamId": "2515",
+          "time": "04:03",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 40 yards from IOW 35 to MIN 25, fair catch by 82-D.Douglas.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad complete to 6-T.Johnson. 6-T.Johnson to MIN 38 for 13 yards.",
+              "driveText": "1st and 10 at MIN25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-S.Green to MIN 45 for 7 yards.",
+              "driveText": "1st and 10 at MIN38",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Penalty on IOW 94-A.Epenesa, Encroachment, 5 yards, enforced at MIN 45. No Play.",
+              "driveText": "2nd and 3 at MIN45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-S.Green complete to 6-T.Johnson. 6-T.Johnson to IOW 34 for 16 yards.",
+              "driveText": "1st and 10 at MIN50",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-S.Green to IOW 28 for 6 yards.",
+              "driveText": "1st and 10 at IOW34",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "24-M.Ibrahim to IOW 27 for 1 yard.",
+              "driveText": "2nd and 4 at IOW28",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "17-S.Green to IOW 28 for -1 yard.",
+              "driveText": "3rd and 3 at IOW27",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad incomplete. Intended for 6-T.Johnson.",
+              "driveText": "4th and 4 at IOW28",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "00:29",
+          "plays": [
+            {
+              "scoreText": "6-I.Smith-Marsette to IOW 34 for 6 yards.",
+              "driveText": "1st and 10 at IOW28",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "4TH",
+      "shortTitle": "4th",
+      "possessions": [
+        {
+          "teamId": "71",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 28-T.Young.",
+              "driveText": "2nd and 4 at IOW34",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 38-T.Hockenson.",
+              "driveText": "3rd and 4 at IOW34",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "7-C.Rastetter punts 47 yards from IOW 34. 82-D.Douglas to MIN 25 for 6 yards.",
+              "driveText": "4th and 4 at IOW34",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2515",
+          "time": "14:39",
+          "plays": [
+            {
+              "scoreText": "17-S.Green incomplete. INTERCEPTED by 20-J.Brents at IOW 37. 20-J.Brents to IOW 37 for no gain.",
+              "driveText": "1st and 10 at MIN25",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "14:32",
+          "plays": [
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 42 for 5 yards.",
+              "driveText": "1st and 10 at IOW37",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 40 for -2 yards.",
+              "driveText": "2nd and 5 at IOW42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 84-N.Easley.",
+              "driveText": "3rd and 7 at IOW40",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "7-C.Rastetter punts 43 yards from IOW 40 to the MIN 17, downed by 50-J.Subbert.",
+              "driveText": "4th and 7 at IOW40",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2515",
+          "time": "12:55",
+          "plays": [
+            {
+              "scoreText": "5-Z.Annexstad sacked at MIN 10 for -7 yards (52-A.Jones).",
+              "driveText": "1st and 10 at MIN17",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad incomplete. INTERCEPTED by 33-R.Moss at MIN 45. 33-R.Moss to MIN 9 for 36 yards.",
+              "driveText": "2nd and 17 at MIN10",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "11:59",
+          "plays": [
+            {
+              "scoreText": "87-N.Fant to MIN 11 for -2 yards.",
+              "driveText": "1st and 9 at MIN9",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 84-N.Easley. 84-N.Easley to MIN 6 for 5 yards. Penalty on IOW 38-T.Hockenson, Clipping, offsetting. Penalty on MIN 31-D.London, Horse Collar, offsetting. No Play.",
+              "driveText": "2nd and 11 at MIN11",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to MIN 9 for 2 yards.",
+              "driveText": "2nd and 11 at MIN11",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to MIN 2 for 7 yards.",
+              "driveText": "3rd and 9 at MIN9",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "91-M.Recinos 20 yards Field Goal is Good.",
+              "driveText": "4th and 2 at MIN10",
+              "visitingScore": "41",
+              "homeScore": "24"
+            }
+          ]
+        },
+        {
+          "teamId": "2515",
+          "time": "09:20",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 40 yards from IOW 35 to MIN 25, fair catch by 82-D.Douglas.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad complete to 13-R.Bateman. 13-R.Bateman to MIN 34 for 9 yards.",
+              "driveText": "1st and 10 at MIN25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "24-M.Ibrahim to MIN 41 for 7 yards.",
+              "driveText": "2nd and 1 at MIN34",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "24-M.Ibrahim to MIN 45 for 4 yards.",
+              "driveText": "1st and 10 at MIN41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "24-M.Ibrahim to IOW 48 for 7 yards.",
+              "driveText": "2nd and 6 at MIN45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad complete to 13-R.Bateman. 13-R.Bateman to IOW 33 for 15 yards.",
+              "driveText": "1st and 10 at IOW48",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "24-M.Ibrahim to IOW 26 for 7 yards.",
+              "driveText": "1st and 10 at IOW33",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-B.Williams to IOW 22 for 4 yards.",
+              "driveText": "2nd and 3 at IOW26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad complete to 6-T.Johnson. 6-T.Johnson to IOW 15 for 7 yards.",
+              "driveText": "1st and 10 at IOW22",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "24-M.Ibrahim to IOW 7 for 8 yards.",
+              "driveText": "2nd and 3 at IOW15",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad complete to 13-R.Bateman. 13-R.Bateman runs 7 yards for a touchdown.",
+              "driveText": "1st and 7 at IOW7",
+              "visitingScore": "41",
+              "homeScore": "30"
+            },
+            {
+              "scoreText": "38-E.Carpenter extra point is good.",
+              "driveText": "",
+              "visitingScore": "41",
+              "homeScore": "31"
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "05:35",
+          "plays": [
+            {
+              "scoreText": "kicks 10 yards from MIN 35 to the MIN 45, downed by 27-A.Hooker to MIN 45 for no gain.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to MIN 41 for 4 yards.",
+              "driveText": "1st and 10 at MIN45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to MIN 41 for no gain.",
+              "driveText": "2nd and 6 at MIN41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 6-I.Smith-Marsette. 6-I.Smith-Marsette to MIN 32 for 9 yards.",
+              "driveText": "3rd and 6 at MIN41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to MIN 36 for -4 yards.",
+              "driveText": "1st and 10 at MIN32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to MIN 31 for 5 yards.",
+              "driveText": "2nd and 14 at MIN36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 38-T.Hockenson. 38-T.Hockenson pushed ob at MIN 1 for 30 yards.",
+              "driveText": "3rd and 9 at MIN31",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to MIN 2 for -1 yard.",
+              "driveText": "1st and 1 at MIN1",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent runs 2 yards for a touchdown.",
+              "driveText": "2nd and 2 at MIN2",
+              "visitingScore": "47",
+              "homeScore": "31"
+            },
+            {
+              "scoreText": "91-M.Recinos extra point is good.",
+              "driveText": "",
+              "visitingScore": "48",
+              "homeScore": "31"
+            }
+          ]
+        },
+        {
+          "teamId": "2515",
+          "time": "01:27",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 43 yards from IOW 35. 44-C.Beebe to MIN 38 for 16 yards.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-B.Williams to IOW 49 for 13 yards.",
+              "driveText": "1st and 10 at MIN38",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad incomplete. Intended for 13-R.Bateman. Penalty on IOW 20-J.Brents, Holding, 10 yards, enforced at IOW 49. No Play.",
+              "driveText": "1st and 10 at IOW49",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad incomplete. Intended for 6-T.Johnson.",
+              "driveText": "1st and 10 at IOW39",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-B.Williams to IOW 35 for 4 yards.",
+              "driveText": "2nd and 10 at IOW39",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad incomplete. Intended for 3-C.Autman-Bell. Team penalty on MIN, Personal Foul, offsetting. Penalty on IOW 52-A.Jones, Personal Foul, offsetting. No Play.",
+              "driveText": "3rd and 6 at IOW35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-Z.Annexstad incomplete. INTERCEPTED by 9-G.Stone at IOW 5. 9-G.Stone to IOW 5 for no gain.",
+              "driveText": "3rd and 6 at IOW35",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "00:38",
+          "plays": [
+            {
+              "scoreText": "4-N.Stanley kneels at IOW 3 for -2 yards.",
+              "driveText": "1st and 10 at IOW5",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

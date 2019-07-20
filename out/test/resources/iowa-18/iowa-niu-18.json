@@ -1,0 +1,1263 @@
+{
+  "inputMD5Sum": "8c0f38d53f10cb57ab06e5d00d1164fa",
+  "updatedTimestamp": "2018-09-02 20:17:41 ET",
+  "meta": {
+    "title": "PLAY-BY-PLAY",
+    "teams": [
+      {
+        "homeTeam": "false",
+        "id": "1645",
+        "color": "#BA0C2F",
+        "shortname": "Northern Ill.",
+        "seoName": "northern-ill",
+        "sixCharAbbr": "NIU"
+      },
+      {
+        "homeTeam": "true",
+        "id": "71",
+        "color": "#010101",
+        "shortname": "Iowa",
+        "seoName": "iowa",
+        "sixCharAbbr": "IOWA"
+      }
+    ]
+  },
+  "periods": [
+    {
+      "title": "1ST",
+      "shortTitle": "1st",
+      "possessions": [
+        {
+          "teamId": "71",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "2-A.Gantz kicks 63 yards from NIL 35. 6-I.Smith-Marsette to IOW 29 for 27 yards (11-T.Foster).",
+              "driveText": "1st and 10 at NIL35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 12-B.Smith.",
+              "driveText": "1st and 10 at IOW29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin pushed ob at IOW 33 for 4 yards (15-S.Smith).",
+              "driveText": "2nd and 10 at IOW29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 87-N.Fant.",
+              "driveText": "3rd and 6 at IOW33",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "punts 0 yards from IOW 33 blocked by 9-J.Wesley. to IOW 23 for no gain.",
+              "driveText": "4th and 6 at IOW33",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "1645",
+          "time": "14:02",
+          "plays": [
+            {
+              "scoreText": "21-M.Jones to IOW 21 for 2 yards (49-N.Niemann).",
+              "driveText": "1st and 10 at IOW23",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-D.Brown complete to 15-M.Childers. 15-M.Childers to IOW 16 for 5 yards.",
+              "driveText": "2nd and 8 at IOW21",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers incomplete. Intended for 13-J.Bonds.",
+              "driveText": "3rd and 3 at IOW16",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "2-A.Gantz 33 yards Field Goal is No Good.",
+              "driveText": "4th and 3 at IOW16",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "12:58",
+          "plays": [
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 21 for 1 yard (55-W.Kramer).",
+              "driveText": "1st and 10 at IOW20",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 23 for 2 yards (55-W.Kramer,3-J.Embry).",
+              "driveText": "2nd and 9 at IOW21",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 84-N.Easley.",
+              "driveText": "3rd and 7 at IOW23",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "7-C.Rastetter punts 55 yards from IOW 23, out of bounds at the NIL 22.",
+              "driveText": "4th and 7 at IOW23",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "1645",
+          "time": "11:30",
+          "plays": [
+            {
+              "scoreText": "22-T.Harbison to NIL 41 for 19 yards (27-A.Hooker,30-J.Gervase).",
+              "driveText": "1st and 10 at NIL22",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers incomplete.",
+              "driveText": "1st and 10 at NIL41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers to NIL 43 for 2 yards. Penalty on NIL 65-N.Veloz, Holding, 10 yards, enforced at NIL 41. No Play.",
+              "driveText": "2nd and 10 at NIL41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "22-T.Harbison to NIL 32 for 1 yard (40-P.Hesse,57-C.Golston).",
+              "driveText": "2nd and 20 at NIL31",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers pushed ob at NIL 36 for 4 yards (34-K.Welch).",
+              "driveText": "3rd and 19 at NIL32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "36-M.Ference punts 41 yards from NIL 36 to IOW 23, fair catch by 14-K.Groeneweg.",
+              "driveText": "4th and 15 at NIL36",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "09:21",
+          "plays": [
+            {
+              "scoreText": "4-N.Stanley complete to 87-N.Fant. 87-N.Fant to IOW 27 for 4 yards (24-T.Smith).",
+              "driveText": "1st and 10 at IOW23",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to IOW 34 for 7 yards (96-M.Kelly,99-B.LeRoy).",
+              "driveText": "2nd and 6 at IOW27",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to IOW 36 for 2 yards (24-T.Smith,37-L.Deveaux).",
+              "driveText": "1st and 10 at IOW34",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 38-T.Hockenson. 38-T.Hockenson to IOW 42 for 6 yards (57-K.Pugh).",
+              "driveText": "2nd and 8 at IOW36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 87-N.Fant. 87-N.Fant to IOW 47 for 5 yards (8-M.Williams).",
+              "driveText": "3rd and 2 at IOW42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 48 for 1 yard (41-M.Lorbeck).",
+              "driveText": "1st and 10 at IOW47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 84-N.Easley.",
+              "driveText": "2nd and 9 at IOW48",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 38-T.Hockenson. 38-T.Hockenson to NIL 39 for 13 yards (57-K.Pugh).",
+              "driveText": "3rd and 9 at IOW48",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to NIL 39 for no gain (41-M.Lorbeck,15-S.Smith).",
+              "driveText": "1st and 10 at NIL39",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 12-B.Smith, INTERCEPTED by 1-A.Smalls at NIL 7. 1-A.Smalls to NIL 7 for no gain (12-B.Smith).",
+              "driveText": "2nd and 10 at NIL39",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "1645",
+          "time": "04:48",
+          "plays": [
+            {
+              "scoreText": "28-J.Nettles to NIL 14 for 7 yards (34-K.Welch,11-M.Ojemudia).",
+              "driveText": "1st and 10 at NIL7",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-J.Nettles to NIL 29 for 15 yards (52-A.Jones).",
+              "driveText": "2nd and 3 at NIL14",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-D.Brown to NIL 31 for 2 yards (34-K.Welch).",
+              "driveText": "1st and 10 at NIL29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers complete to 10-D.Brown. 10-D.Brown to NIL 41 for 10 yards (34-K.Welch).",
+              "driveText": "2nd and 8 at NIL31",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "22-T.Harbison to NIL 43 for 2 yards (96-M.Nelson).",
+              "driveText": "1st and 10 at NIL41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "22-T.Harbison to IOW 47 for 10 yards (30-J.Gervase).",
+              "driveText": "2nd and 8 at NIL43",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "22-T.Harbison to IOW 41 for 6 yards (34-K.Welch).",
+              "driveText": "1st and 10 at IOW47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers complete to 13-L.Payne. 13-L.Payne to IOW 40 for 1 yard (49-N.Niemann).",
+              "driveText": "2nd and 4 at IOW41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers complete to 10-D.Brown. 10-D.Brown pushed ob at IOW 39 for 1 yard (34-K.Welch,30-J.Gervase).",
+              "driveText": "3rd and 3 at IOW40",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-D.Brown to IOW 45 for -6 yards (49-N.Niemann).",
+              "driveText": "4th and 2 at IOW39",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "00:39",
+          "plays": [
+            {
+              "scoreText": "4-N.Stanley complete to 6-I.Smith-Marsette. 6-I.Smith-Marsette to NIL 49 for 6 yards (7-T.Hunt).",
+              "driveText": "1st and 10 at IOW45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to NIL 39 for 10 yards (57-K.Pugh).",
+              "driveText": "2nd and 4 at NIL49",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "2ND",
+      "shortTitle": "2nd",
+      "possessions": [
+        {
+          "teamId": "71",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "4-N.Stanley complete to 38-T.Hockenson. 38-T.Hockenson to NIL 15 for 24 yards (11-T.Foster).",
+              "driveText": "1st and 10 at NIL39",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 87-N.Fant. Penalty on IOW 87-N.Fant, Pass touched by receiver who went OOB, 0 yards, enforced at NIL 15.",
+              "driveText": "1st and 10 at NIL15",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin pushed ob at NIL 11 for 4 yards (8-M.Williams). Penalty on IOW 87-N.Fant, Holding, 10 yards, enforced at NIL 15. No Play.",
+              "driveText": "2nd and 10 at NIL15",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "6-I.Smith-Marsette to NIL 20 for 5 yards.",
+              "driveText": "2nd and 20 at NIL25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to NIL 15 for 5 yards (48-A.Jones-Davis).",
+              "driveText": "3rd and 15 at NIL20",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "91-M.Recinos 33 yards Field Goal is Good.",
+              "driveText": "4th and 10 at NIL15",
+              "visitingScore": "0",
+              "homeScore": "3"
+            }
+          ]
+        },
+        {
+          "teamId": "1645",
+          "time": "12:20",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 65 yards from IOW 35 to NIL End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-M.Jones to NIL 32 for 7 yards (40-P.Hesse,27-A.Hooker).",
+              "driveText": "1st and 10 at NIL25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-M.Jones to NIL 36 for 4 yards (96-M.Nelson,48-J.Hockaday).",
+              "driveText": "2nd and 3 at NIL32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers complete to 9-J.Wesley. 9-J.Wesley runs ob at NIL 47 for 11 yards.",
+              "driveText": "1st and 10 at NIL36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers sacked at NIL 39 for -8 yards (98-A.Nelson).",
+              "driveText": "1st and 10 at NIL47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers complete to 21-M.Jones. 21-M.Jones to NIL 44 for 5 yards (96-M.Nelson,34-K.Welch).",
+              "driveText": "2nd and 18 at NIL39",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers sacked at NIL 41 for -3 yards (40-P.Hesse).",
+              "driveText": "3rd and 13 at NIL44",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "36-M.Ference punts 50 yards from NIL 41. 14-K.Groeneweg to IOW 13 for 4 yards (48-A.Jones-Davis).",
+              "driveText": "4th and 16 at NIL41",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "09:16",
+          "plays": [
+            {
+              "scoreText": "10-M.Sargent to IOW 18 for 5 yards (57-K.Pugh,96-M.Kelly).",
+              "driveText": "1st and 10 at IOW13",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 38-T.Hockenson. 38-T.Hockenson to IOW 39 for 21 yards (8-M.Williams).",
+              "driveText": "2nd and 5 at IOW18",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 12-B.Smith.",
+              "driveText": "1st and 10 at IOW39",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to IOW 45 for 6 yards (8-M.Williams,41-M.Lorbeck).",
+              "driveText": "2nd and 10 at IOW39",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 6-I.Smith-Marsette. 6-I.Smith-Marsette to IOW 50 for 5 yards (57-K.Pugh).",
+              "driveText": "3rd and 4 at IOW45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 12-B.Smith.",
+              "driveText": "1st and 10 at IOW50",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin pushed ob at NIL 46 for 4 yards (8-M.Williams). Penalty on IOW 38-T.Hockenson, Holding, 10 yards, enforced at NIL 46.",
+              "driveText": "2nd and 10 at IOW50",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 12-B.Smith. Penalty on NIL 3-J.Embry, Pass interference, 9 yards, enforced at IOW 44. No Play.",
+              "driveText": "2nd and 16 at IOW44",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley sacked at IOW 49 for -4 yards, FUMBLES (15-S.Smith). 38-T.Hockenson to IOW 49 for no gain.",
+              "driveText": "1st and 10 at NIL47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to NIL 44 for 7 yards (99-B.LeRoy).",
+              "driveText": "2nd and 14 at IOW49",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 10-M.Sargent. 10-M.Sargent to NIL 38 for 6 yards (48-A.Jones-Davis).",
+              "driveText": "3rd and 7 at NIL44",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to NIL 39 for -1 yard (37-L.Deveaux).",
+              "driveText": "4th and 1 at NIL38",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "1645",
+          "time": "03:49",
+          "plays": [
+            {
+              "scoreText": "15-M.Childers incomplete. Intended for 10-D.Brown.",
+              "driveText": "1st and 10 at NIL39",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers complete to 22-T.Harbison. 22-T.Harbison to NIL 45 for 6 yards (8-M.Hankins,48-J.Hockaday).",
+              "driveText": "2nd and 10 at NIL39",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers complete to 9-J.Wesley. 9-J.Wesley to IOW 45 for 10 yards.",
+              "driveText": "3rd and 4 at NIL45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-J.Nettles to IOW 44 for 1 yard (34-K.Welch).",
+              "driveText": "1st and 10 at IOW45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers complete to 10-D.Brown. 10-D.Brown runs ob at IOW 23 for 21 yards.",
+              "driveText": "2nd and 9 at IOW44",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers incomplete. Intended for 18-K.Parker, INTERCEPTED by 27-A.Hooker at IOW 7. 27-A.Hooker to IOW 4 for -3 yards (18-C.Tucker).",
+              "driveText": "1st and 10 at IOW23",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "01:26",
+          "plays": [
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 6 for 2 yards (11-T.Foster).",
+              "driveText": "1st and 10 at IOW4",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 11 for 5 yards (96-M.Kelly).",
+              "driveText": "2nd and 8 at IOW6",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 6-I.Smith-Marsette.",
+              "driveText": "3rd and 3 at IOW11",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "7-C.Rastetter punts 34 yards from IOW 11 to IOW 45, fair catch by 18-C.Tucker.",
+              "driveText": "4th and 3 at IOW11",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "1645",
+          "time": "00:23",
+          "plays": [
+            {
+              "scoreText": "15-M.Childers incomplete. Intended for 18-C.Tucker.",
+              "driveText": "1st and 10 at IOW45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers complete to 18-C.Tucker. 18-C.Tucker to IOW 32 for 13 yards (8-M.Hankins).",
+              "driveText": "2nd and 10 at IOW45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers incomplete.",
+              "driveText": "1st and 10 at IOW32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "2-A.Gantz 49 yards Field Goal is No Good.",
+              "driveText": "2nd and 10 at IOW32",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "00:02",
+          "plays": [
+            {
+              "scoreText": "kneels at IOW 29 for -3 yards.",
+              "driveText": "1st and 10 at IOW32",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "3RD",
+      "shortTitle": "3rd",
+      "possessions": [
+        {
+          "teamId": "1645",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 61 yards from IOW 35, out of bounds at the NIL 4.",
+              "driveText": "2nd and 13 at IOW35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers to NIL 42 for 7 yards (27-A.Hooker).",
+              "driveText": "1st and 10 at NIL35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers incomplete. Intended for 10-D.Brown.",
+              "driveText": "2nd and 3 at NIL42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers complete to 10-D.Brown. 10-D.Brown to NIL 44 for 2 yards (49-N.Niemann).",
+              "driveText": "3rd and 3 at NIL42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "36-M.Ference punts 48 yards from NIL 44. 14-K.Groeneweg pushed ob at IOW 17 for 9 yards (8-M.Williams).",
+              "driveText": "4th and 1 at NIL44",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "13:51",
+          "plays": [
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 21 for 4 yards (3-J.Embry).",
+              "driveText": "1st and 10 at IOW17",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 23 for 2 yards (99-B.LeRoy).",
+              "driveText": "2nd and 6 at IOW21",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 84-N.Easley.",
+              "driveText": "3rd and 4 at IOW23",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "7-C.Rastetter punts 57 yards from IOW 23 to the NIL 20, downed by 33-R.Moss.",
+              "driveText": "4th and 4 at IOW23",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "1645",
+          "time": "12:26",
+          "plays": [
+            {
+              "scoreText": "15-M.Childers incomplete. Intended for 10-D.Brown.",
+              "driveText": "1st and 10 at NIL20",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-M.Jones to NIL 27 for 7 yards (34-K.Welch).",
+              "driveText": "2nd and 10 at NIL20",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers incomplete. Intended for 13-L.Payne.",
+              "driveText": "3rd and 3 at NIL27",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "36-M.Ference punts 42 yards from NIL 27. 14-K.Groeneweg pushed ob at IOW 42 for 11 yards (8-M.Williams).",
+              "driveText": "4th and 3 at NIL27",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "11:33",
+          "plays": [
+            {
+              "scoreText": "21-I.Kelly-Martin pushed ob at NIL 13 for 45 yards (3-J.Embry). Penalty on IOW 59-R.Reynolds, Illegal low block, 15 yards, enforced at IOW 46.",
+              "driveText": "1st and 10 at IOW42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 6-I.Smith-Marsette. 6-I.Smith-Marsette to IOW 48 for 17 yards (7-T.Hunt).",
+              "driveText": "1st and 21 at IOW31",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to NIL 12 for 40 yards (15-S.Smith).",
+              "driveText": "2nd and 4 at IOW48",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 14-K.Groeneweg. Penalty on NIL 7-T.Hunt, Holding, 6 yards, enforced at NIL 12. No Play.",
+              "driveText": "1st and 10 at NIL12",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to NIL 5 for 1 yard (98-J.Heflin).",
+              "driveText": "1st and 6 at NIL6",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to NIL 4 for 1 yard (93-Q.Wynne).",
+              "driveText": "2nd and 5 at NIL5",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to NIL 1 for 3 yards (57-K.Pugh,48-A.Jones-Davis).",
+              "driveText": "3rd and 4 at NIL4",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 87-N.Fant. 87-N.Fant runs 1 yard for a touchdown.",
+              "driveText": "4th and 1 at NIL1",
+              "visitingScore": "0",
+              "homeScore": "9"
+            },
+            {
+              "scoreText": "91-M.Recinos extra point is good.",
+              "driveText": "",
+              "visitingScore": "0",
+              "homeScore": "10"
+            }
+          ]
+        },
+        {
+          "teamId": "1645",
+          "time": "07:20",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 65 yards from IOW 35. 10-D.Brown pushed ob at NIL 23 for 23 yards (4-J.Turner). Penalty on IOW 91-M.Recinos, Illegal formation, 5 yards, enforced at NIL 23.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-J.Nettles to NIL 34 for 6 yards (90-S.Brincks,30-J.Gervase).",
+              "driveText": "1st and 10 at NIL28",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers sacked at NIL 24 for -10 yards (40-P.Hesse).",
+              "driveText": "2nd and 4 at NIL34",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers sacked at NIL 9 for -15 yards, FUMBLES (34-K.Welch). 15-M.Childers to NIL 9 for no gain.",
+              "driveText": "3rd and 14 at NIL24",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "36-M.Ference punts 49 yards from NIL 9. 14-K.Groeneweg to NIL 46 for 12 yards (7-T.Hunt).",
+              "driveText": "4th and 29 at NIL9",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "05:12",
+          "plays": [
+            {
+              "scoreText": "4-N.Stanley scrambles to NIL 44 for 2 yards (41-M.Lorbeck).",
+              "driveText": "1st and 10 at NIL46",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young pushed ob at NIL 20 for 24 yards (8-M.Williams).",
+              "driveText": "2nd and 8 at NIL44",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Penalty on NIL 8-M.Williams, Horse Collar, 10 yards, enforced at NIL 20. No Play.",
+              "driveText": "1st and 10 at NIL20",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to NIL 7 for 3 yards (99-B.LeRoy).",
+              "driveText": "1st and 10 at NIL10",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley scrambles, pushed ob at NIL 2 for 5 yards (57-K.Pugh).",
+              "driveText": "2nd and 7 at NIL7",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin runs 2 yards for a touchdown.",
+              "driveText": "3rd and 2 at NIL2",
+              "visitingScore": "0",
+              "homeScore": "16"
+            },
+            {
+              "scoreText": "91-M.Recinos extra point is good.",
+              "driveText": "",
+              "visitingScore": "0",
+              "homeScore": "17"
+            }
+          ]
+        },
+        {
+          "teamId": "1645",
+          "time": "02:41",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 65 yards from IOW 35 to NIL End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-M.Jones to NIL 28 for 3 yards (27-A.Hooker,94-A.Epenesa).",
+              "driveText": "1st and 10 at NIL25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-J.Nettles to NIL 36 for 8 yards (48-J.Hockaday,30-J.Gervase).",
+              "driveText": "2nd and 7 at NIL28",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers complete to 6-R.Hall. 6-R.Hall to NIL 35 for -1 yard (48-J.Hockaday).",
+              "driveText": "1st and 10 at NIL36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "22-T.Harbison to NIL 38 for 3 yards (57-C.Golston,34-K.Welch).",
+              "driveText": "2nd and 11 at NIL35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers sacked at NIL 26 for -12 yards, FUMBLES (94-A.Epenesa). 57-C.Golston to NIL 26 for no gain (65-N.Veloz).",
+              "driveText": "3rd and 8 at NIL38",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "00:47",
+          "plays": [
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 39-N.Wieting.",
+              "driveText": "1st and 10 at NIL26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to NIL 17 for 9 yards (11-T.Foster).",
+              "driveText": "2nd and 10 at NIL26",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "4TH",
+      "shortTitle": "4th",
+      "possessions": [
+        {
+          "teamId": "71",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "36-B.Ross to NIL 13 for 4 yards (45-J.Cole).",
+              "driveText": "3rd and 1 at NIL17",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to NIL 9 for 4 yards (37-L.Deveaux,48-A.Jones-Davis).",
+              "driveText": "1st and 10 at NIL13",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to NIL 6 for 3 yards (37-L.Deveaux).",
+              "driveText": "2nd and 6 at NIL9",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young runs 6 yards for a touchdown.",
+              "driveText": "3rd and 3 at NIL6",
+              "visitingScore": "0",
+              "homeScore": "23"
+            },
+            {
+              "scoreText": "91-M.Recinos extra point is good.",
+              "driveText": "",
+              "visitingScore": "0",
+              "homeScore": "24"
+            }
+          ]
+        },
+        {
+          "teamId": "1645",
+          "time": "13:02",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 65 yards from IOW 35 to NIL End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers to NIL 29 for 4 yards (94-A.Epenesa,57-C.Golston).",
+              "driveText": "1st and 10 at NIL25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers incomplete. Intended for 84-T.Harmston.",
+              "driveText": "2nd and 6 at NIL29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers incomplete. Intended for 18-C.Tucker.",
+              "driveText": "3rd and 6 at NIL29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "36-M.Ference punts 53 yards from NIL 29. 14-K.Groeneweg pushed ob at IOW 24 for 6 yards (1-J.Huff).",
+              "driveText": "4th and 6 at NIL29",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "12:15",
+          "plays": [
+            {
+              "scoreText": "10-M.Sargent to IOW 30 for 6 yards (96-M.Kelly).",
+              "driveText": "1st and 10 at IOW24",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to IOW 32 for 2 yards (99-B.LeRoy,48-A.Jones-Davis).",
+              "driveText": "2nd and 4 at IOW30",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to IOW 36 for 4 yards (99-B.LeRoy).",
+              "driveText": "3rd and 2 at IOW32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to IOW 39 for 3 yards (99-B.LeRoy). Penalty on IOW 38-T.Hockenson, Holding, 10 yards, enforced at IOW 36. No Play.",
+              "driveText": "1st and 10 at IOW36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to IOW 28 for 2 yards (15-S.Smith).",
+              "driveText": "1st and 20 at IOW26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to IOW 30 for 2 yards (8-M.Williams).",
+              "driveText": "2nd and 18 at IOW28",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 19-M.Cooper.",
+              "driveText": "3rd and 16 at IOW30",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "7-C.Rastetter punts 69 yards from IOW 30 to the NIL 1, downed by 33-R.Moss.",
+              "driveText": "4th and 16 at IOW30",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "1645",
+          "time": "08:33",
+          "plays": [
+            {
+              "scoreText": "15-M.Childers to NIL 1 for no gain (96-M.Nelson,48-J.Hockaday).",
+              "driveText": "1st and 10 at NIL1",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-J.Nettles to NIL 1 for no gain (27-A.Hooker).",
+              "driveText": "2nd and 10 at NIL1",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-J.Nettles to NIL End Zone for -1 yard (27-A.Hooker). to NIL End Zone for -1 yard, safety.",
+              "driveText": "2nd and 10 at NIL1",
+              "visitingScore": "0",
+              "homeScore": "26"
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "07:59",
+          "plays": [
+            {
+              "scoreText": "36-M.Ference kicks 30 yards from NIL 20, out of bounds at the IOW 50. Penalty on NIL 33-D.Walker, Unsportsmanlike conduct, 15 yards, enforced at IOW 50.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "2-P.Mansell complete to 39-N.Wieting. 39-N.Wieting to NIL 5 for 30 yards (11-T.Foster,29-A.Buirge).",
+              "driveText": "1st and 10 at NIL35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to NIL 1 for 4 yards (29-A.Buirge).",
+              "driveText": "1st and 5 at NIL5",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "2-P.Mansell runs 1 yard for a touchdown.",
+              "driveText": "2nd and 1 at NIL1",
+              "visitingScore": "0",
+              "homeScore": "32"
+            },
+            {
+              "scoreText": "91-M.Recinos extra point is good.",
+              "driveText": "",
+              "visitingScore": "0",
+              "homeScore": "33"
+            }
+          ]
+        },
+        {
+          "teamId": "1645",
+          "time": "06:52",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 65 yards from IOW 35 to NIL End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-J.Nettles to NIL 29 for 4 yards (53-G.Jansen,52-A.Jones).",
+              "driveText": "1st and 10 at NIL25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-J.Nettles to NIL 33 for 4 yards (94-A.Epenesa,32-D.Colbert).",
+              "driveText": "2nd and 6 at NIL29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-J.Nettles to NIL 36 for 3 yards (52-A.Jones).",
+              "driveText": "3rd and 2 at NIL33",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-J.Nettles to NIL 48 for 12 yards (9-G.Stone).",
+              "driveText": "1st and 10 at NIL36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers complete to 10-D.Brown. 10-D.Brown pushed ob at IOW 48 for 4 yards (4-J.Turner).",
+              "driveText": "1st and 10 at NIL48",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-J.Nettles to IOW 44 for 4 yards (52-A.Jones).",
+              "driveText": "2nd and 6 at IOW48",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-J.Nettles pushed ob at IOW 38 for 6 yards (52-A.Jones).",
+              "driveText": "3rd and 2 at IOW44",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers to IOW 38 for no gain (4-J.Turner).",
+              "driveText": "1st and 10 at IOW38",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers complete to 9-J.Wesley. 9-J.Wesley to IOW 26 for 12 yards (28-J.Koerner).",
+              "driveText": "2nd and 10 at IOW38",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-J.Nettles to IOW 21 for 5 yards (32-D.Colbert,52-A.Jones). Penalty on IOW 52-A.Jones, Facemasking, 11 yards, enforced at IOW 21.",
+              "driveText": "1st and 10 at IOW26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "15-M.Childers complete to 9-J.Wesley. 9-J.Wesley runs 10 yards for a touchdown.",
+              "driveText": "1st and 10 at IOW10",
+              "visitingScore": "6",
+              "homeScore": "33"
+            },
+            {
+              "scoreText": "Penalty on NIL 61-B.Olson, False start, 5 yards, enforced at IOW 2. No Play.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "2-A.Gantz extra point is good.",
+              "driveText": "",
+              "visitingScore": "7",
+              "homeScore": "33"
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "02:12",
+          "plays": [
+            {
+              "scoreText": "2-A.Gantz kicks 65 yards from NIL 35 to IOW End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "30-H.Geil to IOW 27 for 2 yards (57-K.Pugh,11-T.Foster).",
+              "driveText": "1st and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Penalty on IOW 61-C.Banwart, False start, 5 yards, enforced at IOW 27. No Play.",
+              "driveText": "2nd and 8 at IOW27",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "30-H.Geil to IOW 26 for 4 yards (93-Q.Wynne,96-M.Kelly).",
+              "driveText": "2nd and 13 at IOW22",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "2-P.Mansell incomplete. Intended for -N.Ragaini. Penalty on NIL 11-T.Foster, Holding, 10 yards, enforced at IOW 26. No Play.",
+              "driveText": "3rd and 9 at IOW26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "30-H.Geil to IOW 38 for 2 yards (48-A.Jones-Davis,3-J.Embry).",
+              "driveText": "1st and 10 at IOW36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "2-P.Mansell complete to 19-M.Cooper. 19-M.Cooper to IOW 43 for 5 yards (49-J.McKie).",
+              "driveText": "2nd and 8 at IOW38",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "30-H.Geil to IOW 47 for 4 yards (57-K.Pugh).",
+              "driveText": "3rd and 3 at IOW43",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "30-H.Geil to IOW 48 for 1 yard (37-L.Deveaux).",
+              "driveText": "1st and 10 at IOW47",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

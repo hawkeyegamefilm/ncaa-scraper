@@ -1,0 +1,1443 @@
+{
+  "inputMD5Sum": "120a305122f3487301e0d0c82b666d30",
+  "updatedTimestamp": "2018-10-28 08:29:43 ET",
+  "meta": {
+    "title": "PLAY-BY-PLAY",
+    "teams": [
+      {
+        "homeTeam": "false",
+        "id": "71",
+        "color": "#010101",
+        "shortname": "Iowa",
+        "seoName": "iowa",
+        "sixCharAbbr": "IOWA"
+      },
+      {
+        "homeTeam": "true",
+        "id": "2296",
+        "color": "#041E42",
+        "shortname": "Penn St.",
+        "seoName": "penn-st",
+        "sixCharAbbr": "PENNST"
+      }
+    ]
+  },
+  "periods": [
+    {
+      "title": "1ST",
+      "shortTitle": "1st",
+      "possessions": [
+        {
+          "teamId": "2296",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 65 yards from IOW 35 to PSU End Zone. touchback.",
+              "driveText": "1st and 10 at IOW35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley incomplete. Intended for 87-P.Freiermuth.",
+              "driveText": "1st and 10 at PSU25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "24-M.Sanders to PSU 26 for 1 yard (96-M.Nelson).",
+              "driveText": "2nd and 10 at PSU25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley incomplete. Intended for 3-D.Thompkins.",
+              "driveText": "3rd and 9 at PSU26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "punts 0 yards from PSU 26 blocked by 23-D.Dafney. out of bounds at the PSU End Zone. to PSU End Zone for no gain, safety.",
+              "driveText": "4th and 9 at PSU26",
+              "visitingScore": "2",
+              "homeScore": "0"
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "14:08",
+          "plays": [
+            {
+              "scoreText": "90-R.Checa kicks 58 yards from PSU 20. 6-I.Smith-Marsette to IOW 44 for 22 yards (11-M.Parsons,9-J.Miller).",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley sacked at IOW 39 for -5 yards. Penalty on IOW 4-N.Stanley, Intentional grounding, 0 yards, enforced at IOW 39. (99-Y.Gross-Matos).",
+              "driveText": "1st and 10 at IOW44",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 38-T.Hockenson. 38-T.Hockenson to PSU 35, FUMBLES (7-K.Farmer). 38-T.Hockenson to PSU 29 for no gain.",
+              "driveText": "2nd and 15 at IOW39",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to PSU 24 for 5 yards (23-A.Monroe,36-J.Johnson).",
+              "driveText": "1st and 10 at PSU29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "6-I.Smith-Marsette to PSU 20 for 4 yards (99-Y.Gross-Matos,4-N.Scott).",
+              "driveText": "2nd and 5 at PSU24",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to PSU 20 for no gain (7-K.Farmer,6-C.Brown). Penalty on PSU 54-R.Windsor, Facemasking, 10 yards, enforced at PSU 20. No Play.",
+              "driveText": "3rd and 1 at PSU20",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to PSU 5 for 5 yards (99-Y.Gross-Matos).",
+              "driveText": "1st and 10 at PSU10",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to PSU 4 for 1 yard (36-J.Johnson).",
+              "driveText": "2nd and 5 at PSU5",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 84-N.Easley.",
+              "driveText": "3rd and 4 at PSU4",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Penalty on IOW 91-M.Recinos, Delay of game, 5 yards, enforced at PSU 4. No Play.",
+              "driveText": "4th and 4 at PSU4",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "91-M.Recinos 27 yards Field Goal is Good.",
+              "driveText": "4th and 9 at PSU17",
+              "visitingScore": "5",
+              "homeScore": "0"
+            }
+          ]
+        },
+        {
+          "teamId": "2296",
+          "time": "10:09",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 65 yards from IOW 35 to PSU End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley complete to 1-K.Hamler. 1-K.Hamler to PSU 35 for 10 yards (98-A.Nelson). Penalty on PSU 87-P.Freiermuth, Pass interference, 12 yards, enforced at PSU 25. No Play.",
+              "driveText": "1st and 10 at PSU25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "24-M.Sanders to PSU 17 for 4 yards (98-A.Nelson).",
+              "driveText": "1st and 22 at PSU13",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley incomplete. Intended for 1-K.Hamler.",
+              "driveText": "2nd and 18 at PSU17",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley sacked at PSU 10 for -7 yards (40-P.Hesse).",
+              "driveText": "3rd and 18 at PSU17",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "93-B.Gillikin punts 32 yards from PSU 10, out of bounds at the PSU 42.",
+              "driveText": "4th and 25 at PSU10",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "08:18",
+          "plays": [
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 21-I.Kelly-Martin.",
+              "driveText": "1st and 10 at PSU42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Penalty on PSU 54-R.Windsor, Offside, 5 yards, enforced at PSU 42. No Play.",
+              "driveText": "2nd and 10 at PSU42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to PSU 33, FUMBLES (6-C.Brown). 74-T.Wirfs to PSU 33 for no gain.",
+              "driveText": "2nd and 5 at PSU37",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to PSU 24 for 9 yards (6-C.Brown).",
+              "driveText": "3rd and 1 at PSU33",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to PSU 21 for 3 yards (11-M.Parsons).",
+              "driveText": "1st and 10 at PSU24",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 38-T.Hockenson. 38-T.Hockenson to PSU 10 for 11 yards (6-C.Brown).",
+              "driveText": "2nd and 7 at PSU21",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 12-B.Smith.",
+              "driveText": "1st and 10 at PSU10",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 6-I.Smith-Marsette.",
+              "driveText": "2nd and 10 at PSU10",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 38-T.Hockenson.",
+              "driveText": "3rd and 10 at PSU10",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "7-C.Rastetter complete to 90-S.Brincks. 90-S.Brincks runs 10 yards for a touchdown.",
+              "driveText": "4th and 10 at PSU10",
+              "visitingScore": "11",
+              "homeScore": "0"
+            },
+            {
+              "scoreText": "91-M.Recinos extra point is good.",
+              "driveText": "",
+              "visitingScore": "12",
+              "homeScore": "0"
+            }
+          ]
+        },
+        {
+          "teamId": "2296",
+          "time": "05:22",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 65 yards from IOW 35. 1-K.Hamler to PSU 15 for 15 yards (23-D.Dafney).",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "24-M.Sanders to PSU 31 for 16 yards (34-K.Welch,57-C.Golston).",
+              "driveText": "1st and 10 at PSU15",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "24-M.Sanders to PSU 35 for 4 yards (34-K.Welch).",
+              "driveText": "1st and 10 at PSU31",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley complete to 5-J.Dotson. 5-J.Dotson to PSU 41 for 6 yards (9-G.Stone,33-R.Moss).",
+              "driveText": "2nd and 6 at PSU35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley to PSU 45 for 4 yards (27-A.Hooker).",
+              "driveText": "1st and 10 at PSU41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley complete to 3-D.Thompkins. 3-D.Thompkins pushed ob at IOW 40 for 15 yards (33-R.Moss).",
+              "driveText": "2nd and 6 at PSU45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "24-M.Sanders to IOW 37 for 3 yards (48-J.Hockaday).",
+              "driveText": "1st and 10 at IOW40",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley to IOW 37 for no gain (40-P.Hesse,96-M.Nelson).",
+              "driveText": "2nd and 7 at IOW37",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "24-M.Sanders to IOW 33 for 4 yards (40-P.Hesse,30-J.Gervase).",
+              "driveText": "3rd and 7 at IOW37",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley complete to 5-J.Dotson. 5-J.Dotson to IOW 18 for 15 yards (27-A.Hooker).",
+              "driveText": "4th and 3 at IOW33",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley complete to 87-P.Freiermuth. 87-P.Freiermuth runs 18 yards for a touchdown.",
+              "driveText": "1st and 10 at IOW18",
+              "visitingScore": "12",
+              "homeScore": "6"
+            },
+            {
+              "scoreText": "92-J.Pinegar extra point is good.",
+              "driveText": "",
+              "visitingScore": "12",
+              "homeScore": "7"
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "00:27",
+          "plays": [
+            {
+              "scoreText": "90-R.Checa kicks 65 yards from PSU 35 to IOW End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "21-I.Kelly-Martin to IOW 24 for -1 yard (13-E.Brooks).",
+              "driveText": "1st and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "2ND",
+      "shortTitle": "2nd",
+      "possessions": [
+        {
+          "teamId": "71",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "4-N.Stanley incomplete.",
+              "driveText": "2nd and 11 at IOW24",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 12-B.Smith.",
+              "driveText": "3rd and 11 at IOW24",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "7-C.Rastetter punts 37 yards from IOW 24. 1-K.Hamler to PSU 37 for -2 yards (14-K.Groeneweg). Team penalty on PSU, Holding, 10 yards, enforced at PSU 37.",
+              "driveText": "4th and 11 at IOW24",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2296",
+          "time": "14:33",
+          "plays": [
+            {
+              "scoreText": "9-T.McSorley incomplete. Intended for 24-M.Sanders.",
+              "driveText": "1st and 10 at PSU27",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "24-M.Sanders to PSU 30 for 3 yards (90-S.Brincks,96-M.Nelson).",
+              "driveText": "2nd and 10 at PSU27",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley sacked at PSU 25 for -5 yards (98-A.Nelson,57-C.Golston).",
+              "driveText": "3rd and 7 at PSU30",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "to PSU End Zone, FUMBLES. out of bounds at the PSU End Zone. to PSU End Zone for no gain, safety.",
+              "driveText": "4th and 12 at PSU0",
+              "visitingScore": "14",
+              "homeScore": "7"
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "13:39",
+          "plays": [
+            {
+              "scoreText": "90-R.Checa kicks 69 yards from PSU 20. 6-I.Smith-Marsette to IOW 43 for 32 yards (20-J.Thomas).",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to IOW 47 for 4 yards (13-E.Brooks).",
+              "driveText": "1st and 10 at IOW43",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 84-N.Easley. 84-N.Easley to PSU 48 for 5 yards (6-C.Brown,4-N.Scott).",
+              "driveText": "2nd and 6 at IOW47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 38-T.Hockenson.",
+              "driveText": "3rd and 1 at PSU48",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Penalty on PSU 48-S.Miller, Offside, 5 yards, enforced at PSU 48. No Play.",
+              "driveText": "4th and 1 at PSU48",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 84-N.Easley.",
+              "driveText": "1st and 10 at PSU43",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Penalty on IOW 77-A.Jackson, False start, 5 yards, enforced at PSU 43. No Play.",
+              "driveText": "2nd and 10 at PSU43",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley sacked at IOW 47 for -5 yards (54-R.Windsor).",
+              "driveText": "2nd and 15 at PSU48",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to IOW 49 for 2 yards (11-M.Parsons).",
+              "driveText": "3rd and 20 at IOW47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "7-C.Rastetter punts 36 yards from IOW 49 to the PSU 15, downed by 18-J.Milani.",
+              "driveText": "4th and 18 at IOW49",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2296",
+          "time": "10:30",
+          "plays": [
+            {
+              "scoreText": "2-T.Stevens to PSU 20 for 5 yards (57-C.Golston,95-C.Lattimore).",
+              "driveText": "1st and 10 at PSU15",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "2-T.Stevens to PSU 16 for -4 yards (94-A.Epenesa).",
+              "driveText": "2nd and 5 at PSU20",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "2-T.Stevens to PSU 26 for 10 yards (20-J.Brents).",
+              "driveText": "3rd and 9 at PSU16",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "2-T.Stevens incomplete. Intended for 10-B.Polk.",
+              "driveText": "1st and 10 at PSU26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "24-M.Sanders to PSU 29 for 3 yards (27-A.Hooker).",
+              "driveText": "2nd and 10 at PSU26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "2-T.Stevens incomplete. Intended for 84-J.Johnson.",
+              "driveText": "3rd and 7 at PSU29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "93-B.Gillikin punts 41 yards from PSU 29. 14-K.Groeneweg to IOW 31 for 1 yard (38-L.Wade).",
+              "driveText": "4th and 7 at PSU29",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "07:44",
+          "plays": [
+            {
+              "scoreText": "28-T.Young to IOW 32 for 1 yard (23-A.Monroe).",
+              "driveText": "1st and 10 at IOW31",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 12-B.Smith, INTERCEPTED by 29-J.Reid at IOW 47. 29-J.Reid pushed ob at IOW 3 for 44 yards (74-T.Wirfs).",
+              "driveText": "2nd and 9 at IOW32",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2296",
+          "time": "06:49",
+          "plays": [
+            {
+              "scoreText": "2-T.Stevens runs 3 yards for a touchdown.",
+              "driveText": "1st and 3 at IOW3",
+              "visitingScore": "14",
+              "homeScore": "13"
+            },
+            {
+              "scoreText": "92-J.Pinegar extra point is good.",
+              "driveText": "",
+              "visitingScore": "14",
+              "homeScore": "14"
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "06:45",
+          "plays": [
+            {
+              "scoreText": "90-R.Checa kicks 60 yards from PSU 35. 6-I.Smith-Marsette pushed ob at PSU 46 for 49 yards (90-R.Checa).",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to PSU 35 for 11 yards (21-A.Oruwariye,99-Y.Gross-Matos).",
+              "driveText": "1st and 10 at PSU46",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to PSU 31 for 4 yards (11-M.Parsons).",
+              "driveText": "1st and 10 at PSU35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to PSU 31 for no gain (99-Y.Gross-Matos).",
+              "driveText": "2nd and 6 at PSU31",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 6-I.Smith-Marsette.",
+              "driveText": "3rd and 6 at PSU31",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "91-M.Recinos 49 yards Field Goal is Good.",
+              "driveText": "4th and 6 at PSU39",
+              "visitingScore": "17",
+              "homeScore": "14"
+            }
+          ]
+        },
+        {
+          "teamId": "2296",
+          "time": "04:32",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 65 yards from IOW 35 to PSU End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley complete to 3-D.Thompkins. 3-D.Thompkins to PSU 32 for 7 yards (20-J.Brents).",
+              "driveText": "1st and 10 at PSU25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley incomplete. Intended for 12-M.Hippenhammer.",
+              "driveText": "2nd and 3 at PSU32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley incomplete. Intended for 24-M.Sanders.",
+              "driveText": "3rd and 3 at PSU32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "93-B.Gillikin punts 33 yards from PSU 32 to the IOW 35, downed by 4-R.Slade.",
+              "driveText": "4th and 3 at PSU32",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "03:49",
+          "plays": [
+            {
+              "scoreText": "10-M.Sargent to IOW 37 for 2 yards (34-S.Simmons).",
+              "driveText": "1st and 10 at IOW35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent pushed ob at IOW 41 for 4 yards (6-C.Brown).",
+              "driveText": "2nd and 8 at IOW37",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 84-N.Easley. 84-N.Easley runs ob at IOW 47 for 6 yards.",
+              "driveText": "3rd and 4 at IOW41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Penalty on PSU 93-P.Mustipher, Offside, 5 yards, enforced at IOW 47. No Play.",
+              "driveText": "1st and 10 at IOW47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 12-B.Smith. 12-B.Smith to PSU 42 for 6 yards (26-J.Sutherland,11-M.Parsons).",
+              "driveText": "1st and 5 at PSU48",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Penalty on IOW 77-A.Jackson, False start, 5 yards, enforced at PSU 42. No Play.",
+              "driveText": "1st and 10 at PSU42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 84-N.Easley. 84-N.Easley runs ob at PSU 36 for 11 yards.",
+              "driveText": "1st and 15 at PSU47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to PSU 39 for -3 yards (99-Y.Gross-Matos).",
+              "driveText": "2nd and 4 at PSU36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "to PSU 42, FUMBLES. 59-R.Reynolds to PSU 42 for no gain.",
+              "driveText": "3rd and 7 at PSU42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "2-P.Mansell to PSU 42 for no gain (99-Y.Gross-Matos).",
+              "driveText": "4th and 10 at PSU42",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2296",
+          "time": "00:37",
+          "plays": [
+            {
+              "scoreText": "2-T.Stevens complete to 3-D.Thompkins. 3-D.Thompkins to IOW 49 for 9 yards (33-R.Moss).",
+              "driveText": "1st and 10 at PSU42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "2-T.Stevens scrambles to IOW 45 for 4 yards (98-A.Nelson).",
+              "driveText": "2nd and 1 at IOW49",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "2-T.Stevens complete to 1-K.Hamler. 1-K.Hamler runs ob at IOW 27 for 18 yards.",
+              "driveText": "1st and 10 at IOW45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "92-J.Pinegar 45 yards Field Goal is Good.",
+              "driveText": "1st and 10 at IOW35",
+              "visitingScore": "17",
+              "homeScore": "17"
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "00:03",
+          "plays": [
+            {
+              "scoreText": "90-R.Checa kicks 40 yards from PSU 35 Downed at the IOW 25.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "kneels at IOW 23 for -2 yards.",
+              "driveText": "1st and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "3RD",
+      "shortTitle": "3rd",
+      "possessions": [
+        {
+          "teamId": "71",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "90-R.Checa kicks 65 yards from PSU 35 to IOW End Zone. touchback.",
+              "driveText": "2nd and 12 at PSU35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 87-N.Fant.",
+              "driveText": "1st and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to IOW 48 for 23 yards (4-N.Scott,17-G.Taylor).",
+              "driveText": "2nd and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to IOW 44 for -4 yards (99-Y.Gross-Matos).",
+              "driveText": "1st and 10 at IOW48",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 10-M.Sargent.",
+              "driveText": "2nd and 14 at IOW44",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 84-N.Easley.",
+              "driveText": "3rd and 14 at IOW44",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "7-C.Rastetter punts 33 yards from IOW 44 to the PSU 23, downed by 34-K.Welch.",
+              "driveText": "4th and 14 at IOW44",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2296",
+          "time": "13:24",
+          "plays": [
+            {
+              "scoreText": "9-T.McSorley complete to 1-K.Hamler. 1-K.Hamler runs ob at PSU 41 for 18 yards.",
+              "driveText": "1st and 10 at PSU23",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley incomplete. Intended for 3-D.Thompkins.",
+              "driveText": "1st and 10 at PSU41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley complete to 1-K.Hamler. 1-K.Hamler pushed ob at PSU 49 for 8 yards (27-A.Hooker).",
+              "driveText": "2nd and 10 at PSU41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley runs 51 yards for a touchdown.",
+              "driveText": "3rd and 2 at PSU49",
+              "visitingScore": "17",
+              "homeScore": "23"
+            },
+            {
+              "scoreText": "92-J.Pinegar extra point is good.",
+              "driveText": "",
+              "visitingScore": "17",
+              "homeScore": "24"
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "12:10",
+          "plays": [
+            {
+              "scoreText": "90-R.Checa kicks 65 yards from PSU 35 to IOW End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to IOW 35 for 10 yards (17-G.Taylor,21-A.Oruwariye).",
+              "driveText": "1st and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to IOW 47 for 12 yards (21-A.Oruwariye,36-J.Johnson).",
+              "driveText": "1st and 10 at IOW35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to PSU 49 for 4 yards (7-K.Farmer).",
+              "driveText": "1st and 10 at IOW47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to PSU 48 for 1 yard (7-K.Farmer,55-A.Shelton).",
+              "driveText": "2nd and 6 at PSU49",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 84-N.Easley.",
+              "driveText": "3rd and 5 at PSU48",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "7-C.Rastetter punts 34 yards from PSU 48. 3-D.Thompkins to PSU 14 for no gain (34-K.Welch).",
+              "driveText": "4th and 5 at PSU48",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2296",
+          "time": "09:20",
+          "plays": [
+            {
+              "scoreText": "24-M.Sanders to PSU 18 for 4 yards (27-A.Hooker).",
+              "driveText": "1st and 10 at PSU14",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "24-M.Sanders to PSU 17 for -1 yard (48-J.Hockaday,96-M.Nelson).",
+              "driveText": "2nd and 6 at PSU18",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley incomplete. Intended for 1-K.Hamler.",
+              "driveText": "3rd and 7 at PSU17",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "93-B.Gillikin punts 54 yards from PSU 17 to the IOW 29, downed by 38-L.Wade.",
+              "driveText": "4th and 7 at PSU17",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "08:00",
+          "plays": [
+            {
+              "scoreText": "4-N.Stanley complete to 84-N.Easley. 84-N.Easley pushed ob at IOW 32 for 3 yards (4-N.Scott).",
+              "driveText": "1st and 10 at IOW29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to IOW 32 for no gain (13-E.Brooks).",
+              "driveText": "2nd and 7 at IOW32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley sacked at IOW 24 for -8 yards (99-Y.Gross-Matos).",
+              "driveText": "3rd and 7 at IOW32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "7-C.Rastetter punts 37 yards from IOW 24. 1-K.Hamler to PSU 45 for 6 yards (4-J.Turner).",
+              "driveText": "4th and 15 at IOW24",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2296",
+          "time": "05:55",
+          "plays": [
+            {
+              "scoreText": "9-T.McSorley complete to 3-D.Thompkins. 3-D.Thompkins to IOW 41 for 14 yards (32-D.Colbert,48-J.Hockaday).",
+              "driveText": "1st and 10 at PSU45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley complete to 1-K.Hamler. 1-K.Hamler pushed ob at IOW 28 for 13 yards (33-R.Moss).",
+              "driveText": "1st and 10 at IOW41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley incomplete. Intended for 10-B.Polk.",
+              "driveText": "1st and 10 at IOW28",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley incomplete.",
+              "driveText": "2nd and 10 at IOW28",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley sacked at IOW 31 for -3 yards (98-A.Nelson).",
+              "driveText": "3rd and 10 at IOW28",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "92-J.Pinegar 49 yards Field Goal is Good.",
+              "driveText": "4th and 13 at IOW39",
+              "visitingScore": "17",
+              "homeScore": "27"
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "04:10",
+          "plays": [
+            {
+              "scoreText": "90-R.Checa kicks 65 yards from PSU 35 to IOW End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 12-B.Smith.",
+              "driveText": "1st and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to IOW 25 for no gain (48-S.Miller).",
+              "driveText": "2nd and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 12-B.Smith. 12-B.Smith to IOW 36 for 11 yards (21-A.Oruwariye).",
+              "driveText": "3rd and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to IOW 40 for 4 yards (7-K.Farmer,17-G.Taylor).",
+              "driveText": "1st and 10 at IOW36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent to IOW 42 for 2 yards (54-R.Windsor,7-K.Farmer).",
+              "driveText": "2nd and 6 at IOW40",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 84-N.Easley.",
+              "driveText": "3rd and 4 at IOW42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "7-C.Rastetter punts 41 yards from IOW 42. 1-K.Hamler pushed ob at PSU 23 for 6 yards (27-A.Hooker).",
+              "driveText": "4th and 4 at IOW42",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2296",
+          "time": "01:22",
+          "plays": [
+            {
+              "scoreText": "24-M.Sanders to PSU 27 for 4 yards (95-C.Lattimore,91-B.Reiff).",
+              "driveText": "1st and 10 at PSU23",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley incomplete. Intended for 3-D.Thompkins.",
+              "driveText": "2nd and 6 at PSU27",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley complete to 1-K.Hamler. 1-K.Hamler to IOW 34 for 39 yards (9-G.Stone).",
+              "driveText": "3rd and 6 at PSU27",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "4TH",
+      "shortTitle": "4th",
+      "possessions": [
+        {
+          "teamId": "2296",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "9-T.McSorley runs ob at IOW 27 for 7 yards.",
+              "driveText": "1st and 10 at IOW34",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "24-M.Sanders to IOW 20 for 7 yards (30-J.Gervase).",
+              "driveText": "2nd and 3 at IOW27",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "24-M.Sanders to IOW 14 for 6 yards (33-R.Moss).",
+              "driveText": "1st and 10 at IOW20",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley incomplete. Intended for 87-P.Freiermuth.",
+              "driveText": "2nd and 4 at IOW14",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley to IOW 9 for 5 yards (9-G.Stone,30-J.Gervase).",
+              "driveText": "3rd and 4 at IOW14",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "24-M.Sanders to IOW 10, FUMBLES. 48-J.Hockaday to IOW 10 for no gain.",
+              "driveText": "1st and 9 at IOW9",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "12:57",
+          "plays": [
+            {
+              "scoreText": "Penalty on IOW 77-A.Jackson, False start, 5 yards, enforced at IOW 10. No Play.",
+              "driveText": "1st and 10 at IOW10",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 38-T.Hockenson. 38-T.Hockenson to IOW 25 for 20 yards (17-G.Taylor).",
+              "driveText": "1st and 15 at IOW5",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 6-I.Smith-Marsette.",
+              "driveText": "1st and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 87-N.Fant. 87-N.Fant to IOW 47 for 22 yards (17-G.Taylor).",
+              "driveText": "2nd and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 87-N.Fant.",
+              "driveText": "1st and 10 at IOW47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 6-I.Smith-Marsette. 6-I.Smith-Marsette to PSU 49 for 4 yards.",
+              "driveText": "2nd and 10 at IOW47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 14-K.Groeneweg.",
+              "driveText": "3rd and 6 at PSU49",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "7-C.Rastetter punts 41 yards from PSU 49 Downed at the PSU 8.",
+              "driveText": "4th and 6 at PSU49",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2296",
+          "time": "10:48",
+          "plays": [
+            {
+              "scoreText": "24-M.Sanders to PSU 9 for 1 yard (40-P.Hesse,98-A.Nelson).",
+              "driveText": "1st and 10 at PSU8",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley incomplete. Intended for 10-B.Polk, INTERCEPTED by 9-G.Stone at PSU 24. 9-G.Stone runs 24 yards for a touchdown.",
+              "driveText": "2nd and 9 at PSU9",
+              "visitingScore": "23",
+              "homeScore": "27"
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "10:00",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos extra point is good.",
+              "driveText": "",
+              "visitingScore": "24",
+              "homeScore": "27"
+            }
+          ]
+        },
+        {
+          "teamId": "2296",
+          "time": "10:00",
+          "plays": [
+            {
+              "scoreText": "91-M.Recinos kicks 63 yards from IOW 35. 1-K.Hamler to IOW 31 for 67 yards (42-S.Beyer).",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley to IOW 26 for 5 yards (30-J.Gervase).",
+              "driveText": "1st and 10 at IOW31",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "24-M.Sanders to IOW 26 for no gain (20-J.Brents).",
+              "driveText": "2nd and 5 at IOW26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley incomplete. Intended for 3-D.Thompkins.",
+              "driveText": "3rd and 5 at IOW26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "92-J.Pinegar 44 yards Field Goal is Good.",
+              "driveText": "4th and 5 at IOW34",
+              "visitingScore": "24",
+              "homeScore": "30"
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "08:24",
+          "plays": [
+            {
+              "scoreText": "90-R.Checa kicks 65 yards from PSU 35 to IOW End Zone. touchback.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "28-T.Young to IOW 25 for no gain (48-S.Miller).",
+              "driveText": "1st and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 87-N.Fant. 87-N.Fant runs ob at IOW 37 for 12 yards.",
+              "driveText": "2nd and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 87-N.Fant. 87-N.Fant to IOW 41 for 4 yards (6-C.Brown).",
+              "driveText": "1st and 10 at IOW37",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 87-N.Fant. 87-N.Fant to IOW 48 for 7 yards.",
+              "driveText": "2nd and 6 at IOW41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "10-M.Sargent pushed ob at PSU 32 for 20 yards (17-G.Taylor).",
+              "driveText": "1st and 10 at IOW48",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Penalty on IOW 74-T.Wirfs, False start, 5 yards, enforced at PSU 32. No Play.",
+              "driveText": "1st and 10 at PSU32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "6-I.Smith-Marsette pushed ob at PSU 32 for 5 yards (21-A.Oruwariye).",
+              "driveText": "1st and 15 at PSU37",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 84-N.Easley.",
+              "driveText": "2nd and 10 at PSU32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 10-M.Sargent. 10-M.Sargent to PSU 17 for 15 yards (36-J.Johnson).",
+              "driveText": "3rd and 10 at PSU32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 14-K.Groeneweg.",
+              "driveText": "1st and 10 at PSU17",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 10-M.Sargent.",
+              "driveText": "2nd and 10 at PSU17",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 12-B.Smith. 12-B.Smith pushed ob at PSU 3 for 14 yards (21-A.Oruwariye).",
+              "driveText": "3rd and 10 at PSU17",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 87-N.Fant, INTERCEPTED by 4-N.Scott at PSU 2. 4-N.Scott to PSU 9 for 7 yards.",
+              "driveText": "1st and 3 at PSU3",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2296",
+          "time": "03:18",
+          "plays": [
+            {
+              "scoreText": "24-M.Sanders to PSU 13 for 4 yards (32-D.Colbert).",
+              "driveText": "1st and 10 at PSU9",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley complete to 3-D.Thompkins. 3-D.Thompkins pushed ob at PSU 27 for 14 yards (9-G.Stone).",
+              "driveText": "2nd and 6 at PSU13",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley to PSU 32 for 5 yards (30-J.Gervase,48-J.Hockaday).",
+              "driveText": "1st and 10 at PSU27",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley to PSU 33 for 1 yard (98-A.Nelson).",
+              "driveText": "2nd and 5 at PSU32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "9-T.McSorley to PSU 33 for no gain (98-A.Nelson).",
+              "driveText": "3rd and 4 at PSU33",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "93-B.Gillikin punts 49 yards from PSU 33. 14-K.Groeneweg to IOW 23 for 5 yards (40-J.Luketa).",
+              "driveText": "4th and 4 at PSU33",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "01:23",
+          "plays": [
+            {
+              "scoreText": "4-N.Stanley complete to 12-B.Smith. 12-B.Smith to IOW 34 for 11 yards (5-T.Castro-Fields).",
+              "driveText": "1st and 10 at IOW23",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 12-B.Smith.",
+              "driveText": "1st and 10 at IOW34",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 6-I.Smith-Marsette.",
+              "driveText": "2nd and 10 at IOW34",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley complete to 87-N.Fant. 87-N.Fant to IOW 45 for 11 yards.",
+              "driveText": "3rd and 10 at IOW34",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 6-I.Smith-Marsette.",
+              "driveText": "1st and 10 at IOW45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 38-T.Hockenson.",
+              "driveText": "2nd and 10 at IOW45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley scrambles to PSU 44 for 11 yards (11-M.Parsons,4-N.Scott).",
+              "driveText": "3rd and 10 at IOW45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 87-N.Fant.",
+              "driveText": "1st and 10 at PSU44",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 84-N.Easley.",
+              "driveText": "2nd and 10 at PSU44",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "4-N.Stanley incomplete. Intended for 84-N.Easley.",
+              "driveText": "3rd and 10 at PSU44",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "74-T.Wirfs to PSU 29 for 15 yards (11-M.Parsons).",
+              "driveText": "4th and 10 at PSU44",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

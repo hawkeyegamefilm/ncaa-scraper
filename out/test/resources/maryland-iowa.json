@@ -1,0 +1,1213 @@
+{
+  "meta": {
+    "title": "PLAY-BY-PLAY",
+    "teams": [
+      {
+        "homeTeam": "false",
+        "id": "2502",
+        "color": "#e31836",
+        "shortname": "Maryland",
+        "seoName": "maryland",
+        "sixCharAbbr": "MD"
+      },
+      {
+        "homeTeam": "true",
+        "id": "71",
+        "color": "#ffce18",
+        "shortname": "Iowa",
+        "seoName": "iowa",
+        "sixCharAbbr": "IOWA"
+      }
+    ]
+  },
+  "periods": [
+    {
+      "title": "1ST",
+      "shortTitle": "1st",
+      "possessions": [
+        {
+          "teamId": "71",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "15-B.Craddock kicks 59 yards from MAR 35. 14-D.King to IOW 29 for 23 yards (26-D.Savage).",
+              "driveText": "1st and 10 at MAR35",
+              "visitingScore": "0",
+              "homeScore": "0"
+            },
+            {
+              "scoreText": "16-C.Beathard incomplete. Intended for 89-M.Vandeberg.",
+              "driveText": "1st and 10 at IOW29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard incomplete. Intended for 89-M.Vandeberg.",
+              "driveText": "2nd and 10 at IOW29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard complete to 32-D.Mitchell. 32-D.Mitchell to IOW 48 for 19 yards (19-A.Hendy).",
+              "driveText": "3rd and 10 at IOW29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-A.Wadley to MAR 45 for 7 yards (20-A.Nixon,43-J.Brooks).",
+              "driveText": "1st and 10 at IOW48",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-A.Wadley to MAR 43 for 2 yards (23-J.Carter).",
+              "driveText": "2nd and 3 at MAR45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard to MAR 40 for 3 yards (95-A.Ukandu).",
+              "driveText": "3rd and 1 at MAR43",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-A.Wadley to MAR 33 for 7 yards (43-J.Brooks).",
+              "driveText": "1st and 10 at MAR40",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-A.Wadley to MAR 31 for 2 yards (99-Q.Jefferson).",
+              "driveText": "2nd and 3 at MAR33",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard to MAR 30 for 1 yard (57-K.Opara).",
+              "driveText": "3rd and 1 at MAR31",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard complete to 17-J.Hillyer. 17-J.Hillyer to MAR 27 for 3 yards (21-S.Davis).",
+              "driveText": "1st and 10 at MAR30",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard incomplete. Intended for 89-M.Vandeberg.",
+              "driveText": "2nd and 7 at MAR27",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard incomplete. Intended for 4-T.Smith.",
+              "driveText": "3rd and 7 at MAR27",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "1-M.Koehn 45 yards Field Goal is No Good.",
+              "driveText": "4th and 7 at MAR35",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2502",
+          "time": "09:45",
+          "plays": [
+            {
+              "scoreText": "45-B.Ross to MAR 29 for 2 yards (99-N.Bazata).",
+              "driveText": "1st and 10 at MAR27",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills complete to 83-M.Culmer. 83-M.Culmer to MAR 43 for 14 yards (14-D.King).",
+              "driveText": "2nd and 8 at MAR29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills scrambles, runs ob at IOW 43 for 14 yards.",
+              "driveText": "1st and 10 at MAR43",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "45-B.Ross to IOW 35, FUMBLES (13-G.Mabin). 19-M.Taylor to IOW 38 for no gain.",
+              "driveText": "1st and 10 at IOW43",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "07:51",
+          "plays": [
+            {
+              "scoreText": "25-A.Wadley to IOW 46 for 8 yards (21-S.Davis).",
+              "driveText": "1st and 10 at IOW38",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-A.Wadley to MAR 40 for 14 yards (19-A.Hendy,37-A.Thompson).",
+              "driveText": "2nd and 2 at IOW46",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard incomplete. Intended for 89-M.Vandeberg.",
+              "driveText": "1st and 10 at MAR40",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard complete to 4-T.Smith. 4-T.Smith to MAR 19 for 21 yards (21-S.Davis).",
+              "driveText": "2nd and 10 at MAR40",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "29-L.Daniels to MAR 5 for 14 yards (20-A.Nixon).",
+              "driveText": "1st and 10 at MAR19",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "29-L.Daniels to MAR 1 for 4 yards (7-Y.Ngakoue,21-S.Davis).",
+              "driveText": "1st and 5 at MAR5",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "29-L.Daniels runs 1 yard for a touchdown.",
+              "driveText": "2nd and 1 at MAR1",
+              "visitingScore": "0",
+              "homeScore": "6"
+            },
+            {
+              "scoreText": "1-M.Koehn extra point is good.",
+              "driveText": "",
+              "visitingScore": "0",
+              "homeScore": "7"
+            }
+          ]
+        },
+        {
+          "teamId": "2502",
+          "time": "04:42",
+          "plays": [
+            {
+              "scoreText": "1-M.Koehn kicks 60 yards from IOW 35. 4-W.Likely to MAR 31 for 26 yards (48-J.Hockaday,39-T.Perry).",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills to MAR 38 for 7 yards (40-P.Hesse).",
+              "driveText": "1st and 10 at MAR31",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-W.Brown to MAR 38 for no gain (19-M.Taylor).",
+              "driveText": "2nd and 3 at MAR38",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills incomplete. INTERCEPTED by 19-M.Taylor at MAR 44. 19-M.Taylor to MAR 32, FUMBLES (5-W.Brown). 82-A.Edwards to MAR 32 for no gain.",
+              "driveText": "3rd and 3 at MAR38",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-W.Brown to MAR 36 for 4 yards (34-N.Meier,99-N.Bazata).",
+              "driveText": "1st and 10 at MAR32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills incomplete. Intended for 1-D.Moore.",
+              "driveText": "2nd and 6 at MAR36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills complete to 82-A.Edwards. 82-A.Edwards to MAR 37 for 1 yard (14-D.King).",
+              "driveText": "3rd and 6 at MAR36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "95-N.Pritchard punts 44 yards from MAR 37 to IOW 19, fair catch by 14-D.King.",
+              "driveText": "4th and 5 at MAR37",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "01:45",
+          "plays": [
+            {
+              "scoreText": "16-C.Beathard complete to 46-G.Kittle. 46-G.Kittle to IOW 45 for 26 yards (20-A.Nixon).",
+              "driveText": "1st and 10 at IOW19",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard sacked at IOW 35 for -10 yards (57-K.Opara,41-J.Aniebonam).",
+              "driveText": "1st and 10 at IOW45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard complete to 32-D.Mitchell. 32-D.Mitchell to IOW 40 for 5 yards (11-D.Conyers).",
+              "driveText": "2nd and 20 at IOW35",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "2ND",
+      "shortTitle": "2nd",
+      "possessions": [
+        {
+          "teamId": "71",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "16-C.Beathard sacked at IOW 36 for -4 yards (7-Y.Ngakoue).",
+              "driveText": "3rd and 15 at IOW40",
+              "visitingScore": "0",
+              "homeScore": "7"
+            },
+            {
+              "scoreText": "16-D.Kidd punts 41 yards from IOW 36 to MAR 23, fair catch by 4-W.Likely.",
+              "driveText": "4th and 19 at IOW36",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2502",
+          "time": "14:20",
+          "plays": [
+            {
+              "scoreText": "11-P.Hills complete to 84-A.Etta-Tawo. 84-A.Etta-Tawo to MAR 36 for 13 yards (27-J.Lomax).",
+              "driveText": "1st and 10 at MAR23",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills incomplete. Intended for 84-A.Etta-Tawo.",
+              "driveText": "1st and 10 at MAR36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "45-B.Ross to MAR 32 for -4 yards (40-P.Hesse).",
+              "driveText": "2nd and 10 at MAR36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills sacked at MAR 26 for -6 yards (34-N.Meier).",
+              "driveText": "3rd and 14 at MAR32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Penalty on MAR 56-M.Gillespie, False start, 5 yards, enforced at MAR 26. No Play.",
+              "driveText": "4th and 20 at MAR26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "95-N.Pritchard punts 39 yards from MAR 21. 14-D.King to IOW 37 for -3 yards (19-A.Hendy,56-M.Gillespie).",
+              "driveText": "4th and 25 at MAR21",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "12:15",
+          "plays": [
+            {
+              "scoreText": "25-A.Wadley to IOW 42 for 5 yards (43-J.Brooks,19-A.Hendy).",
+              "driveText": "1st and 10 at IOW37",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-A.Wadley to IOW 42 for no gain.",
+              "driveText": "2nd and 5 at IOW42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard complete to 89-M.Vandeberg. 89-M.Vandeberg pushed ob at MAR 35 for 23 yards (21-S.Davis).",
+              "driveText": "3rd and 5 at IOW42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "29-L.Daniels to MAR 28 for 7 yards (9-T.Burke).",
+              "driveText": "1st and 10 at MAR35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "29-L.Daniels to MAR 30 for -2 yards (99-Q.Jefferson).",
+              "driveText": "2nd and 3 at MAR28",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard incomplete. Intended for 89-M.Vandeberg.",
+              "driveText": "3rd and 5 at MAR30",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard incomplete. Intended for 4-T.Smith. Penalty on MAR 21-S.Davis, Pass interference, 15 yards, enforced at MAR 30. No Play.",
+              "driveText": "4th and 5 at MAR30",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-A.Wadley to MAR 11 for 4 yards (20-A.Nixon,43-J.Brooks).",
+              "driveText": "1st and 10 at MAR15",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-A.Wadley runs 11 yards for a touchdown.",
+              "driveText": "2nd and 6 at MAR11",
+              "visitingScore": "0",
+              "homeScore": "13"
+            },
+            {
+              "scoreText": "1-M.Koehn extra point is good.",
+              "driveText": "",
+              "visitingScore": "0",
+              "homeScore": "14"
+            }
+          ]
+        },
+        {
+          "teamId": "2502",
+          "time": "08:30",
+          "plays": [
+            {
+              "scoreText": "1-M.Koehn kicks 65 yards from IOW 35. 4-W.Likely to MAR 23 for 23 yards (1-M.Koehn).",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills incomplete. Intended for 1-D.Moore.",
+              "driveText": "1st and 10 at MAR23",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills complete to 82-A.Edwards. 82-A.Edwards to MAR 30 for 7 yards (19-M.Taylor).",
+              "driveText": "2nd and 10 at MAR23",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills pushed ob at MAR 34 for 4 yards (44-B.Niemann).",
+              "driveText": "3rd and 3 at MAR30",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills incomplete. Intended for 5-W.Brown.",
+              "driveText": "1st and 10 at MAR34",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills to MAR 38 for 4 yards (19-M.Taylor).",
+              "driveText": "2nd and 10 at MAR34",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-W.Brown to MAR 38 for no gain (41-B.Bower,34-N.Meier).",
+              "driveText": "3rd and 6 at MAR38",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "95-N.Pritchard punts 44 yards from MAR 38. 14-D.King pushed ob at IOW 19 for 1 yard (2-M.Collins).",
+              "driveText": "4th and 6 at MAR38",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "05:30",
+          "plays": [
+            {
+              "scoreText": "16-C.Beathard complete to 9-J.Smith. 9-J.Smith runs ob at IOW 33 for 14 yards.",
+              "driveText": "1st and 10 at IOW19",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-A.Wadley to IOW 32 for -1 yard (96-B.Kulka).",
+              "driveText": "1st and 10 at IOW33",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard complete to 89-M.Vandeberg. 89-M.Vandeberg to MAR 46 for 22 yards (20-A.Nixon).",
+              "driveText": "2nd and 11 at IOW32",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "29-L.Daniels to MAR 41 for 5 yards (43-J.Brooks,95-A.Ukandu).",
+              "driveText": "1st and 10 at MAR46",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "29-L.Daniels to MAR 41 for no gain (43-J.Brooks).",
+              "driveText": "2nd and 5 at MAR41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard incomplete. Intended for 89-M.Vandeberg.",
+              "driveText": "3rd and 5 at MAR41",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-D.Kidd punts 38 yards from MAR 41 to the MAR 3, downed by 15-J.Jackson.",
+              "driveText": "4th and 5 at MAR41",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2502",
+          "time": "02:07",
+          "plays": [
+            {
+              "scoreText": "5-W.Brown to MAR 2 for -1 yard (67-J.Johnson).",
+              "driveText": "1st and 10 at MAR3",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-W.Brown to MAR 4 for 2 yards (36-C.Fisher,43-J.Jewell).",
+              "driveText": "2nd and 11 at MAR2",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills scrambles to MAR 6 for 2 yards (34-N.Meier).",
+              "driveText": "3rd and 9 at MAR4",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "95-N.Pritchard punts 13 yards from MAR 6 blocked by 31-A.Mends. 14-D.King to MAR 19 for no gain.",
+              "driveText": "4th and 7 at MAR6",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "01:01",
+          "plays": [
+            {
+              "scoreText": "16-C.Beathard complete to 32-D.Mitchell. 32-D.Mitchell to MAR 19 for no gain (22-I.Davis). Penalty on IOW 52-B.Myers, Holding, 10 yards, enforced at MAR 19. No Play.",
+              "driveText": "1st and 10 at MAR19",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard complete to 17-J.Hillyer. 17-J.Hillyer to MAR 17 for 12 yards (43-J.Brooks).",
+              "driveText": "1st and 20 at MAR29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard complete to 80-H.KriegerCoble. 80-H.KriegerCoble to MAR 2 for 15 yards (23-J.Carter).",
+              "driveText": "2nd and 8 at MAR17",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "spikes the ball at MAR 2 for no gain.",
+              "driveText": "1st and 2 at MAR2",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard incomplete. Intended for 89-M.Vandeberg.",
+              "driveText": "2nd and 2 at MAR2",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "32-D.Mitchell runs 2 yards for a touchdown.",
+              "driveText": "3rd and 2 at MAR2",
+              "visitingScore": "0",
+              "homeScore": "20"
+            },
+            {
+              "scoreText": "1-M.Koehn extra point is good.",
+              "driveText": "",
+              "visitingScore": "0",
+              "homeScore": "21"
+            }
+          ]
+        },
+        {
+          "teamId": "2502",
+          "time": ":09",
+          "plays": [
+            {
+              "scoreText": "1-M.Koehn kicks 62 yards from IOW 35. 4-W.Likely to MAR 36 for 33 yards (39-T.Perry,44-B.Niemann).",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "3RD",
+      "shortTitle": "3rd",
+      "possessions": [
+        {
+          "teamId": "2502",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "1-M.Koehn kicks 63 yards from IOW 35. 4-W.Likely to MAR 12 for 10 yards (26-K.Ward,41-B.Bower).",
+              "driveText": "1st and 10 at IOW35",
+              "visitingScore": "0",
+              "homeScore": "21"
+            },
+            {
+              "scoreText": "11-P.Hills complete to 12-T.Jacobs. 12-T.Jacobs to MAR 16 for 4 yards (36-C.Fisher).",
+              "driveText": "1st and 10 at MAR12",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills to MAR 25 for 9 yards (27-J.Lomax).",
+              "driveText": "2nd and 6 at MAR16",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills sacked at MAR 23 for -2 yards (67-J.Johnson,99-N.Bazata).",
+              "driveText": "1st and 10 at MAR25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "45-B.Ross to MAR 46 for 23 yards (14-D.King,27-J.Lomax).",
+              "driveText": "2nd and 12 at MAR23",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills to MAR 48 for 2 yards (14-D.King).",
+              "driveText": "1st and 10 at MAR46",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills to MAR 48 for no gain (40-P.Hesse).",
+              "driveText": "2nd and 8 at MAR48",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills complete to 12-T.Jacobs. 12-T.Jacobs to IOW 45 for 7 yards (19-M.Taylor,28-M.Fleming).",
+              "driveText": "3rd and 8 at MAR48",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills to IOW 39 for 6 yards (19-M.Taylor).",
+              "driveText": "4th and 1 at IOW45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "2-S.Cockerille to IOW 38 for 1 yard (19-M.Taylor,44-B.Niemann).",
+              "driveText": "1st and 10 at IOW39",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "2-S.Cockerille incomplete. Intended for 12-T.Jacobs.",
+              "driveText": "2nd and 9 at IOW38",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills complete to 5-W.Brown. 5-W.Brown to IOW 35 for 3 yards (43-J.Jewell).",
+              "driveText": "3rd and 9 at IOW38",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Team penalty on MAR, Delay of game, 5 yards, enforced at IOW 35. No Play.",
+              "driveText": "4th and 6 at IOW35",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "95-N.Pritchard punts 33 yards from IOW 40 to IOW 7, fair catch by 14-D.King.",
+              "driveText": "4th and 11 at IOW40",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "08:35",
+          "plays": [
+            {
+              "scoreText": "25-A.Wadley to IOW 10 for 3 yards (38-B.Zanotto).",
+              "driveText": "1st and 7 at IOW7",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-A.Wadley to IOW 11 for 1 yard (38-B.Zanotto).",
+              "driveText": "2nd and 4 at IOW10",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard complete to 89-M.Vandeberg. 89-M.Vandeberg to IOW 20 for 9 yards (19-A.Hendy,90-R.Braglio).",
+              "driveText": "3rd and 3 at IOW11",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "29-L.Daniels to IOW 23 for 3 yards (26-D.Savage).",
+              "driveText": "1st and 10 at IOW20",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard incomplete. Intended for 17-J.Hillyer.",
+              "driveText": "2nd and 7 at IOW23",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard sacked at IOW 15 for -8 yards (38-B.Zanotto,7-Y.Ngakoue).",
+              "driveText": "3rd and 7 at IOW23",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-D.Kidd punts 35 yards from IOW 15 to IOW 50, fair catch by 14-G.Shaffer.",
+              "driveText": "4th and 15 at IOW15",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2502",
+          "time": "05:12",
+          "plays": [
+            {
+              "scoreText": "4-W.Likely to MAR 48 for -2 yards (34-N.Meier).",
+              "driveText": "1st and 10 at IOW50",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills incomplete. INTERCEPTED by 27-J.Lomax at IOW 3. 27-J.Lomax to IOW 3 for no gain.",
+              "driveText": "2nd and 12 at MAR48",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "04:20",
+          "plays": [
+            {
+              "scoreText": "29-L.Daniels to IOW 19 for 16 yards (27-A.Hill).",
+              "driveText": "1st and 3 at IOW3",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-A.Wadley to IOW 18 for -1 yard (99-Q.Jefferson).",
+              "driveText": "1st and 10 at IOW19",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard to IOW 22 for 4 yards (37-A.Thompson).",
+              "driveText": "2nd and 11 at IOW18",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard incomplete. Intended for 32-D.Mitchell.",
+              "driveText": "3rd and 7 at IOW22",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "1-M.Koehn punts 46 yards from IOW 22. 4-W.Likely to MAR 36 for 4 yards. Penalty on MAR 31-N.Egbuaba, Offside, declined.",
+              "driveText": "4th and 7 at IOW22",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2502",
+          "time": "02:16",
+          "plays": [
+            {
+              "scoreText": "5-W.Brown to MAR 45 for 9 yards (36-C.Fisher,44-B.Niemann).",
+              "driveText": "1st and 10 at MAR36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills to MAR 49 for 4 yards (43-J.Jewell,67-J.Johnson).",
+              "driveText": "2nd and 1 at MAR45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills scrambles to IOW 46 for 5 yards. Penalty on IOW 67-J.Johnson, Personal Foul, 15 yards, enforced at IOW 46.",
+              "driveText": "1st and 10 at MAR49",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills complete to 85-J.Davenport. 85-J.Davenport to IOW 29 for 2 yards (36-C.Fisher,34-N.Meier).",
+              "driveText": "1st and 10 at IOW31",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-W.Brown to IOW 26 for 3 yards. Team penalty on MAR, Illegal shift, 5 yards, enforced at IOW 29. No Play.",
+              "driveText": "2nd and 8 at IOW29",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-W.Brown to IOW 15 for 19 yards (27-J.Lomax,14-D.King).",
+              "driveText": "2nd and 13 at IOW34",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills incomplete. Intended for 85-J.Davenport.",
+              "driveText": "1st and 10 at IOW15",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "4TH",
+      "shortTitle": "4th",
+      "possessions": [
+        {
+          "teamId": "2502",
+          "time": "15:00",
+          "plays": [
+            {
+              "scoreText": "11-P.Hills scrambles to IOW 15 for no gain (43-J.Jewell). Penalty on IOW 43-J.Jewell, Personal Foul, 8 yards, enforced at IOW 15.",
+              "driveText": "2nd and 10 at IOW15",
+              "visitingScore": "0",
+              "homeScore": "21"
+            },
+            {
+              "scoreText": "11-P.Hills complete to 12-T.Jacobs. 12-T.Jacobs runs 7 yards for a touchdown.",
+              "driveText": "1st and 7 at IOW7",
+              "visitingScore": "6",
+              "homeScore": "21"
+            },
+            {
+              "scoreText": "15-B.Craddock extra point is good.",
+              "driveText": "",
+              "visitingScore": "7",
+              "homeScore": "21"
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "14:37",
+          "plays": [
+            {
+              "scoreText": "kicks 10 yards from MAR 35 to the MAR 45, downed by 82-A.Falconer to MAR 45 for no gain.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Penalty on IOW 52-B.Myers, False start, 5 yards, enforced at MAR 45. No Play.",
+              "driveText": "1st and 10 at MAR45",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard to MAR 42 for 8 yards (21-S.Davis).",
+              "driveText": "1st and 15 at MAR50",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard complete to 4-T.Smith. 4-T.Smith to MAR 28 for 14 yards (21-S.Davis).",
+              "driveText": "2nd and 7 at MAR42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-A.Wadley to MAR 26 for 2 yards (23-J.Carter).",
+              "driveText": "1st and 10 at MAR28",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard incomplete. Intended for 4-T.Smith. Penalty on MAR 21-S.Davis, Pass interference, 12 yards, enforced at MAR 26. No Play.",
+              "driveText": "2nd and 8 at MAR26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-A.Wadley to MAR 18 for -4 yards (20-A.Nixon).",
+              "driveText": "1st and 10 at MAR14",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard sacked at MAR 26 for -8 yards (99-Q.Jefferson).",
+              "driveText": "2nd and 14 at MAR18",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard incomplete. Intended for 4-T.Smith.",
+              "driveText": "3rd and 22 at MAR26",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "1-M.Koehn 44 yards Field Goal is Good. Team penalty on IOW, Illegal formation, 5 yards, enforced at MAR 26. No Play.",
+              "driveText": "4th and 22 at MAR34",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "1-M.Koehn 49 yards Field Goal is Good.",
+              "driveText": "4th and 27 at MAR39",
+              "visitingScore": "7",
+              "homeScore": "24"
+            }
+          ]
+        },
+        {
+          "teamId": "2502",
+          "time": "11:04",
+          "plays": [
+            {
+              "scoreText": "1-M.Koehn kicks 65 yards from IOW 35. 4-W.Likely to MAR 28 for 28 yards (1-M.Koehn,12-A.Gair). Penalty on MAR 36-E.Dennah, Holding, 10 yards, enforced at MAR 28.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills to MAR 36 for 18 yards (19-M.Taylor,44-B.Niemann).",
+              "driveText": "1st and 10 at MAR18",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills complete to 45-B.Ross. 45-B.Ross to MAR 47 for 11 yards (36-C.Fisher,99-N.Bazata).",
+              "driveText": "1st and 10 at MAR36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills to IOW 49 for 4 yards (40-P.Hesse).",
+              "driveText": "1st and 10 at MAR47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills to IOW 25 for 24 yards (43-J.Jewell).",
+              "driveText": "2nd and 6 at IOW49",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "45-B.Ross to IOW 20 for 5 yards (36-C.Fisher,99-N.Bazata).",
+              "driveText": "1st and 10 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills to IOW 12, FUMBLES (27-J.Lomax). 50-E.Mulrooney to IOW 12 for no gain.",
+              "driveText": "2nd and 5 at IOW20",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills incomplete. INTERCEPTED by 14-D.King at IOW 12. 14-D.King runs 88 yards for a touchdown.",
+              "driveText": "1st and 10 at IOW12",
+              "visitingScore": "7",
+              "homeScore": "30"
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "07:38",
+          "plays": [
+            {
+              "scoreText": "1-M.Koehn extra point is good.",
+              "driveText": "",
+              "visitingScore": "7",
+              "homeScore": "31"
+            }
+          ]
+        },
+        {
+          "teamId": "2502",
+          "time": "07:38",
+          "plays": [
+            {
+              "scoreText": "1-M.Koehn kicks 65 yards from IOW 35. 4-W.Likely runs 100 yards for a touchdown.",
+              "driveText": "",
+              "visitingScore": "13",
+              "homeScore": "31"
+            },
+            {
+              "scoreText": "11-P.Hills to IOW End Zone for 2 yards. Conversion is good.",
+              "driveText": "",
+              "visitingScore": "15",
+              "homeScore": "31"
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "07:26",
+          "plays": [
+            {
+              "scoreText": "kicks 24 yards from MAR 35 to the IOW 41, downed by 17-J.Hillyer to IOW 41 for no gain. Team penalty on MAR, Offside, 5 yards, enforced at IOW 41.",
+              "driveText": "",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-A.Wadley to IOW 48 for 2 yards.",
+              "driveText": "1st and 10 at IOW46",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-A.Wadley to MAR 46 for 6 yards (90-R.Braglio,38-B.Zanotto).",
+              "driveText": "2nd and 8 at IOW48",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "25-A.Wadley to MAR 47 for -1 yard (20-A.Nixon).",
+              "driveText": "3rd and 2 at MAR46",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Team penalty on IOW, Delay of game, 5 yards, enforced at MAR 47. No Play.",
+              "driveText": "4th and 3 at MAR47",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-D.Kidd punts 34 yards from IOW 48, out of bounds at the MAR 18.",
+              "driveText": "4th and 8 at IOW48",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2502",
+          "time": "05:11",
+          "plays": [
+            {
+              "scoreText": "11-P.Hills complete to 1-D.Moore. 1-D.Moore to MAR 23 for 5 yards (13-G.Mabin).",
+              "driveText": "1st and 10 at MAR18",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills scrambles to MAR 24 for 1 yard (40-P.Hesse).",
+              "driveText": "2nd and 5 at MAR23",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills incomplete. Intended for 12-T.Jacobs.",
+              "driveText": "3rd and 4 at MAR24",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "95-N.Pritchard punts 40 yards from MAR 24 Downed at the IOW 36.",
+              "driveText": "4th and 4 at MAR24",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "03:53",
+          "plays": [
+            {
+              "scoreText": "29-L.Daniels to IOW 42 for 6 yards.",
+              "driveText": "1st and 10 at IOW36",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Penalty on MAR 7-Y.Ngakoue, Unsportsmanlike conduct, 15 yards, enforced at IOW 42. No Play.",
+              "driveText": "2nd and 4 at IOW42",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "29-L.Daniels to MAR 44 for -1 yard (95-A.Ukandu).",
+              "driveText": "1st and 10 at MAR43",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "29-L.Daniels to MAR 40 for 4 yards (23-J.Carter).",
+              "driveText": "2nd and 11 at MAR44",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "29-L.Daniels to MAR 37 for 3 yards (20-A.Nixon,95-A.Ukandu).",
+              "driveText": "3rd and 7 at MAR40",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "Team penalty on IOW, Delay of game, 5 yards, enforced at MAR 37. No Play.",
+              "driveText": "4th and 4 at MAR37",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-D.Kidd punts 39 yards from MAR 42, out of bounds at the MAR 3.",
+              "driveText": "4th and 9 at MAR42",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "2502",
+          "time": "02:56",
+          "plays": [
+            {
+              "scoreText": "11-P.Hills incomplete.",
+              "driveText": "1st and 10 at MAR3",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "5-W.Brown to MAR 3 for no gain (43-J.Jewell).",
+              "driveText": "2nd and 10 at MAR3",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "11-P.Hills incomplete.",
+              "driveText": "3rd and 10 at MAR3",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "95-N.Pritchard punts 70 yards from MAR 3 Downed at the IOW 27.",
+              "driveText": "4th and 10 at MAR3",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        },
+        {
+          "teamId": "71",
+          "time": "01:51",
+          "plays": [
+            {
+              "scoreText": "16-C.Beathard kneels at IOW 25 for -2 yards.",
+              "driveText": "1st and 10 at IOW27",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard kneels at IOW 24 for -1 yard.",
+              "driveText": "2nd and 12 at IOW25",
+              "visitingScore": "",
+              "homeScore": ""
+            },
+            {
+              "scoreText": "16-C.Beathard kneels at IOW 22 for -2 yards.",
+              "driveText": "3rd and 13 at IOW24",
+              "visitingScore": "",
+              "homeScore": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

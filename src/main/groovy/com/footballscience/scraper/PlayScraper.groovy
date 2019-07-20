@@ -26,6 +26,8 @@ class PlayScraper {
     String homeTeamId
     String awayTeamId
 
+    String pbpHomeTeamId
+
     Map abrMap = [:]
     Map idMap = [:]
 
@@ -46,7 +48,8 @@ class PlayScraper {
         homeTeamId = hometeamRoster[0].team_id
         List awayteamRoster = parserDAO.getRosterBySeasonTeamId(awayteam.id)
         awayTeamId = awayteamRoster[0].team_id
-        rosters = [homeTeamId: hometeamRoster, awayTeamId: awayteamRoster]
+        rosters = [(hometeam.id as String): hometeamRoster, (awayteam.id as String): awayteamRoster]
+        pbpHomeTeamId = hometeam.id as String
         abrMap.put(hometeam.id as Integer, parserDAO.getAbreviationsByTeamId(hometeam.id))
         abrMap.put(awayteam.id as Integer, parserDAO.getAbreviationsByTeamId(awayteam.id))
         idMap.put(homeTeamId.toInteger(),hometeam.id)
@@ -146,7 +149,7 @@ class PlayScraper {
                     }
 
                     Boolean onsideFlag = poss.plays.size > 1 //trying to flag onsides
-                    mappedPlay = ScoreTextParserLib.determinePlayTypeAndMapPlay(gameId, poss.teamId as Integer, defensiveTeamId, playIndex as Integer, ytg as Integer, play.scoreText, rosters, onsideFlag, yfog, abrMap)
+                    mappedPlay = ScoreTextParserLib.determinePlayTypeAndMapPlay(gameId, poss.teamId as Integer, defensiveTeamId, playIndex as Integer, ytg as Integer, play.scoreText, rosters, onsideFlag, yfog, abrMap, pbpHomeTeamId)
                     Play playObject = new Play(gameId: gameId, playIndex: globalPlayCount, periodIndex: periodIndex, time: ScoreTextParserLib.convertTimeStringToSeconds(poss.time), teamId: cleanString(poss.teamId as String), defensiveTeamId: defensiveTeamId, visitingScore: cleanString(play.visitingScore as String), homeScore: cleanString(play.homeScore as String),down:down, ytg: ytg, yfog: yfog, playType: mappedPlay.keySet()[0], driveNumber: possIndex, drivePlay: playIndex, fullScoreText:play.scoreText, driveText: play.driveText)
                     ScoreTextParserLib.addMappedPlayToDomainObject(mappedPlay,playObject)
                     plays.add(playObject)
@@ -156,7 +159,11 @@ class PlayScraper {
                 Integer endPeriodIndex
                 if(!multiplePeriodDriveScenario) {
                     endPeriodIndex = periodIndex
-                } else {
+                } else if (multiplePeriodDriveScenario && ScoreTextParserLib.isChangeOfPossesionPlay((plays.last() as Play).fullScoreText)) {
+                    endPeriodIndex = periodIndex
+                    multiplePeriodDriveScenario = false
+                }
+                else {
                     //add another iteration of plays and append to existing drive row data
                     endPeriodIndex= periodIndex + 1
                 }
@@ -171,7 +178,12 @@ class PlayScraper {
                     //need a method to examine last play and reliably create driveType element for endType
                     DriveType endType = ScoreTextParserLib.determineEndType(lastPlay)
 
-                    currentDrive = new Drive(gameId: gameId, driveNumber: possIndex,teamId: poss.teamId as Integer, startPeriod: poss.periodIndex, startClock: timeValue, startSpot: startYfog, startType: driveStartType, endPeriod: endPeriodIndex, endType:endType, plays: plays)
+                    Integer extraPointOnlyDrive = 0
+                    if(plays.size() == 1 && endType == DriveType.TOUCHDOWN) {//this was a defensive score
+                        extraPointOnlyDrive = 1
+                    }
+
+                    currentDrive = new Drive(gameId: gameId, driveNumber: possIndex,teamId: poss.teamId as Integer, startPeriod: poss.periodIndex, startClock: timeValue, startSpot: startYfog, startType: driveStartType, endPeriod: endPeriodIndex, endType:endType, extraPointOnlyDrive: extraPointOnlyDrive, plays: plays)
                 }
                   //information in current drive insufficient, need to peak at drive N+1, also multi-period drive to consider
 //                driveRows.append(endClock).append(",")//endClock

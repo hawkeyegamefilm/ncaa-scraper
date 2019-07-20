@@ -60,14 +60,14 @@ class ScoreTextParserLib {
 //        }
 //    }
 
-    static Map<PlayType,Object> determinePlayTypeAndMapPlay(String gameId, Integer teamId, Integer defensiveTeamId, Integer playNum, Integer ytg, String scoreText, Map rosters, Boolean onsideFlag, Integer yfog, Map abrMap) {
+    static Map<PlayType,Object> determinePlayTypeAndMapPlay(String gameId, Integer teamId, Integer defensiveTeamId, Integer playNum, Integer ytg, String scoreText, Map rosters, Boolean onsideFlag, Integer yfog, Map abrMap, String homeTeamId) {
         Map returnMap = [:]
         if((scoreText.contains("penalty") || scoreText.contains("Penalty")) && scoreText.contains('No Play')) {//Need to box these out first so they don't included in play counts
             //parse out penalty details, write to separate table?
             //treat 'no play' rows discreetly
             returnMap.put(PlayType.PENALTY, null)
         } else if(isPass(scoreText)) {
-            Pass pass = createPassRow(gameId, teamId, playNum, ytg, scoreText, rosters)
+            Pass pass = createPassRow(gameId, teamId, playNum, ytg, scoreText, rosters, abrMap, yfog, homeTeamId)
             returnMap.put(PlayType.PASS, pass)
         } else if(scoreText.contains("punts")) {
             Punt punt = createPuntRow(gameId, teamId, defensiveTeamId, playNum, scoreText, rosters)
@@ -89,10 +89,10 @@ class ScoreTextParserLib {
         } else if(scoreText.contains("Conversion") ||scoreText.contains("conversion") ) {
             //parse this like a normal play for 2 points? Just record success/failure
             if(isPass(scoreText)) {
-                Pass pass = createPassRow(gameId, teamId, playNum, ytg, scoreText, rosters)
+                Pass pass = createPassRow(gameId, teamId, playNum, ytg, scoreText, rosters, abrMap, yfog, homeTeamId)
                 returnMap.put(PlayType.ATTEMPT, pass)
             } else {
-                Rush rush = createRushRow(gameId, teamId, playNum, ytg, scoreText, rosters, yfog,abrMap)
+                Rush rush = createRushRow(gameId, teamId, playNum, ytg, scoreText, rosters, yfog,abrMap, homeTeamId)
                 returnMap.put(PlayType.ATTEMPT, rush)
             }
             //create csv rush or pass row to attempts table on conversation attempt
@@ -101,7 +101,7 @@ class ScoreTextParserLib {
             returnMap.put(PlayType.TIMEOUT, null)
         } else {
             //must be a rush attempt
-            Rush rush = createRushRow(gameId, teamId, playNum, ytg, scoreText, rosters, yfog, abrMap)
+            Rush rush = createRushRow(gameId, teamId, playNum, ytg, scoreText, rosters, yfog, abrMap, homeTeamId)
             returnMap.put(PlayType.RUSH, rush)
         }
         return returnMap
@@ -113,7 +113,12 @@ class ScoreTextParserLib {
         kickoff.kickingTeamId = kickingTeamId
         kickoff.returningTeamId = returningTeamId
 
-        kickoff.kickerId = lookupLeadingPlayerId(scoreText, rosters, kickingTeamId)
+
+        if (scoreText.charAt(1) == dash || scoreText.charAt(2) == dash) {
+            kickoff.kickerId = lookupLeadingPlayerId(scoreText, rosters, kickingTeamId)
+        } else {
+            kickoff.kickerId = -1
+        }
 
         kickoff.yards = scoreText.substring(scoreText.indexOf("kicks")+5, scoreText.indexOf("yards")).trim() as Integer
 
@@ -146,8 +151,8 @@ class ScoreTextParserLib {
                         kickoff.onside = 1
                         //now figure out if it was recovered by the kicking team
                         //need a reliable way to do this
-                        if(onsideFlag) {
-                            kickoff.onsideSuccess = 1
+                        if(scoreText.contains("downed")) {
+                            kickoff.onsideSuccess = 0
                         }
                     }
                 }
@@ -244,7 +249,11 @@ class ScoreTextParserLib {
             } else {
                 String returnString = scoreText.substring(scoreText.indexOf(". " )+2)
                 punt.returnerId = lookupLeadingPlayerId(returnString, rosters, returningTeamId)
-                punt.returnYards = returnString.substring(returnString.indexOf("for")+4,returnString.indexOf("yard"))?.trim() as Integer
+                if (returnString.contains("no gain")) {
+                    punt.returnYards = 0
+                } else {
+                    punt.returnYards = returnString.substring(returnString.indexOf("for")+4,returnString.indexOf("yard"))?.trim() as Integer
+                }
             }
 
         }
@@ -255,7 +264,11 @@ class ScoreTextParserLib {
         return scoreText.contains("incomplete") || scoreText.contains("complete")
     }
 
-    static Pass createPassRow(String gameId, Integer teamId, Integer playNum, Integer ytg, String scoreText, Map rosters) {
+    static Pass createPassRow(String gameId, Integer teamId, Integer playNum, Integer ytg, String scoreText, Map rosters, Map abrMap, Integer yfog, String homeTeamId) {
+        String awayTeamId
+        if(rosters.keySet().size() == 2) {
+            awayTeamId = (rosters.keySet() - homeTeamId)[0]
+        }
         Pass pass = new Pass(gameId: gameId, teamId: teamId, playNum: playNum)
         pass.passerId = lookupLeadingPlayerId(scoreText, rosters, teamId)
 
@@ -267,7 +280,14 @@ class ScoreTextParserLib {
             //find the target
             String receiverJerseyNumber = subScoreText.substring(subScoreText.indexOf('to')+2,subScoreText.indexOf("-")).trim()
             String receiverFirstInitial = subScoreText.substring(subScoreText.indexOf("-")+1,subScoreText.indexOf("."))
-            String receiverLastName = subScoreText.substring(subScoreText.indexOf(".")+1,subScoreText.indexOf(". "))
+
+            String receiverLastName
+            try {
+                receiverLastName = subScoreText.substring(subScoreText.indexOf(".")+1,subScoreText.indexOf(". "))
+            } catch(IndexOutOfBoundsException e) {//this handles bizarre extra spaces in players last name
+                String remainder = subScoreText.substring(subScoreText.indexOf(".")+1).trim()
+                receiverLastName = remainder.substring(0, remainder.indexOf(". ")).trim()
+            }
 
             pass.recieverId = getPlayerIdFromRosters(rosters, teamId, receiverJerseyNumber, receiverFirstInitial, receiverLastName)
 
@@ -325,6 +345,13 @@ class ScoreTextParserLib {
         if(wasFumbled(scoreText)) {
             pass.fumble = 1
             pass.fumbleLost = calculateFumbleLost(scoreText, teamId, rosters)
+            //do fumble yards here
+            if(!(pass.fumbleLost == 1)) {
+                String spotString = scoreText.substring(scoreText.lastIndexOf("to")+2, scoreText.indexOf("for")).replace(" ", "")
+                int endingYfog = calculateSpot(abrMap, spotString, Integer.parseInt(awayTeamId))
+                pass.yards = Math.abs(yfog - endingYfog)
+            }
+
         } else {
             pass.fumble = 0
             pass.fumbleLost = 0
@@ -367,7 +394,11 @@ class ScoreTextParserLib {
         return " "+tailString
     }
 
-    static Rush createRushRow(String gameId, Integer teamId, Integer playNum, Integer ytg, String scoreText, Map rosters, Integer yfog, Map abrMap) {
+    static Rush createRushRow(String gameId, Integer teamId, Integer playNum, Integer ytg, String scoreText, Map rosters, Integer yfog, Map abrMap, String homeTeamId) {
+        String awayTeamId
+        if(rosters.keySet().size() == 2) {
+            awayTeamId = (rosters.keySet() - homeTeamId)[0]
+        }
         String yards
         int attempt = 1
         //filter kneel downs
@@ -402,21 +433,41 @@ class ScoreTextParserLib {
             touchdown = 1
         }
 
-        Integer fumble = 0
-        Integer fumbleLost = 0
-        if(scoreText.contains("FUMBLES")) {
-            fumble = 1
-            fumbleLost = calculateFumbleLost(scoreText, teamId, rosters)
+
+        Integer safety = 0
+        if(scoreText.contains("SAFETY") || scoreText.contains("safety")) {
+            safety = 1
         }
 
         if(touchdown) {
-            yards = scoreText.substring(scoreText.indexOf("runs")+4,scoreText.indexOf("yard")).trim()
+            //check for 1 off defensive recovery score
+            if(scoreText.contains("End Zone") && scoreText.contains("FUMBLES")) {
+                yards = 0
+                touchdown = 0
+            } else {
+                yards = scoreText.substring(scoreText.indexOf("runs")+4,scoreText.indexOf("yard")).trim()
+            }
         } else {
             //handle no gain cases
             if (scoreText.contains("no gain") && sack == 0) {
                 yards = 0
             } else {
+                //default yards calculation
                 yards = scoreText.substring(scoreText.indexOf("for")+4,scoreText.indexOf("yard"))?.trim()
+            }
+        }
+
+        Integer fumble = 0
+        Integer fumbleLost = 0
+        if(scoreText.contains("FUMBLES")) {
+            fumble = 1
+            fumbleLost = calculateFumbleLost(scoreText, teamId, rosters)
+            //do custom yards calc here
+            //get spot
+            if(!scoreText.contains("sacked") && fumbleLost == 0 && safety == 0) {//only do yard calc for non sacks
+                String spotString = scoreText.substring(scoreText.indexOf("to")+2, scoreText.indexOf(",")).replace(" ", "")
+                int endingYfog = calculateSpot(abrMap, spotString, Integer.parseInt(awayTeamId))
+                yards = Math.abs(yfog - endingYfog)
             }
         }
 
@@ -425,18 +476,13 @@ class ScoreTextParserLib {
             firstDown = 1
         }
 
-        Integer safety = 0
-        if(scoreText.contains("SAFETY") || scoreText.contains("safety")) {
-            safety = 1
-        }
-
         //penalty mods
         if(scoreText.contains("penalty") || scoreText.contains("Penalty")) {
             if(!scoreText.contains("Intentional grounding")) {
                 //this is an insane one off; calculate from enforced spot
                 //use start yardline = yfog, then calculate yards from 'enforced at' spot
                 String enforcedSpot = getEnforcedSpot(scoreText)
-                int endingYfog = calculateSpot(abrMap,enforcedSpot,1645)
+                int endingYfog = calculateSpot(abrMap,enforcedSpot,Integer.parseInt(awayTeamId))
                 yards = Math.abs(yfog - endingYfog)
             }
         }
@@ -591,9 +637,17 @@ class ScoreTextParserLib {
 
         return game
     }
+/*
 
+
+ */
     static Integer calculateSpot(Map abrMap, String driveText, Integer awayTeamId) {
-        String last = driveText.substring(driveText.lastIndexOf(" "))
+        String last
+        if(driveText.contains(" ")) {
+            last = driveText.substring(driveText.lastIndexOf(" "))
+        } else {
+            last = driveText
+        }
         String teamString = last.replaceAll("[0-9]", "").trim()
         Integer yardline = last.replaceAll("[A-Za-z]", "").toInteger()
 
@@ -602,5 +656,15 @@ class ScoreTextParserLib {
         } else {
             return (50 - yardline) + 50
         }
+    }
+
+    static boolean isChangeOfPossesionPlay(String fullScoreText) {
+        if(fullScoreText.contains("punt")) {
+            return true
+        }
+        if(wasIntercepted(fullScoreText)) {
+            return true
+        }
+        false
     }
 }
